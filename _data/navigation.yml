@@ -1,15 +1,119 @@
+# example navigation
+foo:
+  - title: "Parent Link 1"
+    url: /parent-1-page-url/
+    children:
+      - title: "Child Link 1"
+        url: /child-1-page-url/
+      - title: "Child Link 2"
+        url: /child-2-page-url/
+  - title: "Parent Link 2"
+    url: /parent-2-page-url/
+    children:
+      - title: "Child Link 1"
+        url: /child-1-page-url/
+      - title: "Child Link 2"
+        url: /child-2-page-url/
+      - title: "Child Link 3"
+        url: /child-3-page-url/
+
+
+# main links
 main:
-  - title: "Quick-Start Guide"
-    url: /docs/quick-start-guide/
-  - title: "Posts"
-    url: /year-archive/
-  - title: "Categories"
-    url: /categories/
-  - title: "Tags"
+  - title: "About"
+    url: /
+  - title: "Publications"
+    url: /publications/
+  - title: "Grant Projects"
+    url: /grants/
+  - title: "Blog"
+    url: /blog/
+  - title: "Teaching"
+    url: /teaching/
+  - title: "Presentations"
+    url: /presentations/
+  - title: "External Links"
+    url: /external/
+
+# sidebar navigation list sample
+sidebar-sample:
+  - title: "Parent Page A"
+    children:
+      - title: "Child Page A1"
+        url: /
+      - title: "Child Page A2"
+        url: /
+      - title: "Child Page A3"
+        url: /
+      - title: "Child Page A4"
+        url: /
+  - title: "Parent Page B"
+    children:
+      - title: "Child Page B1"
+        url: /
+      - title: "Child Page B2"
+        url: /
+      - title: "Child Page B3"
+        url: /
+      - title: "Child Page B4"
+        url: /
+      - title: "Child Page B5"
+        url: /
+  - title: "Parent Page C"
+    children:
+      - title: "Child Page C1"
+        url: /
+      - title: "Child Page C2"
+        url: /
+      - title: "Child Page C3"
+        url: /
+      - title: "Child Page C4"
+        url: /
+      - title: "Child Page C5"
+        url: /
+  - title: "Parent Page D"
+    children:
+      - title: "Child Page D1"
+        url: /
+      - title: "Child Page D2"
+        url: /
+
+# sidebar blog
+sidebar-blog:
+  - title: "Posts by Tags"
     url: /tags/
-  - title: "Pages"
-    url: /page-archive/
-  - title: "Collections"
-    url: /collection-archive/
-  - title: "External Link"
-    url: https://google.com
+  - title: "Posts by Categories"
+    url: /categories/
+  - title: "Posts by Year"
+    url: /year-archive/
+
+# sidebar cheatsheet
+sidebar-cheatsheet:
+    - title: "Notations"
+      url: cheat%20sheet/cheat-sheet/#notations
+    - title: "Basic Probabilities"
+      url: cheat%20sheet/cheat-sheet/#basic-probabilities
+    - title: "Expectations"
+      url: cheat%20sheet/cheat-sheet/#expectations
+    - title: "Concentration Bounds"
+      url: cheat%20sheet/cheat-sheet/#concentration-bounds
+    - title: "Entropy Notions"
+      url: cheat%20sheet/cheat-sheet/#entropy-notions
+      children:
+      - title: "Some Lemmas on Entropy"
+        url: cheat%20sheet/cheat-sheet/#some-lemmas-on-entropy
+    - title: "Binomial Coefficients"
+      url: cheat%20sheet/cheat-sheet/#binomial-coefficients
+    - title: "Useful Inequalities"
+      url: cheat%20sheet/cheat-sheet/#useful-inequalities
+    - title: "Useful Lemmas"
+      url: cheat%20sheet/cheat-sheet/#useful-lemmas
+      children:
+      - title: "Splitting Lemma"
+        url: cheat%20sheet/cheat-sheet/#splitting-lemma
+      - title: "Forking Lemma"
+        url: cheat%20sheet/cheat-sheet/#forking-lemma
+      - title: "Leftover Hash Lemma"
+        url: cheat%20sheet/cheat-sheet/#leftover-hash-lemma
+      - title: "Piling-Up Lemma"
+        url: cheat%20sheet/cheat-sheet/#piling-up-lemma

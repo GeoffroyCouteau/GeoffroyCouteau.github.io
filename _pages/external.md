@@ -6,7 +6,7 @@ permalink: /external/
 comments: false
 ---
 
-A list of interesting websites, blogs, and useful resources.
+A list of interesting websites, blogs, and useful resources, in no particular order.
 
 - [Cryptography Stackexchange](https://crypto.stackexchange.com/)
 - [TCS Stackexchange](https://cstheory.stackexchange.com/)
@@ -18,3 +18,4 @@ A list of interesting websites, blogs, and useful resources.
 - [The Complexity Zoo](https://complexityzoo.uwaterloo.ca/Complexity_Zoo)
 - [The Stanford Encyclopedia of Philosophy](https://plato.stanford.edu/)
 - [The Miracl benchmark page](https://github.com/miracl/MIRACL/blob/master/docs/miracl-explained/benchmarks.md)
+- [Ryan O'Donnell's awesome TCS toolkit](https://www.diderot.one/courses/28)

@@ -21,9 +21,12 @@ div {
   text-align: justify;
   text-justify: inter-word;
 }
+  h5 {
+    display:inline
+}
 </style>
 
-In the course of working on various projects, I found myself spending an excessive amount of time skimming through textbooks and Wikipedia pages to be reminded of the exact statement of various simple probability facts and lemmas. In some cases, this was to check that I was getting the constants right, or not forgetting a condition -- in others, this was just out of laziness. To simplify future searches, I decided to centralize in a cheat sheet a bunch of standard probability lemmas, starting from the most basic facts, but also including some slightly more advanced lemmas. These lemmas showed up several times in my work, and are likely to be useful to cryptographers and theoretical computer scientists. The PDF version of this cheat sheet, in a compact two-column format, is also available [here](/assets/pdf/cheat_sheet.pdf).
+In the course of working on various projects, I found myself spending an excessive amount of time skimming through textbooks and Wikipedia pages to be reminded of the exact statement of various simple probability facts and lemmas. In some cases, this was to check that I was getting the constants right, or not forgetting a condition -- in others, this was just out of laziness. To simplify future searches, I decided to centralize in a cheat sheet a bunch of standard probability lemmas, starting from the most basic facts, but also including some slightly more advanced lemmas. These lemmas showed up several times in my work, and are likely to be useful to cryptographers and theoretical computer scientists. A (less up-to-date) PDF version of this cheat sheet, in a compact two-column format, is also available [here](/assets/pdf/cheat_sheet.pdf).
 {: style="text-align: justify;"}
 
 <!--more-->
@@ -43,11 +46,11 @@ Let $\mathsf{Ber}\_p$ denote the Bernouilli distribution with probability $p$. $
 
 ### Basic Probabilities
 
-**Union Bound:** $\Pr[A \cup B] \leq \Pr[A] + \Pr[B].$
+<a name="union"></a>**Union Bound:** $\Pr[A \cup B] \leq \Pr[A] + \Pr[B].$
 
-**Bayes' Rule:** $\Pr[A \| B] = \frac{\Pr[B \| A]\cdot \Pr[A]}{\Pr[B]}.$
+<a name="bayes"></a>**Bayes' Rule:** $\Pr[A \| B] = \frac{\Pr[B \| A]\cdot \Pr[A]}{\Pr[B]}.$
 
-**Others:** 
+<a name="others"></a>**Others:** 
 
 \begin{align}
 \min\\{\Pr[A],\Pr[B]\\} &\leq \Pr[A \cap B] \leq \Pr[A]+\Pr[B]-1\\\\  
@@ -56,21 +59,21 @@ Let $\mathsf{Ber}\_p$ denote the Bernouilli distribution with probability $p$. $
 
 ### Expectations
 
-**Cauchy-Schwarz:** $\|\mathbb{E}[XY]\| \leq \mathbb{E}[\|XY\|] \leq \sqrt{\mathbb{E}[\|X\|^2]\mathbb{E}[\|Y\|^2]}.$
+<a name="cauchy"></a>**Cauchy-Schwarz:** $\|\mathbb{E}[XY]\| \leq \mathbb{E}[\|XY\|] \leq \sqrt{\mathbb{E}[\|X\|^2]\mathbb{E}[\|Y\|^2]}.$
 
-**Jensen:** $\text{For }\phi \text{ convex, } \phi(\mathbb{E}[X]) \leq \mathbb{E}[\phi(X)].$
+<a name="jensen"></a>**Jensen:** $\text{For }\phi \text{ convex, } \phi(\mathbb{E}[X]) \leq \mathbb{E}[\phi(X)].$
 
 ### Concentration Bounds
 
-**Markov Inequality:** Let $X$ be a positive random variable with finite expected value $\mu$. Then for any $k > 0$,
+<a name="markov"></a>**Markov Inequality:** Let $X$ be a positive random variable with finite expected value $\mu$. Then for any $k > 0$,
 
 $$\Pr[X \geq k] \leq \frac{\mu}{k}.$$
 
-**Bienaymé-Chebyshev Inequality:** Let $X$ be a random variable with finite expected value $\mu$ and finite nonzero variance $\sigma^2$. Then for any $k > 0$,
+<a name="chebyshev"></a>**Bienaymé-Chebyshev Inequality:** Let $X$ be a random variable with finite expected value $\mu$ and finite nonzero variance $\sigma^2$. Then for any $k > 0$,
 
 $$\Pr[|X - \mu| \leq k\sigma] \leq \frac{1}{k^2}.$$
 
-**Chernoff Inequality:** Let $n\in\mathbb{N}$ and let $(X_1, \cdots, X_n)$ be independent random variables taking values in $\{0,1\}$. Let $X$ denote their sum and $\mu \gets \mathbb{E}[X]$. Then for any $\delta \in [0,1]$,
+<a name="chernoff"></a>**Chernoff Inequality:** Let $n\in\mathbb{N}$ and let $(X_1, \cdots, X_n)$ be independent random variables taking values in $\{0,1\}$. Let $X$ denote their sum and $\mu \gets \mathbb{E}[X]$. Then for any $\delta \in [0,1]$,
 
 $$\Pr[X \geq (1+\delta)\mu] \leq \exp\left(-\frac{\delta^2\mu}{3}\right)\text{ and } \Pr[X \leq (1-\delta)\mu] \leq \exp\left(-\frac{\delta^2\mu}{2}\right).$$
 
@@ -78,17 +81,17 @@ Furthermore, for any $\delta \geq 0$,
 
 $$\Pr[X \geq (1+\delta)\mu] \leq \exp\left(-\frac{\delta^2\mu}{2+\delta}\right).$$
 
-**Generalized Chernoff Inequality ([here][generalized]):** Let $n\in\mathbb{N}$ be an integer and let $(X_1, \cdots, X_n)$ be boolean random variables such that, for some $\delta\in [0,1]$, it holds that for every subset $S \subset [n]$, $\Pr[\wedge_{i\in S} X_i] \leq \delta^{\|S\|}.$ Then for any $\gamma \in [\delta, 1]$,
+<a name="gen-chernoff"></a>**Generalized Chernoff Inequality ([here][generalized]):** Let $n\in\mathbb{N}$ be an integer and let $(X_1, \cdots, X_n)$ be boolean random variables such that, for some $\delta\in [0,1]$, it holds that for every subset $S \subset [n]$, $\Pr[\wedge_{i\in S} X_i] \leq \delta^{\|S\|}.$ Then for any $\gamma \in [\delta, 1]$,
 
 $$\Pr\left[\sum_{i=1}^nX_i \geq \gamma n\right] \leq \exp\left(-n D(\gamma||\delta)\right),$$
 
 where $D(\gamma\|\|\delta)$ denotes the relative entropy function, satisfying $D(\gamma\|\|\delta) \geq 2(\gamma-\delta)^2$. For more discussions and a constructive proof of the generalized Chernoff bound, see [Impagliazzo and Kabanets][impkab].
 
-**Bernstein Inequality:** Let $X_1, \cdots, X_m$ be independent zero-mean random variables, and let $M$ be a bound such that $\|X_i\| \leq M$ almost surely for $i=1$ to $m$. Let $X$ denote the random variable $\sum_{i=1}^m X_i$. It holds that
+<a name="bernstein"></a>**Bernstein Inequality:** Let $X_1, \cdots, X_m$ be independent zero-mean random variables, and let $M$ be a bound such that $\|X_i\| \leq M$ almost surely for $i=1$ to $m$. Let $X$ denote the random variable $\sum_{i=1}^m X_i$. It holds that
 
 $$\Pr[X > B] \leq \exp\left(- \frac{B^2}{2\sum_{i=1}^m \mathbb{E}[X_i^2] + \frac{2}{3}MB}\right).$$
 
-**Bounded Difference Inequality:** First proved by [McDiarmid][mcdiarmid], in a more general form than below. Special case of [Azuma inequality][azuma]. Let $(n,m)\in\mathbb{N}^2$ be two integers. We say that a function $\Phi:[n]^m\mapsto \mathbb{R}$ satisfies the *Lipschitz property with constant $d$* if for every $\vec x, \vec x' \in [n]^m$ which differ in a single coordinate, it holds that $\|\Phi(\vec x) - \Phi(\vec x')\| \leq d.$ Then, the statement of the bounded difference inequality is as follows: let $\Phi:[n]^m\mapsto \mathbb{R}$ be a function satisfying the Lipschitz property with constant $d$, and let $(X_1, \cdots, X_m)$ be independent random variables over $[n]$. It holds that
+<a name="bdi"></a>**Bounded Difference Inequality:** First proved by [McDiarmid][mcdiarmid], in a more general form than below. Special case of [Azuma inequality][azuma]. Let $(n,m)\in\mathbb{N}^2$ be two integers. We say that a function $\Phi:[n]^m\mapsto \mathbb{R}$ satisfies the *Lipschitz property with constant $d$* if for every $\vec x, \vec x' \in [n]^m$ which differ in a single coordinate, it holds that $\|\Phi(\vec x) - \Phi(\vec x')\| \leq d.$ Then, the statement of the bounded difference inequality is as follows: let $\Phi:[n]^m\mapsto \mathbb{R}$ be a function satisfying the Lipschitz property with constant $d$, and let $(X_1, \cdots, X_m)$ be independent random variables over $[n]$. It holds that
 
 $$\Pr[\Phi(X_1, \cdots, X_m) < \mathbb{E}[\Phi(X_1, \cdots, X_m)] - t] \leq \exp\left(-\frac{2t^2}{m\cdot d^2}\right).$$
 
@@ -117,9 +120,27 @@ Note that $\mathsf{H}\_1(\mathsf{Ber}\_p) = \mathsf{H}(p)$.
 
 ### Binomial Coefficients
 
-  - For any $0 <  \mu < 1/2$ and $m\in\mathbb{N}$,
+<a name="sbc"></a>**Sums of Binomial Coefficients:** For any $0 <  \mu < 1/2$ and $m\in\mathbb{N}$,
 
   $$\sum_{i=0}^{\mu m} {m \choose i} = 2^{m\mathsf{H}(\mu) - \frac{\log m}{2} + O(1)}.$$
+
+  Alternatively, writing
+
+  $$\sum_{i=1}^{\mu m} {m \choose i} = {m \choose \mu m} \left [ 1 + \frac{\mu m}{m-\mu m +1} + \frac{\mu m (\mu m - 1)}{(m-\mu m +1)(m - \mu m + 2)} + \cdots \right ],$$
+
+  we get, bounding the above by a geometric series:
+
+  $$\sum_{i=1}^{\mu m} {m \choose i} \leq {m \choose \mu m} \cdot \frac{1-\mu}{1-2\mu}.$$
+
+<a name="stirling-approximation"></a>**Stirling's Approximation:**
+
+$$\frac{1}{\sqrt{2\pi n}}n^n \exp\left(-n + \frac{1}{12n} - \frac{1}{360n^3}\right) \leq {n \choose \ell} \leq \frac{1}{\sqrt{2\pi n}}n^n \exp\left(-n + \frac{1}{12n}\right).$$
+
+or equivalently, setting $\delta \gets \ell/n \in [0,1]$:
+
+$$\frac{1}{\sqrt{2\pi n \delta (1-\delta)}} \exp\left(n\cdot\mathsf{H}(\delta) - \frac{1}{12 n \delta (1-\delta)} \right) \leq {n \choose \delta n} \leq \frac{1}{\sqrt{2\pi n \delta(1-\delta)}}\exp\left(n\cdot \mathsf{H}(\delta)\right).$$
+
+<a name="bin-others"></a>**Others:**
 
   - For $k = o(n)$, $\log {n\choose k} = (1+o(1))k \log \frac{n}{k}$.
   - For any $(k,n)$, $\left(\frac{n}{k}\right)^k \leq {n \choose k} \leq \frac{n^k}{k!} < \left(\frac{ne}{k}\right)^k$.

@@ -13,9 +13,9 @@ You can find the manuscript of my PhD thesis [here](/assets/pdf/thesis.pdf).
 
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
-| ITCS 2021  | Black-Box Uselessness: Composing Separations in Cryptography<br> *Geoffroy Couteau, Pooya Farshim, and Mohammad Mahmoody*	| ePrint, Springer |
-| TCC 2020  | On Pseudorandom Encodings	<br> *Thomas Agrikola, Geoffroy Couteau, Yuval Ishai, Stanislaw Jarecki, and Amit Sahai* | [ePrint](https://eprint.iacr.org/2020/445.pdf), Springer |
-| FOCS 2020  | Pseudorandom Correlation Functions from Variable-Density LPN <br> *Elette Boyle, Geoffroy Couteau, Niv Gilboa, Yuval Ishai, Lisa Kohl, and Peter Scholl* | ePrint, Springer |
+| ITCS 2021  | Black-Box Uselessness: Composing Separations in Cryptography<br> *Geoffroy Couteau, Pooya Farshim, and Mohammad Mahmoody*	| [Link](/assets/pdf/BB_Useless.pdf), Springer |
+| TCC 2020  | On Pseudorandom Encodings	<br> *Thomas Agrikola, Geoffroy Couteau, Yuval Ishai, Stanislaw Jarecki, and Amit Sahai* | [ePrint](https://eprint.iacr.org/2020/445.pdf), [Springer](https://link.springer.com/chapter/10.1007/978-3-030-64381-2_23) |
+| FOCS 2020  | Pseudorandom Correlation Functions from Variable-Density LPN <br> *Elette Boyle, Geoffroy Couteau, Niv Gilboa, Yuval Ishai, Lisa Kohl, and Peter Scholl* | [ePrint](https://eprint.iacr.org/2020/1417.pdf), Springer |
 | CRYPTO 2020  | Shorter Non-Interactive Zero-Knowledge Arguments and ZAPs for Algebraic Languages <br> *Geoffroy Couteau and Dominik Hartmann* | [ePrint](https://eprint.iacr.org/2020/286.pdf), [Springer](https://link.springer.com/chapter/10.1007/978-3-030-56877-1_27) |
 | CRYPTO 2020  | Efficient Pseudorandom Correlation Generators from Ring-LPN <br> *Elette Boyle, Geoffroy Couteau, Niv Gilboa, Yuval Ishai, Lisa Kohl, and Peter Scholl* | ePrint, [Springer](https://link.springer.com/chapter/10.1007/978-3-030-56880-1_14) |
 | EUROCRYPT 2020  | Non-Interactive Zero-Knowledge in Pairing-Free Groups from Weaker Assumptions <br> *Geoffroy Couteau, Shuichi Katsumata, and Bogdan Ursu* | [ePrint](https://eprint.iacr.org/2020/535.pdf), [Springer](https://link.springer.com/chapter/10.1007/978-3-030-45727-3_15) |

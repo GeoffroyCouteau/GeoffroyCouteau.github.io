@@ -26,9 +26,9 @@ I have fundings for several master internships, research visits, or PhDs. I am a
 <!--Currently, I am specifically looking for a master student to work on a project related to secure computation and coding theory during the period March 2021 -- September 2021 (other periods can be envisioned depending on the student constraints). There is a possibility of continuing this internship as a PhD. You might want to check the [internship proposal](/assets/pdf/internship_codes.pdf).-->
 
 |---|---|---|---|
-| Past & Current students &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; |   | Notes |
+| Past & Current students | Time period | Status | Notes |
 |---|---|---|---|
-Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting student | |
+Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting student | Post-quantum secure computation |
 Pierre Meyer | Sep. 2020 -- | PhD | Secure computation with constrained communication |
 Elahe Sadeghi | Jul. 2020 -- Oct. 2020 | Internship | Statistical ZAPs from group-based assumptions |
 Michael Reichle | Feb. 2020 -- Aug. 2020 | Master | Efficient range proofs with transparent setup from bounded integer commitments. Michael's work led to a paper, to be presented at EUROCRYPT'21. |

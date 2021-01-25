@@ -31,8 +31,8 @@ I have fundings for several master internships, research visits, or PhDs. I am a
 Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting student | |
 Pierre Meyer | Sep. 2020 -- | PhD | Secure computation with constrained communication |
 Elahe Sadeghi | Jul. 2020 -- Oct. 2020 | Internship | Statistical ZAPs from group-based assumptions |
-Michael Reichle | Feb. 2020 -- Aug. 2020 | Master | Range proofs from bounded integer commitments |
-Pierre Meyer | Nov. 2020 -- Jan. 2020 | Internship | Sublinear MPC from LPN |
+Michael Reichle | Feb. 2020 -- Aug. 2020 | Master | Efficient range proofs with transparent setup from bounded integer commitments. Michael's work led to a paper, to be presented at EUROCRYPT'21. |
+Pierre Meyer | Nov. 2020 -- Jan. 2020 | Internship | Breaking the circuit size barrier for secure computation under quasi-polynomial LPN. Pierre's work led to a paper, to be presented at EUROCRYPT'21. |
 Dominik Hartmann | Feb. 2019 -- Aug. 2020 | Master | Compilers for non-interactive zero-knowledge proofs. Dominik's work led to a [paper](https://eprint.iacr.org/2020/286.pdf), presented at CRYPTO'20. |
 Sebastian Faller | Oct. 2018 -- Feb. 2019 | Bachelor | Lattice-based implicit zero-knowledge arguments |
 Michael Reichle | May 2018 -- Sep. 2018 | Bachelor | Non-interactive keyed-verification anonymous credentials. Michael's work led to a [paper](https://eprint.iacr.org/2019/117.pdf), presented at PKC'19. |
@@ -45,7 +45,7 @@ The list of conferences and workshops where I served as a member of the committe
 |---|---|
 | Year | Conferences/workshops |
 |---|---|
-| 2021 | EUROCRYPT |
+| 2021 | EUROCRYPT, IWSEC |
 | 2020 | EUROCRYPT, IWSEC, WAHC |
 | 2019 | TCC, WAHC |
 | 2018 | INDOCRYPT |

@@ -13,6 +13,8 @@ You can find the manuscript of my PhD thesis [here](/assets/pdf/thesis.pdf).
 
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| EUROCRYPT 2021  | Breaking the Circuit Size Barrier for Secure Computation under Quasi-Polynomial LPN<br> *Geoffroy Couteau and Pierre Meyer*	| ePrint, Springer |
+| EUROCRYPT 2021  | Efficient Range Proofs with Transparent Setup from Bounded Integer Commitments<br> *Geoffroy Couteau, Michael Klooß, Huang Lin, and Michael Reichle*	| ePrint, Springer |
 | ITCS 2021  | Black-Box Uselessness: Composing Separations in Cryptography<br> *Geoffroy Couteau, Pooya Farshim, and Mohammad Mahmoody*	| [ePrint](https://eprint.iacr.org/2021/016.pdf), Springer |
 | TCC 2020  | On Pseudorandom Encodings	<br> *Thomas Agrikola, Geoffroy Couteau, Yuval Ishai, Stanislaw Jarecki, and Amit Sahai* | [ePrint](https://eprint.iacr.org/2020/445.pdf), [Springer](https://link.springer.com/chapter/10.1007/978-3-030-64381-2_23) |
 | FOCS 2020  | Pseudorandom Correlation Functions from Variable-Density LPN <br> *Elette Boyle, Geoffroy Couteau, Niv Gilboa, Yuval Ishai, Lisa Kohl, and Peter Scholl* | [ePrint](https://eprint.iacr.org/2020/1417.pdf), Springer |

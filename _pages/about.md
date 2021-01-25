@@ -28,7 +28,7 @@ I have fundings for several master internships, research visits, or PhDs. I am a
 |---|---|---|---|
 | Past & Current students | Time period | Status | Notes |
 |---|---|---|---|
-Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting student | Post-quantum secure computation |
+Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting student | |
 Pierre Meyer | Sep. 2020 -- | PhD | Secure computation with constrained communication |
 Elahe Sadeghi | Jul. 2020 -- Oct. 2020 | Internship | Statistical ZAPs from group-based assumptions |
 Michael Reichle | Feb. 2020 -- Aug. 2020 | Master | Efficient range proofs with transparent setup from bounded integer commitments. Michael's work led to a paper, to be presented at EUROCRYPT'21. |

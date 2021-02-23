@@ -21,7 +21,7 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 #### Students
 
-I have fundings for several master internships, research visits, or PhDs. I am always looking for candidates with a strong academic record to work on projects related to secure computation, zero-knowledge proofs, or foundational aspects of cryptography. Interested? Drop me a mail!
+<!--I have fundings for several master internships, research visits, or PhDs. I am always looking for candidates with a strong academic record to work on projects related to secure computation, zero-knowledge proofs, or foundational aspects of cryptography. Interested? Drop me a mail!-->
 
 <!--Currently, I am specifically looking for a master student to work on a project related to secure computation and coding theory during the period March 2021 -- September 2021 (other periods can be envisioned depending on the student constraints). There is a possibility of continuing this internship as a PhD. You might want to check the [internship proposal](/assets/pdf/internship_codes.pdf).-->
 

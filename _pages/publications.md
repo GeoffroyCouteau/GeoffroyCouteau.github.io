@@ -13,6 +13,7 @@ You can find the manuscript of my PhD thesis [here](/assets/pdf/thesis.pdf).
 
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| ACISP 2021  | Partially-Fair Computation from Timed-Release Encryption and Oblivious Transfer <br> *Geoffroy Couteau, Bill Roscoe, and Peter Ryan*	| [ePrint](https://eprint.iacr.org/2019/1281.pdf), Springer |
 | EUROCRYPT 2021  | Breaking the Circuit Size Barrier for Secure Computation under Quasi-Polynomial LPN<br> *Geoffroy Couteau and Pierre Meyer*	| ePrint, Springer |
 | EUROCRYPT 2021  | Efficient Range Proofs with Transparent Setup from Bounded Integer Commitments<br> *Geoffroy Couteau, Michael Klooß, Huang Lin, and Michael Reichle*	| ePrint, Springer |
 | ITCS 2021  | Black-Box Uselessness: Composing Separations in Cryptography<br> *Geoffroy Couteau, Pooya Farshim, and Mohammad Mahmoody*	| [ePrint](https://eprint.iacr.org/2021/016.pdf), [LIPIcs](https://drops.dagstuhl.de/opus/volltexte/2021/13586/) |

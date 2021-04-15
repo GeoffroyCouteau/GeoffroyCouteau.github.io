@@ -28,6 +28,7 @@ div {
 ### General questions
 
 - [How to explain ZK proofs to a 7 year old?](https://crypto.stackexchange.com/questions/57674/how-do-i-explain-zero-knowledge-proof-to-my-7-year-old-cousin/57678#57678)
+- [Are there lower bounds on the size and interaction of a ZK proof with a given soundness error?](https://crypto.stackexchange.com/questions/76929/minimizing-exchanges-for-zk-proof-of-a-message-with-given-sha-256/76983#76983)
 - [Can we do zero-knowledge proofs for BPP statements?](https://crypto.stackexchange.com/questions/58461/zero-knowledge-proofs-in-bpp/58463#58463) (short answer: just send the witness!)
 - [What is the difference between ZK proofs and ZK proofs of knowledge?](https://crypto.stackexchange.com/questions/68785/what-is-difference-between-zero-knowledge-proof-and-zero-knowledge-proof-of-know/68786#68786) (short answer: in ZK proof of knowledge, an extractor can recover the witness)
 - [Why is computational ZK the most general notion of zero-knowledge?](https://crypto.stackexchange.com/questions/59481/why-is-computational-zero-knowledge-the-most-generic-notion-of-zero-knowledge/59492#59492)

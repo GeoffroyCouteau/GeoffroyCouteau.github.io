@@ -21,6 +21,7 @@ The list of all past and present grant-funded research projects where I am invol
 |---|---|---|---|---|---|---|
 | Secure Computation over <br> Encrypted Networks | SCENE | Geoffroy Couteau | [Adi Rosén](https://www.irif.fr/~adiro/),<br> [Yann Rotella](https://rotella.fr/) | 2021 -- 2024 | €170.000 | ANR JCJC |
 
+<!--
 ## ANR Project --- SCENE
 
 

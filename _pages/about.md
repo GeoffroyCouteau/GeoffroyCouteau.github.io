@@ -28,10 +28,12 @@ My main research interests are secure multiparty computation and zero-knowledge 
 |---|---|---|---|
 | Past & Current students | Time period | Status | Notes |
 |---|---|---|---|
+Clément Ducros | Mar. 2021 -- Aug. 2021 | Master | Batch equality tests and secure comparison from pseudorandom correlation generators |
+Bui Dung | Mar. 2021 -- Aug. 2021 | Master | Secure computation meets linear-time encodable codes |
 Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting student | |
 Pierre Meyer | Sep. 2020 -- | PhD | Secure computation with constrained communication |
 Elahe Sadeghi | Jul. 2020 -- Oct. 2020 | Internship | Statistical ZAPs from group-based assumptions |
-Michael Reichle | Feb. 2020 -- Aug. 2020 | Master | Efficient range proofs with transparent setup from bounded integer commitments. Michael's work led to a paper, to be presented at EUROCRYPT'21. |
+Michael Reichle | Feb. 2020 -- Aug. 2020 | Master | Efficient range proofs with transparent setup from bounded integer commitments. Michael's work led to a [paper](https://eprint.iacr.org/2021/540.pdf), to be presented at EUROCRYPT'21. |
 Pierre Meyer | Nov. 2020 -- Jan. 2020 | Internship | Breaking the circuit size barrier for secure computation under quasi-polynomial LPN. Pierre's work led to a paper, to be presented at EUROCRYPT'21. |
 Dominik Hartmann | Feb. 2019 -- Aug. 2020 | Master | Compilers for non-interactive zero-knowledge proofs. Dominik's work led to a [paper](https://eprint.iacr.org/2020/286.pdf), presented at CRYPTO'20. |
 Sebastian Faller | Oct. 2018 -- Feb. 2019 | Bachelor | Lattice-based implicit zero-knowledge arguments |

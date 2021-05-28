@@ -28,8 +28,8 @@ My main research interests are secure multiparty computation and zero-knowledge 
 |---|---|---|---|
 | Past & Current students | Time period | Status | Notes |
 |---|---|---|---|
-Clément Ducros | Mar. 2021 -- Aug. 2021 | Master | Batch equality tests and secure comparison from pseudorandom correlation generators |
-Bui Dung | Mar. 2021 -- Aug. 2021 | Master | Secure computation meets linear-time encodable codes |
+Bui Dung | Mar. 2021 -- Aug. 2021 | Master | Batch equality tests and secure comparison from pseudorandom correlation generators |
+Clément Ducros | Mar. 2021 -- Aug. 2021 | Master | Secure computation meets linear-time encodable codes |
 Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting student | |
 Pierre Meyer | Sep. 2020 -- | PhD | Secure computation with constrained communication |
 Elahe Sadeghi | Jul. 2020 -- Oct. 2020 | Internship | Statistical ZAPs from group-based assumptions |

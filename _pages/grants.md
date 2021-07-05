@@ -19,7 +19,8 @@ The list of all past and present grant-funded research projects where I am invol
 |---|---|---|---|---|---|---|
 | Project | Acronym | Principal Investigator | Team members | Duration | Fundings | Type |
 |---|---|---|---|---|---|---|
-| Secure Computation over <br> Encrypted Networks | SCENE | Geoffroy Couteau | [Adi Rosén](https://www.irif.fr/~adiro/),<br> [Yann Rotella](https://rotella.fr/) | 2021 -- 2024 | €170.000 | ANR JCJC |
+| LInear Codes ENabling Computation over Encrypted Data | LICENCED | Geoffroy Couteau | [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/) | 2022 -- 2023 | €65.000 | [DIM RFSI](https://dim-rfsi.fr/projets/appel-a-projets-scientifiques-2021) |
+| Secure Computation over <br> Encrypted Networks | SCENE | Geoffroy Couteau | [Adi Rosén](https://www.irif.fr/~adiro/),<br> [Yann Rotella](https://rotella.fr/) | 2021 -- 2024 | €170.000 | [ANR JCJC](https://anr.fr/fr/detail/call/appel-a-projets-generique-2021/?tx_anrprojects_request%5Baction%5D=show&cHash=16674fce7ebadc3329d8e0c319f14624) |
 
 <!--
 ## ANR Project --- SCENE

@@ -19,7 +19,7 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 ---
 
-#### Ressources
+#### Resources
 
 This website contains a few posts which might be useful to students in cryptography, gathered in the [blog](/blog) section. It includes in particular:
 

@@ -28,7 +28,7 @@ The aim of this post is to provide a simple, ready-for-use LaTeX article templat
 
 - My default main file, for conference versions or full versions of my research papers;
 - My default header file;
-- The basic additional files which are usually needed, such as the llncs class file, which is the typicall mandatory class for articles submitted to IACR conferences.
+- The basic additional files which are usually needed, such as the llncs class file, which is the (typically mandatory) class for articles submitted to IACR conferences.
 
 This is not a post about how to install LaTeX, or how to setup a work environment; I assume that you already have a working LaTeX distribution, together with a text editor (I personally use Sublime Text) and a pdf reader (I use Skim). Also, I'm not the author of the template; I probably got it from [David Pointcheval](https://www.di.ens.fr/david.pointcheval/index.php) or [Fabrice Benhamouda](https://www.normalesup.org/~fbenhamo/) (they also likely got it from somewhere else themselves), and made a bunch of modifications here and there. 
 

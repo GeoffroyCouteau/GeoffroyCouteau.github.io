@@ -66,7 +66,7 @@ The list of conferences and workshops where I served as a member of the committe
 | Year | Conferences/workshops |
 |---|---|
 | 2022 | PKC, CSF |
-| 2021 | EUROCRYPT, IWSEC |
+| 2021 | EUROCRYPT, IWSEC, WAHC |
 | 2020 | EUROCRYPT, IWSEC, WAHC |
 | 2019 | TCC, WAHC |
 | 2018 | INDOCRYPT |

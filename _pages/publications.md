@@ -13,6 +13,7 @@ You can find the manuscript of my PhD thesis [here](/assets/pdf/thesis.pdf).
 
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| ASIACRYPT 2021  | Efficient NIZKs for Algebraic Sets<br> *Geoffroy Couteau, Helger Lipmaa, Roberto Parisella, and Arne Tobias Ødegaard* | ePrint, Springer |
 | CRYPTO 2021  | Low-Complexity Weak Pseudorandom Functions in AC0[MOD2]<br> *Elette Boyle, Geoffroy Couteau, Niv Gilboa, Yuval Ishai, Lisa Kohl, and Peter Scholl*	| ePrint, Springer |
 | CRYPTO 2021 | Silver: Silent VOLE and Oblivious Transfer from Hardness of Decoding Structured LDPC Codes <br> *Geoffroy Couteau, Srinivasan Raghuraman, and Peter Rindal* |ePrint, Springer|
 | ACISP 2021  | Partially-Fair Computation from Timed-Release Encryption and Oblivious Transfer <br> *Geoffroy Couteau, Bill Roscoe, and Peter Ryan*	| [ePrint](https://eprint.iacr.org/2019/1281.pdf), Springer |

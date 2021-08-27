@@ -13,6 +13,8 @@ You can find the manuscript of my PhD thesis [here](/assets/pdf/thesis.pdf).
 
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| TCC 2021  | Statistical ZAPs from Group-Based Assumptions<br> *Geoffroy Couteau, Shuichi Katsumata, Elahe Sadeghi, and Bogdan Ursu* | [ePrint](https://eprint.iacr.org/2021/688.pdf), Springer |
+| TCC 2021  | On Derandomizing Yao’s Weak-to-Strong OWF Construction<br> *Chris Brzuska, Geoffroy Couteau, Pihla Karanko, and Felix Rohrbach* | ePrint, Springer |
 | ASIACRYPT 2021  | Efficient NIZKs for Algebraic Sets<br> *Geoffroy Couteau, Helger Lipmaa, Roberto Parisella, and Arne Tobias Ødegaard* | ePrint, Springer |
 | CRYPTO 2021  | Low-Complexity Weak Pseudorandom Functions in AC0[MOD2]<br> *Elette Boyle, Geoffroy Couteau, Niv Gilboa, Yuval Ishai, Lisa Kohl, and Peter Scholl*	| ePrint, Springer |
 | CRYPTO 2021 | Silver: Silent VOLE and Oblivious Transfer from Hardness of Decoding Structured LDPC Codes <br> *Geoffroy Couteau, Srinivasan Raghuraman, and Peter Rindal* |ePrint, Springer|

@@ -54,8 +54,9 @@ Let $\mathsf{Ber}\_p$ denote the Bernouilli distribution with probability $p$. $
 <a name="others"></a>**Others:** 
 
 \begin{align}
-\min\\{\Pr[A],\Pr[B]\\} &\leq \Pr[A \cap B] \leq \Pr[A]+\Pr[B]-1\\\\  
-\Pr[A \cap B] &\leq \Pr[A\|B]
+\Pr[A \cap B] &\leq \min\\{\Pr[A],\Pr[B]\\}\\\\
+\Pr[A \cap B] &\leq \min\\{\Pr[A\|B], \Pr[A\|B]\\}\\\\ 
+\Pr[A] + \Pr[B] - 1 &\leq \Pr[A \cup B]
 \end{align}
 
 ### Expectations

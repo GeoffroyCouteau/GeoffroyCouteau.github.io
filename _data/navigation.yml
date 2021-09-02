@@ -90,62 +90,62 @@ sidebar-blog:
 # sidebar cheatsheet
 sidebar-cheatsheet:
     - title: "Notations"
-      url: cheat%20sheet/cheat-sheet/#notations
+      url: cheat-sheet/#notations
     - title: "Basic Probabilities"
-      url: cheat%20sheet/cheat-sheet/#basic-probabilities
+      url: cheat-sheet/#basic-probabilities
       children:
       - title: "Union Bound"
-        url: cheat%20sheet/cheat-sheet/#union
+        url: cheat-sheet/#union
       - title: "Bayes' Rule"
-        url: cheat%20sheet/cheat-sheet/#bayes
+        url: cheat-sheet/#bayes
       - title: "Others"
-        url: cheat%20sheet/cheat-sheet/#others
+        url:  cheat-sheet/#others
     - title: "Expectations"
-      url: cheat%20sheet/cheat-sheet/#expectations
+      url:  cheat-sheet/#expectations
       children:
       - title: "Cauchy-Schwarz"
-        url: cheat%20sheet/cheat-sheet/#cauchy
+        url:  cheat-sheet/#cauchy
       - title: "Jensen"
-        url: cheat%20sheet/cheat-sheet/#jensen
+        url:  cheat-sheet/#jensen
     - title: "Concentration Bounds"
-      url: cheat%20sheet/cheat-sheet/#concentration-bounds
+      url:  cheat-sheet/#concentration-bounds
       children:
       - title: "Markov Inequality"
-        url: cheat%20sheet/cheat-sheet/#markov
+        url:  cheat-sheet/#markov
       - title: "Bienaymé-Chebyshev Inequality"
-        url: cheat%20sheet/cheat-sheet/#chebyshev
+        url:  cheat-sheet/#chebyshev
       - title: "Chernoff Inequality"
-        url: cheat%20sheet/cheat-sheet/#chernoff
+        url:  cheat-sheet/#chernoff
       - title: "Generalized Chernoff Inequality"
-        url: cheat%20sheet/cheat-sheet/#gen-chernoff
+        url:  cheat-sheet/#gen-chernoff
       - title: "Bernstein Inequality"
-        url: cheat%20sheet/cheat-sheet/#bernstein
+        url:  cheat-sheet/#bernstein
       - title: "Bounded Difference Inequality"
-        url: cheat%20sheet/cheat-sheet/#bdi
+        url:  cheat-sheet/#bdi
     - title: "Entropy Notions"
-      url: cheat%20sheet/cheat-sheet/#entropy-notions
+      url:  cheat-sheet/#entropy-notions
       children:
       - title: "Some Lemmas on Entropy"
-        url: cheat%20sheet/cheat-sheet/#some-lemmas-on-entropy
+        url:  cheat-sheet/#some-lemmas-on-entropy
     - title: "Binomial Coefficients"
-      url: cheat%20sheet/cheat-sheet/#binomial-coefficients
+      url:  cheat-sheet/#binomial-coefficients
       children:
       - title: "Sums of Binomial Coefficients"
-        url: cheat%20sheet/cheat-sheet/#sbc
+        url:  cheat-sheet/#sbc
       - title: "Stirling Approximation"
-        url: cheat%20sheet/cheat-sheet/#stirling-approximation
+        url:  cheat-sheet/#stirling-approximation
       - title: "Others"
-        url: cheat%20sheet/cheat-sheet/#bin-others
+        url:  cheat-sheet/#bin-others
     - title: "Useful Inequalities"
-      url: cheat%20sheet/cheat-sheet/#useful-inequalities
+      url:  cheat-sheet/#useful-inequalities
     - title: "Useful Lemmas"
-      url: cheat%20sheet/cheat-sheet/#useful-lemmas
+      url:  cheat-sheet/#useful-lemmas
       children:
       - title: "Splitting Lemma"
-        url: cheat%20sheet/cheat-sheet/#splitting-lemma
+        url:  cheat-sheet/#splitting-lemma
       - title: "Forking Lemma"
-        url: cheat%20sheet/cheat-sheet/#forking-lemma
+        url:  cheat-sheet/#forking-lemma
       - title: "Leftover Hash Lemma"
-        url: cheat%20sheet/cheat-sheet/#leftover-hash-lemma
+        url:  cheat-sheet/#leftover-hash-lemma
       - title: "Piling-Up Lemma"
-        url: cheat%20sheet/cheat-sheet/#piling-up-lemma
+        url:  cheat-sheet/#piling-up-lemma

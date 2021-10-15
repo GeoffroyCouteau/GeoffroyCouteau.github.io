@@ -21,7 +21,7 @@ The list of all past and present grant-funded research projects where I am invol
 |---|---|---|---|---|---|
 | Project | Acronym | Team members | Duration | Fundings | Type |
 |---|---|---|---|---|---|---|
-| LInear Codes ENabling Computation over Encrypted Data | LICENCED | [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/) | 2022 -- 2023 | €65.000 | [DIM RFSI](https://dim-rfsi.fr/projets/appel-a-projets-scientifiques-2021) |
+| LInear Codes ENabling Computation <br> over Encrypted Data | LICENCED | [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/) | 2022 -- 2023 | €65.000 | [DIM RFSI](https://dim-rfsi.fr/projets/appel-a-projets-scientifiques-2021) |
 | Secure Computation over <br> Encrypted Networks | SCENE | [Adi Rosén](https://www.irif.fr/~adiro/),<br> [Yann Rotella](https://rotella.fr/) | 2021 -- 2024 | €170.000 | [ANR JCJC](https://anr.fr/fr/detail/call/appel-a-projets-generique-2021/?tx_anrprojects_request%5Baction%5D=show&cHash=16674fce7ebadc3329d8e0c319f14624) |
 
 ### As Member
@@ -29,7 +29,7 @@ The list of all past and present grant-funded research projects where I am invol
 |---|---|---|---|---|---|
 | Project | Acronym | Coordinateur | Duration | Fundings | Type |
 |---|---|---|---|---|---|---|
-| Algèbre, preuves, protocoles, algorithmes, courbes, et surfaces pour les codes et leurs applications | BARRACUDA | [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/) | 2022 -- 2025 | €377.000 | [ANR PRC](https://anr.fr/fileadmin/aap/2021/selection/aapg-selection-2021-3.pdf) |
+| Algèbre, preuves, protocoles,<br> algorithmes, courbes, et surfaces<br> pour les codes et leurs applications | BARRACUDA | [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/) | 2022 -- 2025 | €377.000 | [ANR PRC](https://anr.fr/fileadmin/aap/2021/selection/aapg-selection-2021-3.pdf) |
 
 <!--
 ## ANR Project --- SCENE

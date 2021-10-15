@@ -21,6 +21,7 @@ A list of talks I gave, with links to the slides and video, when available. The 
 
 | Date | Event | Paper / subject                                        | Links |
 | -----|-----|-------------------------------------------------- | -------------|
+| August 2021 | [CISPA Summer school on Coding Techniques & Advanced Post-Quantum Cryptography](https://cispa.de/en/news-and-events/events-archive/2021/digital-cispa-summer-school-2021)  | How to generate correlated pseudorandomness from (variants of) LPN - Part I	| [Slides](/assets/slides/presentation_cispa_2021.pdf), Video |
 | May 2021 | [MIT Cryptography and Information Security Seminar](https://calendar.csail.mit.edu/events/235478)  | Low-Complexity Weak Pseudorandom Functions in AC0[MOD2]	| [Slides](/assets/slides/presentation_pcf_2021.pdf), Video |
 | April 2021 | [Boston University Security Seminar](https://www.bu.edu/hic/noteworthy/calendar/?eid=252034)  | Low-Complexity Weak Pseudorandom Functions in AC0[MOD2]	| [Slides](/assets/slides/presentation_pcf_2021.pdf), [Video](https://www.youtube.com/watch?v=zMkH6mbcBdM) |
 | April 2021 | [UVSQ Crypto Seminar](https://lmv.math.cnrs.fr/evenenement/crypto-geoffroy-couteau-irif-lpn-a-densite-variable-et-fonctions-faiblement-pseudoaleatoires-dans-des-classes-de-complexite-basses/)  | LPN a densité variable, et fonctions faiblement pseudoaléatoires dans des classes de complexité basses	| Slides, Video |

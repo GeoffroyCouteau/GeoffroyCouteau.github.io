@@ -19,3 +19,4 @@ A list of interesting websites, blogs, and useful resources, in no particular or
 - [The Stanford Encyclopedia of Philosophy](https://plato.stanford.edu/)
 - [The Miracl benchmark page](https://github.com/miracl/MIRACL/blob/master/docs/miracl-explained/benchmarks.md)
 - [Ryan O'Donnell's awesome TCS toolkit](https://www.diderot.one/courses/28)
+- [David Pollard's website](http://www.stat.yale.edu/~pollard/) (e.g. see the documents under books/mini or courses)

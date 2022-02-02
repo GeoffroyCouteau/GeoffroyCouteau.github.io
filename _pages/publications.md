@@ -13,7 +13,7 @@ You can find the manuscript of my PhD thesis [here](/assets/pdf/thesis.pdf).
 
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
-| EUROCRYPT 2022  | On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness LPN<br> *Chris Brzuska and Geoffroy Couteau* | [ePrint](https://eprint.iacr.org/2020/13263.pdf), Springer |
+| EUROCRYPT 2022  | On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness<br> *Chris Brzuska and Geoffroy Couteau* | [ePrint](https://eprint.iacr.org/2020/13263.pdf), Springer |
 | TCC 2021  | Statistical ZAPs from Group-Based Assumptions<br> *Geoffroy Couteau, Shuichi Katsumata, Elahe Sadeghi, and Bogdan Ursu* | [ePrint](https://eprint.iacr.org/2021/688.pdf), Springer |
 | TCC 2021  | On Derandomizing Yao’s Weak-to-Strong OWF Construction<br> *Chris Brzuska, Geoffroy Couteau, Pihla Karanko, and Felix Rohrbach* | ePrint, Springer |
 | ASIACRYPT 2021  | Efficient NIZKs for Algebraic Sets<br> *Geoffroy Couteau, Helger Lipmaa, Roberto Parisella, and Arne Tobias Ødegaard* | [ePrint](https://eprint.iacr.org/2021/1251.pdf), Springer |

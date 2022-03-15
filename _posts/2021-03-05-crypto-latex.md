@@ -40,7 +40,7 @@ You can download the basic template [here](/assets/other/Template_Latex.zip). To
 
 Most of it is self-explanatory. The main file is main.tex. Setting \fullversion to 1 will switch to a format with smaller margins, while setting it to 0 recovers the default margins which are mandatory for submissions to most IACR conferences, such as CRYPTO and EUROCRYPT. Other toggles control whether the submission is anonymous, or whether todos should be shown.
 
-I usually put all other LaTeX files in ther directory tex_files. All standard packages and macro are in the file ZZ_header.tex, in the tex_files folder. If you plan to use the template, take a few minutes to scroll it to get a grasp of the many useful shortcuts (with standard crypto notations such as \Enc, \Dec, or useful math notations such as \F for $\mathbb{F}$, \bit for $\\{0,1\\}$, etc).
+I usually put all other LaTeX files in the directory tex_files. All standard packages and macro are in the file ZZ_header.tex, in the tex_files folder. If you plan to use the template, take a few minutes to scroll it to get a grasp of the many useful shortcuts (with standard crypto notations such as \Enc, \Dec, or useful math notations such as \F for $\mathbb{F}$, \bit for $\\{0,1\\}$, etc).
 
 I usually create a new LaTeX file for each new section, and input it directly in the main, like that:
 

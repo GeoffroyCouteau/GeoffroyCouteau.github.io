@@ -66,7 +66,7 @@ $$\mathbb{E}[X] = \sum_{k=1}^{\infty} \Pr[X \geq k].$$
 
 For nonnegative $X$ and differentiable $f$,
 
-$$\mathbb{E}[f(X)] = f(0) + \int_{k=1}^{\infty} f'(x)\Pr[X \geq x].$$
+$$\mathbb{E}[f(X)] = f(0) + \int_{0}^{\infty} f'(x)\Pr[X \geq x]dx.$$
 
 <a name="cauchy"></a>**Cauchy-Schwarz:** $\|\mathbb{E}[XY]\| \leq \mathbb{E}[\|XY\|] \leq \sqrt{\mathbb{E}[\|X\|^2]\mathbb{E}[\|Y\|^2]}.$
 

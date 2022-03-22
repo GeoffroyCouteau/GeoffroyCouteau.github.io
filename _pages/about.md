@@ -21,7 +21,7 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 #### News
 
-With some of my favourite partners in crime, Elette Boyle, Niv Gilboa, and Yuval Ishai, we recently (January 2022) completed a [book chapter](/assets/pdf/HSS_FSS.pdf) for an upcoming book. It is an up-to-date overview of homomorphic secret sharing, function secret sharing, and some of their many applications (including pseudorandom correlation generators). Check it out!
+We recently (January 2022) completed a [book chapter](/assets/pdf/HSS_FSS.pdf) for an upcoming book with [Elette Boyle](https://cs.idc.ac.il/~elette/), [Niv Gilboa](https://www.bgu.ac.il/~gilboan/), and [Yuval Ishai](https://www.cs.technion.ac.il/~yuvali/). It is an up-to-date overview of homomorphic secret sharing, function secret sharing, and some of their many applications (including pseudorandom correlation generators). Check it out!
 
 ---
 

@@ -60,9 +60,24 @@ Let $\mathsf{Ber}\_p$ denote the Bernouilli distribution with probability $p$. $
 
 ### Expectations
 
+If $X$ is a random variable taking nonnegative integer values, then
+
+$$\mathbb{E}[X] = \sum_{k=1}^{\infty} \Pr[X \geq k].$$
+
 <a name="cauchy"></a>**Cauchy-Schwarz:** $\|\mathbb{E}[XY]\| \leq \mathbb{E}[\|XY\|] \leq \sqrt{\mathbb{E}[\|X\|^2]\mathbb{E}[\|Y\|^2]}.$
 
 <a name="jensen"></a>**Jensen:** $\text{For }\phi \text{ convex, } \phi(\mathbb{E}[X]) \leq \mathbb{E}[\phi(X)].$
+
+### Bias
+
+Given a distribution $\mathcal{D}$ over $\mathbb{F}^n$ and a vector $\vec u \in \mathbb{F}^n$, the bias of $\mathcal{D}$ with respect to $\vec u$, denoted $\mathsf{bias}\_{\vec u}(\mathcal{D})$, is equal to
+
+$$\mathsf{bias}_{\vec u}(\mathcal{D}) = \left|\mathbb{E}_{\vec x \sim \mathcal{D}}[\vec u^\intercal \cdot \vec x] - \mathbb{E}_{\vec x \sim \mathbb{U}_n}[\vec u^\intercal \cdot \vec x]  \right| = \left|\mathbb{E}_{\vec x \sim \mathcal{D}}[\vec u^\intercal \cdot \vec x] - \frac{1}{|\mathbb{F}|} \right|,$$
+
+where $\mathbb{U}\_n$ denotes the uniform distribution over $\mathbb{F}^n$.
+The bias of $\mathcal{D}$, denoted $\mathsf{bias}(\mathcal{D})$, is the maximum bias of $\mathcal{D}$ with respect to any nonzero vector $\vec u$.
+
+ Given $t$ distributions $(\mathcal{D}\_1, \cdots, \mathcal{D}\_t)$ over $\mathbb{F}\_2^n$, we denote by $\bigoplus\_{i\leq t} \mathcal{D}\_i$ the distribution obtained by independently sampling $\vec v\_i \gets_r \mathcal{D}\_i$ for $i=1$ to $t$ and outputting $ \vec v \gets\vec v\_1 \oplus \cdots \oplus \vec v\_t$. Then $\mathsf{bias}( \bigoplus\_{i\leq t} \mathcal{D}\_i ) \leq 2^{t-1}\cdot \prod_{i=1}^t \mathsf{bias}(\mathcal{D}\_i) \leq \min_{i \leq t} \mathsf{bias}(\mathcal{D}_i)$. Note that the piling up lemma (given below) can provide a tighter bound if needed.
 
 ### Concentration Bounds
 
@@ -81,6 +96,10 @@ $$\Pr[X \geq (1+\delta)\mu] \leq \exp\left(-\frac{\delta^2\mu}{3}\right)\text{ a
 Furthermore, for any $\delta \geq 0$,
 
 $$\Pr[X \geq (1+\delta)\mu] \leq \exp\left(-\frac{\delta^2\mu}{2+\delta}\right).$$
+
+Note also the tighter, but dirtier bounds:
+
+$$\Pr[X \geq (1+\delta)\mu] \leq \left(\frac{e^\delta}{(1+\delta)^{1+\delta}}\right)^{\mu}\text{ and } \Pr[X \leq (1-\delta)\mu] \leq \left(\frac{e^{-\delta}}{(1-\delta)^{1-\delta}}\right)^{\mu}.$$
 
 <a name="gen-chernoff"></a>**Generalized Chernoff Inequality ([here][generalized]):** Let $n\in\mathbb{N}$ be an integer and let $(X_1, \cdots, X_n)$ be boolean random variables such that, for some $\delta\in [0,1]$, it holds that for every subset $S \subset [n]$, $\Pr[\wedge_{i\in S} X_i] \leq \delta^{\|S\|}.$ Then for any $\gamma \in [\delta, 1]$,
 
@@ -134,10 +153,6 @@ Note that $\mathsf{H}\_1(\mathsf{Ber}\_p) = \mathsf{H}(p)$.
   $$\sum_{i=1}^{\mu m} {m \choose i} \leq {m \choose \mu m} \cdot \frac{1-\mu}{1-2\mu}.$$
 
 <a name="stirling-approximation"></a>**Stirling's Approximation:**
-
-$$\frac{1}{\sqrt{2\pi n}}n^n \exp\left(-n + \frac{1}{12n} - \frac{1}{360n^3}\right) \leq {n \choose \ell} \leq \frac{1}{\sqrt{2\pi n}}n^n \exp\left(-n + \frac{1}{12n}\right).$$
-
-or equivalently, setting $\delta \gets \ell/n \in [0,1]$:
 
 $$\frac{1}{\sqrt{2\pi n \delta (1-\delta)}} \exp\left(n\cdot\mathsf{H}(\delta) - \frac{1}{12 n \delta (1-\delta)} \right) \leq {n \choose \delta n} \leq \frac{1}{\sqrt{2\pi n \delta(1-\delta)}}\exp\left(n\cdot \mathsf{H}(\delta)\right).$$
 

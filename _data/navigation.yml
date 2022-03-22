@@ -107,6 +107,8 @@ sidebar-cheatsheet:
         url:  cheat-sheet/#cauchy
       - title: "Jensen"
         url:  cheat-sheet/#jensen
+    - title: "Bias"
+      url:  cheat-sheet/#bias
     - title: "Concentration Bounds"
       url:  cheat-sheet/#concentration-bounds
       children:

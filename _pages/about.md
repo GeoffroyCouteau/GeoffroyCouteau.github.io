@@ -21,9 +21,9 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 #### News
 
-_April 2022:_ Our Eurocrypt'22 paper, [On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness](https://eprint.iacr.org/2020/1326.pdf), has been invited to the Journal of Cryptology! In this work, we prove weak feasibility results and strong barriers for basing extremely limited forms of cryptography on powerful average-case hardness assumptions. Working on this paper has been a long, but thrilling journey with my amazing coauthor, Chris Brzuska.
+**April 2022:** Our Eurocrypt'22 paper, [On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness](https://eprint.iacr.org/2020/1326.pdf), has been invited to the Journal of Cryptology! In this work, we prove weak feasibility results and strong barriers for basing extremely limited forms of cryptography on powerful average-case hardness assumptions. Working on this paper has been a long, but thrilling journey with my amazing coauthor, Chris Brzuska.
 
-_January 2022:_ We just completed a [book chapter](/assets/pdf/HSS_FSS.pdf) for an upcoming book with [Elette Boyle](https://cs.idc.ac.il/~elette/), [Niv Gilboa](https://www.bgu.ac.il/~gilboan/), and [Yuval Ishai](https://www.cs.technion.ac.il/~yuvali/). It is an up-to-date overview of homomorphic secret sharing, function secret sharing, and some of their many applications (including pseudorandom correlation generators). Check it out!
+**January 2022:** We just completed a [book chapter](/assets/pdf/HSS_FSS.pdf) for an upcoming book with [Elette Boyle](https://cs.idc.ac.il/~elette/), [Niv Gilboa](https://www.bgu.ac.il/~gilboan/), and [Yuval Ishai](https://www.cs.technion.ac.il/~yuvali/). It is an up-to-date overview of homomorphic secret sharing, function secret sharing, and some of their many applications (including pseudorandom correlation generators). Check it out!
 
 ---
 

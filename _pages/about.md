@@ -50,17 +50,19 @@ If you are interested, send me a mail and consider applying to the [openings](ht
 |---|---|---|---|
 | Past & Current students | Time period | Status | Notes |
 |---|---|---|---|
-Bui Dung | Starting Oct. 2021 | PhD | Secure Computation for Privacy-Preserving Analysis of Medical Data |
-Clément Ducros | Starting Oct. 2021 | PhD | Linear Codes for Quantum-Resistant Secure Computation (co-advised with [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/)) |
-Eliana Carozza | Starting Oct. 2021 | PhD | Quantumly hard algebraic problems and their advanced cryptographic applications (co-advised with [Antoine Joux](https://webusers.imj-prg.fr/~antoine.joux/)) |
-Ulysse Léchine |Starting Oct.2021| PhD | Average-case hardness, entropy, and one-way functions (co-advised with [Thomas Seiller](https://www.seiller.org/)) |
+Elahe Sadeghi | Jun. 2022 -- Jul. 2022 | Visiting Student | |
+Bui Dung | Oct. 2021 -- | PhD | Secure Computation for Privacy-Preserving Analysis of Medical Data |
+Clément Ducros | Oct. 2021 -- | PhD | Linear Codes for Quantum-Resistant Secure Computation (co-advised with [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/)) |
+Eliana Carozza | Oct. 2021 -- | PhD | Quantumly hard algebraic problems and their advanced cryptographic applications (co-advised with [Antoine Joux](https://webusers.imj-prg.fr/~antoine.joux/)) |
+Ulysse Léchine  Oct.2021 -- | PhD | Average-case hardness, entropy, and one-way functions (co-advised with [Thomas Seiller](https://www.seiller.org/)) |
+Milan Gonzalez-Thauvin | May 2021 -- Jul. 2021 | Internship | Constructions of Non-Interactive Zero-Knowledge Proofs: Efficiency and Generality |
 Bui Dung | Mar. 2021 -- Aug. 2021 | Master | Batch equality tests and secure comparison from pseudorandom correlation generators |
 Clément Ducros | Mar. 2021 -- Aug. 2021 | Master | Secure computation meets linear-time encodable codes |
 Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting student | |
 Pierre Meyer | Sep. 2020 -- | PhD | Secure computation with constrained communication (co-advised with [Elette Boyle](https://cs.idc.ac.il/~elette/)) |
 Elahe Sadeghi | Jul. 2020 -- Oct. 2020 | Internship | Statistical ZAPs from group-based assumptions |
-Michael Reichle | Feb. 2020 -- Aug. 2020 | Master | Efficient range proofs with transparent setup from bounded integer commitments. Michael's work led to a [paper](https://eprint.iacr.org/2021/540.pdf), to be presented at EUROCRYPT'21. |
-Pierre Meyer | Nov. 2020 -- Jan. 2020 | Internship | Breaking the circuit size barrier for secure computation under quasi-polynomial LPN. Pierre's work led to a paper, to be presented at EUROCRYPT'21. |
+Michael Reichle | Feb. 2020 -- Aug. 2020 | Master | Efficient range proofs with transparent setup from bounded integer commitments. Michael's work led to a [paper](https://eprint.iacr.org/2021/540.pdf), presented at EUROCRYPT'21. |
+Pierre Meyer | Nov. 2020 -- Jan. 2020 | Internship | Breaking the circuit size barrier for secure computation under quasi-polynomial LPN. Pierre's work led to a [paper](https://eprint.iacr.org/2021/943.pdf), presented at EUROCRYPT'21. |
 Dominik Hartmann | Feb. 2019 -- Aug. 2020 | Master | Compilers for non-interactive zero-knowledge proofs. Dominik's work led to a [paper](https://eprint.iacr.org/2020/286.pdf), presented at CRYPTO'20. |
 Sebastian Faller | Oct. 2018 -- Feb. 2019 | Bachelor | Lattice-based implicit zero-knowledge arguments |
 Michael Reichle | May 2018 -- Sep. 2018 | Bachelor | Non-interactive keyed-verification anonymous credentials. Michael's work led to a [paper](https://eprint.iacr.org/2019/117.pdf), presented at PKC'19. |
@@ -73,8 +75,9 @@ Samuel Kopmann | Nov. 2017 -- Mar. 2018 | Bachelor |  Improved designated-verifi
 The list of conferences and workshops where I served as a member of the committee.
 
 |---|---|
-| Year | Conferences/workshops |
+| Year  | Conferences/workshops |
 |---|---|
+| 2023 | CSF|
 | 2022 | PKC, CSF, SCN, TCC |
 | 2021 | EUROCRYPT, IWSEC, WAHC |
 | 2020 | EUROCRYPT, IWSEC, WAHC |

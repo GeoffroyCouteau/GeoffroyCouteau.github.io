@@ -13,6 +13,7 @@ You can find the manuscript of my PhD thesis [here](/assets/pdf/thesis.pdf).
 
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| CCS 2022  | Sharp: Short Relaxed Range Proofs <br> *Geoffroy Couteau, Michael Klooß, Michael Reichle, and Dahmun Goudarzi*	| ePrint, ACM |
 | CRYPTO 2022  | Correlated Pseudorandomness from Expand-Accumulate Codes<br> *Elette Boyle, Geoffroy Couteau, Niv Gilboa, Yuval Ishai, Lisa Kohl, Nicolas Resch, and Peter Scholl*	| ePrint, Springer |
 | EUROCRYPT 2022  | On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness<br> *Chris Brzuska and Geoffroy Couteau*<br> **Paper invited to the Journal of Cryptology** | [ePrint](https://eprint.iacr.org/2020/1326.pdf), Springer |
 | TCC 2021  | Statistical ZAPs from Group-Based Assumptions<br> *Geoffroy Couteau, Shuichi Katsumata, Elahe Sadeghi, and Bogdan Ursu* | [ePrint](https://eprint.iacr.org/2021/688.pdf), [Springer](https://link.springer.com/chapter/10.1007/978-3-030-90459-3_16) |

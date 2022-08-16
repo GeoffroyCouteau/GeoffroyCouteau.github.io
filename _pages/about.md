@@ -54,7 +54,7 @@ Elahe Sadeghi | Jun. 2022 -- Jul. 2022 | Visiting Student | |
 Bui Dung | Oct. 2021 -- | PhD | Secure Computation for Privacy-Preserving Analysis of Medical Data |
 Clément Ducros | Oct. 2021 -- | PhD | Linear Codes for Quantum-Resistant Secure Computation (co-advised with [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/)) |
 Eliana Carozza | Oct. 2021 -- | PhD | Quantumly hard algebraic problems and their advanced cryptographic applications (co-advised with [Antoine Joux](https://webusers.imj-prg.fr/~antoine.joux/)) |
-Ulysse Léchine  Oct.2021 -- | PhD | Average-case hardness, entropy, and one-way functions (co-advised with [Thomas Seiller](https://www.seiller.org/)) |
+Ulysse Léchine |  Oct.2021 -- | PhD | Average-case hardness, entropy, and one-way functions (co-advised with [Thomas Seiller](https://www.seiller.org/)) |
 Milan Gonzalez-Thauvin | May 2021 -- Jul. 2021 | Internship | Constructions of Non-Interactive Zero-Knowledge Proofs: Efficiency and Generality |
 Bui Dung | Mar. 2021 -- Aug. 2021 | Master | Batch equality tests and secure comparison from pseudorandom correlation generators |
 Clément Ducros | Mar. 2021 -- Aug. 2021 | Master | Secure computation meets linear-time encodable codes |

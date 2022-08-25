@@ -13,6 +13,8 @@ You can find the manuscript of my PhD thesis [here](/assets/pdf/thesis.pdf).
 
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| ASIACRYPT 2022  | Non-Interactive Secure Computation of Inner-Product from LPN and LWE <br> *Geoffroy Couteau and Maryam Zarezadeh*	| ePrint, Springer |
+| ASIACRYPT 2022  | Random Sources in Private Computation <br> *Geoffroy Couteau and Adi Rosén*	| ePrint, Springer |
 | CCS 2022  | Sharp: Short Relaxed Range Proofs <br> *Geoffroy Couteau, Michael Klooß, Michael Reichle, and Dahmun Goudarzi*	| ePrint, ACM |
 | CRYPTO 2022  | Correlated Pseudorandomness from Expand-Accumulate Codes<br> *Elette Boyle, Geoffroy Couteau, Niv Gilboa, Yuval Ishai, Lisa Kohl, Nicolas Resch, and Peter Scholl*	| ePrint, Springer |
 | EUROCRYPT 2022  | On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness<br> *Chris Brzuska and Geoffroy Couteau*<br> **Paper invited to the Journal of Cryptology** | [ePrint](https://eprint.iacr.org/2020/1326.pdf), Springer |

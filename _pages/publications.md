@@ -13,6 +13,8 @@ You can find the manuscript of my PhD thesis [here](/assets/pdf/thesis.pdf).
 
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| TCC 2022  | Sublinear Secure Computation from New Assumptions <br> *Elette Boyle, Geoffroy Couteau, and Pierre Meyer*	| ePrint, Springer |
+| TCC 2022  | Anonymous Whistleblowing over Authenticated Channels <br> *Thomas Agrikola, Geoffroy Couteau, and Sven Maier*	| ePrint, Springer |
 | ASIACRYPT 2022  | Non-Interactive Secure Computation of Inner-Product from LPN and LWE <br> *Geoffroy Couteau and Maryam Zarezadeh*	| ePrint, Springer |
 | ASIACRYPT 2022  | Random Sources in Private Computation <br> *Geoffroy Couteau and Adi Rosén*	| ePrint, Springer |
 | CCS 2022  | Sharp: Short Relaxed Range Proofs <br> *Geoffroy Couteau, Dahmun Goudarzi, Michael Klooß, and Michael Reichle*	| ePrint, ACM |

@@ -48,8 +48,12 @@ I have the pleasure to advise several amazing PhD students, and I will not be ac
 If you are interested, send me a mail and consider applying to the [openings](https://www.irif.fr/postes/postdoc) of the Algorithm and Complexity team of IRIF (around October 2022).
 
 |---|---|---|---|
-| Past & Current students | Time period | Status | Notes |
+| Past & Current students & postdocs | Time period | Status | Notes |
 |---|---|---|---|
+Sven Maier | Nov. 2022 -- Nov. 2023 | Postdoc | |
+Christop Egger | Oct. 2022 -- Oct. 2023 | Postdoc | |
+Alexander Koch | Oct. 2022 -- Oct. 2023 | Postdoc | |
+Balthazar Bauer | Oct. 2022 -- Oct. 2023 | Postdoc | |
 Elahe Sadeghi | Jun. 2022 -- Jul. 2022 | Visiting Student | |
 Bui Dung | Oct. 2021 -- | PhD | Secure Computation for Privacy-Preserving Analysis of Medical Data |
 Clément Ducros | Oct. 2021 -- | PhD | Linear Codes for Quantum-Resistant Secure Computation (co-advised with [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/)) |

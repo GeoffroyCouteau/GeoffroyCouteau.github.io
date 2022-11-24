@@ -11,6 +11,8 @@ classes: wide
 
 _M2 Theoretical Computer Science, ENS Lyon_
 
+[Course page](https://perso.ens-lyon.fr/alain.passelegue/teaching/m2_2022.html)
+
 **Lecturers:** [Alain Passelègue](https://perso.ens-lyon.fr/alain.passelegue), Geoffroy Couteau
 
 ### Secure Computation

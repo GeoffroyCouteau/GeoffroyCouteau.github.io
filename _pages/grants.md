@@ -24,10 +24,17 @@ The list of all past and present grant-funded research projects where I am invol
 | LInear Codes ENabling Computation <br> over Encrypted Data | LICENCED | [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/) | 2022 -- 2023 | €65.000 | [DIM RFSI](https://dim-rfsi.fr/projets/appel-a-projets-scientifiques-2021) |
 | Secure Computation over <br> Encrypted Networks | SCENE | [Adi Rosén](https://www.irif.fr/~adiro/),<br> [Yann Rotella](https://rotella.fr/) | 2021 -- 2024 | €170.000 | [ANR JCJC](https://anr.fr/fr/detail/call/appel-a-projets-generique-2021/?tx_anrprojects_request%5Baction%5D=show&cHash=16674fce7ebadc3329d8e0c319f14624) |
 
+### As Local Coordinator
+
+|---|---|---|---|---|---|
+| Project | Acronym | Principal <br> Investigator | Duration | Fundings | Type |
+|---|---|---|---|---|---|---|
+| Secure Computations | SecureCompute | [David Pointcheval](https://www.di.ens.fr/david.pointcheval/index.php) | 2022 -- 2028 | €5M (1M IRIF)| [PEPR <br> Cybersécurité](https://anr.fr/fr/detail/call/pepr-cybersecurite-appel-a-projets-2022/?tx_anrprojects_request%5Baction%5D=show&cHash=8e3af47312e6cd8cd8ceb49d19667954) |
+
 ### As Member
 
 |---|---|---|---|---|---|
-| Project | Acronym | Coordinateur | Duration | Fundings | Type |
+| Project | Acronym | Principal <br> Investigator | Duration | Fundings | Type |
 |---|---|---|---|---|---|---|
 | Algèbre, preuves, protocoles,<br> algorithmes, courbes, et surfaces<br> pour les codes et leurs applications | BARRACUDA | [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/) | 2022 -- 2025 | €377.000 | [ANR PRC](https://anr.fr/fileadmin/aap/2021/selection/aapg-selection-2021-3.pdf) |
 

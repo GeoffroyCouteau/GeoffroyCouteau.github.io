@@ -21,6 +21,9 @@ A list of talks I gave, with links to the slides and video, when available. The 
 
 | Date | Event | Paper / subject                                        | Links |
 | -----|-----|-------------------------------------------------- | -------------|
+| June 2022 | [ENS Cryptography Seminar](https://crypto.di.ens.fr/web2py/index/seminars)  | Pseudorandom Correlation Generators, Constructions and Applications	| [Slides](/assets/slides/presentation_berkeley_2022), Video |
+| April 2022 | [UC Berkeley Cryptography Reading Group](https://crypto.eecs.berkeley.edu/reading-group.html)  | Pseudorandom Correlation Generators, Constructions and Applications | [Slides](/assets/slides/presentation_berkeley_2022), [Video](https://drive.google.com/file/d/1aoGP1xc6CncgRtUMHJ6N0NVOIUCftwvZ/view) |
+| October 2021 | CWI Cryptography Student Seminar | Black-Box Uselessness: Composing Separations in Cryptography | Slides, Video |
 | August 2021 | [CISPA Summer school on Coding Techniques & Advanced Post-Quantum Cryptography](https://cispa.de/en/news-and-events/events-archive/2021/digital-cispa-summer-school-2021)  | How to generate correlated pseudorandomness from (variants of) LPN - Part I	| [Slides](/assets/slides/presentation_cispa_2021.pdf), Video |
 | May 2021 | [MIT Cryptography and Information Security Seminar](https://calendar.csail.mit.edu/events/235478)  | Low-Complexity Weak Pseudorandom Functions in AC0[MOD2]	| [Slides](/assets/slides/presentation_pcf_2021.pdf), Video |
 | April 2021 | [Boston University Security Seminar](https://www.bu.edu/hic/noteworthy/calendar/?eid=252034)  | Low-Complexity Weak Pseudorandom Functions in AC0[MOD2]	| [Slides](/assets/slides/presentation_pcf_2021.pdf), [Video](https://www.youtube.com/watch?v=zMkH6mbcBdM) |

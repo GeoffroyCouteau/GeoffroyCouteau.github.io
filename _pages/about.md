@@ -64,7 +64,7 @@ Bui Dung | Mar. 2021 -- Aug. 2021 | Master | Batch equality tests and secure com
 Clément Ducros | Mar. 2021 -- Aug. 2021 | Master | Secure computation meets linear-time encodable codes |
 Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting student | |
 Pierre Meyer | Sep. 2020 -- | PhD | Secure computation with constrained communication (co-advised with [Elette Boyle](https://cs.idc.ac.il/~elette/)) |
-Elahe Sadeghi | Jul. 2020 -- Oct. 2020 | Internship | Statistical ZAPs from group-based assumptions |
+Elahe Sadeghi | Jul. 2020 -- Oct. 2020 | Internship | Statistical ZAPs from group-based assumptions. Elahe's work led to a [paper](https://eprint.iacr.org/2021/688.pdf), presented at TCC'21. |
 Michael Reichle | Feb. 2020 -- Aug. 2020 | Master | Efficient range proofs with transparent setup from bounded integer commitments. Michael's work led to a [paper](https://eprint.iacr.org/2021/540.pdf), presented at EUROCRYPT'21. |
 Pierre Meyer | Nov. 2020 -- Jan. 2020 | Internship | Breaking the circuit size barrier for secure computation under quasi-polynomial LPN. Pierre's work led to a [paper](https://eprint.iacr.org/2021/943.pdf), presented at EUROCRYPT'21. |
 Dominik Hartmann | Feb. 2019 -- Aug. 2020 | Master | Compilers for non-interactive zero-knowledge proofs. Dominik's work led to a [paper](https://eprint.iacr.org/2020/286.pdf), presented at CRYPTO'20. |

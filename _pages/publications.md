@@ -13,6 +13,8 @@ You can find the manuscript of my PhD thesis [here](/assets/pdf/thesis.pdf).
 
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| PKC 2023  | Improved Private Set Intersection for Sets with Small Entries <br> *Geoffroy Couteau and Dung Bui* | [ePrint](https://eprint.iacr.org/2022/334.pdf), Springer |
+| PKC 2023  | Pseudorandom Correlation Functions from Variable-Density LPN, Revisited <br> *Geoffroy Couteau and Clément Ducros* | ePrint, Springer |
 | TCC 2022  | Sublinear Secure Computation from New Assumptions <br> *Elette Boyle, Geoffroy Couteau, and Pierre Meyer*	| ePrint, [Springer](https://link.springer.com/chapter/10.1007/978-3-031-22365-5_5) |
 | TCC 2022  | Anonymous Whistleblowing over Authenticated Channels <br> *Thomas Agrikola, Geoffroy Couteau, and Sven Maier*	| [ePrint](https://eprint.iacr.org/2021/1341.pdf), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-22365-5_24) |
 | ASIACRYPT 2022  | Non-Interactive Secure Computation of Inner-Product from LPN and LWE <br> *Geoffroy Couteau and Maryam Zarezadeh*	| [ePrint](https://eprint.iacr.org/2023/072.pdf), Springer |

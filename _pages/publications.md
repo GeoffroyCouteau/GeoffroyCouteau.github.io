@@ -13,6 +13,11 @@ You can find the manuscript of my PhD thesis [here](/assets/pdf/thesis.pdf).
 
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| EUROCRYPT 2023 | Constrained Pseudorandom Functions from Homomorphic Secret Sharing <br> *Geoffroy Couteau, Pierre Meyer, Alain Passelègue, and Mahshid Riahinia* | ePrint, Springer |
+| EUROCRYPT 2023 | Sublinear-Communication Secure Multiparty Computation does not require FHE <br> *Elette Boyle, Geoffroy Couteau, and Pierre Meyer* | ePrint, Springer |
+| EUROCRYPT 2023 | Short Signatures from Regular Syndrome Decoding in the Head <br> *Eliana Carozza, Geoffroy Couteau, and Antoine Joux* | ePrint, Springer |
+| EUROCRYPT 2023 | Fine-Grained Non-Interactive Key-Exchange: Constructions and Lower Bounds <br> *Abtin Afshar, Mohammad Mahmoody, and Elahe Sadeghi* | ePrint, Springer |
+| EUROCRYPT 2023 | Oblivious Transfer with Constant Computational Overhead <br> *Elette Boyle, Geoffroy Couteau, Niv Gilboa, Yuval Ishai, Lisa Kohl, Nicolas Resch, and Peter Scholl* | ePrint, Springer |
 | PKC 2023  | Improved Private Set Intersection for Sets with Small Entries <br> *Geoffroy Couteau and Dung Bui* | [ePrint](https://eprint.iacr.org/2022/334.pdf), Springer |
 | PKC 2023  | Pseudorandom Correlation Functions from Variable-Density LPN, Revisited <br> *Geoffroy Couteau and Clément Ducros* | ePrint, Springer |
 | TCC 2022  | Sublinear Secure Computation from New Assumptions <br> *Elette Boyle, Geoffroy Couteau, and Pierre Meyer*	| ePrint, [Springer](https://link.springer.com/chapter/10.1007/978-3-031-22365-5_5) |

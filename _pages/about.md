@@ -45,15 +45,15 @@ This website contains a few posts which might be useful to students in cryptogra
 
 I have the pleasure to advise several amazing PhD students, and I will not be accepting any new PhD requests in the next few years. However, I might have openings for postdocs. Topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including black-box separations and connections to learning theory).
 
-If you are interested, send me a mail and consider applying to the [openings](https://www.irif.fr/postes/postdoc) of the Algorithm and Complexity team of IRIF (around October 2022).
+If you are interested, send me a mail and consider applying to the [openings](https://www.irif.fr/postes/postdoc) of the Algorithm and Complexity team of IRIF (around October 2023).
 
 |---|---|---|---|
 | Past & Current students & postdocs | Time period | Status | Notes |
 |---|---|---|---|
-Sven Maier | Nov. 2022 -- Nov. 2023 | Postdoc | |
-Christop Egger | Oct. 2022 -- Oct. 2023 | Postdoc | |
-Alexander Koch | Oct. 2022 -- Oct. 2023 | Postdoc | |
-Balthazar Bauer | Oct. 2022 -- Oct. 2023 | Postdoc | |
+Sven Maier | Nov. 2022 -- Mar. 2023 | Postdoc | |
+Christop Egger | Oct. 2022 -- | Postdoc | |
+Alexander Koch | Oct. 2022 -- | Postdoc | |
+Balthazar Bauer | Oct. 2022 -- | Postdoc | |
 Elahe Sadeghi | Jun. 2022 -- Jul. 2022 | Visiting Student | |
 Bui Dung | Oct. 2021 -- | PhD | Secure Computation for Privacy-Preserving Analysis of Medical Data |
 Clément Ducros | Oct. 2021 -- | PhD | Linear Codes for Quantum-Resistant Secure Computation (co-advised with [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/)) |
@@ -62,7 +62,7 @@ Ulysse Léchine |  Oct.2021 -- | PhD | Average-case hardness, entropy, and one-w
 Milan Gonzalez-Thauvin | May 2021 -- Jul. 2021 | Internship | Constructions of Non-Interactive Zero-Knowledge Proofs: Efficiency and Generality |
 Bui Dung | Mar. 2021 -- Aug. 2021 | Master | Batch equality tests and secure comparison from pseudorandom correlation generators |
 Clément Ducros | Mar. 2021 -- Aug. 2021 | Master | Secure computation meets linear-time encodable codes |
-Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting student | |
+Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting student | Non-interactive inner products from LPN. Maryam's work led to a [paper](https://eprint.iacr.org/2023/072.pdf), presented at ASIACRYPT'22. |
 Pierre Meyer | Sep. 2020 -- | PhD | Secure computation with constrained communication (co-advised with [Elette Boyle](https://cs.idc.ac.il/~elette/)) |
 Elahe Sadeghi | Jul. 2020 -- Oct. 2020 | Internship | Statistical ZAPs from group-based assumptions. Elahe's work led to a [paper](https://eprint.iacr.org/2021/688.pdf), presented at TCC'21. |
 Michael Reichle | Feb. 2020 -- Aug. 2020 | Master | Efficient range proofs with transparent setup from bounded integer commitments. Michael's work led to a [paper](https://eprint.iacr.org/2021/540.pdf), presented at EUROCRYPT'21. |

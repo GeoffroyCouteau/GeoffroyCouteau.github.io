@@ -13,17 +13,19 @@ You can find the manuscript of my PhD thesis [here](/assets/pdf/thesis.pdf).
 
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
-| EUROCRYPT 2023 | Constrained Pseudorandom Functions from Homomorphic Secret Sharing <br> *Geoffroy Couteau, Pierre Meyer, Alain Passelègue, and Mahshid Riahinia* | ePrint, Springer |
-| EUROCRYPT 2023 | Sublinear-Communication Secure Multiparty Computation does not require FHE <br> *Elette Boyle, Geoffroy Couteau, and Pierre Meyer* | ePrint, Springer |
-| EUROCRYPT 2023 | Short Signatures from Regular Syndrome Decoding in the Head <br> *Eliana Carozza, Geoffroy Couteau, and Antoine Joux* | ePrint, Springer |
-| EUROCRYPT 2023 | Fine-Grained Non-Interactive Key-Exchange: Constructions and Lower Bounds <br> *Abtin Afshar, Mohammad Mahmoody, and Elahe Sadeghi* | ePrint, Springer |
-| EUROCRYPT 2023 | Oblivious Transfer with Constant Computational Overhead <br> *Elette Boyle, Geoffroy Couteau, Niv Gilboa, Yuval Ishai, Lisa Kohl, Nicolas Resch, and Peter Scholl* | ePrint, Springer |
-| PKC 2023  | Improved Private Set Intersection for Sets with Small Entries <br> *Geoffroy Couteau and Dung Bui* | [ePrint](https://eprint.iacr.org/2022/334.pdf), Springer |
-| PKC 2023  | Pseudorandom Correlation Functions from Variable-Density LPN, Revisited <br> *Geoffroy Couteau and Clément Ducros* | ePrint, Springer |
-| TCC 2022  | Sublinear Secure Computation from New Assumptions <br> *Elette Boyle, Geoffroy Couteau, and Pierre Meyer*	| ePrint, [Springer](https://link.springer.com/chapter/10.1007/978-3-031-22365-5_5) |
+| CRYPTO 2023 | A Note on Non-Interactive Zero-Knowledge from CDH <br> *Geoffroy Couteau, Abhishek Jain, Zhengzhong Jin, and Willy Quach* | ePrint, Springer |
+| CRYPTO 2023 | Correlated Pseudorandomness from the Hardness of Quasi-Abelian Decoding <br> *Maxime Bombar, Geoffroy Couteau, Alain Couvreur, and Clément Ducros* | ePrint, Springer |
+| EUROCRYPT 2023 | Constrained Pseudorandom Functions from Homomorphic Secret Sharing <br> *Geoffroy Couteau, Pierre Meyer, Alain Passelègue, and Mahshid Riahinia* | [ePrint](https://eprint.iacr.org/2023/387), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-30620-4_7) |
+| EUROCRYPT 2023 | Sublinear-Communication Secure Multiparty Computation does not require FHE <br> *Elette Boyle, Geoffroy Couteau, and Pierre Meyer* | ePrint, [Springer](https://link.springer.com/chapter/10.1007/978-3-031-30617-4_6) |
+| EUROCRYPT 2023 | Short Signatures from Regular Syndrome Decoding in the Head <br> *Eliana Carozza, Geoffroy Couteau, and Antoine Joux* | ePrint, [Springer](https://link.springer.com/chapter/10.1007/978-3-031-30589-4_19) |
+| EUROCRYPT 2023 | Fine-Grained Non-Interactive Key-Exchange: Constructions and Lower Bounds <br> *Abtin Afshar, Mohammad Mahmoody, and Elahe Sadeghi* | [ePrint](https://eprint.iacr.org/2023/571), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-30545-0_3) |
+| EUROCRYPT 2023 | Oblivious Transfer with Constant Computational Overhead <br> *Elette Boyle, Geoffroy Couteau, Niv Gilboa, Yuval Ishai, Lisa Kohl, Nicolas Resch, and Peter Scholl* | ePrint, [Springer](https://link.springer.com/chapter/10.1007/978-3-031-30545-0_10) |
+| PKC 2023  | Improved Private Set Intersection for Sets with Small Entries <br> *Geoffroy Couteau and Dung Bui* | [ePrint](https://eprint.iacr.org/2022/334.pdf), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-31371-4_7) |
+| PKC 2023  | Pseudorandom Correlation Functions from Variable-Density LPN, Revisited <br> *Geoffroy Couteau and Clément Ducros* | ePrint, [Springer](https://link.springer.com/chapter/10.1007/978-3-031-31371-4_8) |
+| TCC 2022  | Sublinear Secure Computation from New Assumptions <br> *Elette Boyle, Geoffroy Couteau, and Pierre Meyer*	| [ePrint](https://eprint.iacr.org/2023/513), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-22365-5_5) |
 | TCC 2022  | Anonymous Whistleblowing over Authenticated Channels <br> *Thomas Agrikola, Geoffroy Couteau, and Sven Maier*	| [ePrint](https://eprint.iacr.org/2021/1341.pdf), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-22365-5_24) |
-| ASIACRYPT 2022  | Non-Interactive Secure Computation of Inner-Product from LPN and LWE <br> *Geoffroy Couteau and Maryam Zarezadeh*	| [ePrint](https://eprint.iacr.org/2023/072.pdf), Springer |
-| ASIACRYPT 2022  | Random Sources in Private Computation <br> *Geoffroy Couteau and Adi Rosén*	| [ePrint](https://eprint.iacr.org/2023/074.pdf), Springer |
+| ASIACRYPT 2022  | Non-Interactive Secure Computation of Inner-Product from LPN and LWE <br> *Geoffroy Couteau and Maryam Zarezadeh*	| [ePrint](https://eprint.iacr.org/2023/072.pdf), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-22963-3_16) |
+| ASIACRYPT 2022  | Random Sources in Private Computation <br> *Geoffroy Couteau and Adi Rosén*	| [ePrint](https://eprint.iacr.org/2023/074.pdf), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-22963-3_15) |
 | CCS 2022  | Sharp: Short Relaxed Range Proofs <br> *Geoffroy Couteau, Dahmun Goudarzi, Michael Klooß, and Michael Reichle*	| [ePrint](https://eprint.iacr.org/2022/1153.pdf), [ACM](https://dl.acm.org/doi/10.1145/3548606.3560628) |
 | CRYPTO 2022  | Correlated Pseudorandomness from Expand-Accumulate Codes<br> *Elette Boyle, Geoffroy Couteau, Niv Gilboa, Yuval Ishai, Lisa Kohl, Nicolas Resch, and Peter Scholl*	| [ePrint](https://eprint.iacr.org/2022/1014.pdf), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-15979-4_21) |
 | EUROCRYPT 2022  | On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness<br> *Chris Brzuska and Geoffroy Couteau*<br> **Paper invited to the Journal of Cryptology** | [ePrint](https://eprint.iacr.org/2020/1326.pdf), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-07085-3_20) |

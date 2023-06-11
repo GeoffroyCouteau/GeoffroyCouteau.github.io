@@ -20,3 +20,7 @@ A list of interesting websites, blogs, and useful resources, in no particular or
 - [The Miracl benchmark page](https://github.com/miracl/MIRACL/blob/master/docs/miracl-explained/benchmarks.md)
 - [Ryan O'Donnell's awesome TCS toolkit](https://www.diderot.one/courses/28)
 - [David Pollard's website](http://www.stat.yale.edu/~pollard/) (e.g. see the documents under books/mini or courses)
+- [Chainlink Labs Research's series of posts on VOLE-based ZK](https://blog.chain.link/realizing-vole/)
+- [A collection of references on lattice-based cryptography, by Sofía Celi](https://thelatticeclub.com/)
+- [Mathematics of the Impossible: Computational Complexity (draft of a book by Emanuele Viola)](https://www.ccs.neu.edu/home/viola/papers/moti.pdf)
+- [Victor Lecompte's notes on TCS](https://victorlecomte.com/notes/)

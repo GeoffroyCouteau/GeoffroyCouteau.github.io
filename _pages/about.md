@@ -15,7 +15,7 @@ div {
 I am a CNRS research scientist at [IRIF][irif], Université Paris Cité. I received my PhD from École Normale Supérieure de Paris ([ENS][ens]) in November 2017, under the supervision of [David Pointcheval](https://www.di.ens.fr/david.pointcheval/index.php) and [Hoeteck Wee](https://www.di.ens.fr/~wee/). In 2017 -- 2019, I was a postdoctoral researcher at Karlsruhe Institute of Technology ([KIT][kit]), in the team of [Dennis Hofheinz](https://people.inf.ethz.ch/dhofheinz/).
 
 
-My main research interests are secure multiparty computation and zero-knowledge proofs (both foundational and practical aspects), as well as the theoretical foundations of cryptography. For an up-to-date list of my publications, you can check my [publication page][publications], my [dblp profile][dblp], or my [Google scholar profile][scholar]. All my publications become available at some point in open access format on the ePrint archive; see the list [here](https://eprint.iacr.org/search?q=geoffroy+couteau). My PhD thesis can  be found [here](/assets/pdf/thesis.pdf).
+My main research interests are secure multiparty computation and zero-knowledge proofs (both foundational and practical aspects), as well as the theoretical foundations of cryptography. For an up-to-date list of my publications, you can check my [publication page][publications], my [dblp profile][dblp], or my [Google scholar profile][scholar]. All my publications become available at some point in open access format on the ePrint archive; see the list [here](https://eprint.iacr.org/search?q=&title=&authors=geoffroy+couteau). My PhD thesis can  be found [here](/assets/pdf/thesis.pdf).
 
 ---
 

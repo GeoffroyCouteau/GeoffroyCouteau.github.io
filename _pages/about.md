@@ -43,7 +43,7 @@ This website contains a few posts which might be useful to students in cryptogra
 
 <!--Currently, I am specifically looking for a master student to work on a project related to secure computation and coding theory during the period March 2021 -- September 2021 (other periods can be envisioned depending on the student constraints). There is a possibility of continuing this internship as a PhD. You might want to check the [internship proposal](/assets/pdf/internship_codes.pdf).-->
 
-I have the pleasure to advise several amazing PhD students, and I will not be accepting any new PhD requests in the next few years. However, I might have openings for postdocs. Topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including black-box separations and connections to learning theory).
+I have the pleasure to advise several amazing PhD students, and I will not be accepting any new PhD requests in the next year or so. However, I have openings for postdocs. Topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including black-box separations and connections to learning theory).
 
 If you are interested, send me a mail and consider applying to the [openings](https://www.irif.fr/postes/postdoc) of the Algorithm and Complexity team of IRIF (around October 2023).
 

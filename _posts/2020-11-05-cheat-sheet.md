@@ -27,7 +27,7 @@ div {
 }
 </style>
 
-In the course of working on various projects, I found myself spending an excessive amount of time skimming through textbooks and Wikipedia pages to be reminded of the exact statement of various simple probability facts and lemmas. In some cases, this was to check that I was getting the constants right, or not forgetting a condition -- in others, this was just out of laziness. To simplify future searches, I decided to centralize in a cheat sheet a bunch of standard probability lemmas, starting from the most basic facts, but also including some slightly more advanced lemmas. These lemmas showed up several times in my work, and are likely to be useful to cryptographers and theoretical computer scientists. A (less up-to-date) PDF version of this cheat sheet, in a compact two-column format, is also available [here](/assets/pdf/cheat_sheet.pdf).
+In the course of working on various projects, I found myself spending an excessive amount of time skimming through textbooks and Wikipedia pages to be reminded of the exact statement of various simple probability facts and lemmas. In some cases, this was to check that I was getting the constants right, or not forgetting a condition -- in others, this was just out of laziness. To simplify future searches, I decided to centralize in a cheat sheet a bunch of standard probability lemmas, starting from the most basic facts, but also including some slightly more advanced lemmas. These lemmas showed up several times in my work, and are likely to be useful to cryptographers and theoretical computer scientists. An outdated PDF version of this cheat sheet, in a compact two-column format, is also available [here](/assets/pdf/cheat_sheet.pdf).
 {: style="text-align: justify;"}
 
 <!--more-->

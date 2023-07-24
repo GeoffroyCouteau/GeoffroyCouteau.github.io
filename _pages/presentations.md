@@ -21,6 +21,12 @@ A list of talks I gave, with links to the slides and video, when available. The 
 
 | Date | Event | Paper / subject                                        | Links |
 | -----|-----|-------------------------------------------------- | -------------|
+| June 2023 | [Conference on Information-Theoretic Cryptography - ITC 2023](https://itcrypto.github.io/2023/2023prog.html) | Spotlight talk: On Correlated Pseudorandomness | [Slides](/assets/slides/itc_2023.pdf), Video |
+| May 2023 | [Workshop FILOFOCS 2023](https://www.filofocs.org/filofocs-2023) | Random Sources in Private Computation | Slides, Video|
+| April 2023 | [Forum International de la Cybersécurité](https://europe.forum-fic.com/en/programme-2023-2/) | Masterclass on secure computation | [Slides](/assets/slides/presentation_FIC_2023.pdf), [Video](https://www.youtube.com/watch?v=bWdS1SE9UpI)|
+| April 2023 | [JNIM - Journées Nationales du GDR-IM](https://jnim2023.sciencesconf.org/) | Secure computation: protecting the privacy of sensitive data used in distributed computations | [Slides](/assets/slides/presentation_GDR_2023.pdf), Video|
+| November 2022 | [ASIACRYPT 2022](https://asiacrypt.iacr.org/2022/) | Random Sources in Private Computation | [Slides](/assets/slides/presentation_random_sources_AC2023), [Video](https://www.youtube.com/watch?v=FwmEffEc2-Y) |
+| November 2022 | [ASIACRYPT 2022](https://asiacrypt.iacr.org/2022/) | Non-Interactive Secure Computation of Inner-Product from LPN and LWE | [Slides](/assets/slides/presentation_IPLPN_AC2023), [Video](https://www.youtube.com/watch?v=FwmEffEc2-Y) |
 | June 2022 | [ENS Cryptography Seminar](https://crypto.di.ens.fr/web2py/index/seminars)  | Pseudorandom Correlation Generators, Constructions and Applications	| [Slides](/assets/slides/presentation_berkeley_2022), Video |
 | April 2022 | [UC Berkeley Cryptography Reading Group](https://crypto.eecs.berkeley.edu/reading-group.html)  | Pseudorandom Correlation Generators, Constructions and Applications | [Slides](/assets/slides/presentation_berkeley_2022), [Video](https://drive.google.com/file/d/1aoGP1xc6CncgRtUMHJ6N0NVOIUCftwvZ/view) |
 | October 2021 | CWI Cryptography Student Seminar | Black-Box Uselessness: Composing Separations in Cryptography | Slides, Video |

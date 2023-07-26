@@ -19,7 +19,9 @@ _M2 Theoretical Computer Science, ENS Lyon_
 
 _[ACCQ207](https://synapses.telecom-paris.fr/catalogue/2020-2021/ue/2114/ACCQ207-morceaux-choisis-en-cryptographie-mathematique-selected-topics-in-mathematical-cryptography?from=P2939), Selected Topics in Mathematical Cryptography, M1, Télécom Paris_
 
-**Lecturers:** [Sihem Mesnager](https://www.math.univ-paris13.fr/~mesnager/), [Hugues Randriambololona](https://perso.telecom-paristech.fr/randriam/), Geoffroy Couteau
+**Lecturers:** [Weiqiang Wen](https://www.telecom-paris.fr/weiqiang-wen), [Hugues Randriambololona](https://perso.telecom-paristech.fr/randriam/), Geoffroy Couteau
+
+**Slides:** [first course](/assets/slides/cours_telecom_1.pdf), [second course](/assets/slides/cours_telecom_2.pdf)
 
 ### Introduction à la Sécurité
 

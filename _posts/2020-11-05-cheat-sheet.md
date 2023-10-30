@@ -160,6 +160,10 @@ Note that $\mathsf{H}\_1(\mathsf{Ber}\_p) = \mathsf{H}(p)$.
 
 $$\frac{1}{\sqrt{2\pi n \delta (1-\delta)}} \exp\left(n\cdot\mathsf{H}(\delta) - \frac{1}{12 n \delta (1-\delta)} \right) \leq {n \choose \delta n} \leq \frac{1}{\sqrt{2\pi n \delta(1-\delta)}}\exp\left(n\cdot \mathsf{H}(\delta)\right).$$
 
+$$\sqrt{\frac{n}{8k(n-k)}}\cdot e^{n\cdot h(k/n)} \leq {n \choose k} \leq \sqrt{\frac{n}{2\pi k(n-k)}}\cdot e^{n\cdot h(k/n)},$$
+
+where $h(\cdot)$ denotes the binary entropy function. The version above is taken from Bob Gallager's [Information Theory and Reliable Communications]()
+
 <a name="bin-others"></a>**Others:**
 
   - For $k = o(n)$, $\log {n\choose k} = (1+o(1))k \log \frac{n}{k}$.

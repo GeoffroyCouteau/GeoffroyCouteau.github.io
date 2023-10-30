@@ -10,8 +10,8 @@ categories: TestCategories
 
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
-| CRYPTO 2023 | A Note on Non-Interactive Zero-Knowledge from CDH <br> *Geoffroy Couteau, Abhishek Jain, Zhengzhong Jin, and Willy Quach* | [ePrint](https://eprint.iacr.org/2023/970), Springer |
-| CRYPTO 2023 | Correlated Pseudorandomness from the Hardness of Quasi-Abelian Decoding <br> *Maxime Bombar, Geoffroy Couteau, Alain Couvreur, and Clément Ducros* | [ePrint](https://eprint.iacr.org/2023/845), Springer |
+| CRYPTO 2023 | A Note on Non-Interactive Zero-Knowledge from CDH <br> *Geoffroy Couteau, Abhishek Jain, Zhengzhong Jin, and Willy Quach* | [ePrint](https://eprint.iacr.org/2023/970), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-38551-3_23) |
+| CRYPTO 2023 | Correlated Pseudorandomness from the Hardness of Quasi-Abelian Decoding <br> *Maxime Bombar, Geoffroy Couteau, Alain Couvreur, and Clément Ducros* | [ePrint](https://eprint.iacr.org/2023/845), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-38551-3_18) |
 | EUROCRYPT 2023 | Constrained Pseudorandom Functions from Homomorphic Secret Sharing <br> *Geoffroy Couteau, Pierre Meyer, Alain Passelègue, and Mahshid Riahinia* | [ePrint](https://eprint.iacr.org/2023/387), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-30620-4_7) |
 | EUROCRYPT 2023 | Sublinear-Communication Secure Multiparty Computation does not require FHE <br> *Elette Boyle, Geoffroy Couteau, and Pierre Meyer* | ePrint, [Springer](https://link.springer.com/chapter/10.1007/978-3-031-30617-4_6) |
 | EUROCRYPT 2023 | Short Signatures from Regular Syndrome Decoding in the Head <br> *Eliana Carozza, Geoffroy Couteau, and Antoine Joux* | [ePrint](https://eprint.iacr.org/2023/1035), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-30589-4_19) |

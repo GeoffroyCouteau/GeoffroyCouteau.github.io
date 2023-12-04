@@ -21,7 +21,7 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 ### News
 
-**September 2023:** I was [awarded an ERC Starting Grant](https://erc.europa.eu/sites/default/files/2023-09/erc_2023-stg-results_pe.pdf) from my project OBELiSC (Overcoming Barriers and Efficiency Limitations in Secure Computation). See [here](https://www.ins2i.cnrs.fr/fr/cnrsinfo/geoffroy-couteau-une-erc-pour-pousser-la-securite-des-donnees) and [here](https://www.irif.fr/portraits/erc_geoffroy_couteau) for interviews where I explain (in French) the goals of the project, and [here](https://u-paris.fr/cinq-nouveaux-erc-starting-grants-dans-les-laboratoires-duniversite-paris-cite/) for a short abstract (still in French).
+**September 2023:** I was [awarded an ERC Starting Grant](https://erc.europa.eu/sites/default/files/2023-09/erc_2023-stg-results_pe.pdf) for my project OBELiSC (Overcoming Barriers and Efficiency Limitations in Secure Computation). See [here](https://www.ins2i.cnrs.fr/fr/cnrsinfo/geoffroy-couteau-une-erc-pour-pousser-la-securite-des-donnees) and [here](https://www.irif.fr/portraits/erc_geoffroy_couteau) for interviews where I explain (in French) the goals of the project, and [here](https://u-paris.fr/cinq-nouveaux-erc-starting-grants-dans-les-laboratoires-duniversite-paris-cite/) for a short abstract (still in French).
 
 **June 2023:** I was invited to deliver a Spotlight Talk to the 2023 [Conference on Information-Theoretic Cryptography (ITC)](https://itcrypto.github.io/2023/index.html). My talk, titled *On Correlated Pseudorandomness*, covered pseudorandom correlation generators, their impact on secure computation, and some of the latest advances in the area. You can check the slides [here](/assets/slides/itc_2023.pdf).
 

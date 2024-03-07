@@ -1,5 +1,6 @@
 ---
 title:  "Habilitation à diriger des recherches"
+classes: wide
 layout: archive
 author_profile: true
 permalink: /hdr/

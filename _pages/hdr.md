@@ -9,7 +9,7 @@ comments: false
 
 It is my pleasure to invite you to the defense of my habilitation à diriger des recherches, titled:
 
-### Correlated Pseudorandomness in Secure Computation
+**Correlated Pseudorandomness in Secure Computation**
 
 The defense will take place on **March 20, 10 am** at the following address:
 

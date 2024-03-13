@@ -21,6 +21,8 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 ### News
 
+**March 2024** I will defend my *Habilitation à Diriger des Recherches* on March 20. An HDR is a French diploma needed to supervize PhD students (without it, a co-supervisor with HDR is required). It proceeds essentially like a second PhD defense. You can find my HDR manuscript [here](https://geoffroycouteau.github.io/assets/pdf/hdr.pdf); it provides an overview of secure computation in the correlated randomness model, and a step-by-step introduction to pseudorandom correlation generators, which might be useful for anyone wanting to get into this research area. More information about the defense [here](\hdr/).
+
 **September 2023:** I was [awarded an ERC Starting Grant](https://erc.europa.eu/sites/default/files/2023-09/erc_2023-stg-results_pe.pdf) for my project OBELiSC (Overcoming Barriers and Efficiency Limitations in Secure Computation). See [here](https://www.ins2i.cnrs.fr/fr/cnrsinfo/geoffroy-couteau-une-erc-pour-pousser-la-securite-des-donnees) and [here](https://www.irif.fr/portraits/erc_geoffroy_couteau) for interviews where I explain (in French) the goals of the project, and [here](https://u-paris.fr/cinq-nouveaux-erc-starting-grants-dans-les-laboratoires-duniversite-paris-cite/) for a short abstract (still in French).
 
 **June 2023:** I was invited to deliver a Spotlight Talk to the 2023 [Conference on Information-Theoretic Cryptography (ITC)](https://itcrypto.github.io/2023/index.html). My talk, titled *On Correlated Pseudorandomness*, covered pseudorandom correlation generators, their impact on secure computation, and some of the latest advances in the area. You can check the slides [here](/assets/slides/itc_2023.pdf).

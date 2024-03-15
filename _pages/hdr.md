@@ -17,14 +17,18 @@ Amphithéâtre Turing, bâtiment Sophie Germain<br>
 8 place Aurélie Nemours<br>
 75013, Paris
 
-It will also be possible to attend remotely; the link will be posted on this page on the day of the defense. The defense will be held in English and will be followed by a cocktail, to which you are cordially invited.
+It will also be possible to attend remotely using the link below:
+
+[https://u-paris.zoom.us/my/hdr.couteau](https://u-paris.zoom.us/my/hdr.couteau)
+
+The defense will be held in English and will be followed by a cocktail, to which you are cordially invited.
 
 ### Jury:
 
-Michel Abdalla, reviewer, DR CNRS at ENS Paris
-Benny Applebaum, reviewer, Professor at Tel-Aviv University
-Ivan Damgård, examiner, Professor at Aarhus University
-Carmit Hazay, reviewer, Professor at Bar-Ilan University
-Sophie Laplante, examiner, Professor at Université Paris-Cité
+- Michel Abdalla, reviewer, DR CNRS at ENS Paris
+- Benny Applebaum, reviewer, Professor at Tel-Aviv University
+- Ivan Damgård, examiner, Professor at Aarhus University
+- Carmit Hazay, reviewer, Professor at Bar-Ilan University
+- Sophie Laplante, examiner, Professor at Université Paris-Cité
 
 The manuscript is available [here](https://geoffroycouteau.github.io/assets/pdf/hdr.pdf).

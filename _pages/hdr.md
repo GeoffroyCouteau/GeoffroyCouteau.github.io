@@ -39,4 +39,4 @@ The defense will be followed by a cocktail, to which you are cordially invited. 
 
 - **Place:** IRIF, 4-th floor, bâtiment Sophie Germain (same building as the defense)
 - **Access:** a badge is required to access the 4-th floor. If you are not from IRIF, follow someone that has a badge after the defense. If you arrived late, you can either get a badge from the reception (in exchange for an ID; you can say that you are visiting me) or send a message to someone inside.
-- Drinks: **bring your own cup**. For environmental reasons, there will be no plastic cups available, so bring your cups, gourds, or mugs. If you forgot to bring one, you can always borrow a glass from the IRIF kitchen return it (clean) afterwards.
+- Drinks: **bring your own cup**. For environmental reasons, there will be no plastic cups available, so bring your cups, gourds, or mugs. If you forgot to bring one, you can always borrow a glass from the IRIF kitchen and return it (clean) afterwards.

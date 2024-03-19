@@ -19,7 +19,9 @@ Amphithéâtre Turing, bâtiment Sophie Germain<br>
 
 When you enter the building from the place Aurélie Nemours, go straight to the left, where you will see the elevators. The amphitheater is on level -1, the stairs are in front of the elevators. It will also be possible to attend remotely using the link below:
 
-[https://u-paris.zoom.us/my/hdr.couteau](https://u-paris.zoom.us/my/hdr.couteau)
+[https://u-paris.zoom.us/my/hdr.couteau](https://u-paris.zoom.us/j/7565640251?pwd=ck92OE5SblpvTnFVNzFVRitqM1ZnQT09)
+
+Code: 699897
 
 ### Jury:
 

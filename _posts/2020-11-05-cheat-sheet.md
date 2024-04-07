@@ -180,7 +180,7 @@ where $h(\cdot)$ denotes the binary entropy function. The version above is taken
 
 #### Splitting Lemma
 
-Let $A\subset X \times Y$ such that $\Pr[(x,y) \in A] \leq \varepsilon$. For any $\varepsilon' < \varepsilon$, defining $B$ as $B = \{(x, y) \in X \times Y \;\|\; \Pr_{y'\gets_r Y}[(x, y') \in A] \geq \varepsilon - \varepsilon'\}$, it holds that
+Let $A\subset X \times Y$ such that $\Pr[(x,y) \in A] \geq \varepsilon$. For any $\varepsilon' < \varepsilon$, defining $B$ as $B = \\{(x, y) \in X \times Y \;\|\; \Pr_{y'\gets_r Y}[(x, y') \in A] \geq \varepsilon - \varepsilon'\\}$, it holds that
 
 \begin{align}
 \Pr[B]\geq \varepsilon' &&\forall (x,y)\in B, \Pr_{y'}[(x,y')\in A]\geq \varepsilon - \varepsilon' &&\Pr[B|A] \geq \varepsilon'/\varepsilon.
@@ -188,7 +188,7 @@ Let $A\subset X \times Y$ such that $\Pr[(x,y) \in A] \leq \varepsilon$. For any
 
 #### Forking Lemma
 
-For any $q\geq 1$, any set $H$ with $\|H\| \geq 2$, and randomized PPT algorithm $\mathcal{A}$ which, on input $(x, h_1, \cdots, h_q)$ returns a pair $(J,\sigma) \in [q]\times \{0,1\}^{\*}$, and input distribution $\mathcal{D}$, let
+For any $q\geq 1$, any set $H$ with $\|H\| \geq 2$, and randomized PPT algorithm $\mathcal{A}$ which, on input $(x, h_1, \cdots, h_q)$ returns a pair $(J,\sigma) \in [q]\times \\{0,1\\}^{\*}$, and input distribution $\mathcal{D}$, let
 
 $$\mathsf{acc} \gets \Pr[x \gets_r \mathcal{D}, (h_1, \cdots, h_q) \gets_r H, (J,\sigma) \gets_r \mathcal{A}(x, h_1, \cdots, h_q) : J \geq 1].$$
 

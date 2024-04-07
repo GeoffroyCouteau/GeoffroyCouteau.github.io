@@ -21,7 +21,7 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 ### News
 
-**March 2024** I will defend my *Habilitation à Diriger des Recherches* on March 20. An HDR is a French diploma needed to supervize PhD students (without it, a co-supervisor with HDR is required). It proceeds essentially like a second PhD defense. You can find my HDR manuscript [here](https://geoffroycouteau.github.io/assets/pdf/hdr.pdf); it provides an overview of secure computation in the correlated randomness model, and a step-by-step introduction to pseudorandom correlation generators, which might be useful for anyone wanting to get into this research area. More information about the defense [here](\hdr/).
+**March 2024** I defended my *Habilitation à Diriger des Recherches* on March 20. An HDR is a French diploma needed to supervize PhD students (without it, a co-supervisor with HDR is required). It proceeds essentially like a second PhD defense. You can find my HDR manuscript [here](https://geoffroycouteau.github.io/assets/pdf/hdr.pdf); it provides an overview of secure computation in the correlated randomness model, and a step-by-step introduction to pseudorandom correlation generators, which might be useful for anyone wanting to get into this research area. More information about the defense [here](\hdr/).
 
 **September 2023:** I was [awarded an ERC Starting Grant](https://erc.europa.eu/sites/default/files/2023-09/erc_2023-stg-results_pe.pdf) for my project OBELiSC (Overcoming Barriers and Efficiency Limitations in Secure Computation). See [here](https://www.ins2i.cnrs.fr/fr/cnrsinfo/geoffroy-couteau-une-erc-pour-pousser-la-securite-des-donnees) and [here](https://www.irif.fr/portraits/erc_geoffroy_couteau) for interviews where I explain (in French) the goals of the project, and [here](https://u-paris.fr/cinq-nouveaux-erc-starting-grants-dans-les-laboratoires-duniversite-paris-cite/) for a short abstract (still in French).
 
@@ -58,6 +58,7 @@ If you are interested, send me a mail and consider applying to the [openings](ht
 |---|---|---|---|
 |  | Time period | Notes |
 |---|---|---|---|
+[Sihang Pu](https://sihangpu.uk/) | Apr. 2024 -- current | |
 [Christop Egger](https://christoph-egger.org/) | Oct. 2022 -- current | |
 [Alexander Koch](https://alex-koch.gitlab.io/) | Oct. 2022 -- current | |
 Balthazar Bauer | Oct. 2022 -- Sep. 2023 | Now holding the Chaire de Professeur Junior at UVSQ. |
@@ -79,6 +80,7 @@ Ulysse Léchine |  Oct.2021 -- | Average-case hardness, entropy, and one-way fun
 |---|---|---|---|
 | | Time period | Notes |
 |---|---|---|---|
+Alexandros Themelis | Apr. 2024 -- Sep. 2024 | Advanced Post-Quantum Signatures |
 Bui Dung | Mar. 2021 -- Aug. 2021 | Batch equality tests and secure comparison from pseudorandom correlation generators |
 [Clément Ducros](https://www.irif.fr/users/cducros/index) | Mar. 2021 -- Aug. 2021 | Secure computation meets linear-time encodable codes |
 [Michael Reichle](https://www.di.ens.fr/michael.reichle/) | Feb. 2020 -- Aug. 2020 | Efficient range proofs with transparent setup from bounded integer commitments. Michael's work led to a [paper](https://eprint.iacr.org/2021/540.pdf), presented at EUROCRYPT'21. Now postdoc at ETH Zurich under the supervision of [Dennis Hofheinz](https://people.inf.ethz.ch/dhofheinz/). |
@@ -89,7 +91,11 @@ Dominik Hartmann | Feb. 2019 -- Aug. 2020 | Compilers for non-interactive zero-k
 |---|---|---|---|
 | | Time period | Status | Notes |
 |---|---|---|---|
-[Sacha Servan-Schreiber](https://sachaservanschreiber.com/) | Sep. 2023 -- current | Visiting PhD student | |
+
+[Willy Quach](https://wquach.github.io/) | Feb. 2024 -- May 2024 | Visting postdoctoral researcher |
+[Kelsey Melissaris](https://www.kelseymelissaris.com/) | Feb. 2024 -- Jun. 2024 | Visting postdoctoral researcher |
+[Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Feb. 2024 -- Jun. 2024 | Visting PhD student |
+[Sacha Servan-Schreiber](https://sachaservanschreiber.com/) | Sep. 2023 -- March 2024 | Visiting PhD student | |
 Elahe Sadeghi | Jun. 2022 -- Jul. 2022 | Visiting PhD student | Elahe's work led to a [paper](https://eprint.iacr.org/2023/571), presented at EUROCRYPT'23. |
 Milan Gonzalez-Thauvin | May 2021 -- Jul. 2021 | Internship | Constructions of Non-Interactive Zero-Knowledge Proofs: Efficiency and Generality |
 Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting PhD student | Non-interactive inner products from LPN. Maryam's work led to a [paper](https://eprint.iacr.org/2023/072), presented at ASIACRYPT'22. |
@@ -108,7 +114,7 @@ The list of conferences, workshops, and journals where I served as a member of t
 |---|---|
 | Year  | Venues |
 |---|---|
-| 2024 | Communications in Cryptology |
+| 2024 | Communications in Cryptology, TCC |
 | 2023 | CSF, CRYPTO |
 | 2022 | PKC, CSF, SCN, TCC |
 | 2021 | EUROCRYPT, IWSEC, WAHC |

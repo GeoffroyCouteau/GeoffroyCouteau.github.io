@@ -77,21 +77,22 @@ Ulysse Léchine |  Oct.2021 -- | Average-case hardness, entropy, and one-way fun
 
 #### Master students
 
-|---|---|---|---|---|
+|---|---|---|---|
 | | Time period | Notes |
-|---|---|---|---|---|
+|---|---|---|---|
 Alexandros Themelis | Apr. 2024 -- Sep. 2024 | Advanced Post-Quantum Signatures |
 Bui Dung | Mar. 2021 -- Aug. 2021 | Batch equality tests and secure comparison from pseudorandom correlation generators |
 [Clément Ducros](https://www.irif.fr/users/cducros/index) | Mar. 2021 -- Aug. 2021 | Secure computation meets linear-time encodable codes |
 [Michael Reichle](https://www.di.ens.fr/michael.reichle/) | Feb. 2020 -- Aug. 2020 | Efficient range proofs with transparent setup from bounded integer commitments. Michael's work led to a [paper](https://eprint.iacr.org/2021/540.pdf), presented at EUROCRYPT'21. Now postdoc at ETH Zurich under the supervision of [Dennis Hofheinz](https://people.inf.ethz.ch/dhofheinz/). |
 Dominik Hartmann | Feb. 2019 -- Aug. 2020 | Compilers for non-interactive zero-knowledge proofs. Dominik's work led to a [paper](https://eprint.iacr.org/2020/286.pdf), presented at CRYPTO'20. Now PhD student at Ruhr Universität Bochum.|
 
+bla
+
 #### Other: visitors, interns, bachelor students
 
 |---|---|---|---|
-| | Time period | Status | Notes |
+| | Time period | Status blablablabla | Notes |
 |---|---|---|---|
-
 [Willy Quach](https://wquach.github.io/) | Feb. 2024 -- May 2024 | Visting postdoctoral researcher | |
 [Kelsey Melissaris](https://www.kelseymelissaris.com/) | Feb. 2024 -- Jun. 2024 | Visting postdoctoral researcher | |
 [Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Feb. 2024 -- Jun. 2024 | Visting PhD student | |

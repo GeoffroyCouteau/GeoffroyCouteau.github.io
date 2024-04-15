@@ -92,9 +92,9 @@ Dominik Hartmann | Feb. 2019 -- Aug. 2020 | Compilers for non-interactive zero-k
 | | Time period | Status | Notes |
 |---|---|---|---|
 
-[Willy Quach](https://wquach.github.io/) | Feb. 2024 -- May 2024 | Visting postdoctoral researcher |
-[Kelsey Melissaris](https://www.kelseymelissaris.com/) | Feb. 2024 -- Jun. 2024 | Visting postdoctoral researcher |
-[Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Feb. 2024 -- Jun. 2024 | Visting PhD student |
+[Willy Quach](https://wquach.github.io/) | Feb. 2024 -- May 2024 | Visting postdoctoral researcher | |
+[Kelsey Melissaris](https://www.kelseymelissaris.com/) | Feb. 2024 -- Jun. 2024 | Visting postdoctoral researcher | |
+[Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Feb. 2024 -- Jun. 2024 | Visting PhD student | |
 [Sacha Servan-Schreiber](https://sachaservanschreiber.com/) | Sep. 2023 -- March 2024 | Visiting PhD student | |
 Elahe Sadeghi | Jun. 2022 -- Jul. 2022 | Visiting PhD student | Elahe's work led to a [paper](https://eprint.iacr.org/2023/571), presented at EUROCRYPT'23. |
 Milan Gonzalez-Thauvin | May 2021 -- Jul. 2021 | Internship | Constructions of Non-Interactive Zero-Knowledge Proofs: Efficiency and Generality |

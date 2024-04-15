@@ -77,9 +77,9 @@ Ulysse Léchine |  Oct.2021 -- | Average-case hardness, entropy, and one-way fun
 
 #### Master students
 
-|---|---|---|---|
+|---|---|---|---|---|
 | | Time period | Notes |
-|---|---|---|---|
+|---|---|---|---|---|
 Alexandros Themelis | Apr. 2024 -- Sep. 2024 | Advanced Post-Quantum Signatures |
 Bui Dung | Mar. 2021 -- Aug. 2021 | Batch equality tests and secure comparison from pseudorandom correlation generators |
 [Clément Ducros](https://www.irif.fr/users/cducros/index) | Mar. 2021 -- Aug. 2021 | Secure computation meets linear-time encodable codes |

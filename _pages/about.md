@@ -96,6 +96,7 @@ Dominik Hartmann | Feb. 2019 -- Aug. 2020 | Compilers for non-interactive zero-k
 [Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Feb. 2024 -- Jun. 2024 | Visting PhD student | |
 [Sacha Servan-Schreiber](https://sachaservanschreiber.com/) | Sep. 2023 -- March 2024 | Visiting PhD student | |
 Elahe Sadeghi | Jun. 2022 -- Jul. 2022 | Visiting PhD student | Elahe's work led to a [paper](https://eprint.iacr.org/2023/571), presented at EUROCRYPT'23. |
+Naman Kumar | May 2022 -- Jun. 2022 | Internship | Naman's work led to a paper, to be presented at CRYPTO'24. |
 Milan Gonzalez-Thauvin | May 2021 -- Jul. 2021 | Internship | Constructions of Non-Interactive Zero-Knowledge Proofs: Efficiency and Generality |
 Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting PhD student | Non-interactive inner products from LPN. Maryam's work led to a [paper](https://eprint.iacr.org/2023/072), presented at ASIACRYPT'22. |
 Elahe Sadeghi | Jul. 2020 -- Oct. 2020 | Internship | Statistical ZAPs from group-based assumptions. Elahe's work led to a [paper](https://eprint.iacr.org/2021/688), presented at TCC'21. |

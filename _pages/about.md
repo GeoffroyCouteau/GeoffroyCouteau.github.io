@@ -81,8 +81,8 @@ Ulysse Léchine |  Oct.2021 -- | Average-case hardness, entropy, and one-way fun
 | | Time period | Notes |
 |---|---|---|---|
 Alexandros Themelis | Apr. 2024 -- Sep. 2024 | Advanced Post-Quantum Signatures |
-Bui Dung | Mar. 2021 -- Aug. 2021 | Batch equality tests and secure comparison from pseudorandom correlation generators |
-[Clément Ducros](https://www.irif.fr/users/cducros/index) | Mar. 2021 -- Aug. 2021 | Secure computation meets linear-time encodable codes |
+Bui Dung | Mar. 2021 -- Aug. 2021 | Batch equality tests and secure comparison from pseudorandom correlation generators. Dung's work led to a [paper](https://eprint.iacr.org/2022/334), presented at PKC'23. |
+[Clément Ducros](https://www.irif.fr/users/cducros/index) | Mar. 2021 -- Aug. 2021 | Secure computation meets linear-time encodable codes. Clément's work led to a [paper](https://eprint.iacr.org/2023/650), presented at PKC'23.|
 [Michael Reichle](https://www.di.ens.fr/michael.reichle/) | Feb. 2020 -- Aug. 2020 | Efficient range proofs with transparent setup from bounded integer commitments. Michael's work led to a [paper](https://eprint.iacr.org/2021/540.pdf), presented at EUROCRYPT'21. Now postdoc at ETH Zurich under the supervision of [Dennis Hofheinz](https://people.inf.ethz.ch/dhofheinz/). |
 Dominik Hartmann | Feb. 2019 -- Aug. 2020 | Compilers for non-interactive zero-knowledge proofs. Dominik's work led to a [paper](https://eprint.iacr.org/2020/286.pdf), presented at CRYPTO'20. Now PhD student at Ruhr Universität Bochum.|
 
@@ -95,8 +95,8 @@ Dominik Hartmann | Feb. 2019 -- Aug. 2020 | Compilers for non-interactive zero-k
 [Kelsey Melissaris](https://www.kelseymelissaris.com/) | Feb. 2024 -- Jun. 2024 | Visting postdoctoral researcher | |
 [Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Feb. 2024 -- Jun. 2024 | Visting PhD student | |
 [Sacha Servan-Schreiber](https://sachaservanschreiber.com/) | Sep. 2023 -- March 2024 | Visiting PhD student | |
+Naman Kumar | May 2023 -- Jun. 2023 | Internship | Naman's work led to a paper, to be presented at CRYPTO'24. |
 Elahe Sadeghi | Jun. 2022 -- Jul. 2022 | Visiting PhD student | Elahe's work led to a [paper](https://eprint.iacr.org/2023/571), presented at EUROCRYPT'23. |
-Naman Kumar | May 2022 -- Jun. 2022 | Internship | Naman's work led to a paper, to be presented at CRYPTO'24. |
 Milan Gonzalez-Thauvin | May 2021 -- Jul. 2021 | Internship | Constructions of Non-Interactive Zero-Knowledge Proofs: Efficiency and Generality |
 Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting PhD student | Non-interactive inner products from LPN. Maryam's work led to a [paper](https://eprint.iacr.org/2023/072), presented at ASIACRYPT'22. |
 Elahe Sadeghi | Jul. 2020 -- Oct. 2020 | Internship | Statistical ZAPs from group-based assumptions. Elahe's work led to a [paper](https://eprint.iacr.org/2021/688), presented at TCC'21. |

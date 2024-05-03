@@ -11,7 +11,7 @@ categories: TestCategories
 | Conference | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
 | CRYPTO 2024 | Fine-Grained Non-Interactive Key Exchange, Revisited <br> *Balthazar Bauer, Geoffroy Couteau, and Elahe Sadeghi* | ePrint, Springer |
-| CRYPTO 2024 | 10-Party Sublinear Secure Computation from Standard Assumptions <br> *Geoffroy Couteau, and Naman Kumar* | ePrint, Springer |
+| CRYPTO 2024 | 10-Party Sublinear Secure Computation from Standard Assumptions <br> *Geoffroy Couteau and Naman Kumar* | ePrint, Springer |
 | EUROCRYPT 2024 | Fast Public-Key Silent OT and More from Constrained Naor-Reingold <br> *Dung Bui, Geoffroy Couteau, Pierre Meyer, Alain Passelègue, and Mahshid Riahinia* | [ePrint](https://eprint.iacr.org/2024/178), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-58751-1_4) |
 | CRYPTO 2023 | A Note on Non-Interactive Zero-Knowledge from CDH <br> *Geoffroy Couteau, Abhishek Jain, Zhengzhong Jin, and Willy Quach* | [ePrint](https://eprint.iacr.org/2023/970), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-38551-3_23) |
 | CRYPTO 2023 | Correlated Pseudorandomness from the Hardness of Quasi-Abelian Decoding <br> *Maxime Bombar, Geoffroy Couteau, Alain Couvreur, and Clément Ducros* | [ePrint](https://eprint.iacr.org/2023/845), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-38551-3_18) |

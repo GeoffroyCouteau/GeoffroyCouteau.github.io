@@ -21,6 +21,19 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 ### News
 
+**June 2024** The Algorithms & Complexity team at IRIF (CNRS, Université Paris-Cité) in Paris, France is inviting applications for several fully-funded postdoctoral positions (1-2 years) to work on cryptography. Areas of interest include, but are not limited to, zero-knowledge proofs, secure computation, post-quantum cryptography, foundations of cryptography, connections with complexity theory, confidential transactions, anonymous credentials. The candidate will work alongside Geoffroy Couteau and Michele Orrù.
+
+<div>
+<li><b>Required qualifications.</b> The ideal candidate for the postdoc position will hold a PhD (or be close to completion) in cryptography and be an expert in any of the areas of interest.</li>
+<li><b>Salary.</b> €3080 to €4291 gross monthly salary depending on the past experience of the candidate.</li>
+<li><b>Dates.</b> The starting date is flexible from October 2024.</li>
+<li><b>Working at IRIF, Paris:</b> IRIF (the computer science department of Université Paris Cité) is a French institute focused on foundational computer science. It provides a stimulating environment with researchers from many areas of theoretical computer science. CNRS is the largest European research institution.</li>
+</div>
+{: .notice--info}
+
+<a href="https://www.irif.fr/postes/postdoc" class="btn btn--success">How to apply</a>
+{: .text-center}
+
 **March 2024** I defended my *Habilitation à Diriger des Recherches* on March 20. An HDR is a French diploma needed to supervize PhD students (without it, a co-supervisor with HDR is required). It proceeds essentially like a second PhD defense. You can find my HDR manuscript [here](https://geoffroycouteau.github.io/assets/pdf/hdr.pdf); it provides an overview of secure computation in the correlated randomness model, and a step-by-step introduction to pseudorandom correlation generators, which might be useful for anyone wanting to get into this research area. More information about the defense [here](\hdr/).
 
 **September 2023:** I was [awarded an ERC Starting Grant](https://erc.europa.eu/sites/default/files/2023-09/erc_2023-stg-results_pe.pdf) for my project OBELiSC (Overcoming Barriers and Efficiency Limitations in Secure Computation). See [here](https://www.ins2i.cnrs.fr/fr/cnrsinfo/geoffroy-couteau-une-erc-pour-pousser-la-securite-des-donnees) and [here](https://www.irif.fr/portraits/erc_geoffroy_couteau) for interviews where I explain (in French) the goals of the project, and [here](https://u-paris.fr/cinq-nouveaux-erc-starting-grants-dans-les-laboratoires-duniversite-paris-cite/) for a short abstract (still in French).
@@ -50,8 +63,6 @@ This website contains a few posts which might be useful to students in cryptogra
 <!--Currently, I am specifically looking for a master student to work on a project related to secure computation and coding theory during the period March 2021 -- September 2021 (other periods can be envisioned depending on the student constraints). There is a possibility of continuing this internship as a PhD. You might want to check the [internship proposal](/assets/pdf/internship_codes.pdf).-->
 
 I have the pleasure to advise several amazing PhD students, and I will not be accepting any new PhD requests in the next year or so. However, I have openings for postdocs. Topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including black-box separations and connections to learning theory).
-
-If you are interested, send me a mail and consider applying to the [openings](https://www.irif.fr/postes/postdoc) of the Algorithm and Complexity team of IRIF (the deadline is November 1st, 2023 -- but if you missed it, you can still ping me).
 
 #### Postdocs
 
@@ -91,11 +102,13 @@ Dominik Hartmann | Feb. 2019 -- Aug. 2019 | Compilers for non-interactive zero-k
 |---|---|---|---|
 | | Time period | Status | Notes |
 |---|---|---|---|
+[Naman Kumar](https://matcauthon49.github.io/) | June 2024 -- Sep. 2024 | Internship |  |
+[Aditya Hegde](https://adishegde.github.io/) | June 2024 -- July. 2024 | Internship |  |
 [Willy Quach](https://wquach.github.io/) | Feb. 2024 -- May 2024 | Visiting postdoctoral researcher | |
 [Kelsey Melissaris](https://www.kelseymelissaris.com/) | Feb. 2024 -- Jun. 2024 | Visiting postdoctoral researcher | |
 [Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Feb. 2024 -- Jun. 2024 | Visiting PhD <br> student | |
 [Sacha Servan-Schreiber](https://sachaservanschreiber.com/) | Sep. 2023 -- March 2024 | Visiting PhD <br> student | |
-Naman Kumar | May 2023 -- Jun. 2023 | Internship | Naman's work led to a paper, to be presented at CRYPTO'24. |
+[Naman Kumar](https://matcauthon49.github.io/) | May 2023 -- Jun. 2023 | Internship | Naman's work led to a paper, to be presented at CRYPTO'24. |
 Elahe Sadeghi | Jun. 2022 -- Jul. 2022 | Visiting PhD <br> student | Elahe's work led to a [paper](https://eprint.iacr.org/2023/571), presented at EUROCRYPT'23. |
 Milan Gonzalez-Thauvin | May 2021 -- Jul. 2021 | Internship | Constructions of Non-Interactive Zero-Knowledge Proofs: Efficiency and Generality |
 Maryam Zarezadeh | Nov. 2020 -- Apr. 2021 | Visiting PhD <br> student | Non-interactive inner products from LPN. Maryam's work led to a [paper](https://eprint.iacr.org/2023/072), presented at ASIACRYPT'22. |

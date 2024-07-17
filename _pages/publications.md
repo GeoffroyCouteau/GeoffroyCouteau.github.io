@@ -62,4 +62,4 @@ categories: TestCategories
 | CRYPTO 2015  | Implicit Zero-Knowledge Arguments and Applications to the Malicious Setting <br> *Fabrice Benhamouda, Geoffroy Couteau, David Pointcheval, and Hoeteck Wee* | [ePrint](https://eprint.iacr.org/2015/246.pdf), [Springer](https://link.springer.com/chapter/10.1007/978-3-662-48000-7_6) |
 | FPS 2015  | Secure Distributed Computation on Private Inputs <br> *Geoffroy Couteau, Thomas Peters, and David Pointcheval* | [ePrint](https://eprint.iacr.org/2015/1196.pdf), [Springer](https://link.springer.com/chapter/10.1007%2F978-3-319-30303-1_2) |
 
-You can find the manuscript of my PhD thesis [here](/assets/pdf/thesis.pdf).
+Here are links to my [PhD thesis](/assets/pdf/thesis.pdf) and my [HDR manuscript](https://geoffroycouteau.github.io/assets/pdf/hdr.pdf).

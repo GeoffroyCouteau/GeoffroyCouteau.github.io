@@ -8,8 +8,10 @@ tags: test
 categories: TestCategories
 ---
 
-| Conference | Article                                        | Links |
+| Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| JoC 2024  | An Eﬃcient ZK Compiler from SIMD Circuits to General Circuits<br> *Dung Bui, Haotian Chu, Geoffroy Couteau, Xiao Wang, Chenkai Weng, Kang Yang, and Yu Yu*<br>| [ePrint](https://eprint.iacr.org/2023/1610), Springer |
+| JoC 2024  | On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness<br> *Chris Brzuska and Geoffroy Couteau*<br> | [ePrint](https://eprint.iacr.org/2020/1326.pdf), Springer |
 | SCN 2024 | Instantiating the Hash-Then-Evaluate Paradigm: Strengthening PRFs, PCFs, and OPRFs <br> *Chris Brzuska, Geoffroy Couteau, Christoph Egger, and Pierre Meyer* | ePrint, Springer |
 | CRYPTO 2024 | Fine-Grained Non-Interactive Key Exchange, Revisited <br> *Balthazar Bauer, Geoffroy Couteau, and Elahe Sadeghi* | [ePrint](https://eprint.iacr.org/2024/834), Springer |
 | CRYPTO 2024 | 10-Party Sublinear Secure Computation from Standard Assumptions <br> *Geoffroy Couteau and Naman Kumar* | ePrint, Springer |

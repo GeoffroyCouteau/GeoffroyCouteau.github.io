@@ -21,7 +21,7 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 ### News
 
-**June 2024** The Algorithms & Complexity team at IRIF (CNRS, Université Paris-Cité) in Paris, France is inviting applications for several fully-funded postdoctoral positions (1-2 years) to work on cryptography. Areas of interest include, but are not limited to, zero-knowledge proofs, secure computation, post-quantum cryptography, foundations of cryptography, connections with complexity theory, confidential transactions, anonymous credentials. The candidate will work alongside Geoffroy Couteau and Michele Orrù.
+**June 2024:** The Algorithms & Complexity team at IRIF (CNRS, Université Paris-Cité) in Paris, France is inviting applications for several fully-funded postdoctoral positions (1-2 years) to work on cryptography. Areas of interest include, but are not limited to, zero-knowledge proofs, secure computation, post-quantum cryptography, foundations of cryptography, connections with complexity theory, confidential transactions, anonymous credentials. The candidate will work alongside Geoffroy Couteau and Michele Orrù.
 
 <div>
 <li><b>Required qualifications.</b> The ideal candidate for the postdoc position will hold a PhD (or be close to completion) in cryptography and be an expert in any of the areas of interest.</li>
@@ -34,7 +34,7 @@ My main research interests are secure multiparty computation and zero-knowledge 
 <a href="https://www.irif.fr/postes/postdoc" class="btn btn--success">How to apply</a>
 {: .text-center}
 
-**March 2024** I defended my *Habilitation à Diriger des Recherches* on March 20. An HDR is a French diploma needed to supervize PhD students (without it, a co-supervisor with HDR is required). It proceeds essentially like a second PhD defense. You can find my HDR manuscript [here](https://geoffroycouteau.github.io/assets/pdf/hdr.pdf); it provides an overview of secure computation in the correlated randomness model, and a step-by-step introduction to pseudorandom correlation generators, which might be useful for anyone wanting to get into this research area. More information about the defense [here](\hdr/).
+**March 2024:** I defended my *Habilitation à Diriger des Recherches* on March 20. An HDR is a French diploma needed to supervize PhD students (without it, a co-supervisor with HDR is required). It proceeds essentially like a second PhD defense. You can find my HDR manuscript [here](https://geoffroycouteau.github.io/assets/pdf/hdr.pdf); it provides an overview of secure computation in the correlated randomness model, and a step-by-step introduction to pseudorandom correlation generators, which might be useful for anyone wanting to get into this research area. More information about the defense [here](\hdr/).
 
 **September 2023:** I was [awarded an ERC Starting Grant](https://erc.europa.eu/sites/default/files/2023-09/erc_2023-stg-results_pe.pdf) for my project OBELiSC (Overcoming Barriers and Efficiency Limitations in Secure Computation). See [here](https://www.ins2i.cnrs.fr/fr/cnrsinfo/geoffroy-couteau-une-erc-pour-pousser-la-securite-des-donnees) and [here](https://www.irif.fr/portraits/erc_geoffroy_couteau) for interviews where I explain (in French) the goals of the project, and [here](https://u-paris.fr/cinq-nouveaux-erc-starting-grants-dans-les-laboratoires-duniversite-paris-cite/) for a short abstract (still in French).
 

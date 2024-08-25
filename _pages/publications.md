@@ -12,9 +12,9 @@ categories: TestCategories
 | -----|---------------------------------------- | -------------|
 | JoC 2024  | An Eﬃcient ZK Compiler from SIMD Circuits to General Circuits<br> *Dung Bui, Haotian Chu, Geoffroy Couteau, Xiao Wang, Chenkai Weng, Kang Yang, and Yu Yu*<br>| [ePrint](https://eprint.iacr.org/2023/1610), Springer |
 | JoC 2024  | On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness<br> *Chris Brzuska and Geoffroy Couteau*<br> | [ePrint](https://eprint.iacr.org/2020/1326.pdf), Springer |
-| SCN 2024 | Instantiating the Hash-Then-Evaluate Paradigm: Strengthening PRFs, PCFs, and OPRFs <br> *Chris Brzuska, Geoffroy Couteau, Christoph Egger, and Pierre Meyer* | ePrint, Springer |
-| CRYPTO 2024 | Fine-Grained Non-Interactive Key Exchange, Revisited <br> *Balthazar Bauer, Geoffroy Couteau, and Elahe Sadeghi* | [ePrint](https://eprint.iacr.org/2024/834), Springer |
-| CRYPTO 2024 | 10-Party Sublinear Secure Computation from Standard Assumptions <br> *Geoffroy Couteau and Naman Kumar* | ePrint, Springer |
+| SCN 2024 | Instantiating the Hash-Then-Evaluate Paradigm: Strengthening PRFs, PCFs, and OPRFs <br> *Chris Brzuska, Geoffroy Couteau, Christoph Egger, and Pierre Meyer* | [ePrint](https://eprint.iacr.org/2023/1145), Springer |
+| CRYPTO 2024 | Fine-Grained Non-Interactive Key Exchange, Revisited <br> *Balthazar Bauer, Geoffroy Couteau, and Elahe Sadeghi* | [ePrint](https://eprint.iacr.org/2024/834), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-68379-4_9) |
+| CRYPTO 2024 | 10-Party Sublinear Secure Computation from Standard Assumptions <br> *Geoffroy Couteau and Naman Kumar* | ePrint, [Springer](https://link.springer.com/chapter/10.1007/978-3-031-68400-5_2) |
 | EUROCRYPT 2024 | Fast Public-Key Silent OT and More from Constrained Naor-Reingold <br> *Dung Bui, Geoffroy Couteau, Pierre Meyer, Alain Passelègue, and Mahshid Riahinia* | [ePrint](https://eprint.iacr.org/2024/178), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-58751-1_4) |
 | CRYPTO 2023 | A Note on Non-Interactive Zero-Knowledge from CDH <br> *Geoffroy Couteau, Abhishek Jain, Zhengzhong Jin, and Willy Quach* | [ePrint](https://eprint.iacr.org/2023/970), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-38551-3_23) |
 | CRYPTO 2023 | Correlated Pseudorandomness from the Hardness of Quasi-Abelian Decoding <br> *Maxime Bombar, Geoffroy Couteau, Alain Couvreur, and Clément Ducros* | [ePrint](https://eprint.iacr.org/2023/845), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-38551-3_18) |

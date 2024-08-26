@@ -10,8 +10,7 @@ categories: TestCategories
 
 | Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
-| ASIACRYPT 2024 | FOLEAGE: F4-OLE-Based Multi-Party Computation for Boolean
-  Circuits<br> *Maxime Bombar, Dung Bui, Geoffroy Couteau, Alain Couvreur, Clément Ducros, and Sacha Servan-Schreiber* | [ePrint](https://eprint.iacr.org/2024/429), Springer |
+| ASIACRYPT 2024 | FOLEAGE: F4-OLE-Based Multi-Party Computation for Boolean Circuits<br> *Maxime Bombar, Dung Bui, Geoffroy Couteau, Alain Couvreur, Clément Ducros, and Sacha Servan-Schreiber* | [ePrint](https://eprint.iacr.org/2024/429), Springer |
 | ASIACRYPT 2024 | Lightweight Oblivious Transfer with a Public-Key Setup<br> *Geoffroy Couteau, Lalita Devadas, Srinivasan Devadas, Alexander Koch, and Sacha Servan-Schreiber* | [ePrint](https://eprint.iacr.org/2024/1079), Springer |
 | ASIACRYPT 2024 | Faster Signatures from MPC-in-the-Head<br> *Dung Bui, Eliana Carozza, Geoffroy Couteau, Dahmun Goudarzi, and Antoine Joux* | [ePrint](https://eprint.iacr.org/2024/252), Springer |
 | JoC 2024  | An Eﬃcient ZK Compiler from SIMD Circuits to General Circuits<br> *Dung Bui, Haotian Chu, Geoffroy Couteau, Xiao Wang, Chenkai Weng, Kang Yang, and Yu Yu*| [ePrint](https://eprint.iacr.org/2023/1610), Springer |

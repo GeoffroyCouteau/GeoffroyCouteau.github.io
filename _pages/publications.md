@@ -11,7 +11,7 @@ categories: TestCategories
 | Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
 | TCC 2024 | On Bounded Storage Key Agreement and One-Way Functions<br> *Chris Brzuska, Christoph Egger, Geoffroy Couteau, and Willy Quach* | ePrint, Springer |
-| TCC 2024 | Depth-Reduction Algorithms for Directed Acyclic Graphs and Applications to Secure Multiparty Computation<br> *Geoffroy Couteau and Pierre Meyer* | ePrint, Springer |
+| TCC 2024 | Depth-Reduction Algorithms for Directed Acyclic Graphs and Applications to Secure Multiparty Computation<br> *Pierre Charbit, Geoffroy Couteau, Pierre Meyer, and Reza Naserasr* | ePrint, Springer |
 | ASIACRYPT 2024 | FOLEAGE: F4-OLE-Based Multi-Party Computation for Boolean Circuits<br> *Maxime Bombar, Dung Bui, Geoffroy Couteau, Alain Couvreur, Clément Ducros, and Sacha Servan-Schreiber* | [ePrint](https://eprint.iacr.org/2024/429), Springer |
 | ASIACRYPT 2024 | Lightweight Oblivious Transfer with a Public-Key Setup<br> *Geoffroy Couteau, Lalita Devadas, Srinivasan Devadas, Alexander Koch, and Sacha Servan-Schreiber* | [ePrint](https://eprint.iacr.org/2024/1079), Springer |
 | ASIACRYPT 2024 | Faster Signatures from MPC-in-the-Head<br> *Dung Bui, Eliana Carozza, Geoffroy Couteau, Dahmun Goudarzi, and Antoine Joux* | [ePrint](https://eprint.iacr.org/2024/252), Springer |

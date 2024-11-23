@@ -82,10 +82,11 @@ Sven Maier | Nov. 2022 -- Mar. 2023 | |
 |---|---|---|---|
 | | Time period | Notes |
 |---|---|---|---|
+Elahe Sadeghi | Oct. 2024 -- | Decentralized Wallets from FastThreshold Signing (co-advised with [Sriram Vishwanath](http://sriram.utlinc.org/#/)) |
 [Dung Bui](https://dungbui15.github.io/) | Oct. 2021 -- | Secure Computation for Privacy-Preserving Analysis of Medical Data |
-[Clément Ducros](https://www.irif.fr/users/cducros/index) | Oct. 2021 -- | Linear Codes for Quantum-Resistant Secure Computation (co-advised with [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/)) |
-Eliana Carozza | Oct. 2021 -- | Quantumly hard algebraic problems and their advanced cryptographic applications (co-advised with [Antoine Joux](https://webusers.imj-prg.fr/~antoine.joux/)) |
-Ulysse Léchine |  Oct.2021 -- | Average-case hardness, entropy, and one-way functions (co-advised with [Thomas Seiller](https://www.seiller.org/)) |
+[Clément Ducros](https://www.irif.fr/users/cducros/index) | Oct. 2021 -- Nov. 2024 | Multiparty Computation from the Hardness of Coding Theory (co-advised with [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/)) |
+[Eliana Carozza](https://elianacarozza.github.io/) | Oct. 2021 -- | Quantumly hard algebraic problems and their advanced cryptographic applications (co-advised with [Antoine Joux](https://webusers.imj-prg.fr/~antoine.joux/)) |
+Ulysse Léchine |  Oct.2021 -- Dec. 2024 | Complexity theory: medley (co-advised with [Thomas Seiller](https://www.seiller.org/)) |
 [Pierre Meyer](https://cs.idc.ac.il/~pierre.meyer/) | Sep. 2020 -- Sep. 2023 | Secure computation with constrained communication (co-advised with [Elette Boyle](https://cs.idc.ac.il/~elette/)). Now postdoc at [Aarhus University](https://www.cs.au.dk/~orlandi/cryptogroup/), supervised by [Claudio Orlandi](https://users-cs.au.dk/orlandi/). You can check Pierre's PhD thesis [here](https://cs.idc.ac.il/~pierre.meyer/Documents/PhD-Pierre-Meyer.pdf).|
 
 #### Master students

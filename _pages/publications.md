@@ -10,13 +10,13 @@ categories: TestCategories
 
 | Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| JoC 2025  | An Eﬃcient ZK Compiler from SIMD Circuits to General Circuits<br> *Dung Bui, Haotian Chu, Geoffroy Couteau, Xiao Wang, Chenkai Weng, Kang Yang, and Yu Yu*| [ePrint](https://eprint.iacr.org/2023/1610), Springer |
+| JoC 2025  | On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness<br> *Chris Brzuska and Geoffroy Couteau* | [ePrint](https://eprint.iacr.org/2020/1326), Springer |
 | TCC 2024 | On Bounded Storage Key Agreement and One-Way Functions<br> *Chris Brzuska, Christoph Egger, Geoffroy Couteau, and Willy Quach* | ePrint, Springer |
 | TCC 2024 | A Note on Low-Communication Secure Multiparty Computation via Circuit Depth-Reduction<br> *Pierre Charbit, Geoffroy Couteau, Pierre Meyer, and Reza Naserasr* | [ePrint](https://eprint.iacr.org/2024/1473), Springer |
 | ASIACRYPT 2024 | FOLEAGE: F4-OLE-Based Multi-Party Computation for Boolean Circuits<br> *Maxime Bombar, Dung Bui, Geoffroy Couteau, Alain Couvreur, Clément Ducros, and Sacha Servan-Schreiber* | [ePrint](https://eprint.iacr.org/2024/429), Springer |
 | ASIACRYPT 2024 | Lightweight Oblivious Transfer with a Public-Key Setup<br> *Geoffroy Couteau, Lalita Devadas, Srinivasan Devadas, Alexander Koch, and Sacha Servan-Schreiber* | [ePrint](https://eprint.iacr.org/2024/1079), Springer |
 | ASIACRYPT 2024 | Faster Signatures from MPC-in-the-Head<br> *Dung Bui, Eliana Carozza, Geoffroy Couteau, Dahmun Goudarzi, and Antoine Joux* | [ePrint](https://eprint.iacr.org/2024/252), Springer |
-| JoC 2024  | An Eﬃcient ZK Compiler from SIMD Circuits to General Circuits<br> *Dung Bui, Haotian Chu, Geoffroy Couteau, Xiao Wang, Chenkai Weng, Kang Yang, and Yu Yu*| [ePrint](https://eprint.iacr.org/2023/1610), Springer |
-| JoC 2024  | On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness<br> *Chris Brzuska and Geoffroy Couteau* | [ePrint](https://eprint.iacr.org/2020/1326), Springer |
 | SCN 2024 | Instantiating the Hash-Then-Evaluate Paradigm: Strengthening PRFs, PCFs, and OPRFs <br> *Chris Brzuska, Geoffroy Couteau, Christoph Egger, and Pierre Meyer* | [ePrint](https://eprint.iacr.org/2023/1145), Springer |
 | CRYPTO 2024 | Fine-Grained Non-Interactive Key Exchange, Revisited <br> *Balthazar Bauer, Geoffroy Couteau, and Elahe Sadeghi* | [ePrint](https://eprint.iacr.org/2024/834), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-68379-4_9) |
 | CRYPTO 2024 | 10-Party Sublinear Secure Computation from Standard Assumptions <br> *Geoffroy Couteau and Naman Kumar* | ePrint, [Springer](https://link.springer.com/chapter/10.1007/978-3-031-68400-5_2) |

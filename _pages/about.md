@@ -71,11 +71,14 @@ I have the pleasure to advise several amazing PhD students, and I will not be ac
 |---|---|---|---|
 |  | Time period | Notes |
 |---|---|---|---|
+Ulysse Léchine | Jan. 2025 -- current | |
+[Lennart Braun]() | Jan. 2025 -- current | |
+[Ioanna Karantaidou](https://sites.google.com/view/ioannakarantaidou) | Jan. 2025 -- current | Co-hosted with [Michele Orrù](https://tumbolandia.net/) |
 [Sihang Pu](https://sihangpu.uk/) | Apr. 2024 -- current | |
-[Christop Egger](https://christoph-egger.org/) | Oct. 2022 -- current | |
+[Christop Egger](https://christoph-egger.org/) | Oct. 2022 -- Oct. 2024 | Now Assistant Professor at Chalmers University of Technology|
 [Alexander Koch](https://alex-koch.gitlab.io/) | Oct. 2022 -- current | |
-Balthazar Bauer | Oct. 2022 -- Sep. 2023 | Now holding the Chaire de Professeur Junior at UVSQ. |
-Sven Maier | Nov. 2022 -- Mar. 2023 | |
+Balthazar Bauer | Oct. 2022 -- Sep. 2023 | Now holding the Chaire de Professeur Junior at UVSQ |
+Sven Maier | Nov. 2022 -- Mar. 2023 | Currently Research Engineer at Wibu Systems |
 
 #### PhD students
 

@@ -10,7 +10,7 @@ categories: TestCategories
 
 | Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
-| EUROCRYPT 2025  | Multi-key Homomorphic Secret Sharing <br> *Geoffroy Couteau,Lalita Devadas,Aditya Hegde,Abhishek Jain, and Sacha Servan-Schreiber*| [ePrint](https://eprint.iacr.org/2025/094), Springer|
+| EUROCRYPT 2025  | Multi-key Homomorphic Secret Sharing <br> *Geoffroy Couteau, Lalita Devadas, Aditya Hegde, Abhishek Jain, and Sacha Servan-Schreiber*| [ePrint](https://eprint.iacr.org/2025/094), Springer|
 | EUROCRYPT 2025  | Breaking the 1/λ-Rate Barrier for Arithmetic Garbling <br> *Geoffroy Couteau, Carmit Hazay, Aditya Hegde, and Naman Kumar*| ePrint, Springer|
 | EUROCRYPT 2025  | Enhanced Trapdoor Hashing from DDH and DCR <br> *Geoffroy Couteau, Aditya Hegde, and Sihang Pu*| ePrint, Springer|
 | JoC 2025  | An Eﬃcient ZK Compiler from SIMD Circuits to General Circuits<br> *Dung Bui, Haotian Chu, Geoffroy Couteau, Xiao Wang, Chenkai Weng, Kang Yang, and Yu Yu*| [ePrint](https://eprint.iacr.org/2023/1610), [Springer](https://link.springer.com/article/10.1007/s00145-024-09531-4) |

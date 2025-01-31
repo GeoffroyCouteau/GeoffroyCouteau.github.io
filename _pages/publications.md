@@ -10,6 +10,9 @@ categories: TestCategories
 
 | Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| EUROCRYPT 2025  | Multi-key Homomorphic Secret Sharing <br> *Geoffroy Couteau,Lalita Devadas,Aditya Hegde,Abhishek Jain, and Sacha Servan-Schreiber*| [ePrint](https://eprint.iacr.org/2025/094), Springer|
+| EUROCRYPT 2025  | Breaking the 1/λ-Rate Barrier for Arithmetic Garbling <br> *Geoffroy Couteau, Carmit Hazay, Aditya Hegde, and Naman Kumar*| ePrint, Springer|
+| EUROCRYPT 2025  | Enhanced Trapdoor Hashing from DDH and DCR <br> *Geoffroy Couteau, Aditya Hegde, and Sihang Pu*| ePrint, Springer|
 | JoC 2025  | An Eﬃcient ZK Compiler from SIMD Circuits to General Circuits<br> *Dung Bui, Haotian Chu, Geoffroy Couteau, Xiao Wang, Chenkai Weng, Kang Yang, and Yu Yu*| [ePrint](https://eprint.iacr.org/2023/1610), [Springer](https://link.springer.com/article/10.1007/s00145-024-09531-4) |
 | JoC 2025  | On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness<br> *Chris Brzuska and Geoffroy Couteau* | [ePrint](https://eprint.iacr.org/2020/1326), [Springer](https://link.springer.com/article/10.1007/s00145-024-09518-1) |
 | TCC 2024 | On Bounded Storage Key Agreement and One-Way Functions<br> *Chris Brzuska, Christoph Egger, Geoffroy Couteau, and Willy Quach* | ePrint, [Springer](https://link.springer.com/chapter/10.1007/978-3-031-78011-0_10) |

@@ -85,7 +85,7 @@ Sven Maier | Nov. 2022 -- Mar. 2023 | Currently Research Engineer at Wibu System
 |---|---|---|---|
 | | Time period | Notes |
 |---|---|---|---|
-Elahe Sadeghi | Oct. 2024 -- | Decentralized Wallets from FastThreshold Signing (co-advised with [Sriram Vishwanath](http://sriram.utlinc.org/#/)) |
+Elahe Sadeghi | Oct. 2024 -- | Decentralized Wallets from Fast Threshold Signing (co-advised with [Sriram Vishwanath](http://sriram.utlinc.org/#/)) |
 [Dung Bui](https://dungbui15.github.io/) | Oct. 2021 -- | Secure Computation for Privacy-Preserving Analysis of Medical Data |
 [Clément Ducros](https://www.irif.fr/users/cducros/index) | Oct. 2021 -- Nov. 2024 | Multiparty Computation from the Hardness of Coding Theory (co-advised with [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/)) |
 [Eliana Carozza](https://elianacarozza.github.io/) | Oct. 2021 -- | Quantumly hard algebraic problems and their advanced cryptographic applications (co-advised with [Antoine Joux](https://webusers.imj-prg.fr/~antoine.joux/)) |

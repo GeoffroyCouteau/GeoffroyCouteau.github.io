@@ -10,6 +10,7 @@ categories: TestCategories
 
 | Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| CRYPTO 2025  | 𝜔(1/𝜆)-Rate Boolean Garbling Scheme from Generic Groups <br> *Geoffroy Couteau, Carmit Hazay, Aditya Hegde, and Naman Kumar*| [ePrint](https://eprint.iacr.org/2025/268), Springer|
 | EUROCRYPT 2025  | Multi-key Homomorphic Secret Sharing <br> *Geoffroy Couteau, Lalita Devadas, Aditya Hegde, Abhishek Jain, and Sacha Servan-Schreiber*| [ePrint](https://eprint.iacr.org/2025/094), Springer|
 | EUROCRYPT 2025  | Breaking the 1/λ-Rate Barrier for Arithmetic Garbling <br> *Geoffroy Couteau, Carmit Hazay, Aditya Hegde, and Naman Kumar*| ePrint, Springer|
 | EUROCRYPT 2025  | Enhanced Trapdoor Hashing from DDH and DCR <br> *Geoffroy Couteau, Aditya Hegde, and Sihang Pu*| ePrint, Springer|

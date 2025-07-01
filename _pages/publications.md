@@ -10,6 +10,7 @@ categories: TestCategories
 
 | Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| RANDOM 2025 | Structured-Seed Local Pseudorandom Generators and their Applications <br> *Benny Applebaum, Dung Bui, Geoffroy Couteau and Nikolas Melissaris* | ePrint, LIPIcs | 
 | SAC 2025 | Downlink (T)FHE ciphertexts compression <br> *Antonina Bondarchuk, Olive Chakraborty, Geoffroy Couteau, and Renaud Sirdey* | [ePrint](https://eprint.iacr.org/2024/1921), Springer | 
 | CRYPTO 2025  | 𝜔(1/𝜆)-Rate Boolean Garbling Scheme from Generic Groups <br> *Geoffroy Couteau, Carmit Hazay, Aditya Hegde, and Naman Kumar*| [ePrint](https://eprint.iacr.org/2025/268), [Springer](https://eprint.iacr.org/2025/268)|
 | EUROCRYPT 2025  | Multi-key Homomorphic Secret Sharing <br> *Geoffroy Couteau, Lalita Devadas, Aditya Hegde, Abhishek Jain, and Sacha Servan-Schreiber*| [ePrint](https://eprint.iacr.org/2025/094), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-91092-0_1)|

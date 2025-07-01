@@ -64,19 +64,21 @@ This website contains a few posts which might be useful to students in cryptogra
 
 <!--Currently, I am specifically looking for a master student to work on a project related to secure computation and coding theory during the period March 2021 -- September 2021 (other periods can be envisioned depending on the student constraints). There is a possibility of continuing this internship as a PhD. You might want to check the [internship proposal](/assets/pdf/internship_codes.pdf).-->
 
-I have the pleasure to advise several amazing PhD students, and I will not be accepting any new PhD requests in the next year or so. However, I have openings for postdocs. Topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including black-box separations and connections to learning theory).
+I currently have a very limited bandwidth for hiring new postdocs or PhD students. However, I can always be convinced about making room for one more if I see exciting prospects for strong collaborations. Topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including fine-grained cryptography, black-box separations, and connections to learning theory).
 
 #### Postdocs
 
 |---|---|---|---|
 |  | Time period | Notes |
 |---|---|---|---|
+[Kaartik Bhushan](https://homepages.iitb.ac.in/~kbhushan/) | Jun. 2025 -- current | |
+[Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Mar. 2025 -- current | |
 Ulysse Léchine | Jan. 2025 -- current | |
-[Lennart Braun]() | Jan. 2025 -- current | |
+Lennart Braun | Jan. 2025 -- current | |
 [Ioanna Karantaidou](https://sites.google.com/view/ioannakarantaidou) | Jan. 2025 -- current | Co-hosted with [Michele Orrù](https://tumbolandia.net/) |
 [Sihang Pu](https://sihangpu.uk/) | Apr. 2024 -- current | |
 [Christop Egger](https://christoph-egger.org/) | Oct. 2022 -- Oct. 2024 | Now Assistant Professor at Chalmers University of Technology|
-[Alexander Koch](https://alex-koch.gitlab.io/) | Oct. 2022 -- current | |
+[Alexander Koch](https://alex-koch.gitlab.io/) | Oct. 2022 -- Feb. 2025 | |
 Balthazar Bauer | Oct. 2022 -- Sep. 2023 | Now holding the Chaire de Professeur Junior at UVSQ |
 Sven Maier | Nov. 2022 -- Mar. 2023 | Currently Research Engineer at Wibu Systems |
 
@@ -97,23 +99,28 @@ Ulysse Léchine |  Oct.2021 -- Dec. 2024 | Complexity theory: medley (co-advised
 |---|---|---|---|
 | | Time period | Notes |
 |---|---|---|---|
-Alexandros Themelis | Apr. 2024 -- Sep. 2024 | Advanced Post-Quantum Signatures |
+Alexandros Themelis | Apr. 2024 -- Sep. 2024 | Advanced Post-Quantum Signatures. Co-supervised witn [Sihang Pu](https://sihangpu.uk/). |
 [Dung Bui](https://dungbui15.github.io/) | Mar. 2021 -- Aug. 2021 | Batch equality tests and secure comparison from pseudorandom correlation generators. Dung's work led to a [paper](https://eprint.iacr.org/2022/334), presented at PKC'23. |
 [Clément Ducros](https://www.irif.fr/users/cducros/index) | Mar. 2021 -- Aug. 2021 | Secure computation meets linear-time encodable codes. Clément's work led to a [paper](https://eprint.iacr.org/2023/650), presented at PKC'23.|
 [Michael Reichle](https://www.di.ens.fr/michael.reichle/) | Feb. 2020 -- Aug. 2020 | Efficient range proofs with transparent setup from bounded integer commitments. Michael's work led to a [paper](https://eprint.iacr.org/2021/540.pdf), presented at EUROCRYPT'21. Now postdoc at ETH Zurich under the supervision of [Dennis Hofheinz](https://people.inf.ethz.ch/dhofheinz/). |
 Dominik Hartmann | Feb. 2019 -- Aug. 2019 | Compilers for non-interactive zero-knowledge proofs. Dominik's work led to a [paper](https://eprint.iacr.org/2020/286.pdf), presented at CRYPTO'20. Now PhD student at Ruhr Universität Bochum.|
 
-#### Other: visitors, interns, bachelor students
+#### Other: long-term visitors, interns, bachelor students
 
 |---|---|---|---|
 | | Time period | Status | Notes |
 |---|---|---|---|
-[Naman Kumar](https://matcauthon49.github.io/) | June 2024 -- Sep. 2024 | Internship |  |
-[Aditya Hegde](https://adishegde.github.io/) | June 2024 -- July. 2024 | Internship |  |
-[Willy Quach](https://wquach.github.io/) | Feb. 2024 -- May 2024 | Visiting postdoctoral researcher | |
+[Amit Agarwal](https://amitagarwal.gitbook.io/profile) | Apr. 2025 -- May 2025 | Visiting PhD <br> student | |
+Xiaxi Ye | Apr. 2025 -- Aug. 2025 | Visiting PhD <br> student | |
+[Kaartik Bhushan](https://homepages.iitb.ac.in/~kbhushan/) | Nov. 2024 -- Feb. 2024 | Visiting PhD <br> student | Now postdoctoral researcher at IRIF. |
+[Francesco Migliaro](https://pur2all.github.io/) | Nov. 2024 -- Apr. 2025 | Visting PhD <br> student | |
+[Mahshid Riahinia](https://mriahinia.github.io/) | Sep. 2024 -- Sep. 2025 | Visiting postdoctoral researcher | |
+[Naman Kumar](https://matcauthon49.github.io/) | June 2024 -- Sep. 2024 | Internship | Naman's visit led to a [paper](https://eprint.iacr.org/2025/1053) presented at EUROCRYPT'25 |
+[Aditya Hegde](https://adishegde.github.io/) | June 2024 -- July. 2024 | Internship | Aditya's visit led [to](https://link.springer.com/chapter/10.1007/978-3-031-91095-1_5) [three](https://eprint.iacr.org/2025/1053) [papers](https://eprint.iacr.org/2025/094) presented at EUROCRYPT'25. |
+[Willy Quach](https://wquach.github.io/) | Feb. 2024 -- May 2024 | Visiting postdoctoral researcher | Willy's visit led to a [paper](https://link.springer.com/chapter/10.1007/978-3-031-78011-0_10) presented at TCC'24. |
 [Kelsey Melissaris](https://www.kelseymelissaris.com/) | Feb. 2024 -- Jun. 2024 | Visiting postdoctoral researcher | |
-[Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Feb. 2024 -- Jun. 2024 | Visiting PhD <br> student | |
-[Sacha Servan-Schreiber](https://sachaservanschreiber.com/) | Sep. 2023 -- March 2024 | Visiting PhD <br> student | |
+[Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Feb. 2024 -- Jun. 2024 | Visiting PhD <br> student | Nikolas' visit led to a paper, to be presented at RANDOM'25. Now postdoctoral researcher at IRIF. |
+[Sacha Servan-Schreiber](https://sachaservanschreiber.com/) | Sep. 2023 -- March 2024 | Visiting PhD <br> student | Sacha's visit led to [two](https://eprint.iacr.org/2024/1079) [papers](https://eprint.iacr.org/2024/429), presented at ASIACRYPT'24. |
 [Naman Kumar](https://matcauthon49.github.io/) | May 2023 -- Jun. 2023 | Internship | Naman's work led to a paper, to be presented at CRYPTO'24. |
 Elahe Sadeghi | Jun. 2022 -- Jul. 2022 | Visiting PhD <br> student | Elahe's work led to a [paper](https://eprint.iacr.org/2023/571), presented at EUROCRYPT'23. |
 Milan Gonzalez-Thauvin | May 2021 -- Jul. 2021 | Internship | Constructions of Non-Interactive Zero-Knowledge Proofs: Efficiency and Generality |

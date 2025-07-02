@@ -98,7 +98,7 @@ Sven Maier | Nov. 2022 -- Mar. 2023 | Currently Research Engineer at Wibu System
 | | Time period | Notes |
 |---|---|---|---|
 Elahe Sadeghi | Oct. 2024 -- | Decentralized Wallets from Fast Threshold Signing (co-advised with [Sriram Vishwanath](http://sriram.utlinc.org/#/)) |
-[Dung Bui](https://dungbui15.github.io/) | Oct. 2021 -- Mar. 2025 | Efficient Secure Computation from Correlated Pseudorandomness. Now postdoc at QI team, LIP6, Sorbonne Université. You can check Dung's PhD thesis [here](https://dungbui15.github.io/files/thesis.pdf)|
+[Dung Bui](https://dungbui15.github.io/) | Oct. 2021 -- Mar. 2025 | Efficient Secure Computation from Correlated Pseudorandomness. Now postdoc at QI team, LIP6, Sorbonne Université. You can check Dung's PhD thesis [here](https://dungbui15.github.io/files/thesis.pdf).|
 [Clément Ducros](https://www.irif.fr/users/cducros/index) | Oct. 2021 -- Nov. 2024 | Multiparty Computation from the Hardness of Coding Theory (co-advised with [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/)). You can check Clément's PhD thesis [here](https://theses.hal.science/tel-04889558/). |
 [Eliana Carozza](https://elianacarozza.github.io/) | Oct. 2021 -- Mar. 2025 | Code-Based Post-Quantum Signature Schemes: from MPC-in-the-Head to Threshold Signatures (co-advised with [Antoine Joux](https://webusers.imj-prg.fr/~antoine.joux/)). Now educational designer and researcher at UVSQ. You can check Eliana's thesis [here](https://theses.fr/s304595). |
 Ulysse Léchine |  Oct.2021 -- Dec. 2024 | Complexity theory: medley (co-advised with [Thomas Seiller](https://www.seiller.org/)). Now postdoc at IRIF. You can check Ulysse's PhD thesis [here](https://theses.fr/2024PA131054). |
@@ -126,7 +126,7 @@ Xiaxi Ye | Apr. 2025 -- Aug. 2025 | Visiting PhD <br> student | |
 [Francesco Migliaro](https://pur2all.github.io/) | Nov. 2024 -- Apr. 2025 | Visting PhD <br> student | |
 [Mahshid Riahinia](https://mriahinia.github.io/) | Sep. 2024 -- Sep. 2025 | Visiting postdoctoral researcher | |
 [Naman Kumar](https://matcauthon49.github.io/) | June 2024 -- Sep. 2024 | Internship | Naman's visit led to a [paper](https://eprint.iacr.org/2025/1053) presented at EUROCRYPT'25 |
-[Aditya Hegde](https://adishegde.github.io/) | June 2024 -- July. 2024 | Internship | Aditya's visit led [to](https://link.springer.com/chapter/10.1007/978-3-031-91095-1_5) [three](https://eprint.iacr.org/2025/1053) [papers](https://eprint.iacr.org/2025/094) presented at EUROCRYPT'25. |
+[Aditya Hegde](https://adishegde.github.io/) | June 2024 -- July 2024 | Internship | Aditya's visit led [to](https://link.springer.com/chapter/10.1007/978-3-031-91095-1_5) [three](https://eprint.iacr.org/2025/1053) [papers](https://eprint.iacr.org/2025/094) presented at EUROCRYPT'25. |
 [Willy Quach](https://wquach.github.io/) | Feb. 2024 -- May 2024 | Visiting postdoctoral researcher | Willy's visit led to a [paper](https://link.springer.com/chapter/10.1007/978-3-031-78011-0_10) presented at TCC'24. |
 [Kelsey Melissaris](https://www.kelseymelissaris.com/) | Feb. 2024 -- Jun. 2024 | Visiting postdoctoral researcher | |
 [Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Feb. 2024 -- Jun. 2024 | Visiting PhD <br> student | Nikolas' visit led to a paper, to be presented at RANDOM'25. Now postdoctoral researcher at IRIF. |

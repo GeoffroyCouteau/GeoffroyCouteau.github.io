@@ -150,6 +150,7 @@ The list of conferences, workshops, and journals where I served as a member of t
 |---|---|
 | Year  | Venues |
 |---|---|
+| 2025 | EUROCRYPT <br> (area chair: advanced cryptographic primitives) |
 | 2024 | Communications in Cryptology, TCC |
 | 2023 | CSF, CRYPTO |
 | 2022 | PKC, CSF, SCN, TCC |

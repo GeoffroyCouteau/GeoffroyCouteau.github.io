@@ -21,30 +21,40 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 ### News
 
-**June 2024:** The Algorithms & Complexity team at IRIF (CNRS, Université Paris-Cité) in Paris, France is inviting applications for several fully-funded postdoctoral positions (1-2 years) to work on cryptography. Areas of interest include, but are not limited to, zero-knowledge proofs, secure computation, post-quantum cryptography, foundations of cryptography, connections with complexity theory, confidential transactions, anonymous credentials. The candidate will work alongside Geoffroy Couteau and Michele Orrù.
+<details>
+  <summary><strong>Archived</strong></summary>
 
-<div>
-<li><b>Required qualifications.</b> The ideal candidate for the postdoc position will hold a PhD (or be close to completion) in cryptography and be an expert in any of the areas of interest.</li>
-<li><b>Salary.</b> €3080 to €4291 gross monthly salary depending on the past experience of the candidate.</li>
-<li><b>Dates.</b> The starting date is flexible from October 2024.</li>
-<li><b>Working at IRIF, Paris:</b> IRIF (the computer science department of Université Paris Cité) is a French institute focused on foundational computer science. It provides a stimulating environment with researchers from many areas of theoretical computer science. CNRS is the largest European research institution.</li>
+<br>
+  <p><strong>June 2024:</strong> The Algorithms &amp; Complexity team at IRIF (CNRS, Université Paris-Cité) in Paris, France is inviting applications for several fully-funded postdoctoral positions (1–2 years) to work on cryptography. Areas of interest include, but are not limited to, zero-knowledge proofs, secure computation, post-quantum cryptography, foundations of cryptography, connections with complexity theory, confidential transactions, anonymous credentials. The candidate will work alongside Geoffroy Couteau and Michele Orrù.</p>
+
+ <div class="notice--info">
+  <div>
+    <ul>
+      <li><strong>Required qualifications.</strong> The ideal candidate for the postdoc position will hold a PhD (or be close to completion) in cryptography and be an expert in any of the areas of interest.</li>
+      <li><strong>Salary.</strong> €3080 to €4291 gross monthly salary depending on the past experience of the candidate.</li>
+      <li><strong>Dates.</strong> The starting date is flexible from October 2024.</li>
+      <li><strong>Working at IRIF, Paris:</strong> IRIF (the computer science department of Université Paris Cité) is a French institute focused on foundational computer science. It provides a stimulating environment with researchers from many areas of theoretical computer science. CNRS is the largest European research institution.</li>
+    </ul>
+  </div>
 </div>
-{: .notice--info}
 
-<a href="https://www.irif.fr/postes/postdoc" class="btn btn--success">How to apply</a>
-{: .text-center}
+  <div class="text-center">
+    <a href="https://www.irif.fr/postes/postdoc" class="btn btn--success">How to apply</a>
+  </div>
 
-*Update (August 2024):* this opening is now closed! You can still check the link above to be informed about other positions at IRIF in the Algorithm and Complexity group, now or in the future (the page is updated regularly).
+  <p><em>Update (August 2024):</em> this opening is now closed! You can still check the link above to be informed about other positions at IRIF in the Algorithm and Complexity group, now or in the future (the page is updated regularly).</p>
 
-**March 2024:** I defended my *Habilitation à Diriger des Recherches* on March 20. An HDR is a French diploma needed to supervize PhD students (without it, a co-supervisor with HDR is required). It proceeds essentially like a second PhD defense. You can find my HDR manuscript [here](https://geoffroycouteau.github.io/assets/pdf/hdr.pdf); it provides an overview of secure computation in the correlated randomness model, and a step-by-step introduction to pseudorandom correlation generators, which might be useful for anyone wanting to get into this research area. More information about the defense [here](\hdr/).
+  <p><strong>March 2024:</strong> I defended my <em>Habilitation à Diriger des Recherches</em> on March 20. An HDR is a French diploma needed to supervize PhD students (without it, a co-supervisor with HDR is required). It proceeds essentially like a second PhD defense. You can find my HDR manuscript <a href="https://geoffroycouteau.github.io/assets/pdf/hdr.pdf">here</a>; it provides an overview of secure computation in the correlated randomness model, and a step-by-step introduction to pseudorandom correlation generators, which might be useful for anyone wanting to get into this research area. More information about the defense <a href="\hdr/">here</a>.</p>
 
-**September 2023:** I was [awarded an ERC Starting Grant](https://erc.europa.eu/sites/default/files/2023-09/erc_2023-stg-results_pe.pdf) for my project OBELiSC (Overcoming Barriers and Efficiency Limitations in Secure Computation). See [here](https://www.ins2i.cnrs.fr/fr/cnrsinfo/geoffroy-couteau-une-erc-pour-pousser-la-securite-des-donnees) and [here](https://www.irif.fr/portraits/erc_geoffroy_couteau) for interviews where I explain (in French) the goals of the project, and [here](https://u-paris.fr/cinq-nouveaux-erc-starting-grants-dans-les-laboratoires-duniversite-paris-cite/) for a short abstract (still in French).
+  <p><strong>September 2023:</strong> I was <a href="https://erc.europa.eu/sites/default/files/2023-09/erc_2023-stg-results_pe.pdf">awarded an ERC Starting Grant</a> for my project OBELiSC (Overcoming Barriers and Efficiency Limitations in Secure Computation). See <a href="https://www.ins2i.cnrs.fr/fr/cnrsinfo/geoffroy-couteau-une-erc-pour-pousser-la-securite-des-donnees">here</a> and <a href="https://www.irif.fr/portraits/erc_geoffroy_couteau">here</a> for interviews where I explain (in French) the goals of the project, and <a href="https://u-paris.fr/cinq-nouveaux-erc-starting-grants-dans-les-laboratoires-duniversite-paris-cite/">here</a> for a short abstract (still in French).</p>
 
-**June 2023:** I was invited to deliver a Spotlight Talk to the 2023 [Conference on Information-Theoretic Cryptography (ITC)](https://itcrypto.github.io/2023/index.html). My talk, titled *On Correlated Pseudorandomness*, covered pseudorandom correlation generators, their impact on secure computation, and some of the latest advances in the area. You can check the slides [here](/assets/slides/itc_2023.pdf).
+  <p><strong>June 2023:</strong> I was invited to deliver a Spotlight Talk to the 2023 <a href="https://itcrypto.github.io/2023/index.html">Conference on Information-Theoretic Cryptography (ITC)</a>. My talk, titled <em>On Correlated Pseudorandomness</em>, covered pseudorandom correlation generators, their impact on secure computation, and some of the latest advances in the area. You can check the slides <a href="/assets/slides/itc_2023.pdf">here</a>.</p>
 
-**April 2022:** Our Eurocrypt'22 paper, [On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness](https://eprint.iacr.org/2020/1326.pdf), has been invited to the Journal of Cryptology. In this work, we prove weak feasibility results and strong barriers for basing extremely limited forms of cryptography on powerful average-case hardness assumptions. Working on this paper has been a long, but thrilling journey with my amazing coauthor, Chris Brzuska.
+  <p><strong>April 2022:</strong> Our Eurocrypt'22 paper, <a href="https://eprint.iacr.org/2020/1326.pdf">On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness</a>, has been invited to the Journal of Cryptology. In this work, we prove weak feasibility results and strong barriers for basing extremely limited forms of cryptography on powerful average-case hardness assumptions. Working on this paper has been a long, but thrilling journey with my amazing coauthor, Chris Brzuska.</p>
 
-**January 2022:** We just completed a [book chapter](/assets/pdf/HSS_FSS.pdf) for an upcoming book with [Elette Boyle](https://cs.idc.ac.il/~elette/), [Niv Gilboa](https://www.bgu.ac.il/~gilboan/), and [Yuval Ishai](https://www.cs.technion.ac.il/~yuvali/). It is an up-to-date overview of homomorphic secret sharing, function secret sharing, and some of their many applications (including pseudorandom correlation generators). Check it out!
+  <p><strong>January 2022:</strong> We just completed a <a href="/assets/pdf/HSS_FSS.pdf">book chapter</a> for an upcoming book with <a href="https://cs.idc.ac.il/~elette/">Elette Boyle</a>, <a href="https://www.bgu.ac.il/~gilboan/">Niv Gilboa</a>, and <a href="https://www.cs.technion.ac.il/~yuvali/">Yuval Ishai</a>. It is an up-to-date overview of homomorphic secret sharing, function secret sharing, and some of their many applications (including pseudorandom correlation generators). Check it out!</p>
+
+</details>
 
 ---
 
@@ -64,7 +74,7 @@ This website contains a few posts which might be useful to students in cryptogra
 
 <!--Currently, I am specifically looking for a master student to work on a project related to secure computation and coding theory during the period March 2021 -- September 2021 (other periods can be envisioned depending on the student constraints). There is a possibility of continuing this internship as a PhD. You might want to check the [internship proposal](/assets/pdf/internship_codes.pdf).-->
 
-I currently have a very limited bandwidth for hiring new postdocs or PhD students. However, I can always be convinced about making room for one more if I see exciting prospects for strong collaborations. Topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including fine-grained cryptography, black-box separations, and connections to learning theory).
+I currently have very limited bandwidth to take on new postdocs or PhD students. However, I can always be persuaded to make room for one more if I see strong potential for exciting collaborations. Topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including fine-grained cryptography, black-box separations, and connections to learning theory).
 
 #### Postdocs
 

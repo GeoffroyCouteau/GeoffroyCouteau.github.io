@@ -98,11 +98,11 @@ Sven Maier | Nov. 2022 -- Mar. 2023 | Currently Research Engineer at Wibu System
 | | Time period | Notes |
 |---|---|---|---|
 Elahe Sadeghi | Oct. 2024 -- | Decentralized Wallets from Fast Threshold Signing (co-advised with [Sriram Vishwanath](http://sriram.utlinc.org/#/)) |
-[Dung Bui](https://dungbui15.github.io/) | Oct. 2021 -- | Secure Computation for Privacy-Preserving Analysis of Medical Data |
-[Clément Ducros](https://www.irif.fr/users/cducros/index) | Oct. 2021 -- Nov. 2024 | Multiparty Computation from the Hardness of Coding Theory (co-advised with [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/)) |
-[Eliana Carozza](https://elianacarozza.github.io/) | Oct. 2021 -- | Quantumly hard algebraic problems and their advanced cryptographic applications (co-advised with [Antoine Joux](https://webusers.imj-prg.fr/~antoine.joux/)) |
-Ulysse Léchine |  Oct.2021 -- Dec. 2024 | Complexity theory: medley (co-advised with [Thomas Seiller](https://www.seiller.org/)) |
-[Pierre Meyer](https://cs.idc.ac.il/~pierre.meyer/) | Sep. 2020 -- Sep. 2023 | Secure computation with constrained communication (co-advised with [Elette Boyle](https://cs.idc.ac.il/~elette/)). Now postdoc at [Aarhus University](https://www.cs.au.dk/~orlandi/cryptogroup/), supervised by [Claudio Orlandi](https://users-cs.au.dk/orlandi/). You can check Pierre's PhD thesis [here](https://cs.idc.ac.il/~pierre.meyer/Documents/PhD-Pierre-Meyer.pdf).|
+[Dung Bui](https://dungbui15.github.io/) | Oct. 2021 -- Mar. 2025 | Efficient Secure Computation from Correlated Pseudorandomness. Now postdoc at QI team, LIP6, Sorbonne Université. You can check Dung's PhD thesis [here](https://dungbui15.github.io/files/thesis.pdf)|
+[Clément Ducros](https://www.irif.fr/users/cducros/index) | Oct. 2021 -- Nov. 2024 | Multiparty Computation from the Hardness of Coding Theory (co-advised with [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/)). You can check Clément's PhD thesis [here](https://theses.hal.science/tel-04889558/). |
+[Eliana Carozza](https://elianacarozza.github.io/) | Oct. 2021 -- Mar. 2025 | Code-Based Post-Quantum Signature Schemes: from MPC-in-the-Head to Threshold Signatures (co-advised with [Antoine Joux](https://webusers.imj-prg.fr/~antoine.joux/)). Now educational designer and researcher at UVSQ. You can check Eliana's thesis [here](https://theses.fr/s304595). |
+Ulysse Léchine |  Oct.2021 -- Dec. 2024 | Complexity theory: medley (co-advised with [Thomas Seiller](https://www.seiller.org/)). Now postdoc at IRIF. You can check Ulysse's PhD thesis [here](https://theses.fr/2024PA131054). |
+[Pierre Meyer](https://cs.idc.ac.il/~pierre.meyer/) | Sep. 2020 -- Sep. 2023 | Secure computation with constrained communication (co-advised with [Elette Boyle](https://cs.idc.ac.il/~elette/)). Now postdoc at [Aarhus University](https://www.cs.au.dk/~orlandi/cryptogroup/). You can check Pierre's PhD thesis [here](https://cs.idc.ac.il/~pierre.meyer/Documents/PhD-Pierre-Meyer.pdf).|
 
 #### Master students
 

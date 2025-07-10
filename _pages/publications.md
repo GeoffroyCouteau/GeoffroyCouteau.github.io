@@ -10,7 +10,7 @@ categories: TestCategories
 
 | Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
-| Cryptography and <br> Communications 2025 | Instantiating the Hash-Then-Evaluate Paradigm: Strengthening PRFs, PCFs, and OPRFs <br> *Chris Brzuska, Geoffroy Couteau, Christoph Egger, and Pierre Meyer* | [ePrint](https://eprint.iacr.org/2023/1145), [Springer |
+| Cryptography and <br> Communications 2025 | Instantiating the Hash-Then-Evaluate Paradigm: Strengthening PRFs, PCFs, and OPRFs <br> *Chris Brzuska, Geoffroy Couteau, Christoph Egger, and Pierre Meyer* | [ePrint](https://eprint.iacr.org/2023/1145), Springer |
 | RANDOM 2025 | Structured-Seed Local Pseudorandom Generators and their Applications <br> *Benny Applebaum, Dung Bui, Geoffroy Couteau and Nikolas Melissaris* | ePrint, <br>LIPIcs | 
 | SAC 2025 | Downlink (T)FHE ciphertexts compression <br> *Antonina Bondarchuk, Olive Chakraborty, Geoffroy Couteau, and Renaud Sirdey* | [ePrint](https://eprint.iacr.org/2024/1921), Springer | 
 | CRYPTO 2025  | 𝜔(1/𝜆)-Rate Boolean Garbling Scheme from Generic Groups <br> *Geoffroy Couteau, Carmit Hazay, Aditya Hegde, and Naman Kumar*| [ePrint](https://eprint.iacr.org/2025/268), [Springer](https://eprint.iacr.org/2025/268)|

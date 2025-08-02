@@ -10,7 +10,7 @@ categories: TestCategories
 
 | Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
-| IACR Transactions of <br> Symmetric Cryptology 2025 | SoK: On Shallow Weak PRFs <br> *Christina Boura, Geoffroy Couteau, Léo Perrin, Yann Rotella* | ePrint, tosc.iacr.org |
+| IACR Transactions of <br> Symmetric Cryptology 2025 | SoK: On Shallow Weak PRFs <br> *Christina Boura, Geoffroy Couteau, Léo Perrin, and Yann Rotella* | ePrint, tosc.iacr.org |
 | Cryptography and <br> Communications 2025 | Instantiating the Hash-Then-Evaluate Paradigm: Strengthening PRFs, PCFs, and OPRFs <br> *Chris Brzuska, Geoffroy Couteau, Christoph Egger, and Pierre Meyer* | [ePrint](https://eprint.iacr.org/2023/1145), Springer |
 | RANDOM 2025 | Structured-Seed Local Pseudorandom Generators and their Applications <br> *Benny Applebaum, Dung Bui, Geoffroy Couteau and Nikolas Melissaris* | ePrint, <br>LIPIcs | 
 | SAC 2025 | Downlink (T)FHE ciphertexts compression <br> *Antonina Bondarchuk, Olive Chakraborty, Geoffroy Couteau, and Renaud Sirdey* | [ePrint](https://eprint.iacr.org/2024/1921), Springer | 

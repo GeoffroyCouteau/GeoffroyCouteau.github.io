@@ -1,0 +1,2159 @@
+/* OBELiSC Wiki Styles */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Navigation */
+.navbar {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 0.6rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-brand h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.nav-brand .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.auth-section {
+    position: relative;
+}
+
+.admin-panel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-right: 1rem;
+}
+
+.admin-actions .btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+}
+
+#adminWelcome {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 100px auto 2rem !important;
+    padding: 0 2rem;
+}
+
+/* Content Sections */
+.content-section {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.content-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #3498db;
+}
+
+.admin-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Project Overview */
+.project-summary {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+}
+
+.project-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.project-title h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.project-acronym {
+    font-size: 1.2rem;
+    color: #3498db;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.project-description p {
+    margin-bottom: 1rem;
+}
+
+.project-description strong {
+    color: #2c3e50;
+}
+
+/* Work Packages */
+.work-packages {
+    margin-top: 3rem;
+}
+
+.work-packages h3 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.wp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.work-package {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #3498db;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.work-package:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.work-package[data-wp="rg1"] {
+    border-left-color: #e74c3c;
+}
+
+.work-package[data-wp="rg2"] {
+    border-left-color: #f39c12;
+}
+
+.work-package[data-wp="rg3"] {
+    border-left-color: #27ae60;
+}
+
+.wp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.wp-header h4 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    flex: 1;
+}
+
+.wp-badge {
+    background: #3498db;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.work-package[data-wp="rg1"] .wp-badge {
+    background: #e74c3c;
+}
+
+.work-package[data-wp="rg2"] .wp-badge {
+    background: #f39c12;
+}
+
+.work-package[data-wp="rg3"] .wp-badge {
+    background: #27ae60;
+}
+
+.work-package p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.wp-goals ul {
+    list-style: none;
+    padding: 0;
+}
+
+.wp-goals li {
+    padding: 0.3rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+    color: #666;
+}
+
+.wp-goals li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.team-member {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-3px);
+}
+
+.member-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+}
+
+.member-role {
+    font-size: 0.85rem;
+    color: #3498db;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.member-duration {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Base styling for member buttons */
+.member-website,
+.member-publications-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 2px solid;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    background: white;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: normal;
+}
+
+/* Website button specific styling */
+.member-website {
+    color: #3498db;
+    border-color: #3498db;
+}
+
+.member-website:hover {
+    background: #3498db;
+    color: white;
+}
+
+/* Publications button specific styling */
+.member-publications-btn {
+    color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.member-publications-btn:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+.member-actions {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+}
+
+/* Publications */
+.publications-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #3498db;
+    background: white;
+    color: #3498db;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #3498db;
+    color: white;
+}
+
+.filter-separator {
+    width: 2px;
+    height: 20px;
+    background: #bdc3c7;
+    margin: 0 1rem;
+    flex-shrink: 0;
+}
+
+.work-package-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    background: #f8f9fa;
+    color: #6c757d;
+    border-color: #dee2e6;
+}
+
+.work-package-btn:hover,
+.work-package-btn.active {
+    background: #6c757d;
+    color: white;
+    border-color: #6c757d;
+}
+
+.publications-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.publications-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.publication {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #95a5a6;
+    position: relative;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.publication:hover {
+    transform: translateY(-2px);
+}
+
+.admin-logged-in .publication {
+    position: relative;
+}
+
+/* Reorder arrows container */
+.reorder-arrows {
+    position: absolute;
+    top: 0.5rem;
+    left: 3rem;
+    display: flex;
+    gap: 0.25rem;
+    z-index: 20;
+}
+
+.publication.reorder-mode {
+    border-left: 4px solid #f39c12;
+    background: rgba(243, 156, 18, 0.02);
+    padding-left: 8rem;
+}
+
+.publication.reorder-mode .drag-handle {
+    opacity: 1;
+    transform: scale(1.1);
+    color: #f39c12;
+    background: rgba(243, 156, 18, 0.1);
+    border-color: rgba(243, 156, 18, 0.3);
+}
+
+.reorder-up,
+.reorder-down {
+    width: 2rem !important;
+    height: 2rem !important;
+    padding: 0.25rem !important;
+    font-size: 0.8rem !important;
+    border-radius: 4px !important;
+}
+
+.reorder-up:disabled,
+.reorder-down:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.reorder-up:hover:not(:disabled),
+.reorder-down:hover:not(:disabled) {
+    background: #7f8c8d;
+    transform: scale(1.1);
+}
+
+.publication[data-wp="rg1"] {
+    border-left-color: #e74c3c;
+}
+
+.publication[data-wp="rg2"] {
+    border-left-color: #f39c12;
+}
+
+.publication[data-wp="rg3"] {
+    border-left-color: #27ae60;
+}
+
+.publication-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.publication-authors {
+    color: #7f8c8d;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.publication-venue {
+    color: #3498db;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.publication-wp-badges {
+    margin-bottom: 0.5rem;
+}
+
+.publication-wp {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    color: white;
+    margin-right: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.publication-wp[data-wp^="rg1"] {
+    background: #e74c3c;
+}
+
+.publication-wp[data-wp^="rg2"] {
+    background: #f39c12;
+}
+
+.publication-wp[data-wp^="rg3"] {
+    background: #27ae60;
+}
+
+.publication-description {
+    color: #666;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.publication-actions {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+    z-index: 15;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #95a5a6;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #7f8c8d;
+}
+
+.btn-tertiary {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-tertiary:hover {
+    background: #c0392b;
+}
+
+.btn-link {
+    background: none;
+    color: #3498db;
+    border: none;
+    text-decoration: underline;
+    padding: 0.3rem;
+}
+
+.btn-link:hover {
+    color: #2980b9;
+}
+
+.btn-small {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+}
+
+.btn-icon {
+    padding: 0.4rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modals */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content.large {
+    max-width: 700px;
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #95a5a6;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: #f8f9fa;
+    color: #333;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-help {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin: 0.25rem 0 0.75rem 0;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    flex-wrap: wrap;
+}
+
+.form-actions .btn {
+    flex-shrink: 0;
+    min-width: 120px;
+    font-size: 0.9rem;
+}
+
+/* Action buttons styling */
+.publication-actions .btn-icon,
+.member-actions .btn-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    padding: 0.2rem;
+    font-size: 0.75rem;
+}
+
+/* Drag handle styling */
+.drag-handle {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    color: #bdc3c7;
+    cursor: grab;
+    padding: 0.3rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid transparent;
+    opacity: 0.6;
+}
+
+.drag-handle:hover {
+    color: #3498db;
+    background: rgba(52, 152, 219, 0.1);
+    border-color: rgba(52, 152, 219, 0.2);
+    transform: scale(1.1);
+}
+
+.publication.dragging .drag-handle {
+    cursor: grabbing;
+    color: #3498db;
+}
+
+.publication-actions .btn-icon i,
+.member-actions .btn-icon i {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none !important;
+}
+
+.admin-only {
+    display: none !important;
+}
+
+.admin-logged-in .admin-only {
+    display: block !important;
+}
+
+.admin-logged-in .admin-only.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: #7f8c8d;
+}
+
+.mb-2 {
+    margin-bottom: 1rem;
+}
+
+.mt-2 {
+    margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+        margin-top: 120px !important;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .admin-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .wp-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .publications-filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-title h3 {
+        font-size: 1.4rem;
+    }
+
+    .work-package {
+        padding: 1rem;
+    }
+
+    .wp-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .team-member,
+    .publication {
+        padding: 1rem;
+    }
+
+    .member-actions,
+    .publication-actions {
+        position: static;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 0.5rem;
+    }
+
+    .publication-actions .btn-icon,
+    .member-actions .btn-icon {
+        width: 2.2rem;
+        height: 2.2rem;
+        font-size: 0.8rem;
+    }
+
+    .wp-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .wp-admin-controls {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .questions-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .questions-admin-controls {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .research-questions li {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .question-controls {
+        opacity: 1;
+        align-self: flex-end;
+    }
+
+    .title-admin-controls,
+    .description-admin-controls {
+        text-align: center;
+    }
+
+    .wp-publications-header {
+        padding: 0.4rem;
+    }
+
+    .wp-publications-header:hover {
+        padding: 0.4rem;
+    }
+
+    .wp-remarks-header {
+        padding: 0.4rem 0;
+    }
+
+    .wp-remarks-header:hover {
+        padding: 0.4rem;
+    }
+
+    .wp-remarks-content {
+        padding-left: 1rem;
+    }
+
+    .wp-pub-item {
+        padding: 0.6rem;
+    }
+
+    .wp-pub-title {
+        font-size: 0.85rem;
+    }
+
+    .wp-pub-authors,
+    .wp-pub-venue {
+        font-size: 0.8rem;
+    }
+
+    .rg-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .rg-checkbox {
+        align-self: center;
+    }
+
+    .publications-filters {
+        justify-content: center;
+        gap: 0.3rem;
+    }
+
+    .filter-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .work-package-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .filter-separator {
+        display: none;
+    }
+
+    .previous-publications-subtitle {
+        font-size: 0.85rem;
+        padding: 0.8rem;
+        margin: 0.8rem 0 1.5rem 0;
+    }
+
+    .publications-separator {
+        margin: 2rem 0;
+    }
+
+    .publications-separator::after {
+        width: 60px;
+    }
+
+    .filter-btn-prev {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .filter-btn-prev.work-package-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .publication.reorder-mode {
+        padding-left: 1rem;
+    }
+
+    .reorder-arrows {
+        position: static;
+        justify-content: center;
+        margin: 1rem 0;
+        gap: 0.5rem;
+    }
+}
+
+/* Loading States */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Success/Error Messages */
+.message {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Work Package Selector */
+.wp-selector {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background: #f8f9fa;
+}
+
+.rg-section {
+    margin-bottom: 1.5rem;
+}
+
+.rg-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.rg-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: rgba(52, 152, 219, 0.1);
+    border: 1px solid #3498db;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 0;
+}
+
+.rg-checkbox:hover {
+    background: rgba(52, 152, 219, 0.2);
+    border-color: #2980b9;
+}
+
+.rg-checkbox input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.rg-label {
+    color: #2980b9;
+    font-weight: 500;
+}
+
+.rg-section:last-child {
+    margin-bottom: 0;
+}
+
+.rg-section h4 {
+    color: #2c3e50;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.wp-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+}
+
+.wp-checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.wp-checkboxes label:hover {
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.wp-checkboxes input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+/* Publication badge styling */
+.publication-wp {
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-right: 0.3rem;
+    margin-bottom: 0.3rem;
+    display: inline-block;
+}
+
+/* Research goal badges (general contributions) */
+.publication-wp[data-wp="rg1"] {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: 1px solid #c0392b;
+    font-weight: 600;
+}
+
+.publication-wp[data-wp="rg2"] {
+    background: linear-gradient(135deg, #f39c12, #d68910);
+    color: white;
+    border: 1px solid #d68910;
+    font-weight: 600;
+}
+
+.publication-wp[data-wp="rg3"] {
+    background: linear-gradient(135deg, #27ae60, #229954);
+    color: white;
+    border: 1px solid #229954;
+    font-weight: 600;
+}
+
+/* Publications page styling */
+.publications-separator {
+    margin: 3rem 0;
+    border-top: 3px solid #e9ecef;
+    position: relative;
+}
+
+.publications-separator::after {
+    content: "";
+    position: absolute;
+    top: -1.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #3498db;
+}
+
+.previous-publications-subtitle {
+    font-size: 0.95rem;
+    color: #6c757d;
+    line-height: 1.6;
+    margin: 1rem 0 2rem 0;
+    padding: 1rem;
+    background: rgba(248, 249, 250, 0.8);
+    border-left: 4px solid #3498db;
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+}
+
+/* Filter buttons for previous publications */
+.filter-btn-prev {
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #6c757d;
+    background: white;
+    color: #6c757d;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn-prev:hover,
+.filter-btn-prev.active {
+    background: #6c757d;
+    color: white;
+}
+
+.filter-btn-prev.work-package-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    background: #f8f9fa;
+    color: #495057;
+    border-color: #dee2e6;
+}
+
+.filter-btn-prev.work-package-btn:hover,
+.filter-btn-prev.work-package-btn.active {
+    background: #495057;
+    color: white;
+    border-color: #495057;
+}
+
+/* Progress Bars */
+.progress-container {
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+}
+
+.progress-label {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #ecf0f1;
+    background: linear-gradient(
+        to right,
+        var(--progress-color, #e74c3c) 0%,
+        var(--progress-color, #e74c3c) var(--progress-width, 0%),
+        #ecf0f1 var(--progress-width, 0%),
+        #ecf0f1 100%
+    );
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    justify-content: center;
+    padding: 0.5rem;
+    background: rgba(248, 249, 250, 0.8);
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+.progress-input {
+    width: 70px;
+    padding: 0.4rem 0.6rem;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.progress-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    background: white;
+}
+
+.progress-controls .btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+}
+
+.admin-logged-in .admin-only .progress-bar {
+    cursor: pointer;
+}
+
+/* Research Goal Admin Controls */
+.wp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.wp-admin-controls {
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.wp-header:hover .wp-admin-controls {
+    opacity: 1;
+}
+
+.title-admin-controls {
+    margin: 0.5rem 0;
+}
+
+.description-admin-controls {
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.questions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.questions-admin-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.research-questions {
+    list-style: none;
+    padding-left: 0;
+}
+
+.research-questions li {
+    margin-bottom: 0.8rem;
+    padding: 0.8rem;
+    background: rgba(248, 249, 250, 0.5);
+    border-left: 3px solid #3498db;
+    border-radius: 0 6px 6px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+.question-controls {
+    display: flex;
+    gap: 0.3rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    flex-shrink: 0;
+}
+
+.research-questions li:hover .question-controls {
+    opacity: 1;
+}
+
+.question-controls .btn-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    padding: 0.2rem;
+    font-size: 0.7rem;
+}
+
+/* Work Package Publications */
+.wp-publications {
+    margin-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+    padding-top: 1rem;
+}
+
+.wp-publications-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.wp-publications-header:hover {
+    background: rgba(248, 249, 250, 0.8);
+    border-radius: 6px;
+    padding: 0.5rem;
+}
+
+.wp-publications-header h5 {
+    margin: 0;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.wp-publications-toggle {
+    color: #6c757d;
+    transition: transform 0.2s ease;
+    margin-right: 0.5rem;
+}
+
+.wp-publications-list {
+    margin-top: 0.5rem;
+    max-height: 500px;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+.wp-publications-list.collapsed {
+    max-height: 0;
+    margin-top: 0;
+}
+
+/* Central Vision Styling */
+.central-vision {
+    margin: 2rem 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.vision-content {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+    border: 2px solid #2196f3;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 700px;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.vision-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2196f3, #9c27b0, #2196f3);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+.vision-content h4 {
+    color: #1565c0;
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.vision-content h4 i {
+    color: #2196f3;
+    font-size: 1.2rem;
+}
+
+.vision-content p {
+    color: #37474f;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Feature List Styling */
+.feature-list {
+    background: #f8f9fa;
+    border-left: 4px solid #2196f3;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.feature-list li {
+    margin: 0.8rem 0;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.feature-list li strong {
+    color: #1565c0;
+    font-weight: 600;
+}
+
+/* Research Goal Detail Actions Spacing */
+.rg-detail-actions {
+    margin: 1.5rem 0 2rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #e9ecef;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.rg-detail-actions .btn {
+    margin: 0;
+}
+
+/* Work Package Sub-Filters Styling */
+.wp-sub-filters {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.sub-filter-btn {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.sub-filter-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.sub-filter-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.sub-filter-btn.active:hover {
+    background: #0056b3;
+    border-color: #004085;
+}
+
+/* Formatting Help Styling */
+.formatting-help {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.formatting-help small {
+    color: #6c757d;
+    margin: 0;
+}
+
+.form-text.text-muted {
+    color: #6c757d;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Project Logo Styling */
+.project-logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.project-title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .project-logo {
+        max-height: 200px;
+    }
+
+    .central-vision {
+        margin: 1.5rem 0;
+        padding: 0 1rem;
+    }
+
+    .vision-content {
+        padding: 1.5rem;
+        border-radius: 8px;
+        max-width: 100%;
+    }
+
+    .vision-content h4 {
+        font-size: 1.2rem;
+    }
+
+    .vision-content p {
+        font-size: 1rem;
+    }
+
+    .feature-list {
+        padding: 1rem 1rem 1rem 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .rg-detail-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .rg-detail-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-logo {
+        max-height: 150px;
+    }
+
+    .vision-content {
+        padding: 1.2rem;
+    }
+
+    .vision-content h4 {
+        font-size: 1.1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .feature-list {
+        padding: 0.8rem 0.8rem 0.8rem 1.2rem;
+        margin: 0.8rem 0;
+    }
+
+    .feature-list li {
+        margin: 0.6rem 0;
+        font-size: 0.95rem;
+    }
+
+    .wp-sub-filters {
+        padding: 0.75rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .sub-filter-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+    }
+}
+
+/* Work Package Remarks Styling */
+.wp-remarks {
+    margin-top: 1.5rem;
+    border-top: 1px solid #e9ecef;
+    padding-top: 1rem;
+}
+
+.wp-remarks-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.wp-remarks-header:hover {
+    background: rgba(248, 249, 250, 0.8);
+    border-radius: 6px;
+    padding: 0.5rem;
+}
+
+.wp-remarks-header h5 {
+    margin: 0;
+    color: #495057;
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+
+.wp-remarks-toggle {
+    color: #6c757d;
+    transition: transform 0.2s ease;
+    margin-right: 0.5rem;
+}
+
+.remarks-admin-controls {
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.wp-remarks-header:hover .remarks-admin-controls {
+    opacity: 1;
+}
+
+.wp-remarks-content {
+    margin-top: 0.5rem;
+    max-height: 500px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding-left: 1.5rem;
+}
+
+.wp-remarks-content.collapsed {
+    max-height: 0;
+    margin-top: 0;
+}
+
+.wp-remarks-text {
+    padding: 0.75rem 0;
+}
+
+.no-remarks {
+    color: #6c757d;
+    font-style: italic;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.remarks-content {
+    color: #495057;
+    line-height: 1.6;
+}
+
+.remarks-content p {
+    margin-bottom: 0.75rem;
+}
+
+.remarks-content p:last-child {
+    margin-bottom: 0;
+}
+
+.wp-pub-item {
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    background: rgba(248, 249, 250, 0.6);
+    border-left: 3px solid #6c757d;
+    border-radius: 0 6px 6px 0;
+    transition: all 0.2s ease;
+}
+
+.wp-pub-item:hover {
+    background: rgba(248, 249, 250, 0.9);
+    border-left-color: #495057;
+}
+
+.wp-pub-title {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.wp-pub-authors {
+    color: #6c757d;
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+}
+
+.wp-pub-venue {
+    color: #495057;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.no-publications {
+    color: #6c757d;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+    margin: 0;
+}
+
+/* Research Goal Detail Pages */
+.rg-detail {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.rg-detail-header {
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+
+.rg-detail-nav {
+    margin-bottom: 1rem;
+}
+
+.rg-detail-nav .btn-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.rg-detail-nav .btn-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.rg-detail-header h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.rg-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+    font-style: italic;
+}
+
+.rg-detail-content {
+    padding: 2rem;
+}
+
+.rg-overview {
+    margin-bottom: 3rem;
+}
+
+.rg-overview h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.rg-overview p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+.work-packages-detail h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.work-package-detail {
+    background: #f8f9fa;
+    border-left: 4px solid #3498db;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.work-package-detail h4 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.wp-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.key-questions h5 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.research-questions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.research-questions li {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 2.5rem;
+    line-height: 1.5;
+    color: #444;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.research-questions li:before {
+    content: "?";
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.rg-detail-actions {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e9ecef;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Responsive design for research goal details */
+@media (max-width: 768px) {
+    .rg-detail-header {
+        padding: 1.5rem;
+    }
+
+    .rg-detail-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .rg-detail-content {
+        padding: 1.5rem;
+    }
+
+    .work-package-detail {
+        padding: 1rem;
+    }
+
+    .rg-detail-actions {
+        flex-direction: column;
+    }
+
+    .research-questions li {
+        padding-left: 2rem;
+    }
+
+    .research-questions li:before {
+        left: 0.5rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Import/Export Functionality */
+.import-warning {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.import-warning i {
+    color: #f39c12;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.import-warning h4 {
+    color: #d68910;
+    margin-bottom: 1rem;
+}
+
+.import-warning ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.import-warning li {
+    margin-bottom: 0.5rem;
+}
+
+.import-info {
+    background: #e8f4f8;
+    border: 1px solid #bee5eb;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.import-info h4 {
+    color: #0c5460;
+    margin-bottom: 0.5rem;
+}
+
+#importPreview {
+    font-family: "Courier New", monospace;
+    font-size: 0.9rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+    background: #c82333;
+}
+
+.btn-danger:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+}

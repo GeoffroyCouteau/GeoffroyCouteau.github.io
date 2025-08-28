@@ -14,6 +14,11 @@
         />
     </head>
     <body>
+        <!--
+        This wiki automatically loads content from obelisc.json when available.
+        This ensures all visitors see the latest published state by default.
+        -->
+
         <!-- Navigation -->
         <nav class="navbar">
             <div class="nav-container">
@@ -83,35 +88,7 @@
                     </div>
 
                     <div id="projectDescription" class="project-description">
-                        <p>
-                            The importance of maintaining data privacy over
-                            large-scale communication systems is now well
-                            acknowledged. However, our use of networks has
-                            evolved beyond simple communication - we now
-                            routinely use our personal data in computations by
-                            third parties (targeted advertising, cloud storage,
-                            social networks, etc.). This creates a considerable
-                            threat to privacy.
-                        </p>
-
-                        <p>
-                            The aim of <strong>secure computation</strong> is to
-                            solve this paradox by enabling multiple participants
-                            to distributively execute computations on their
-                            sensitive data without compromising confidentiality.
-                            OBELiSC explores the current limits of silent and
-                            non-interactive protocols and introduces new methods
-                            for overcoming remaining barriers.
-                        </p>
-
-                        <p>
-                            The long-term vision is to
-                            <strong
-                                >enable the deployment of a large-scale network
-                                that protects our sensitive data whenever it is
-                                used in distributed computations</strong
-                            >.
-                        </p>
+                        <!-- Project description will be loaded from obelisc.json or localStorage -->
                     </div>
                 </div>
 

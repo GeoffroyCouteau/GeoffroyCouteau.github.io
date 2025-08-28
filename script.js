@@ -21,8 +21,8 @@ class OBELiSCWiki {
     this.init();
   }
 
-  init() {
-    this.loadData();
+  async init() {
+    await this.loadData();
     this.checkAuthState();
     this.setupEventListeners();
     this.renderContent();
@@ -30,11 +30,58 @@ class OBELiSCWiki {
   }
 
   // Data Management
-  loadData() {
-    // Load from localStorage or set defaults
-    const savedData = localStorage.getItem("obelisc-wiki-data");
-    if (savedData) {
-      this.data = JSON.parse(savedData);
+  async loadData() {
+    // Data loading strategy:
+    // 1. First try to load from obelisc.json (default state for all visitors)
+    // 2. Fall back to localStorage (user's local edits)
+    // 3. Finally use hardcoded defaults (fresh installation)
+    // This ensures that obelisc.json becomes the "published" state that all visitors see
+    let dataLoaded = false;
+
+    try {
+      const response = await fetch("obelisc.json");
+      if (response.ok) {
+        const exportData = await response.json();
+
+        // Validate the import data structure
+        if (this.validateImportData(exportData)) {
+          // Load all localStorage data from the export
+          if (exportData.localStorage["obelisc-wiki-data"]) {
+            this.data = JSON.parse(
+              exportData.localStorage["obelisc-wiki-data"],
+            );
+            dataLoaded = true;
+
+            // Also restore other localStorage items
+            Object.keys(exportData.localStorage).forEach((key) => {
+              if (key !== "obelisc-wiki-data") {
+                localStorage.setItem(key, exportData.localStorage[key]);
+              }
+            });
+
+            console.log("Successfully loaded default state from obelisc.json");
+          }
+        }
+      }
+    } catch (error) {
+      console.log(
+        "Could not load obelisc.json, falling back to localStorage:",
+        error,
+      );
+    }
+
+    // If we couldn't load from obelisc.json, try localStorage
+    if (!dataLoaded) {
+      const savedData = localStorage.getItem("obelisc-wiki-data");
+      if (savedData) {
+        this.data = JSON.parse(savedData);
+        dataLoaded = true;
+        console.log("Loaded state from localStorage");
+      }
+    }
+
+    // Apply migrations and initialize missing fields
+    if (dataLoaded) {
       // Check if we need to add initial publications (migration)
       if (!this.data.publications || this.data.publications.length === 0) {
         this.addInitialPublications();
@@ -102,17 +149,17 @@ class OBELiSCWiki {
 <p>Just as secure communication achieved widespread adoption through key architectural features, OBELiSC focuses on developing secure computation protocols that <strong>mimic the core features of secure communication networks</strong>:</p>
 
 <ul class="feature-list">
-  <li><strong>Two-phase structure:</strong> A heavy preprocessing phase followed by lightweight online computation</li>
-  <li><strong>Non-interactive protocols:</strong> Parties can participate without being simultaneously online</li>
-  <li><strong>Minimal communication overhead:</strong> Efficient bandwidth usage comparable to insecure alternatives</li>
-  <li><strong>Diverse security foundations:</strong> Multiple cryptographic assumptions for robust security</li>
+<li><strong>Two-phase structure:</strong> A heavy preprocessing phase followed by lightweight online computation</li>
+<li><strong>Non-interactive protocols:</strong> Parties can participate without being simultaneously online</li>
+<li><strong>Minimal communication overhead:</strong> Efficient bandwidth usage comparable to insecure alternatives</li>
+<li><strong>Diverse security foundations:</strong> Multiple cryptographic assumptions for robust security</li>
 </ul>
 
 <p>By achieving these landmark features, OBELiSC aims to make secure computation practical for deployment over large-scale networks, ultimately realizing a world where <strong>privacy-by-default</strong> becomes the standard for distributed computations.</p>`;
         this.saveData();
       }
     } else {
-      // Set initial project description
+      // Set defaults if no saved data and couldn't load from obelisc.json
       this.data.projectDescription = `<p>Privacy-preserving communication has become the norm over large-scale networks: around 85% of Internet traffic is now encrypted. However, our use of these networks is also evolving rapidly. The modern user searches through pictures stored in the Cloud, gets video recommendations, sees targeted advertising, and uses healthcare and social apps. In each of these situations, <strong>a third party is performing computations on our private data</strong> (our pictures, navigation history, preferences, etc.). This creates a fundamental tension between utility and privacy.</p>
 
 <div class="central-vision">
@@ -127,136 +174,38 @@ class OBELiSCWiki {
 <p>Just as secure communication achieved widespread adoption through key architectural features, OBELiSC focuses on developing secure computation protocols that <strong>mimic the core features of secure communication networks</strong>:</p>
 
 <ul class="feature-list">
-  <li><strong>Two-phase structure:</strong> A heavy preprocessing phase followed by lightweight online computation</li>
-  <li><strong>Non-interactive protocols:</strong> Parties can participate without being simultaneously online</li>
-  <li><strong>Minimal communication overhead:</strong> Efficient bandwidth usage comparable to insecure alternatives</li>
-  <li><strong>Diverse security foundations:</strong> Multiple cryptographic assumptions for robust security</li>
+<li><strong>Two-phase structure:</strong> A heavy preprocessing phase followed by lightweight online computation</li>
+<li><strong>Non-interactive protocols:</strong> Parties can participate without being simultaneously online</li>
+<li><strong>Minimal communication overhead:</strong> Efficient bandwidth usage comparable to insecure alternatives</li>
+<li><strong>Diverse security foundations:</strong> Multiple cryptographic assumptions for robust security</li>
 </ul>
 
 <p>By achieving these landmark features, OBELiSC aims to make secure computation practical for deployment over large-scale networks, ultimately realizing a world where <strong>privacy-by-default</strong> becomes the standard for distributed computations.</p>`;
 
-      // Add initial team member (project leader)
-      this.data.members = [
-        {
-          id: Date.now(),
-          firstName: "Geoffroy",
-          lastName: "Couteau",
-          startDate: "2023-01-01",
-          endDate: "",
-          website: "https://geoffroycouteau.github.io/",
-          role: "PI",
-        },
-      ];
+      this.data.members = [];
+      this.data.publications = [];
+      this.data.previousPublications = [];
 
-      // Add initial publications
-      this.data.publications = [
-        {
-          id: Date.now() + 1,
-          title:
-            "Instantiating the Hash-Then-Evaluate Paradigm: Strengthening PRFs, PCFs, and OPRFs",
-          authors:
-            "Chris Brzuska, Geoffroy Couteau, Christoph Egger, and Pierre Meyer",
-          venue: "Cryptography and Communications 2025",
-          workPackage: "",
-          description: "",
-        },
-        {
-          id: Date.now() + 2,
-          title:
-            "Structured-Seed Local Pseudorandom Generators and their Applications",
-          authors:
-            "Benny Applebaum, Dung Bui, Geoffroy Couteau and Nikolas Melissaris",
-          venue: "RANDOM 2025",
-          workPackage: "",
-          description: "",
-        },
-        {
-          id: Date.now() + 3,
-          title: "Downlink (T)FHE ciphertexts compression",
-          authors:
-            "Antonina Bondarchuk, Olive Chakraborty, Geoffroy Couteau, and Renaud Sirdey",
-          venue: "SAC 2025",
-          workPackage: "",
-          description: "",
-        },
-        {
-          id: Date.now() + 4,
-          title: "ω(1/λ)-Rate Boolean Garbling Scheme from Generic Groups",
-          authors:
-            "Geoffroy Couteau, Carmit Hazay, Aditya Hegde, and Naman Kumar",
-          venue: "CRYPTO 2025",
-          workPackage: "",
-          description: "",
-        },
-        {
-          id: Date.now() + 5,
-          title: "Multi-key Homomorphic Secret Sharing",
-          authors:
-            "Geoffroy Couteau, Lalita Devadas, Aditya Hegde, Abhishek Jain, and Sacha Servan-Schreiber",
-          venue: "EUROCRYPT 2025",
-          workPackage: "",
-          description: "",
-        },
-        {
-          id: Date.now() + 6,
-          title: "Breaking the 1/λ-Rate Barrier for Arithmetic Garbling",
-          authors:
-            "Geoffroy Couteau, Carmit Hazay, Aditya Hegde, and Naman Kumar",
-          venue: "EUROCRYPT 2025",
-          workPackage: "",
-          description: "",
-        },
-        {
-          id: Date.now() + 7,
-          title: "Enhanced Trapdoor Hashing from DDH and DCR",
-          authors: "Geoffroy Couteau, Aditya Hegde, and Sihang Pu",
-          venue: "EUROCRYPT 2025",
-          workPackage: "",
-          description: "",
-        },
-        {
-          id: Date.now() + 8,
-          title:
-            "An Efficient ZK Compiler from SIMD Circuits to General Circuits",
-          authors:
-            "Dung Bui, Haotian Chu, Geoffroy Couteau, Xiao Wang, Chenkai Weng, Kang Yang, and Yu Yu",
-          venue: "JoC 2025",
-          workPackage: "",
-          description: "",
-        },
-        {
-          id: Date.now() + 9,
-          title:
-            "On Building Fine-Grained One-Way Functions from Strong Average-Case Hardness",
-          authors: "Chris Brzuska and Geoffroy Couteau",
-          venue: "JoC 2025",
-          workPackage: "",
-          description: "",
-        },
-        {
-          id: Date.now() + 10,
-          title: "On Bounded Storage Key Agreement and One-Way Functions",
-          authors:
-            "Chris Brzuska, Christoph Egger, Geoffroy Couteau, and Willy Quach",
-          venue: "TCC 2024",
-          workPackage: "",
-          description: "",
-        },
-        {
-          id: Date.now() + 11,
-          title:
-            "A Note on Low-Communication Secure Multiparty Computation via Circuit Depth-Reduction",
-          authors:
-            "Pierre Charbit, Geoffroy Couteau, Pierre Meyer, and Reza Naserasr",
-          venue: "TCC 2024",
-          workPackage: "",
-          description: "",
-        },
-      ];
+      this.data.progress = {
+        "rg1-specific": 75,
+        "rg1-ole": 60,
+        "rg1-unbounded": 40,
+        "rg1-multiparty": 25,
+        "rg2-nisp": 30,
+        "rg2-nizk": 80,
+        "rg2-foundations": 65,
+        "rg3-multiparty": 45,
+        "rg3-general": 55,
+        "rg3-barriers": 20,
+      };
+
+      this.data.workPackageRemarks = {};
 
       this.addInitialPublications();
       this.initializeResearchGoals();
       this.saveData();
+
+      console.log("Initialized with default data");
     }
   }
 
@@ -387,6 +336,11 @@ class OBELiSCWiki {
   }
 
   addInitialPublications() {
+    // This method is only called as a last resort when:
+    // 1. obelisc.json cannot be loaded AND
+    // 2. localStorage is empty AND
+    // 3. This is a fresh installation
+    // Since obelisc.json is the primary data source, this fallback should rarely be used
     this.data.publications = [
       {
         id: Date.now() + 1,

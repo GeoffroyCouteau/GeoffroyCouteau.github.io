@@ -718,6 +718,186 @@ class OBELiSCWiki {
     this.hideAdminElements();
   }
 
+  // Export/Import functionality
+  exportWikiData() {
+    try {
+      // Collect all wiki state data
+      const exportData = {
+        version: "1.0",
+        timestamp: new Date().toISOString(),
+        localStorage: {},
+        sessionStorage: {},
+        userAgent: navigator.userAgent,
+        url: window.location.href,
+      };
+
+      // Export all localStorage data
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        exportData.localStorage[key] = localStorage.getItem(key);
+      }
+
+      // Export all sessionStorage data
+      for (let i = 0; i < sessionStorage.length; i++) {
+        const key = sessionStorage.key(i);
+        exportData.sessionStorage[key] = sessionStorage.getItem(key);
+      }
+
+      // Create and download the file
+      const dataStr = JSON.stringify(exportData, null, 2);
+      const dataBlob = new Blob([dataStr], { type: "application/json" });
+
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(dataBlob);
+
+      // Create filename with timestamp
+      const timestamp = new Date()
+        .toISOString()
+        .replace(/[:.]/g, "-")
+        .split("T")[0];
+      link.download = `obelisc-wiki-export-${timestamp}.json`;
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      this.showSuccess("Wiki data exported successfully!");
+    } catch (error) {
+      console.error("Export failed:", error);
+      this.showError("Failed to export wiki data. Please try again.");
+    }
+  }
+
+  handleImportFile(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    if (!file.name.endsWith(".json")) {
+      this.showError("Please select a valid JSON file.");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const importData = JSON.parse(e.target.result);
+
+        // Validate the import data structure
+        if (!this.validateImportData(importData)) {
+          this.showError("Invalid import file format.");
+          return;
+        }
+
+        // Store import data for confirmation
+        this.pendingImportData = importData;
+
+        // Show import preview
+        this.showImportPreview(importData);
+
+        // Show confirmation modal
+        this.showModal("importConfirmationModal");
+      } catch (error) {
+        console.error("Import file parsing failed:", error);
+        this.showError(
+          "Failed to read import file. Please ensure it is a valid JSON file.",
+        );
+      }
+    };
+
+    reader.onerror = () => {
+      this.showError("Failed to read the selected file.");
+    };
+
+    reader.readAsText(file);
+  }
+
+  validateImportData(data) {
+    // Check if the data has the expected structure
+    return (
+      data &&
+      data.version &&
+      data.localStorage &&
+      typeof data.localStorage === "object" &&
+      data.sessionStorage &&
+      typeof data.sessionStorage === "object"
+    );
+  }
+
+  showImportPreview(data) {
+    const preview = document.getElementById("importPreview");
+    const infoSection = document.getElementById("importFileInfo");
+    const confirmBtn = document.getElementById("confirmImportBtn");
+
+    let previewText = `Export Version: ${data.version || "Unknown"}\n`;
+    previewText += `Export Date: ${data.timestamp ? new Date(data.timestamp).toLocaleString() : "Unknown"}\n`;
+    previewText += `Source URL: ${data.url || "Unknown"}\n\n`;
+
+    previewText += `Data Summary:\n`;
+    previewText += `- LocalStorage items: ${Object.keys(data.localStorage).length}\n`;
+    previewText += `- SessionStorage items: ${Object.keys(data.sessionStorage).length}\n\n`;
+
+    // Check if main wiki data exists
+    if (data.localStorage["obelisc-wiki-data"]) {
+      try {
+        const wikiData = JSON.parse(data.localStorage["obelisc-wiki-data"]);
+        previewText += `Wiki Content:\n`;
+        previewText += `- Team members: ${wikiData.members ? wikiData.members.length : 0}\n`;
+        previewText += `- Publications: ${wikiData.publications ? wikiData.publications.length : 0}\n`;
+        previewText += `- Previous publications: ${wikiData.previousPublications ? wikiData.previousPublications.length : 0}\n`;
+        previewText += `- Research goals: ${wikiData.researchGoals ? Object.keys(wikiData.researchGoals).length : 0}\n`;
+        previewText += `- Has project description: ${wikiData.projectDescription ? "Yes" : "No"}\n`;
+      } catch (e) {
+        previewText += `- Wiki data: Present but unable to parse details\n`;
+      }
+    } else {
+      previewText += `- No main wiki data found\n`;
+    }
+
+    preview.textContent = previewText;
+    infoSection.style.display = "block";
+    confirmBtn.disabled = false;
+  }
+
+  confirmImport() {
+    if (!this.pendingImportData) {
+      this.showError("No import data available.");
+      return;
+    }
+
+    try {
+      // Clear all current storage
+      localStorage.clear();
+      sessionStorage.clear();
+
+      // Import localStorage data
+      Object.keys(this.pendingImportData.localStorage).forEach((key) => {
+        localStorage.setItem(key, this.pendingImportData.localStorage[key]);
+      });
+
+      // Import sessionStorage data
+      Object.keys(this.pendingImportData.sessionStorage).forEach((key) => {
+        sessionStorage.setItem(key, this.pendingImportData.sessionStorage[key]);
+      });
+
+      // Clean up
+      this.pendingImportData = null;
+      document.getElementById("importFile").value = "";
+
+      this.closeModal("importConfirmationModal");
+      this.showSuccess(
+        "Import completed successfully! The page will reload to apply all changes.",
+      );
+
+      // Reload the page to apply all changes
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    } catch (error) {
+      console.error("Import failed:", error);
+      this.showError("Failed to import data. Please try again.");
+    }
+  }
+
   // Event Listeners
   setupEventListeners() {
     // Prevent multiple setup
@@ -760,6 +940,39 @@ class OBELiSCWiki {
         this.logoutAdmin();
       });
       logoutBtn._hasListener = true;
+    }
+
+    // Export/Import buttons
+    const exportBtn = document.getElementById("exportBtn");
+    if (exportBtn && !exportBtn._hasListener) {
+      exportBtn.addEventListener("click", () => {
+        this.exportWikiData();
+      });
+      exportBtn._hasListener = true;
+    }
+
+    const importBtn = document.getElementById("importBtn");
+    if (importBtn && !importBtn._hasListener) {
+      importBtn.addEventListener("click", () => {
+        document.getElementById("importFile").click();
+      });
+      importBtn._hasListener = true;
+    }
+
+    const importFile = document.getElementById("importFile");
+    if (importFile && !importFile._hasListener) {
+      importFile.addEventListener("change", (e) => {
+        this.handleImportFile(e);
+      });
+      importFile._hasListener = true;
+    }
+
+    const confirmImportBtn = document.getElementById("confirmImportBtn");
+    if (confirmImportBtn && !confirmImportBtn._hasListener) {
+      confirmImportBtn.addEventListener("click", () => {
+        this.confirmImport();
+      });
+      confirmImportBtn._hasListener = true;
     }
 
     document
@@ -967,6 +1180,13 @@ class OBELiSCWiki {
         modalId === "editRemarksModal"
       ) {
         modal.remove();
+      }
+      // Cleanup import data when closing import modal
+      if (modalId === "importConfirmationModal") {
+        this.pendingImportData = null;
+        document.getElementById("importFile").value = "";
+        document.getElementById("importFileInfo").style.display = "none";
+        document.getElementById("confirmImportBtn").disabled = true;
       }
     }
   }

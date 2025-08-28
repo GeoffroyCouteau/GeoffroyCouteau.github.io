@@ -31,6 +31,26 @@
                         </button>
                         <div id="adminPanel" class="admin-panel hidden">
                             <span id="adminWelcome">Welcome, Admin</span>
+                            <div class="admin-actions">
+                                <button
+                                    id="exportBtn"
+                                    class="btn btn-secondary"
+                                >
+                                    <i class="fas fa-download"></i> Export Data
+                                </button>
+                                <button
+                                    id="importBtn"
+                                    class="btn btn-secondary"
+                                >
+                                    <i class="fas fa-upload"></i> Import Data
+                                </button>
+                                <input
+                                    type="file"
+                                    id="importFile"
+                                    accept=".json"
+                                    style="display: none"
+                                />
+                            </div>
                             <button id="logoutBtn" class="btn btn-tertiary">
                                 Logout
                             </button>
@@ -739,6 +759,55 @@
                             Close
                         </button>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Import Confirmation Modal -->
+        <div id="importConfirmationModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Import Data</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="import-warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h4>Warning: This will replace all current data</h4>
+                        <p>
+                            Importing will completely replace all current wiki
+                            content including:
+                        </p>
+                        <ul>
+                            <li>Project description and all edits</li>
+                            <li>All team members</li>
+                            <li>All publications (current and previous)</li>
+                            <li>All research goals and work packages</li>
+                            <li>All progress tracking data</li>
+                            <li>All custom content modifications</li>
+                        </ul>
+                        <p><strong>This action cannot be undone.</strong></p>
+                    </div>
+                    <div
+                        class="import-info"
+                        id="importFileInfo"
+                        style="display: none"
+                    >
+                        <h4>Import File Details:</h4>
+                        <div id="importPreview"></div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button class="btn btn-secondary modal-close">
+                        Cancel
+                    </button>
+                    <button
+                        id="confirmImportBtn"
+                        class="btn btn-danger"
+                        disabled
+                    >
+                        Import Data
+                    </button>
                 </div>
             </div>
         </div>

@@ -1,0 +1,153 @@
+# example navigation
+foo:
+  - title: "Parent Link 1"
+    url: /parent-1-page-url/
+    children:
+      - title: "Child Link 1"
+        url: /child-1-page-url/
+      - title: "Child Link 2"
+        url: /child-2-page-url/
+  - title: "Parent Link 2"
+    url: /parent-2-page-url/
+    children:
+      - title: "Child Link 1"
+        url: /child-1-page-url/
+      - title: "Child Link 2"
+        url: /child-2-page-url/
+      - title: "Child Link 3"
+        url: /child-3-page-url/
+
+
+# main links
+main:
+  - title: "About"
+    url: /
+  - title: "Publications"
+    url: /publications/
+  - title: "Grant Projects"
+    url: /grants/
+  - title: "Blog"
+    url: /blog/
+  - title: "Teaching"
+    url: /teaching/
+  - title: "Presentations"
+    url: /presentations/
+  - title: "External Links"
+    url: /external/
+
+# sidebar navigation list sample
+sidebar-sample:
+  - title: "Parent Page A"
+    children:
+      - title: "Child Page A1"
+        url: /
+      - title: "Child Page A2"
+        url: /
+      - title: "Child Page A3"
+        url: /
+      - title: "Child Page A4"
+        url: /
+  - title: "Parent Page B"
+    children:
+      - title: "Child Page B1"
+        url: /
+      - title: "Child Page B2"
+        url: /
+      - title: "Child Page B3"
+        url: /
+      - title: "Child Page B4"
+        url: /
+      - title: "Child Page B5"
+        url: /
+  - title: "Parent Page C"
+    children:
+      - title: "Child Page C1"
+        url: /
+      - title: "Child Page C2"
+        url: /
+      - title: "Child Page C3"
+        url: /
+      - title: "Child Page C4"
+        url: /
+      - title: "Child Page C5"
+        url: /
+  - title: "Parent Page D"
+    children:
+      - title: "Child Page D1"
+        url: /
+      - title: "Child Page D2"
+        url: /
+
+# sidebar blog
+sidebar-blog:
+  - title: "Posts by Tags"
+    url: /tags/
+  - title: "Posts by Categories"
+    url: /categories/
+  - title: "Posts by Year"
+    url: /year-archive/
+
+# sidebar cheatsheet
+sidebar-cheatsheet:
+    - title: "Notations"
+      url: cheat-sheet/#notations
+    - title: "Basic Probabilities"
+      url: cheat-sheet/#basic-probabilities
+      children:
+      - title: "Union Bound"
+        url: cheat-sheet/#union
+      - title: "Bayes' Rule"
+        url: cheat-sheet/#bayes
+      - title: "Others"
+        url:  cheat-sheet/#others
+    - title: "Expectations"
+      url:  cheat-sheet/#expectations
+      children:
+      - title: "Cauchy-Schwarz"
+        url:  cheat-sheet/#cauchy
+      - title: "Jensen"
+        url:  cheat-sheet/#jensen
+    - title: "Bias"
+      url:  cheat-sheet/#bias
+    - title: "Concentration Bounds"
+      url:  cheat-sheet/#concentration-bounds
+      children:
+      - title: "Markov Inequality"
+        url:  cheat-sheet/#markov
+      - title: "Bienaymé-Chebyshev Inequality"
+        url:  cheat-sheet/#chebyshev
+      - title: "Chernoff Inequality"
+        url:  cheat-sheet/#chernoff
+      - title: "Generalized Chernoff Inequality"
+        url:  cheat-sheet/#gen-chernoff
+      - title: "Bernstein Inequality"
+        url:  cheat-sheet/#bernstein
+      - title: "Bounded Difference Inequality"
+        url:  cheat-sheet/#bdi
+    - title: "Entropy Notions"
+      url:  cheat-sheet/#entropy-notions
+      children:
+      - title: "Some Lemmas on Entropy"
+        url:  cheat-sheet/#some-lemmas-on-entropy
+    - title: "Binomial Coefficients"
+      url:  cheat-sheet/#binomial-coefficients
+      children:
+      - title: "Sums of Binomial Coefficients"
+        url:  cheat-sheet/#sbc
+      - title: "Stirling Approximation"
+        url:  cheat-sheet/#stirling-approximation
+      - title: "Others"
+        url:  cheat-sheet/#bin-others
+    - title: "Useful Inequalities"
+      url:  cheat-sheet/#useful-inequalities
+    - title: "Useful Lemmas"
+      url:  cheat-sheet/#useful-lemmas
+      children:
+      - title: "Splitting Lemma"
+        url:  cheat-sheet/#splitting-lemma
+      - title: "Forking Lemma"
+        url:  cheat-sheet/#forking-lemma
+      - title: "Leftover Hash Lemma"
+        url:  cheat-sheet/#leftover-hash-lemma
+      - title: "Piling-Up Lemma"
+        url:  cheat-sheet/#piling-up-lemma

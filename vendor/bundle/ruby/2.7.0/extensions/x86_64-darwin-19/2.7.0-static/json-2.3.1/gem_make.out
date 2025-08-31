@@ -1,0 +1,13 @@
+current directory: /Users/geoffroy/Documents/git/GeoffroyCouteau.github.io/vendor/bundle/ruby/2.7.0/gems/json-2.3.1/ext/json
+/Users/geoffroy/.rubies/ruby-2.7.2/bin/ruby -I /Users/geoffroy/.rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20201101-66175-9bodqb.rb extconf.rb
+creating Makefile
+
+current directory: /Users/geoffroy/Documents/git/GeoffroyCouteau.github.io/vendor/bundle/ruby/2.7.0/gems/json-2.3.1/ext/json
+make "DESTDIR=" clean
+
+current directory: /Users/geoffroy/Documents/git/GeoffroyCouteau.github.io/vendor/bundle/ruby/2.7.0/gems/json-2.3.1/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Users/geoffroy/Documents/git/GeoffroyCouteau.github.io/vendor/bundle/ruby/2.7.0/gems/json-2.3.1/ext/json
+make "DESTDIR=" install

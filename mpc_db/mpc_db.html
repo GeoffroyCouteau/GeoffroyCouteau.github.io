@@ -2894,13 +2894,34 @@
             // Auto-load mpc_db.json if it exists
             async function autoLoadDatabase() {
                 try {
+                    console.log("Attempting to auto-load mpc_db.json...");
+
+                    // Check if we're running from file:// protocol
+                    if (window.location.protocol === 'file:') {
+                        console.log("⚠️ Running from file:// protocol - auto-load will not work");
+                        console.log("📝 For auto-load to work:");
+                        console.log("  • Deploy to a web server (e.g., GitHub Pages)");
+                        console.log("  • Or run a local server: python -m http.server");
+                        console.log("  • Auto-load will work normally in production");
+                        showMessage('Auto-load disabled: use Import button to load mpc_db.json when running locally', 'info');
+                        return;
+                    }
+
                     const response = await fetch('mpc_db.json');
                     if (response.ok) {
                         const data = await response.json();
-                        console.log("Auto-loading mpc_db.json...");
+                        console.log("✅ Auto-loading mpc_db.json...");
 
                         // Store original database for change tracking
                         originalDatabase = JSON.parse(JSON.stringify(data));
+
+                        // Reset change tracker
+                        changeTracker = {
+                            addedPapers: new Set(),
+                            modifiedPapers: new Map(),
+                            deletedPapers: new Set(),
+                            modifiedLabels: new Map()
+                        };
 
                         // Import the data (overwrite everything)
                         papers = data.papers || [];
@@ -2908,13 +2929,20 @@
                         // Save to IndexedDB
                         await savePapers();
 
-                        console.log(`Auto-loaded ${papers.length} papers from mpc_db.json`);
-                        showMessage('Database loaded successfully from mpc_db.json', 'success');
+                        console.log(`✅ Auto-loaded ${papers.length} papers from mpc_db.json`);
+                        showMessage(`Database loaded successfully: ${papers.length} papers from mpc_db.json`, 'success');
                     } else {
-                        console.log("mpc_db.json not found, continuing with existing data");
+                        console.log(`❌ mpc_db.json not found (HTTP ${response.status}), continuing with existing data`);
+                        console.log("💡 If this is unexpected, check that mpc_db.json exists in the same directory");
                     }
                 } catch (error) {
-                    console.log("Could not auto-load mpc_db.json:", error);
+                    if (error.name === 'TypeError' && error.message.includes('fetch')) {
+                        console.log("❌ Network error loading mpc_db.json - likely CORS or file access issue");
+                        console.log("💡 This is normal when running locally via file:// protocol");
+                    } else {
+                        console.log("❌ Error auto-loading mpc_db.json:", error);
+                    }
+                    console.log("📂 Continuing with existing browser data...");
                 }
             }
 
@@ -2929,6 +2957,7 @@
 
             // Admin login function
             async function adminLogin() {
+                console.log("adminLogin called");
                 const password = prompt("Enter admin password:");
                 if (!password) return;
 
@@ -2962,6 +2991,10 @@
 
                 showMessage('Admin mode disabled', 'info');
             }
+
+            // Make functions globally available
+            window.adminLogin = adminLogin;
+            window.adminLogout = adminLogout;
 
             // Track changes when papers are added/modified/deleted
             function trackChange(type, paper, originalPaper = null) {
@@ -3098,6 +3131,7 @@
 
             // Integrate changes function
             function integrateChanges() {
+                console.log("integrateChanges called");
                 if (!originalDatabase) {
                     showMessage('No original database loaded. Changes cannot be tracked.', 'error');
                     return;
@@ -3207,6 +3241,12 @@
                 URL.revokeObjectURL(diffUrl);
             }
 
+            // Make functions globally available
+            window.integrateChanges = integrateChanges;
+            window.showContactForm = showContactForm;
+            window.closeContactForm = closeContactForm;
+            window.submitChanges = submitChanges;
+
             // Import diff file (admin only)
             async function importDiffFile(event) {
                 if (!isAdminMode) {
@@ -3283,6 +3323,7 @@
 
             // Export full database (with local data)
             function exportFullDatabase() {
+                console.log("exportFullDatabase called");
                 const data = {
                     papers: papers,
                     folders: folders,
@@ -3302,8 +3343,12 @@
                 showMessage('Full database exported successfully', 'success');
             }
 
+            // Make function globally available
+            window.exportFullDatabase = exportFullDatabase;
+
             // Open user manual
             function openUserManual() {
+                console.log("openUserManual called");
                 const modal = document.createElement('div');
                 modal.className = 'modal';
                 modal.innerHTML = `
@@ -3441,6 +3486,10 @@
                     window.currentUserManual = null;
                 }
             }
+
+            // Make functions globally available
+            window.openUserManual = openUserManual;
+            window.closeUserManual = closeUserManual;
 
             async function checkAutoAddParameters() {
                 const urlParams = new URLSearchParams(window.location.search);
@@ -11620,6 +11669,10 @@
                             };
 
                             papers.push(paper);
+
+                            // Track change
+                            trackChange('add', paper);
+
                             successCount++;
                             addBatchResult(
                                 url,

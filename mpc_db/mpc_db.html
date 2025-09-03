@@ -1135,6 +1135,13 @@
                 gap: 8px;
             }
 
+            .selection-dropdown {
+                padding: 4px 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 12px;
+            }
+
             .view-mode-btn {
                 padding: 6px 12px;
                 border: 1px solid #ddd;
@@ -1353,10 +1360,9 @@
                 border: 1px solid #e1e5e9;
                 border-radius: 8px;
                 padding: 12px;
-                margin: 16px 0;
-                align-items: center;
-                justify-content: space-between;
-                gap: 16px;
+                margin-bottom: 16px;
+                flex-direction: column;
+                gap: 8px;
             }
 
             .paper-selection-controls.active {
@@ -1364,8 +1370,28 @@
             }
 
             .selection-info {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
+            }
+
+            .selection-buttons {
+                display: flex;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+
+            .selection-info {
                 font-weight: 500;
                 color: #495057;
+            }
+
+            .selection-actions {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                flex-wrap: wrap;
             }
 
             .selection-actions {
@@ -1570,6 +1596,36 @@
                     gap: 15px !important;
                 }
 
+                .paper-selection-controls {
+                    padding: 8px !important;
+                    gap: 6px !important;
+                }
+
+                .selection-info {
+                    font-size: 13px;
+                    gap: 6px !important;
+                }
+
+                .selection-buttons {
+                    gap: 4px !important;
+                }
+
+                .selection-actions {
+                    gap: 6px !important;
+                    flex-wrap: wrap;
+                }
+
+                .selection-dropdown {
+                    font-size: 11px !important;
+                    padding: 3px 6px !important;
+                    max-width: 150px;
+                }
+
+                .bulk-action-btn {
+                    font-size: 11px !important;
+                    padding: 4px 8px !important;
+                }
+
                 .folders-panel,
                 .sidebar,
                 .content-area {
@@ -1688,8 +1744,12 @@
                 }
 
                 .paper-authors {
-                    font-size: 13px;
-                    margin-bottom: 5px;
+                    font-size: 11px;
+                    color: #666;
+                    margin-bottom: 2px;
+                    padding-right: 120px; /* Space for icons on mobile */
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
                 }
 
                 .paper-date {
@@ -1953,8 +2013,8 @@
                         <div class="section-title">Add New Paper</div>
                         <div class="input-group">
                             <label for="eprint-url"
-                                >Paper URL (ePrint, Springer Nature, or ACM
-                                Digital Library)</label
+                                >Paper URL (ePrint, Springer Nature, ACM Digital
+                                Library, or IEEE Xplore)</label
                             >
                             <input
                                 type="url"
@@ -2378,36 +2438,11 @@
                             <button class="btn" onclick="toggleSelectionMode()">
                                 <span>☑️</span> Select Papers
                             </button>
-                            <button class="btn" onclick="exportDatabase()">
-                                <span>📁</span> Export
-                            </button>
                             <button
                                 class="btn"
-                                onclick="exportFullDatabase()"
-                                title="Export with scratchpad, reading status, and folders"
+                                onclick="toggleExportImportOptions()"
                             >
-                                <span>📁</span> Export Full
-                            </button>
-                            <input
-                                type="file"
-                                id="importFile"
-                                accept=".json"
-                                style="display: none"
-                                onchange="importDatabase(event)"
-                            />
-                            <button
-                                class="btn"
-                                onclick="document.getElementById('importFile').click()"
-                            >
-                                <span>📂</span> Import
-                            </button>
-
-                            <button
-                                class="btn"
-                                onclick="integrateChanges()"
-                                title="Send your changes for review"
-                            >
-                                <span>📧</span> Update DB
+                                <span>⚙️</span> Export/Import Options
                             </button>
                             <button
                                 class="btn"
@@ -2422,7 +2457,7 @@
                                 title="Refresh metadata for all visible papers"
                                 style="display: none"
                             >
-                                <span>🔄</span> Refresh All
+                                <span>🔄</span> Refresh Metadata
                             </button>
 
                             <button
@@ -2432,23 +2467,22 @@
                                 title="Sync papers added via browser extension to database"
                                 style="position: relative; display: none"
                             >
-                                <span>🔄</span> Sync DB
+                                <span>📥</span> Sync DB
                                 <span
                                     id="extension-count-badge"
                                     style="
                                         position: absolute;
-                                        top: -8px;
-                                        right: -8px;
-                                        background: #e74c3c;
+                                        top: -5px;
+                                        right: -5px;
+                                        background: #dc3545;
                                         color: white;
                                         border-radius: 50%;
-                                        width: 20px;
-                                        height: 20px;
-                                        font-size: 11px;
+                                        width: 18px;
+                                        height: 18px;
+                                        font-size: 10px;
                                         display: none;
                                         align-items: center;
                                         justify-content: center;
-                                        font-weight: bold;
                                     "
                                     >0</span
                                 >
@@ -2466,8 +2500,9 @@
                                 title="Edit user manual content"
                                 style="display: none"
                             >
-                                <span>✏️</span> Edit Manual
+                                <span>📝</span> Edit Manual
                             </button>
+
                             <input
                                 type="file"
                                 id="adminImportFile"
@@ -2483,17 +2518,121 @@
                             >
                                 <span>📥</span> Update DB
                             </button>
-                            <button
-                                class="btn"
-                                onclick="toggleAutoLoad()"
-                                id="auto-load-toggle-btn"
-                                title="Toggle automatic loading of mpc_db.json on page refresh"
+                        </div>
+
+                        <!-- Collapsible Export/Import Options -->
+                        <div
+                            id="export-import-options"
+                            style="
+                                display: none;
+                                margin-top: 16px;
+                                margin-bottom: 24px;
+                            "
+                        >
+                            <div
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #e3f2fd 0%,
+                                        #f3e5f5 100%
+                                    );
+                                    border: 1px solid #bbdefb;
+                                    border-radius: 12px;
+                                    padding: 16px;
+                                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                                "
                             >
-                                <span>🔄</span>
-                                <span id="auto-load-status"
-                                    >Disable Auto-load</span
+                                <h4
+                                    style="
+                                        margin: 0 0 12px 0;
+                                        color: #1565c0;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        text-align: center;
+                                    "
                                 >
-                            </button>
+                                    Export/Import Options
+                                </h4>
+                                <div
+                                    style="
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        gap: 6px;
+                                        justify-content: center;
+                                        align-items: center;
+                                    "
+                                >
+                                    <button
+                                        class="btn"
+                                        onclick="exportDatabase()"
+                                        style="
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
+                                        "
+                                    >
+                                        <span>📁</span> Export
+                                    </button>
+                                    <button
+                                        class="btn"
+                                        onclick="exportFullDatabase()"
+                                        title="Export with scratchpad, reading status, and folders"
+                                        style="
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
+                                        "
+                                    >
+                                        <span>📁</span> Export Full
+                                    </button>
+                                    <input
+                                        type="file"
+                                        id="importFile"
+                                        accept=".json"
+                                        style="display: none"
+                                        onchange="importDatabase(event)"
+                                    />
+                                    <button
+                                        class="btn"
+                                        onclick="document.getElementById('importFile').click()"
+                                        style="
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
+                                        "
+                                    >
+                                        <span>📂</span> Import
+                                    </button>
+                                    <button
+                                        class="btn"
+                                        onclick="integrateChanges()"
+                                        title="Send your changes for review"
+                                        style="
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
+                                        "
+                                    >
+                                        <span>📧</span> Update DB
+                                    </button>
+                                    <button
+                                        class="btn"
+                                        onclick="toggleAutoLoad()"
+                                        id="auto-load-toggle-btn-options"
+                                        title="Toggle automatic loading of mpc_db.json on page refresh"
+                                        style="
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
+                                        "
+                                    >
+                                        <span>🔄</span>
+                                        <span id="auto-load-status-options"
+                                            >Disable Auto-load</span
+                                        >
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -2503,29 +2642,26 @@
                         class="paper-selection-controls"
                     >
                         <div class="selection-info">
-                            <span id="selected-count">0</span> papers selected
-                            <button
-                                class="btn btn-secondary"
-                                onclick="selectAllVisiblePapers()"
-                                style="
-                                    margin-left: 12px;
-                                    padding: 4px 8px;
-                                    font-size: 12px;
-                                "
-                            >
-                                Select All
-                            </button>
-                            <button
-                                class="btn btn-secondary"
-                                onclick="deselectAllPapers()"
-                                style="
-                                    margin-left: 8px;
-                                    padding: 4px 8px;
-                                    font-size: 12px;
-                                "
-                            >
-                                Deselect All
-                            </button>
+                            <div>
+                                <span id="selected-count">0</span> papers
+                                selected
+                            </div>
+                            <div class="selection-buttons">
+                                <button
+                                    class="btn btn-secondary"
+                                    onclick="selectAllVisiblePapers()"
+                                    style="padding: 4px 8px; font-size: 12px"
+                                >
+                                    Select All
+                                </button>
+                                <button
+                                    class="btn btn-secondary"
+                                    onclick="deselectAllPapers()"
+                                    style="padding: 4px 8px; font-size: 12px"
+                                >
+                                    Deselect All
+                                </button>
+                            </div>
                         </div>
                         <div class="selection-actions">
                             <select
@@ -3953,10 +4089,32 @@ Install the companion browser extension to quickly add papers while browsing aca
             // Update auto-load button text and status
             function updateAutoLoadButton() {
                 const statusSpan = document.getElementById("auto-load-status");
+                const statusSpanOptions = document.getElementById(
+                    "auto-load-status-options",
+                );
+                const text = autoLoadEnabled
+                    ? "Disable Auto-load"
+                    : "Enable Auto-load";
+
                 if (statusSpan) {
-                    statusSpan.textContent = autoLoadEnabled
-                        ? "Disable Auto-load"
-                        : "Enable Auto-load";
+                    statusSpan.textContent = text;
+                }
+                if (statusSpanOptions) {
+                    statusSpanOptions.textContent = text;
+                }
+            }
+
+            // Toggle export/import options visibility
+            function toggleExportImportOptions() {
+                const options = document.getElementById(
+                    "export-import-options",
+                );
+                if (options.style.display === "none") {
+                    options.style.display = "block";
+                    // Update the second auto-load button status
+                    updateAutoLoadButton();
+                } else {
+                    options.style.display = "none";
                 }
             }
 
@@ -3964,6 +4122,7 @@ Install the companion browser extension to quickly add papers while browsing aca
             window.adminLogin = adminLogin;
             window.adminLogout = adminLogout;
             window.toggleAutoLoad = toggleAutoLoad;
+            window.toggleExportImportOptions = toggleExportImportOptions;
 
             // Incremental update functions for performance
             async function updateSinglePaper(paperId, changes) {

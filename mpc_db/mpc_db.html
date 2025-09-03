@@ -35,6 +35,9 @@
                 margin-bottom: 24px;
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
                 border: 1px solid rgba(255, 255, 255, 0.2);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
             }
 
             .header h1 {
@@ -160,8 +163,9 @@
 
             .search-controls {
                 display: flex;
-                gap: 12px;
-                margin-bottom: 16px;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 12px;
             }
 
             .label-selector {
@@ -668,6 +672,33 @@
                 margin-bottom: 4px;
             }
 
+            .header-content {
+                flex: 1;
+            }
+
+            .header-manual-btn {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
+                border-radius: 12px;
+                padding: 12px 20px;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+                margin-left: 20px;
+                flex-shrink: 0;
+            }
+
+            .header-manual-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            }
+
             .folders-tree {
                 margin-bottom: 16px;
             }
@@ -900,6 +931,40 @@
             }
 
             /* Favorite Star Icon */
+            /* User manual preview styles */
+            #user-manual-preview a {
+                color: #667eea;
+                text-decoration: none;
+            }
+
+            #user-manual-preview a:hover {
+                text-decoration: underline;
+            }
+
+            #user-manual-preview em {
+                font-style: italic;
+            }
+
+            #user-manual-preview h1,
+            #user-manual-preview h2,
+            #user-manual-preview h3 {
+                margin-top: 1.5em;
+                margin-bottom: 0.5em;
+            }
+
+            #user-manual-preview p {
+                margin-bottom: 1em;
+            }
+
+            #user-manual-preview ul {
+                margin-bottom: 1em;
+                padding-left: 1.5em;
+            }
+
+            #user-manual-preview li {
+                margin-bottom: 0.3em;
+            }
+
             .favorite-star-icon {
                 position: absolute;
                 top: 12px;
@@ -1250,7 +1315,9 @@
 
             .search-query-input {
                 width: 100%;
-                margin-bottom: 10px;
+                min-height: 40px;
+                resize: vertical;
+                margin-bottom: 0;
             }
 
             .graph-controls {
@@ -1675,7 +1742,7 @@
 
                 .folders-panel h3:after,
                 .sidebar .section-title:after {
-                    content: '▼';
+                    content: "▼";
                     position: absolute;
                     right: 0;
                     top: 0;
@@ -1722,51 +1789,19 @@
                 }
 
                 .header {
-                    display: flex;
-                    justify-content: space-between;
                     align-items: center;
                     margin-bottom: 32px;
                     padding: 24px 0;
                 }
 
                 .header-content {
-                    flex: 1;
                     text-align: center;
-                }
-
-                .header-manual-btn {
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    color: white;
-                    border: none;
-                    border-radius: 8px;
-                    padding: 10px 20px;
-                    font-size: 14px;
-                    font-weight: 500;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    text-decoration: none;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-                    flex-shrink: 0;
-                }
-
-                .header-manual-btn:hover {
-                    transform: translateY(-2px);
-                    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-                    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-                }
-
-                .header-content {
-                    text-align: center;
-                    margin-bottom: 15px;
                 }
 
                 .header-manual-btn {
                     margin-left: 0;
-                    width: auto;
-                    align-self: center;
+                    font-size: 12px;
+                    padding: 10px 16px;
                 }
 
                 .header h1 {
@@ -1811,7 +1846,7 @@
                 border-radius: 10px;
                 overflow: hidden;
                 margin-bottom: 20px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
 
             .loading-progress-bar {
@@ -1871,10 +1906,10 @@
     <body>
         <script>
             // Show loading immediately on page load
-            document.addEventListener('DOMContentLoaded', function() {
-                const overlay = document.createElement('div');
-                overlay.id = 'loading-overlay';
-                overlay.className = 'loading-overlay';
+            document.addEventListener("DOMContentLoaded", function () {
+                const overlay = document.createElement("div");
+                overlay.id = "loading-overlay";
+                overlay.className = "loading-overlay";
                 overlay.innerHTML = `
                     <div class="loading-text" id="loading-text">Loading MPC Database...</div>
                     <div class="loading-progress">
@@ -1890,10 +1925,15 @@
                 <div class="header-content">
                     <h1>The Secure Computation Database</h1>
                     <p>
-                        Organize and explore your secure computation research papers
+                        Organize and explore your secure computation research
+                        papers
                     </p>
                 </div>
-                <button class="header-manual-btn" onclick="openUserManualDynamic()" title="Open user manual">
+                <button
+                    class="header-manual-btn"
+                    onclick="openUserManualDynamic()"
+                    title="Open user manual"
+                >
                     <span>📖</span> User Manual
                 </button>
             </div>
@@ -2144,13 +2184,14 @@
                             "
                         ></div>
                         <div class="search-controls">
-                            <input
-                                type="text"
+                            <textarea
                                 id="search-query"
                                 class="search-query-input"
-                                placeholder="e.g., title:protocol AND author:Smith, year:2024, date:\"unknown date\" OR cryptography..."
+                                placeholder='e.g., title:protocol AND author:Smith, year:2024, date:"unknown date" OR cryptography...'
                                 oninput="validateAndDebounceSearch()"
-                            />
+                                rows="2"
+                                style="font-size: 12px"
+                            ></textarea>
                             <button class="btn" onclick="performSearch()">
                                 <span>🔍</span> Search
                             </button>
@@ -2161,55 +2202,55 @@
                             style="
                                 display: flex;
                                 flex-wrap: wrap;
-                                gap: 8px;
+                                gap: 4px;
                                 margin-bottom: 16px;
                             "
                         >
                             <button
                                 class="btn btn-secondary"
-                                style="font-size: 12px; padding: 6px 12px"
+                                style="font-size: 11px; padding: 4px 8px"
                                 onclick="filterByReadingStatus('all')"
                             >
                                 All Papers
                             </button>
                             <button
                                 class="btn btn-secondary"
-                                style="font-size: 12px; padding: 6px 12px"
+                                style="font-size: 11px; padding: 4px 8px"
                                 onclick="filterByReadingStatus('to-read')"
                             >
                                 📖 To Read
                             </button>
                             <button
                                 class="btn btn-secondary"
-                                style="font-size: 12px; padding: 6px 12px"
+                                style="font-size: 11px; padding: 4px 8px"
                                 onclick="filterByReadingStatus('reading')"
                             >
                                 📘 Reading
                             </button>
                             <button
                                 class="btn btn-secondary"
-                                style="font-size: 12px; padding: 6px 12px"
+                                style="font-size: 11px; padding: 4px 8px"
                                 onclick="filterByReadingStatus('read')"
                             >
                                 ✅ Read
                             </button>
                             <button
                                 class="btn btn-secondary"
-                                style="font-size: 12px; padding: 6px 12px"
+                                style="font-size: 11px; padding: 4px 8px"
                                 onclick="filterByReadingStatus('skimmed')"
                             >
                                 👀 Skimmed
                             </button>
                             <button
                                 class="btn btn-secondary"
-                                style="font-size: 12px; padding: 6px 12px"
+                                style="font-size: 11px; padding: 4px 8px"
                                 onclick="filterByReadingStatus('referenced')"
                             >
                                 📚 Referenced
                             </button>
                             <button
                                 class="btn btn-secondary"
-                                style="font-size: 12px; padding: 6px 12px"
+                                style="font-size: 11px; padding: 4px 8px"
                                 onclick="toggleFavoriteFilter()"
                                 id="favorite-filter-btn"
                             >
@@ -2340,7 +2381,11 @@
                             <button class="btn" onclick="exportDatabase()">
                                 <span>📁</span> Export
                             </button>
-                            <button class="btn" onclick="exportFullDatabase()" title="Export with scratchpad, reading status, and folders">
+                            <button
+                                class="btn"
+                                onclick="exportFullDatabase()"
+                                title="Export with scratchpad, reading status, and folders"
+                            >
                                 <span>📁</span> Export Full
                             </button>
                             <input
@@ -2357,11 +2402,19 @@
                                 <span>📂</span> Import
                             </button>
 
-                            <button class="btn" onclick="integrateChanges()" title="Send your changes for review">
-                                <span>📧</span> Integrate Changes
+                            <button
+                                class="btn"
+                                onclick="integrateChanges()"
+                                title="Send your changes for review"
+                            >
+                                <span>📧</span> Update DB
                             </button>
-                            <button class="btn" onclick="adminLogin()" id="admin-login-btn">
-                                <span>🔐</span> Admin Login
+                            <button
+                                class="btn"
+                                onclick="adminLogin()"
+                                id="admin-login-btn"
+                            >
+                                <span>🔐</span> Admin
                             </button>
                             <button
                                 class="btn admin-only"
@@ -2431,13 +2484,15 @@
                                 <span>📥</span> Update DB
                             </button>
                             <button
-                                class="btn admin-only"
+                                class="btn"
                                 onclick="toggleAutoLoad()"
                                 id="auto-load-toggle-btn"
                                 title="Toggle automatic loading of mpc_db.json on page refresh"
-                                style="display: none"
                             >
-                                <span>🔄</span> <span id="auto-load-status">Disable Auto-load</span>
+                                <span>🔄</span>
+                                <span id="auto-load-status"
+                                    >Disable Auto-load</span
+                                >
                             </button>
                         </div>
                     </div>
@@ -2500,7 +2555,9 @@
                                     Set status: Read
                                 </option>
                                 <option value="add-labels">Add labels</option>
-                                <option value="remove-labels">Remove labels</option>
+                                <option value="remove-labels">
+                                    Remove labels
+                                </option>
                                 <option value="move-to-folder">
                                     Move to folder
                                 </option>
@@ -2548,7 +2605,8 @@
                         class="help-icon"
                         onclick="showGraphHelp()"
                         title="Show graph help"
-                        >?</span>
+                        >?</span
+                    >
                 </div>
                 <div class="graph-controls">
                     <select id="graph-type-select">
@@ -2789,16 +2847,19 @@
             // Change tracking and admin system
             let originalDatabase = null; // Original state from mpc_db.json for change tracking
             let isAdminMode = false;
-            let autoLoadEnabled = localStorage.getItem('autoLoadEnabled') !== 'false'; // Default to true
+            let autoLoadEnabled =
+                localStorage.getItem("autoLoadEnabled") !== "false"; // Default to true
             let changeTracker = {
                 addedPapers: new Set(),
                 modifiedPapers: new Map(),
                 deletedPapers: new Set(),
-                modifiedLabels: new Map() // paperId -> {added: Set(), removed: Set()}
+                modifiedLabels: new Map(), // paperId -> {added: Set(), removed: Set()}
             };
 
             // User manual content
-            let userManualContent = localStorage.getItem('userManualContent') || `# MPC Database User Manual
+            let userManualContent =
+                localStorage.getItem("userManualContent") ||
+                `# MPC Database User Manual
 
 ## 1. What the Database Offers
 
@@ -2931,7 +2992,7 @@ Best regards,
 When you modify the database (add papers, edit metadata, change labels), these changes are stored locally in your browser.
 
 **To submit your changes:**
-- Click "Integrate Changes" to send your modifications for review
+- Click "Update DB" to send your modifications for review
 - Provide your contact information when prompted
 - An email will be sent to mpc@irif.fr with a summary of your changes
 - Changes are reviewed and may be integrated into the main database
@@ -2963,50 +3024,69 @@ Install the companion browser extension to quickly add papers while browsing aca
 
             // Simple markdown parser for user manual
             function parseUserManualMarkdown(markdown) {
-                return markdown
-                    // Headers
-                    .replace(/^### (.*$)/gm, '<h3>$1</h3>')
-                    .replace(/^## (.*$)/gm, '<h2>$1</h2>')
-                    .replace(/^# (.*$)/gm, '<h1>$1</h1>')
-                    // Code blocks
-                    .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
-                    // Inline code
-                    .replace(/`([^`]+)`/g, '<code>$1</code>')
-                    // Bold
-                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                    // Lists
-                    .replace(/^- (.*$)/gm, '<li>$1</li>')
-                    .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
-                    // Fix nested lists
-                    .replace(/<\/ul>\s*<ul>/g, '')
-                    // Paragraphs
-                    .split('\n\n')
-                    .map(paragraph => {
-                        paragraph = paragraph.trim();
-                        if (!paragraph) return '';
-                        if (paragraph.startsWith('<h') || paragraph.startsWith('<ul') ||
-                            paragraph.startsWith('<pre') || paragraph.startsWith('<li')) {
-                            return paragraph;
-                        }
-                        return `<p>${paragraph}</p>`;
-                    })
-                    .join('\n');
+                return (
+                    markdown
+                        // Headers
+                        .replace(/^### (.*$)/gm, "<h3>$1</h3>")
+                        .replace(/^## (.*$)/gm, "<h2>$1</h2>")
+                        .replace(/^# (.*$)/gm, "<h1>$1</h1>")
+                        // Code blocks
+                        .replace(
+                            /```([\s\S]*?)```/g,
+                            "<pre><code>$1</code></pre>",
+                        )
+                        // Inline code
+                        .replace(/`([^`]+)`/g, "<code>$1</code>")
+                        // Links [text](url)
+                        .replace(
+                            /\[([^\]]+)\]\(([^)]+)\)/g,
+                            '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>',
+                        )
+                        // Bold
+                        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+                        // Italics
+                        .replace(/\*([^*]+)\*/g, "<em>$1</em>")
+                        // Lists
+                        .replace(/^- (.*$)/gm, "<li>$1</li>")
+                        .replace(/(<li>.*<\/li>)/gs, "<ul>$1</ul>")
+                        // Fix nested lists
+                        .replace(/<\/ul>\s*<ul>/g, "")
+                        // Paragraphs
+                        .split("\n\n")
+                        .map((paragraph) => {
+                            paragraph = paragraph.trim();
+                            if (!paragraph) return "";
+                            if (
+                                paragraph.startsWith("<h") ||
+                                paragraph.startsWith("<ul") ||
+                                paragraph.startsWith("<pre") ||
+                                paragraph.startsWith("<li")
+                            ) {
+                                return paragraph;
+                            }
+                            return `<p>${paragraph}</p>`;
+                        })
+                        .join("\n")
+                );
             }
 
             // Save user manual content
             function saveUserManualContent() {
-                localStorage.setItem('userManualContent', userManualContent);
+                localStorage.setItem("userManualContent", userManualContent);
             }
 
             // Edit user manual (admin only)
             function editUserManual() {
                 if (!isAdminMode) {
-                    showMessage("Admin mode required to edit user manual", "error");
+                    showMessage(
+                        "Admin mode required to edit user manual",
+                        "error",
+                    );
                     return;
                 }
 
-                const modal = document.createElement('div');
-                modal.className = 'modal';
+                const modal = document.createElement("div");
+                modal.className = "modal";
                 modal.innerHTML = `
                     <div class="modal-content" style="max-width: 900px; max-height: 90vh; overflow-y: auto;">
                         <div class="modal-header">
@@ -3019,26 +3099,45 @@ Install the companion browser extension to quickly add papers while browsing aca
                                 <button class="btn btn-success" onclick="saveUserManualEdit()">Save</button>
                             </div>
                             <textarea id="user-manual-editor" style="width: 100%; height: 500px; font-family: monospace; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">${userManualContent}</textarea>
-                            <div id="user-manual-preview" style="display: none; margin-top: 20px; padding: 20px; border: 1px solid #ddd; border-radius: 4px; background: #f9f9f9; line-height: 1.6;"></div>
+                            <div id="user-manual-preview" style="display: none; margin-top: 20px; padding: 20px; border: 1px solid #ddd; border-radius: 4px; background: #f9f9f9; line-height: 1.6; max-height: 400px; overflow-y: auto;"></div>
                         </div>
                     </div>
                 `;
                 document.body.appendChild(modal);
-                modal.style.display = 'flex';
+                modal.style.display = "flex";
                 window.currentEditUserManual = modal;
             }
 
             function previewUserManual() {
-                const editor = document.getElementById('user-manual-editor');
-                const preview = document.getElementById('user-manual-preview');
+                console.log("previewUserManual called");
+                const editor = document.getElementById("user-manual-editor");
+                const preview = document.getElementById("user-manual-preview");
+                console.log("Editor found:", !!editor);
+                console.log("Preview found:", !!preview);
                 if (editor && preview) {
-                    preview.innerHTML = parseUserManualMarkdown(editor.value);
-                    preview.style.display = preview.style.display === 'none' ? 'block' : 'none';
+                    if (
+                        preview.style.display === "none" ||
+                        !preview.style.display
+                    ) {
+                        console.log("Showing preview");
+                        preview.innerHTML = parseUserManualMarkdown(
+                            editor.value,
+                        );
+                        preview.style.display = "block";
+                    } else {
+                        console.log("Hiding preview");
+                        preview.style.display = "none";
+                    }
+                } else {
+                    console.error("Could not find editor or preview elements");
                 }
             }
 
+            // Make function globally available
+            window.previewUserManual = previewUserManual;
+
             function saveUserManualEdit() {
-                const editor = document.getElementById('user-manual-editor');
+                const editor = document.getElementById("user-manual-editor");
                 if (editor) {
                     userManualContent = editor.value;
                     saveUserManualContent();
@@ -3049,15 +3148,20 @@ Install the companion browser extension to quickly add papers while browsing aca
 
             function closeEditUserManual() {
                 if (window.currentEditUserManual) {
-                    document.body.removeChild(window.currentEditUserManual);
+                    window.currentEditUserManual.remove();
                     window.currentEditUserManual = null;
                 }
             }
 
+            // Make functions globally available
+            window.saveUserManualEdit = saveUserManualEdit;
+            window.closeEditUserManual = closeEditUserManual;
+            window.editUserManual = editUserManual;
+
             // New dynamic user manual display
             function openUserManualDynamic() {
-                const modal = document.createElement('div');
-                modal.className = 'modal';
+                const modal = document.createElement("div");
+                modal.className = "modal";
                 modal.innerHTML = `
                     <div class="modal-content" style="max-width: 900px; max-height: 90vh; overflow-y: auto; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); box-shadow: 0 20px 60px rgba(0,0,0,0.15); border-radius: 16px;">
                         <div class="modal-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 16px 16px 0 0; padding: 25px 30px;">
@@ -3082,18 +3186,22 @@ Install the companion browser extension to quickly add papers while browsing aca
                     </div>
                 `;
                 document.body.appendChild(modal);
-                modal.style.display = 'flex';
+                modal.style.display = "flex";
                 window.currentUserManual = modal;
             }
 
             // Loading progress functions
-            function showLoadingProgress(text = "Loading database...", subtext = "") {
-                const existingOverlay = document.getElementById('loading-overlay');
+            function showLoadingProgress(
+                text = "Loading database...",
+                subtext = "",
+            ) {
+                const existingOverlay =
+                    document.getElementById("loading-overlay");
                 if (existingOverlay) return; // Don't create multiple overlays
 
-                const overlay = document.createElement('div');
-                overlay.id = 'loading-overlay';
-                overlay.className = 'loading-overlay';
+                const overlay = document.createElement("div");
+                overlay.id = "loading-overlay";
+                overlay.className = "loading-overlay";
                 overlay.innerHTML = `
                     <div class="loading-text" id="loading-text">${text}</div>
                     <div class="loading-progress">
@@ -3104,10 +3212,17 @@ Install the companion browser extension to quickly add papers while browsing aca
                 document.body.appendChild(overlay);
             }
 
-            function updateLoadingProgress(percent, text = null, subtext = null) {
-                const progressBar = document.getElementById('loading-progress-bar');
-                const textElement = document.getElementById('loading-text');
-                const subtextElement = document.getElementById('loading-subtext');
+            function updateLoadingProgress(
+                percent,
+                text = null,
+                subtext = null,
+            ) {
+                const progressBar = document.getElementById(
+                    "loading-progress-bar",
+                );
+                const textElement = document.getElementById("loading-text");
+                const subtextElement =
+                    document.getElementById("loading-subtext");
 
                 if (progressBar) {
                     progressBar.style.width = `${Math.min(100, Math.max(0, percent))}%`;
@@ -3121,7 +3236,7 @@ Install the companion browser extension to quickly add papers while browsing aca
             }
 
             function hideLoadingProgress() {
-                const overlay = document.getElementById('loading-overlay');
+                const overlay = document.getElementById("loading-overlay");
                 if (overlay) {
                     overlay.remove();
                 }
@@ -3329,7 +3444,10 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                     // Text search
                     if (query && !evaluateAdvancedQuery(query, paper)) {
-                        if (query.includes("date:") && query.includes("unknown")) {
+                        if (
+                            query.includes("date:") &&
+                            query.includes("unknown")
+                        ) {
                             console.log(
                                 `DEBUG: Paper "${paper.title}" (date="${paper.date}") filtered out by query`,
                             );
@@ -3404,7 +3522,6 @@ Install the companion browser extension to quickly add papers while browsing aca
                     window.isAutoLoading = true;
                     // Try to auto-load mpc_db.json first
                     await autoLoadDatabase();
-
 
                     window.isAutoLoading = false;
 
@@ -3487,8 +3604,13 @@ Install the companion browser extension to quickly add papers while browsing aca
                                 "[STORAGE EVENT] localStorage updated by another tab",
                             );
                             // Reload and merge data
-                            console.log("[INIT] Auto-load disabled, using local data");
-                            showLoadingProgress("Loading local database...", "Auto-load disabled");
+                            console.log(
+                                "[INIT] Auto-load disabled, using local data",
+                            );
+                            showLoadingProgress(
+                                "Loading local database...",
+                                "Auto-load disabled",
+                            );
                             loadPapers().then(() => {
                                 performSearch();
                                 renderPapers();
@@ -3550,7 +3672,11 @@ Install the companion browser extension to quickly add papers while browsing aca
                     // Paper count will be updated after extension papers are loaded
                     updatePaperCount();
 
-                    updateLoadingProgress(100, "Complete!", "Database loaded successfully");
+                    updateLoadingProgress(
+                        100,
+                        "Complete!",
+                        "Database loaded successfully",
+                    );
 
                     // Hide loading after a brief delay
                     setTimeout(() => {
@@ -3559,12 +3685,14 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                     // Defer non-critical updates
                     setTimeout(() => {
-
                         // Initialize reading status statistics
                         updateReadingStatusStats(papers);
 
                         // Update extension sync badge
                         updateExtensionSyncBadge();
+
+                        // Initialize auto-load button status
+                        updateAutoLoadButton();
 
                         // Check if there are extension papers waiting for sync
                         const extensionStored = localStorage.getItem(
@@ -3584,19 +3712,18 @@ Install the companion browser extension to quickly add papers while browsing aca
                         }
                     }, 500);
 
-                        // Check for date integrity issues (deferred to avoid blocking startup)
-                        setTimeout(() => {
-                            const dateCheck = checkDateIntegrity();
-                            if (dateCheck.suspicious > 0) {
-                                console.warn(
-                                    `[INIT] ⚠️ Found ${dateCheck.suspicious} papers with corrupted dates after 2025-08-15`,
-                                );
+                    // Check for date integrity issues (deferred to avoid blocking startup)
+                    setTimeout(() => {
+                        const dateCheck = checkDateIntegrity();
+                        if (dateCheck.suspicious > 0) {
+                            console.warn(
+                                `[INIT] ⚠️ Found ${dateCheck.suspicious} papers with corrupted dates after 2025-08-15`,
+                            );
 
-                                // Remove date corruption warning messages
-                                // Users can still search for date:"unknown date" if needed
-                            }
-                        }, 2000);
-
+                            // Remove date corruption warning messages
+                            // Users can still search for date:"unknown date" if needed
+                        }
+                    }, 2000);
 
                     console.log(
                         `=== INITIALIZATION COMPLETE: ${papers.length} papers, ${folders.length} folders ===`,
@@ -3658,23 +3785,39 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                     // Check if auto-load is enabled
                     if (!autoLoadEnabled) {
-                        console.log("🚫 Auto-load is disabled via admin toggle");
-                        showMessage('Auto-load disabled: use Import button or enable via admin panel', 'info');
+                        console.log(
+                            "🚫 Auto-load is disabled via admin toggle",
+                        );
+                        showMessage(
+                            "Auto-load disabled: use Import button or enable via admin panel",
+                            "info",
+                        );
                         return;
                     }
 
                     // Check if we're running from file:// protocol
-                    if (window.location.protocol === 'file:') {
-                        console.log("⚠️ Running from file:// protocol - auto-load will not work");
+                    if (window.location.protocol === "file:") {
+                        console.log(
+                            "⚠️ Running from file:// protocol - auto-load will not work",
+                        );
                         console.log("📝 For auto-load to work:");
-                        console.log("  • Deploy to a web server (e.g., GitHub Pages)");
-                        console.log("  • Or run a local server: python -m http.server");
-                        console.log("  • Auto-load will work normally in production");
-                        showMessage('Auto-load disabled: use Import button to load mpc_db.json when running locally', 'info');
+                        console.log(
+                            "  • Deploy to a web server (e.g., GitHub Pages)",
+                        );
+                        console.log(
+                            "  • Or run a local server: python -m http.server",
+                        );
+                        console.log(
+                            "  • Auto-load will work normally in production",
+                        );
+                        showMessage(
+                            "Auto-load disabled: use Import button to load mpc_db.json when running locally",
+                            "info",
+                        );
                         return;
                     }
 
-                    const response = await fetch('mpc_db.json');
+                    const response = await fetch("mpc_db.json");
                     if (response.ok) {
                         const data = await response.json();
                         console.log("✅ Auto-loading mpc_db.json...");
@@ -3687,7 +3830,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                             addedPapers: new Set(),
                             modifiedPapers: new Map(),
                             deletedPapers: new Set(),
-                            modifiedLabels: new Map()
+                            modifiedLabels: new Map(),
                         };
 
                         // Import the data (overwrite everything)
@@ -3697,24 +3840,45 @@ Install the companion browser extension to quickly add papers while browsing aca
                         if (data.userManual) {
                             userManualContent = data.userManual;
                             saveUserManualContent();
-                            console.log("✅ User manual loaded from mpc_db.json");
+                            console.log(
+                                "✅ User manual loaded from mpc_db.json",
+                            );
                         }
 
                         // Save to IndexedDB
                         await savePapers();
 
-                        console.log(`✅ Auto-loaded ${papers.length} papers from mpc_db.json`);
-                        showMessage(`Database loaded successfully: ${papers.length} papers from mpc_db.json`, 'success');
+                        console.log(
+                            `✅ Auto-loaded ${papers.length} papers from mpc_db.json`,
+                        );
+                        showMessage(
+                            `Database loaded successfully: ${papers.length} papers from mpc_db.json`,
+                            "success",
+                        );
                     } else {
-                        console.log(`❌ mpc_db.json not found (HTTP ${response.status}), continuing with existing data`);
-                        console.log("💡 If this is unexpected, check that mpc_db.json exists in the same directory");
+                        console.log(
+                            `❌ mpc_db.json not found (HTTP ${response.status}), continuing with existing data`,
+                        );
+                        console.log(
+                            "💡 If this is unexpected, check that mpc_db.json exists in the same directory",
+                        );
                     }
                 } catch (error) {
-                    if (error.name === 'TypeError' && error.message.includes('fetch')) {
-                        console.log("❌ Network error loading mpc_db.json - likely CORS or file access issue");
-                        console.log("💡 This is normal when running locally via file:// protocol");
+                    if (
+                        error.name === "TypeError" &&
+                        error.message.includes("fetch")
+                    ) {
+                        console.log(
+                            "❌ Network error loading mpc_db.json - likely CORS or file access issue",
+                        );
+                        console.log(
+                            "💡 This is normal when running locally via file:// protocol",
+                        );
                     } else {
-                        console.log("❌ Error auto-loading mpc_db.json:", error);
+                        console.log(
+                            "❌ Error auto-loading mpc_db.json:",
+                            error,
+                        );
                     }
                     console.log("📂 Continuing with existing browser data...");
                 }
@@ -3724,9 +3888,11 @@ Install the companion browser extension to quickly add papers while browsing aca
             async function hashPassword(password) {
                 const encoder = new TextEncoder();
                 const data = encoder.encode(password + "mpc_salt_2024"); // Add salt
-                const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+                const hashBuffer = await crypto.subtle.digest("SHA-256", data);
                 const hashArray = Array.from(new Uint8Array(hashBuffer));
-                return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+                return hashArray
+                    .map((b) => b.toString(16).padStart(2, "0"))
+                    .join("");
             }
 
             // Admin login function
@@ -3740,48 +3906,57 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                 if (hashedPassword === correctHash) {
                     isAdminMode = true;
-                    document.getElementById('admin-login-btn').innerHTML = '<span>🔓</span> Admin Logout';
-                    document.getElementById('admin-login-btn').onclick = adminLogout;
+                    document.getElementById("admin-login-btn").innerHTML =
+                        "<span>🔓</span> Admin Logout";
+                    document.getElementById("admin-login-btn").onclick =
+                        adminLogout;
 
                     // Show admin-only buttons
-                    const adminElements = document.querySelectorAll('.admin-only');
-                    adminElements.forEach(el => el.style.display = '');
+                    const adminElements =
+                        document.querySelectorAll(".admin-only");
+                    adminElements.forEach((el) => (el.style.display = ""));
 
                     // Update auto-load button status
                     updateAutoLoadButton();
 
-                    showMessage('Admin mode enabled', 'success');
+                    showMessage("Admin mode enabled", "success");
                 } else {
-                    showMessage('Incorrect password', 'error');
+                    showMessage("Incorrect password", "error");
                 }
             }
 
             // Admin logout function
             function adminLogout() {
                 isAdminMode = false;
-                document.getElementById('admin-login-btn').innerHTML = '<span>🔐</span> Admin Login';
-                document.getElementById('admin-login-btn').onclick = adminLogin;
+                document.getElementById("admin-login-btn").innerHTML =
+                    "<span>🔐</span> Admin";
+                document.getElementById("admin-login-btn").onclick = adminLogin;
 
                 // Hide admin-only buttons
-                const adminElements = document.querySelectorAll('.admin-only');
-                adminElements.forEach(el => el.style.display = 'none');
+                const adminElements = document.querySelectorAll(".admin-only");
+                adminElements.forEach((el) => (el.style.display = "none"));
 
-                showMessage('Admin mode disabled', 'info');
+                showMessage("Admin mode disabled", "info");
             }
 
             // Toggle auto-load functionality
             function toggleAutoLoad() {
                 autoLoadEnabled = !autoLoadEnabled;
-                localStorage.setItem('autoLoadEnabled', autoLoadEnabled);
+                localStorage.setItem("autoLoadEnabled", autoLoadEnabled);
                 updateAutoLoadButton();
-                showMessage(`Auto-load ${autoLoadEnabled ? 'enabled' : 'disabled'}`, 'success');
+                showMessage(
+                    `Auto-load ${autoLoadEnabled ? "enabled" : "disabled"}`,
+                    "success",
+                );
             }
 
             // Update auto-load button text and status
             function updateAutoLoadButton() {
-                const statusSpan = document.getElementById('auto-load-status');
+                const statusSpan = document.getElementById("auto-load-status");
                 if (statusSpan) {
-                    statusSpan.textContent = autoLoadEnabled ? 'Disable Auto-load' : 'Enable Auto-load';
+                    statusSpan.textContent = autoLoadEnabled
+                        ? "Disable Auto-load"
+                        : "Enable Auto-load";
                 }
             }
 
@@ -3795,7 +3970,10 @@ Install the companion browser extension to quickly add papers while browsing aca
                 if (!db) await initDB();
 
                 return new Promise((resolve, reject) => {
-                    const transaction = db.transaction([PAPERS_STORE], 'readwrite');
+                    const transaction = db.transaction(
+                        [PAPERS_STORE],
+                        "readwrite",
+                    );
                     const papersStore = transaction.objectStore(PAPERS_STORE);
 
                     const getRequest = papersStore.get(paperId);
@@ -3803,7 +3981,9 @@ Install the companion browser extension to quickly add papers while browsing aca
                     getRequest.onsuccess = () => {
                         const existingPaper = getRequest.result;
                         if (!existingPaper) {
-                            reject(new Error(`Paper with id ${paperId} not found`));
+                            reject(
+                                new Error(`Paper with id ${paperId} not found`),
+                            );
                             return;
                         }
 
@@ -3811,7 +3991,10 @@ Install the companion browser extension to quickly add papers while browsing aca
                         const putRequest = papersStore.put(updatedPaper);
 
                         putRequest.onsuccess = () => {
-                            console.log(`[INCREMENTAL UPDATE] Updated paper ${paperId}:`, changes);
+                            console.log(
+                                `[INCREMENTAL UPDATE] Updated paper ${paperId}:`,
+                                changes,
+                            );
                             resolve();
                         };
                         putRequest.onerror = () => reject(putRequest.error);
@@ -3846,10 +4029,12 @@ Install the companion browser extension to quickly add papers while browsing aca
                 pendingUpdates.clear();
                 saveTimeout = null;
 
-                console.log(`[BATCH UPDATE] Processing ${updates.length} pending updates`);
+                console.log(
+                    `[BATCH UPDATE] Processing ${updates.length} pending updates`,
+                );
 
                 const promises = updates.map(([paperId, changes]) =>
-                    updateSinglePaper(paperId, changes)
+                    updateSinglePaper(paperId, changes),
                 );
 
                 try {
@@ -3857,7 +4042,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                     // Update localStorage backup (lightweight)
                     saveToLocalStorage();
                 } catch (error) {
-                    console.error('[BATCH UPDATE] Error:', error);
+                    console.error("[BATCH UPDATE] Error:", error);
                     // Fallback to full save on error
                     await savePapers();
                 }
@@ -3866,15 +4051,15 @@ Install the companion browser extension to quickly add papers while browsing aca
             // Throttle function for scroll events
             function throttle(func, limit) {
                 let inThrottle;
-                return function() {
+                return function () {
                     const args = arguments;
                     const context = this;
                     if (!inThrottle) {
                         func.apply(context, args);
                         inThrottle = true;
-                        setTimeout(() => inThrottle = false, limit);
+                        setTimeout(() => (inThrottle = false), limit);
                     }
-                }
+                };
             }
 
             // Make incremental functions globally available
@@ -3887,29 +4072,29 @@ Install the companion browser extension to quickly add papers while browsing aca
                 if (!originalDatabase) return; // No original database to compare against
 
                 switch (type) {
-                    case 'add':
+                    case "add":
                         changeTracker.addedPapers.add(paper.id);
                         break;
-                    case 'modify':
+                    case "modify":
                         if (!changeTracker.addedPapers.has(paper.id)) {
                             changeTracker.modifiedPapers.set(paper.id, {
                                 original: originalPaper,
-                                modified: paper
+                                modified: paper,
                             });
                         }
                         break;
-                    case 'delete':
+                    case "delete":
                         if (changeTracker.addedPapers.has(paper.id)) {
                             changeTracker.addedPapers.delete(paper.id);
                         } else {
                             changeTracker.deletedPapers.add(paper.id);
                         }
                         break;
-                    case 'label':
+                    case "label":
                         if (!changeTracker.modifiedLabels.has(paper.id)) {
                             changeTracker.modifiedLabels.set(paper.id, {
                                 added: new Set(),
-                                removed: new Set()
+                                removed: new Set(),
                             });
                         }
                         break;
@@ -3923,10 +4108,10 @@ Install the companion browser extension to quickly add papers while browsing aca
                 // Added papers
                 if (changeTracker.addedPapers.size > 0) {
                     summary += "ADDED PAPERS:\n";
-                    changeTracker.addedPapers.forEach(paperId => {
-                        const paper = papers.find(p => p.id === paperId);
+                    changeTracker.addedPapers.forEach((paperId) => {
+                        const paper = papers.find((p) => p.id === paperId);
                         if (paper) {
-                            summary += `- ${paper.title} (${paper.authors || 'Unknown authors'})\n`;
+                            summary += `- ${paper.title} (${paper.authors || "Unknown authors"})\n`;
                         }
                     });
                     summary += "\n";
@@ -3939,25 +4124,41 @@ Install the companion browser extension to quickly add papers while browsing aca
                         summary += `- Paper: ${change.modified.title}\n`;
 
                         // Check for field changes
-                        const fields = ['title', 'authors', 'abstract', 'url', 'date', 'venue'];
-                        fields.forEach(field => {
-                            if (change.original[field] !== change.modified[field]) {
-                                summary += `  ${field}: "${change.original[field] || ''}" → "${change.modified[field] || ''}"\n`;
+                        const fields = [
+                            "title",
+                            "authors",
+                            "abstract",
+                            "url",
+                            "date",
+                            "venue",
+                        ];
+                        fields.forEach((field) => {
+                            if (
+                                change.original[field] !==
+                                change.modified[field]
+                            ) {
+                                summary += `  ${field}: "${change.original[field] || ""}" → "${change.modified[field] || ""}"\n`;
                             }
                         });
 
                         // Check for label changes
-                        const origLabels = new Set(change.original.labels || []);
+                        const origLabels = new Set(
+                            change.original.labels || [],
+                        );
                         const modLabels = new Set(change.modified.labels || []);
 
-                        const addedLabels = [...modLabels].filter(l => !origLabels.has(l));
-                        const removedLabels = [...origLabels].filter(l => !modLabels.has(l));
+                        const addedLabels = [...modLabels].filter(
+                            (l) => !origLabels.has(l),
+                        );
+                        const removedLabels = [...origLabels].filter(
+                            (l) => !modLabels.has(l),
+                        );
 
                         if (addedLabels.length > 0) {
-                            summary += `  Added labels: ${addedLabels.join(', ')}\n`;
+                            summary += `  Added labels: ${addedLabels.join(", ")}\n`;
                         }
                         if (removedLabels.length > 0) {
-                            summary += `  Removed labels: ${removedLabels.join(', ')}\n`;
+                            summary += `  Removed labels: ${removedLabels.join(", ")}\n`;
                         }
                     });
                     summary += "\n";
@@ -3966,10 +4167,12 @@ Install the companion browser extension to quickly add papers while browsing aca
                 // Deleted papers
                 if (changeTracker.deletedPapers.size > 0) {
                     summary += "DELETED PAPERS:\n";
-                    changeTracker.deletedPapers.forEach(paperId => {
-                        const originalPaper = originalDatabase.papers.find(p => p.id === paperId);
+                    changeTracker.deletedPapers.forEach((paperId) => {
+                        const originalPaper = originalDatabase.papers.find(
+                            (p) => p.id === paperId,
+                        );
                         if (originalPaper) {
-                            summary += `- ${originalPaper.title} (${originalPaper.authors || 'Unknown authors'})\n`;
+                            summary += `- ${originalPaper.title} (${originalPaper.authors || "Unknown authors"})\n`;
                         }
                     });
                 }
@@ -3985,13 +4188,13 @@ Install the companion browser extension to quickly add papers while browsing aca
                     changes: {
                         added: [],
                         modified: [],
-                        deleted: Array.from(changeTracker.deletedPapers)
-                    }
+                        deleted: Array.from(changeTracker.deletedPapers),
+                    },
                 };
 
                 // Added papers (excluding local-only data)
-                changeTracker.addedPapers.forEach(paperId => {
-                    const paper = papers.find(p => p.id === paperId);
+                changeTracker.addedPapers.forEach((paperId) => {
+                    const paper = papers.find((p) => p.id === paperId);
                     if (paper) {
                         const cleanPaper = { ...paper };
                         delete cleanPaper.scratchpad;
@@ -4019,16 +4222,20 @@ Install the companion browser extension to quickly add papers while browsing aca
             function integrateChanges() {
                 console.log("integrateChanges called");
                 if (!originalDatabase) {
-                    showMessage('No original database loaded. Changes cannot be tracked.', 'error');
+                    showMessage(
+                        "No original database loaded. Changes cannot be tracked.",
+                        "error",
+                    );
                     return;
                 }
 
-                const hasChanges = changeTracker.addedPapers.size > 0 ||
-                                 changeTracker.modifiedPapers.size > 0 ||
-                                 changeTracker.deletedPapers.size > 0;
+                const hasChanges =
+                    changeTracker.addedPapers.size > 0 ||
+                    changeTracker.modifiedPapers.size > 0 ||
+                    changeTracker.deletedPapers.size > 0;
 
                 if (!hasChanges) {
-                    showMessage('No changes detected to integrate.', 'info');
+                    showMessage("No changes detected to integrate.", "info");
                     return;
                 }
 
@@ -4038,12 +4245,12 @@ Install the companion browser extension to quickly add papers while browsing aca
 
             // Show contact form for change integration
             function showContactForm() {
-                const modal = document.createElement('div');
-                modal.className = 'modal';
+                const modal = document.createElement("div");
+                modal.className = "modal";
                 modal.innerHTML = `
                     <div class="modal-content" style="max-width: 600px;">
                         <div class="modal-header">
-                            <h2>Integrate Changes</h2>
+                            <h2>Update Database</h2>
                             <span class="close" onclick="closeContactForm()">&times;</span>
                         </div>
                         <div style="padding: 20px;">
@@ -4076,7 +4283,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                     </div>
                 `;
                 document.body.appendChild(modal);
-                modal.style.display = 'flex';
+                modal.style.display = "flex";
                 window.currentContactModal = modal;
             }
 
@@ -4090,35 +4297,54 @@ Install the companion browser extension to quickly add papers while browsing aca
 
             // Submit changes via email
             function submitChanges() {
-                const firstname = document.getElementById('contact-firstname').value.trim();
-                const lastname = document.getElementById('contact-lastname').value.trim();
-                const website = document.getElementById('contact-website').value.trim();
+                const firstname = document
+                    .getElementById("contact-firstname")
+                    .value.trim();
+                const lastname = document
+                    .getElementById("contact-lastname")
+                    .value.trim();
+                const website = document
+                    .getElementById("contact-website")
+                    .value.trim();
 
                 if (!firstname || !lastname) {
-                    showMessage('Please fill in all required fields.', 'error');
+                    showMessage("Please fill in all required fields.", "error");
                     return;
                 }
 
-                const contactInfo = `${firstname} ${lastname}` + (website ? ` (${website})` : '');
+                const contactInfo =
+                    `${firstname} ${lastname}` +
+                    (website ? ` (${website})` : "");
                 const summary = generateChangesSummary();
                 const diffFile = generateDiffFile();
 
                 // Create mailto link
-                const subject = encodeURIComponent('MPC Database Changes Submission');
-                const body = encodeURIComponent(`Contact: ${contactInfo}\n\n${summary}`);
+                const subject = encodeURIComponent(
+                    "MPC Database Changes Submission",
+                );
+                const body = encodeURIComponent(
+                    `Contact: ${contactInfo}\n\n${summary}`,
+                );
 
                 // Create downloadable diff file
-                const diffBlob = new Blob([JSON.stringify(diffFile, null, 2)], { type: 'application/json' });
+                const diffBlob = new Blob([JSON.stringify(diffFile, null, 2)], {
+                    type: "application/json",
+                });
                 const diffUrl = URL.createObjectURL(diffBlob);
-                const diffLink = document.createElement('a');
+                const diffLink = document.createElement("a");
                 diffLink.href = diffUrl;
-                diffLink.download = `mpc_db_changes_${new Date().toISOString().split('T')[0]}.json`;
+                diffLink.download = `mpc_db_changes_${new Date().toISOString().split("T")[0]}.json`;
 
                 // Show instructions
-                showMessage(`Please download the changes file and attach it to your email to mpc@irif.fr`, 'info');
+                showMessage(
+                    `Please download the changes file and attach it to your email to mpc@irif.fr`,
+                    "info",
+                );
 
                 // Trigger downloads/email
+                document.body.appendChild(diffLink);
                 diffLink.click();
+                document.body.removeChild(diffLink);
                 setTimeout(() => {
                     window.location.href = `mailto:mpc@irif.fr?subject=${subject}&body=${body}`;
                 }, 1000);
@@ -4136,7 +4362,7 @@ Install the companion browser extension to quickly add papers while browsing aca
             // Import diff file (admin only) - optimized for incremental updates
             async function importDiffFile(event) {
                 if (!isAdminMode) {
-                    showMessage('Admin access required', 'error');
+                    showMessage("Admin access required", "error");
                     return;
                 }
 
@@ -4148,15 +4374,17 @@ Install the companion browser extension to quickly add papers while browsing aca
                     const diff = JSON.parse(text);
 
                     if (!diff.changes) {
-                        throw new Error('Invalid diff file format');
+                        throw new Error("Invalid diff file format");
                     }
 
                     let appliedCount = 0;
 
                     // Apply added papers using incremental updates
                     if (diff.changes.added) {
-                        diff.changes.added.forEach(paper => {
-                            const existingIndex = papers.findIndex(p => p.id === paper.id);
+                        diff.changes.added.forEach((paper) => {
+                            const existingIndex = papers.findIndex(
+                                (p) => p.id === paper.id,
+                            );
                             if (existingIndex === -1) {
                                 papers.push(paper);
                                 queuePaperUpdate(paper.id, paper);
@@ -4167,18 +4395,28 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                     // Apply modified papers using incremental updates
                     if (diff.changes.modified) {
-                        diff.changes.modified.forEach(paper => {
-                            const existingIndex = papers.findIndex(p => p.id === paper.id);
+                        diff.changes.modified.forEach((paper) => {
+                            const existingIndex = papers.findIndex(
+                                (p) => p.id === paper.id,
+                            );
                             if (existingIndex !== -1) {
                                 // Preserve local-only data
                                 const localData = {
-                                    scratchpad: papers[existingIndex].scratchpad,
-                                    readingStatus: papers[existingIndex].readingStatus,
+                                    scratchpad:
+                                        papers[existingIndex].scratchpad,
+                                    readingStatus:
+                                        papers[existingIndex].readingStatus,
                                     favorite: papers[existingIndex].favorite,
-                                    folderId: papers[existingIndex].folderId
+                                    folderId: papers[existingIndex].folderId,
                                 };
-                                papers[existingIndex] = { ...paper, ...localData };
-                                queuePaperUpdate(paper.id, papers[existingIndex]);
+                                papers[existingIndex] = {
+                                    ...paper,
+                                    ...localData,
+                                };
+                                queuePaperUpdate(
+                                    paper.id,
+                                    papers[existingIndex],
+                                );
                                 appliedCount++;
                             }
                         });
@@ -4186,8 +4424,10 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                     // Apply deleted papers
                     if (diff.changes.deleted) {
-                        diff.changes.deleted.forEach(paperId => {
-                            const existingIndex = papers.findIndex(p => p.id === paperId);
+                        diff.changes.deleted.forEach((paperId) => {
+                            const existingIndex = papers.findIndex(
+                                (p) => p.id === paperId,
+                            );
                             if (existingIndex !== -1) {
                                 papers.splice(existingIndex, 1);
                                 appliedCount++;
@@ -4200,14 +4440,19 @@ Install the companion browser extension to quickly add papers while browsing aca
                     renderPapers();
                     updatePaperCount();
 
-                    showMessage(`Applied ${appliedCount} changes from diff file`, 'success');
-
+                    showMessage(
+                        `Applied ${appliedCount} changes from diff file`,
+                        "success",
+                    );
                 } catch (error) {
-                    console.error('Error importing diff file:', error);
-                    showMessage('Error importing diff file: ' + error.message, 'error');
+                    console.error("Error importing diff file:", error);
+                    showMessage(
+                        "Error importing diff file: " + error.message,
+                        "error",
+                    );
                 }
 
-                event.target.value = '';
+                event.target.value = "";
             }
 
             // Export full database (with local data)
@@ -4219,18 +4464,22 @@ Install the companion browser extension to quickly add papers while browsing aca
                     userManual: userManualContent,
                     exportDate: new Date().toISOString(),
                     version: "2.0", // Updated for new optimized format
-                    isFullExport: true
+                    isFullExport: true,
                 };
 
-                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const blob = new Blob([JSON.stringify(data, null, 2)], {
+                    type: "application/json",
+                });
                 const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
+                const a = document.createElement("a");
                 a.href = url;
-                a.download = `mpc_db_full_${new Date().toISOString().split('T')[0]}.json`;
+                a.download = `mpc_db_full_${new Date().toISOString().split("T")[0]}.json`;
+                document.body.appendChild(a);
                 a.click();
+                document.body.removeChild(a);
                 URL.revokeObjectURL(url);
 
-                showMessage('Full database exported successfully', 'success');
+                showMessage("Full database exported successfully", "success");
             }
 
             // Make function globally available
@@ -4239,8 +4488,8 @@ Install the companion browser extension to quickly add papers while browsing aca
             // Open user manual
             function openUserManual() {
                 console.log("openUserManual called");
-                const modal = document.createElement('div');
-                modal.className = 'modal';
+                const modal = document.createElement("div");
+                modal.className = "modal";
                 modal.innerHTML = `
                     <div class="modal-content" style="max-width: 800px; max-height: 90vh; overflow-y: auto;">
                         <div class="modal-header">
@@ -4264,7 +4513,7 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                             <p><strong>To submit your changes:</strong></p>
                             <ul>
-                                <li>Click "Integrate Changes" to send your modifications for review</li>
+                                <li>Click "Update DB" to send your modifications for review</li>
                                 <li>Provide your contact information when prompted</li>
                                 <li>An email will be sent to mpc@irif.fr with a summary of your changes</li>
                                 <li>Changes are reviewed and may be integrated into the main database</li>
@@ -4365,7 +4614,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                     </div>
                 `;
                 document.body.appendChild(modal);
-                modal.style.display = 'flex';
+                modal.style.display = "flex";
                 window.currentUserManual = modal;
             }
 
@@ -4381,44 +4630,56 @@ Install the companion browser extension to quickly add papers while browsing aca
             window.openUserManual = openUserManual;
             window.closeUserManual = closeUserManual;
 
-
-
             async function checkAutoAddParameters() {
                 const urlParams = new URLSearchParams(window.location.search);
 
                 // First check sessionStorage (for hybrid approach)
-                const sessionData = sessionStorage.getItem("extensionPaperData");
+                const sessionData =
+                    sessionStorage.getItem("extensionPaperData");
                 if (sessionData) {
-                    console.log("Processing paper from sessionStorage (hybrid approach)");
+                    console.log(
+                        "Processing paper from sessionStorage (hybrid approach)",
+                    );
                     try {
                         const metadata = JSON.parse(sessionData);
                         sessionStorage.removeItem("extensionPaperData");
                         await processExtensionPaper(metadata);
                         return;
                     } catch (error) {
-                        console.error("Error processing sessionStorage data:", error);
+                        console.error(
+                            "Error processing sessionStorage data:",
+                            error,
+                        );
                     }
                 }
 
                 // Check if we should wait for sessionStorage data
                 if (urlParams.get("extensionData") === "sessionStorage") {
-                    console.log("Extension indicated sessionStorage data incoming, waiting...");
+                    console.log(
+                        "Extension indicated sessionStorage data incoming, waiting...",
+                    );
 
                     // Wait up to 5 seconds for sessionStorage data to arrive
                     let attempts = 0;
                     const maxAttempts = 50; // 5 seconds / 100ms
 
                     const waitForSessionStorage = async () => {
-                        const sessionData = sessionStorage.getItem("extensionPaperData");
+                        const sessionData =
+                            sessionStorage.getItem("extensionPaperData");
                         if (sessionData) {
-                            console.log("SessionStorage data received, processing...");
+                            console.log(
+                                "SessionStorage data received, processing...",
+                            );
                             try {
                                 const metadata = JSON.parse(sessionData);
                                 sessionStorage.removeItem("extensionPaperData");
                                 await processExtensionPaper(metadata);
                                 return;
                             } catch (error) {
-                                console.error("Error processing delayed sessionStorage data:", error);
+                                console.error(
+                                    "Error processing delayed sessionStorage data:",
+                                    error,
+                                );
                             }
                         }
 
@@ -4426,7 +4687,9 @@ Install the companion browser extension to quickly add papers while browsing aca
                         if (attempts < maxAttempts) {
                             setTimeout(waitForSessionStorage, 100);
                         } else {
-                            console.log("Timeout waiting for sessionStorage data");
+                            console.log(
+                                "Timeout waiting for sessionStorage data",
+                            );
                         }
                     };
 
@@ -4435,7 +4698,9 @@ Install the companion browser extension to quickly add papers while browsing aca
                 }
 
                 // Legacy sessionStorage check
-                const legacySessionData = sessionStorage.getItem("pendingPaperFromExtension");
+                const legacySessionData = sessionStorage.getItem(
+                    "pendingPaperFromExtension",
+                );
                 if (legacySessionData) {
                     console.log("Processing paper from legacy sessionStorage");
                     await checkExtensionPendingPapers();
@@ -4445,9 +4710,16 @@ Install the companion browser extension to quickly add papers while browsing aca
                 // Fallback to URL parameters (works for both short and long parameter names)
                 if (urlParams.get("autoAdd") === "true") {
                     const metadata = {
-                        title: urlParams.get("title") || urlParams.get("t") || "",
-                        authors: urlParams.get("authors") || urlParams.get("a") || "",
-                        abstract: urlParams.get("abstract") || urlParams.get("abs") || "",
+                        title:
+                            urlParams.get("title") || urlParams.get("t") || "",
+                        authors:
+                            urlParams.get("authors") ||
+                            urlParams.get("a") ||
+                            "",
+                        abstract:
+                            urlParams.get("abstract") ||
+                            urlParams.get("abs") ||
+                            "",
                         date: urlParams.get("date") || urlParams.get("d") || "",
                         url: urlParams.get("url") || urlParams.get("u") || "",
                         paperId: urlParams.get("paperId") || "",
@@ -4485,7 +4757,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                         showMessage(
                             "Paper already exists in database",
                             "error",
-                            true  // Allow stacking with sync messages
+                            true, // Allow stacking with sync messages
                         );
                         return;
                     }
@@ -4527,7 +4799,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                     showMessage(
                         "Paper already exists in database",
                         "error",
-                        true  // Allow stacking with sync messages
+                        true, // Allow stacking with sync messages
                     );
                     cleanupUrlParameters();
                     return;
@@ -4536,21 +4808,29 @@ Install the companion browser extension to quickly add papers while browsing aca
                 // Create new paper
                 const newPaper = {
                     id: Date.now() + Math.random(),
-                    title: metadata.title || `Paper ${metadata.paperId || 'Unknown'}`,
+                    title:
+                        metadata.title ||
+                        `Paper ${metadata.paperId || "Unknown"}`,
                     authors: metadata.authors || "Unknown Authors",
                     abstract: metadata.abstract || "No abstract available",
                     date: metadata.date || "Unknown date",
                     url: metadata.url,
-                    labelSets: metadata.labelSets ? JSON.parse(metadata.labelSets) : [],
-                    previousWorks: metadata.previousWorks ? JSON.parse(metadata.previousWorks) : [],
+                    labelSets: metadata.labelSets
+                        ? JSON.parse(metadata.labelSets)
+                        : [],
+                    previousWorks: metadata.previousWorks
+                        ? JSON.parse(metadata.previousWorks)
+                        : [],
                     addedDate: metadata.addedDate || new Date().toISOString(),
                     folder: metadata.folder || "",
                     readingStatus: metadata.readingStatus || "to-read",
                     isPlaceholder: metadata.isPlaceholder || false,
                     scratchpad: metadata.scratchpad || "",
-                    contactEmails: metadata.contactEmails ?
-                        (typeof metadata.contactEmails === 'string' ?
-                            JSON.parse(metadata.contactEmails) : metadata.contactEmails) : [],
+                    contactEmails: metadata.contactEmails
+                        ? typeof metadata.contactEmails === "string"
+                            ? JSON.parse(metadata.contactEmails)
+                            : metadata.contactEmails
+                        : [],
                 };
 
                 // Add paper to database with immediate caching for extension reliability
@@ -4567,8 +4847,8 @@ Install the companion browser extension to quickly add papers while browsing aca
                 );
                 performSearch(); // Maintain current search state
                 if (
-                    document.getElementById("graph-display").style
-                        .display !== "none"
+                    document.getElementById("graph-display").style.display !==
+                    "none"
                 ) {
                     renderGraph();
                 }
@@ -4635,7 +4915,10 @@ Install the companion browser extension to quickly add papers while browsing aca
             // Load papers from storage with robust data merging
             async function loadPapers() {
                 try {
-                    showLoadingProgress("Initializing database...", "Checking storage availability");
+                    showLoadingProgress(
+                        "Initializing database...",
+                        "Checking storage availability",
+                    );
                     console.log(
                         "[LOAD DEBUG] Starting loadPapers() - checking storage availability",
                     );
@@ -4659,8 +4942,6 @@ Install the companion browser extension to quickly add papers while browsing aca
                             );
                         }
                     }
-
-
 
                     let indexedDBPapers = [];
                     let localStoragePapers = [];
@@ -4860,7 +5141,11 @@ Install the companion browser extension to quickly add papers while browsing aca
                     ) {
                         // Only localStorage has data
                         papers = localStoragePapers;
-                        updateLoadingProgress(70, "Synchronizing data...", `Found ${papers.length} papers in localStorage`);
+                        updateLoadingProgress(
+                            70,
+                            "Synchronizing data...",
+                            `Found ${papers.length} papers in localStorage`,
+                        );
                         console.log(
                             `[LOAD DEBUG] Using localStorage data (${papers.length} papers) - IndexedDB empty`,
                         );
@@ -5157,8 +5442,6 @@ Install the companion browser extension to quickly add papers while browsing aca
                                 unique: false,
                             });
                         }
-
-
 
                         // Create folders object store
                         if (!db.objectStoreNames.contains(FOLDERS_STORE)) {
@@ -5464,15 +5747,21 @@ Install the companion browser extension to quickly add papers while browsing aca
             function migratePreviousWorksToIds() {
                 let migrationCount = 0;
 
-                papers.forEach(paper => {
+                papers.forEach((paper) => {
                     if (paper.previousWorks && paper.previousWorks.length > 0) {
                         // Check if previousWorks contains indices (numbers) instead of IDs
                         const firstItem = paper.previousWorks[0];
-                        if (typeof firstItem === 'number' && firstItem < papers.length) {
+                        if (
+                            typeof firstItem === "number" &&
+                            firstItem < papers.length
+                        ) {
                             // This looks like an array index, convert to IDs
                             const newPreviousWorks = [];
-                            paper.previousWorks.forEach(index => {
-                                if (typeof index === 'number' && papers[index]) {
+                            paper.previousWorks.forEach((index) => {
+                                if (
+                                    typeof index === "number" &&
+                                    papers[index]
+                                ) {
                                     newPreviousWorks.push(papers[index].id);
                                 }
                             });
@@ -5484,8 +5773,8 @@ Install the companion browser extension to quickly add papers while browsing aca
                     // Also handle legacy relatedPapers field
                     if (paper.relatedPapers && paper.relatedPapers.length > 0) {
                         const newPreviousWorks = [];
-                        paper.relatedPapers.forEach(index => {
-                            if (typeof index === 'number' && papers[index]) {
+                        paper.relatedPapers.forEach((index) => {
+                            if (typeof index === "number" && papers[index]) {
                                 newPreviousWorks.push(papers[index].id);
                             }
                         });
@@ -5493,7 +5782,12 @@ Install the companion browser extension to quickly add papers while browsing aca
                             paper.previousWorks = newPreviousWorks;
                         } else {
                             // Merge with existing previousWorks
-                            paper.previousWorks = [...new Set([...paper.previousWorks, ...newPreviousWorks])];
+                            paper.previousWorks = [
+                                ...new Set([
+                                    ...paper.previousWorks,
+                                    ...newPreviousWorks,
+                                ]),
+                            ];
                         }
                         delete paper.relatedPapers;
                         migrationCount++;
@@ -5501,7 +5795,9 @@ Install the companion browser extension to quickly add papers while browsing aca
                 });
 
                 if (migrationCount > 0) {
-                    console.log(`[MIGRATION] Converted previousWorks from indices to IDs for ${migrationCount} papers`);
+                    console.log(
+                        `[MIGRATION] Converted previousWorks from indices to IDs for ${migrationCount} papers`,
+                    );
                     savePapers(); // Save the migrated data
                 }
             }
@@ -5970,7 +6266,12 @@ Install the companion browser extension to quickly add papers while browsing aca
                 chipElement,
                 labelSetIndex = null,
             ) {
-                if (mode === "add" || mode === "edit" || mode === "bulk" || mode === "bulk-remove") {
+                if (
+                    mode === "add" ||
+                    mode === "edit" ||
+                    mode === "bulk" ||
+                    mode === "bulk-remove"
+                ) {
                     if (chipElement.classList.contains("selected")) {
                         chipElement.classList.remove("selected");
 
@@ -6108,7 +6409,8 @@ Install the companion browser extension to quickly add papers while browsing aca
                             if (isFullExport) {
                                 confirmMessage = `Import ${data.papers.length} papers${data.folders ? ` and ${data.folders.length} folders` : ""}?\n\nWARNING: This will overwrite your scratchpad notes, reading status, favorites, and folders.`;
                             } else {
-                                confirmMessage += "\n\nThis will preserve your existing scratchpad notes, reading status, favorites, and folders.";
+                                confirmMessage +=
+                                    "\n\nThis will preserve your existing scratchpad notes, reading status, favorites, and folders.";
                             }
 
                             const confirmed = confirm(confirmMessage);
@@ -6117,12 +6419,14 @@ Install the companion browser extension to quickly add papers while browsing aca
                                 // Store current personal data if not doing full import
                                 const currentPersonalData = new Map();
                                 if (!isFullExport) {
-                                    papers.forEach(paper => {
+                                    papers.forEach((paper) => {
                                         currentPersonalData.set(paper.id, {
                                             scratchpad: paper.scratchpad || "",
-                                            readingStatus: paper.readingStatus || "referenced",
+                                            readingStatus:
+                                                paper.readingStatus ||
+                                                "referenced",
                                             favorite: paper.favorite || false,
-                                            folderId: paper.folderId || ""
+                                            folderId: paper.folderId || "",
                                         });
                                     });
                                 }
@@ -6140,27 +6444,38 @@ Install the companion browser extension to quickly add papers while browsing aca
                                                       },
                                                   ]
                                                 : []),
-                                        contactEmails: paper.contactEmails || [],
+                                        contactEmails:
+                                            paper.contactEmails || [],
                                     };
 
                                     // Add personal data
                                     if (isFullExport) {
                                         // Use data from file
-                                        baseData.scratchpad = paper.scratchpad || "";
-                                        baseData.readingStatus = paper.readingStatus || "referenced";
-                                        baseData.favorite = paper.favorite || false;
-                                        baseData.folderId = paper.folderId || "";
+                                        baseData.scratchpad =
+                                            paper.scratchpad || "";
+                                        baseData.readingStatus =
+                                            paper.readingStatus || "referenced";
+                                        baseData.favorite =
+                                            paper.favorite || false;
+                                        baseData.folderId =
+                                            paper.folderId || "";
                                     } else {
                                         // Preserve existing personal data or use defaults
-                                        const personalData = currentPersonalData.get(paper.id);
+                                        const personalData =
+                                            currentPersonalData.get(paper.id);
                                         if (personalData) {
-                                            baseData.scratchpad = personalData.scratchpad;
-                                            baseData.readingStatus = personalData.readingStatus;
-                                            baseData.favorite = personalData.favorite;
-                                            baseData.folderId = personalData.folderId;
+                                            baseData.scratchpad =
+                                                personalData.scratchpad;
+                                            baseData.readingStatus =
+                                                personalData.readingStatus;
+                                            baseData.favorite =
+                                                personalData.favorite;
+                                            baseData.folderId =
+                                                personalData.folderId;
                                         } else {
                                             baseData.scratchpad = "";
-                                            baseData.readingStatus = "referenced";
+                                            baseData.readingStatus =
+                                                "referenced";
                                             baseData.favorite = false;
                                             baseData.folderId = "";
                                         }
@@ -6183,23 +6498,31 @@ Install the companion browser extension to quickly add papers while browsing aca
                                 }
 
                                 // Reset original database for change tracking
-                                originalDatabase = JSON.parse(JSON.stringify(data));
+                                originalDatabase = JSON.parse(
+                                    JSON.stringify(data),
+                                );
                                 changeTracker = {
                                     addedPapers: new Set(),
                                     modifiedPapers: new Map(),
                                     deletedPapers: new Set(),
-                                    modifiedLabels: new Map()
+                                    modifiedLabels: new Map(),
                                 };
 
                                 // Use incremental saves for v2.0 format, legacy for v1.0
                                 if (isV2Format) {
                                     // Process papers incrementally for better performance
-                                    papers.forEach(paper => queuePaperUpdate(paper.id, paper));
+                                    papers.forEach((paper) =>
+                                        queuePaperUpdate(paper.id, paper),
+                                    );
                                     processPendingUpdates().then(() => {
                                         saveFolders();
                                         renderFolders();
                                         performSearch();
-                                        if (document.getElementById("graph-display").style.display !== "none") {
+                                        if (
+                                            document.getElementById(
+                                                "graph-display",
+                                            ).style.display !== "none"
+                                        ) {
                                             renderGraph();
                                         }
                                         updatePreviousWorksSelect();
@@ -6210,7 +6533,10 @@ Install the companion browser extension to quickly add papers while browsing aca
                                     saveFolders();
                                     renderFolders();
                                     performSearch();
-                                    if (document.getElementById("graph-display").style.display !== "none") {
+                                    if (
+                                        document.getElementById("graph-display")
+                                            .style.display !== "none"
+                                    ) {
                                         renderGraph();
                                     }
                                     updatePreviousWorksSelect();
@@ -6218,7 +6544,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                                 }
 
                                 showMessage(
-                                    `Successfully imported ${papers.length} papers${folders.length > 0 ? ` and ${folders.length} folders` : ""} (${isV2Format ? 'v2.0 optimized format' : 'v1.0 legacy format'})!`,
+                                    `Successfully imported ${papers.length} papers${folders.length > 0 ? ` and ${folders.length} folders` : ""} (${isV2Format ? "v2.0 optimized format" : "v1.0 legacy format"})!`,
                                     "success",
                                 );
                             }
@@ -6287,10 +6613,13 @@ Install the companion browser extension to quickly add papers while browsing aca
                             `;
 
                 // Add event listener for OK button after creating the element
-                const okButton = annotationDiv.querySelector('.annotation-ok-btn');
-                okButton.addEventListener('click', () => {
-                    const input = document.querySelector(`#${CSS.escape(annotationId)} input`);
-                    updateSearchAnnotation(label, input ? input.value : '');
+                const okButton =
+                    annotationDiv.querySelector(".annotation-ok-btn");
+                okButton.addEventListener("click", () => {
+                    const input = document.querySelector(
+                        `#${CSS.escape(annotationId)} input`,
+                    );
+                    updateSearchAnnotation(label, input ? input.value : "");
                 });
 
                 document.body.appendChild(annotationDiv);
@@ -6546,7 +6875,9 @@ Install the companion browser extension to quickly add papers while browsing aca
 
             // Initialize bulk remove label sets
             function initializeBulkRemoveLabelSets() {
-                const container = document.getElementById("bulk-remove-label-sets");
+                const container = document.getElementById(
+                    "bulk-remove-label-sets",
+                );
                 if (!container) return;
 
                 // Clear existing content
@@ -6570,7 +6901,11 @@ Install the companion browser extension to quickly add papers while browsing aca
                 `;
 
                 container.appendChild(labelSetDiv);
-                renderLabels("bulk-remove-label-set-0-labels", "bulk-remove", 0);
+                renderLabels(
+                    "bulk-remove-label-set-0-labels",
+                    "bulk-remove",
+                    0,
+                );
             }
 
             // Fetch paper metadata from ePrint
@@ -8470,17 +8805,23 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                 // Allow saving if either main fields are filled OR previous works are selected
                 const hasMainContent = title && authors && date && url;
-                const hasPreviousWorks = document.getElementById("previous-works").selectedOptions.length > 0;
+                const hasPreviousWorks =
+                    document.getElementById("previous-works").selectedOptions
+                        .length > 0;
 
                 if (!hasMainContent && !hasPreviousWorks) {
-                    showMessage("Please fill in the main fields OR select some previous works", "error");
+                    showMessage(
+                        "Please fill in the main fields OR select some previous works",
+                        "error",
+                    );
                     return;
                 }
 
                 // If only previous works selected, create a minimal paper entry
                 if (!hasMainContent && hasPreviousWorks) {
                     const previousWorks = Array.from(
-                        document.getElementById("previous-works").selectedOptions,
+                        document.getElementById("previous-works")
+                            .selectedOptions,
                     ).map((option) => option.value);
 
                     const paper = {
@@ -8504,13 +8845,18 @@ Install the companion browser extension to quickly add papers while browsing aca
                     papers.push(paper);
 
                     // Track change
-                    trackChange('add', paper);
+                    trackChange("add", paper);
 
                     // Use incremental update for new paper
                     queuePaperUpdate(paper.id, paper);
 
-                    console.log(`[FORM DEBUG] ✅ Added previous works collection with ${previousWorks.length} papers`);
-                    showMessage("Previous works added successfully!", "success");
+                    console.log(
+                        `[FORM DEBUG] ✅ Added previous works collection with ${previousWorks.length} papers`,
+                    );
+                    showMessage(
+                        "Previous works added successfully!",
+                        "success",
+                    );
                     document.getElementById("add-paper-form").reset();
                     closeBatchAddModal();
                     performSearch(); // Still need this for new papers to appear
@@ -8545,7 +8891,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                 papers.push(paper);
 
                 // Track change
-                trackChange('add', paper);
+                trackChange("add", paper);
 
                 // Use incremental update for new paper
                 queuePaperUpdate(paper.id, paper);
@@ -8615,11 +8961,18 @@ Install the companion browser extension to quickly add papers while browsing aca
                 // For simple queries without operators or field searches, do basic text search
                 // Improved detection: check if operators are actually used as operators (not just words)
                 const hasRealOperators = query.match(/\b(AND|OR|NOT)\s+\w/i);
-                const hasFieldSearches = query.match(/(title|author|abstract|year|status|email|date):/i);
+                const hasFieldSearches = query.match(
+                    /(title|author|abstract|year|status|email|date):/i,
+                );
                 const hasQuotes = query.includes('"');
                 const hasParens = query.includes("(") || query.includes(")");
 
-                if (!hasRealOperators && !hasFieldSearches && !hasQuotes && !hasParens) {
+                if (
+                    !hasRealOperators &&
+                    !hasFieldSearches &&
+                    !hasQuotes &&
+                    !hasParens
+                ) {
                     const searchText =
                         `${paper.title} ${paper.authors} ${paper.abstract}`.toLowerCase();
                     const result = searchText.includes(query.toLowerCase());
@@ -8709,7 +9062,9 @@ Install the companion browser extension to quickly add papers while browsing aca
                     // Handle field searches (field:value or field:"quoted value")
                     const fieldMatch = query
                         .slice(i)
-                        .match(/^(title|author|abstract|year|status|email|date):/i);
+                        .match(
+                            /^(title|author|abstract|year|status|email|date):/i,
+                        );
                     if (fieldMatch) {
                         const field = fieldMatch[1].toLowerCase();
                         i += fieldMatch[0].length;
@@ -8929,7 +9284,10 @@ Install the companion browser extension to quickly add papers while browsing aca
                     }
 
                     // Only log for date searches with "unknown" to reduce spam
-                    if (field === "date" && value.toLowerCase().includes("unknown")) {
+                    if (
+                        field === "date" &&
+                        value.toLowerCase().includes("unknown")
+                    ) {
                         console.log(
                             `DEBUG: Date search ${field}:"${value}" on paper "${paper.title}" (actual date: "${paper.date}")`,
                         );
@@ -8999,21 +9357,32 @@ Install the companion browser extension to quickly add papers while browsing aca
                                 const dateObj = new Date(paper.date);
                                 const isInvalidDate = isNaN(dateObj.getTime());
 
-                                result = !paper.date ||
-                                        paper.date === "" ||
-                                        paper.date === "Unknown" ||
-                                        paper.date === "Unknown date" ||
-                                        (paper.date && paper.date.toLowerCase().includes("unknown")) ||
-                                        isInvalidDate;
+                                result =
+                                    !paper.date ||
+                                    paper.date === "" ||
+                                    paper.date === "Unknown" ||
+                                    paper.date === "Unknown date" ||
+                                    (paper.date &&
+                                        paper.date
+                                            .toLowerCase()
+                                            .includes("unknown")) ||
+                                    isInvalidDate;
 
                                 // Debug logging for unknown date search
                                 if (value.toLowerCase().includes("unknown")) {
-                                    console.log(`  Paper "${paper.title}": date="${paper.date}", isEmpty=${!paper.date}, isEmptyString=${paper.date === ""}, isInvalidDate=${isInvalidDate}, result=${result}`);
+                                    console.log(
+                                        `  Paper "${paper.title}": date="${paper.date}", isEmpty=${!paper.date}, isEmptyString=${paper.date === ""}, isInvalidDate=${isInvalidDate}, result=${result}`,
+                                    );
                                 }
                             } else if (value.match(/^[<>=]\d{4}$/)) {
                                 // Handle year comparisons like <1999, >2020, =2018
-                                const paperYear = new Date(paper.date).getFullYear();
-                                result = evaluateYearCondition(paperYear, value);
+                                const paperYear = new Date(
+                                    paper.date,
+                                ).getFullYear();
+                                result = evaluateYearCondition(
+                                    paperYear,
+                                    value,
+                                );
                             } else {
                                 // Regular date search
                                 result = paperDate
@@ -9092,11 +9461,17 @@ Install the companion browser extension to quickly add papers while browsing aca
                     // Get filtered papers
                     const filteredPapers = getCurrentlyFilteredPapers();
 
-                    console.log(`DEBUG SEARCH: Query="${query}", Found=${filteredPapers.length} papers`);
+                    console.log(
+                        `DEBUG SEARCH: Query="${query}", Found=${filteredPapers.length} papers`,
+                    );
                     if (query.includes("date:") && query.includes("unknown")) {
-                        console.log("DEBUG: Checking first 5 papers for unknown dates:");
+                        console.log(
+                            "DEBUG: Checking first 5 papers for unknown dates:",
+                        );
                         filteredPapers.slice(0, 5).forEach((paper, i) => {
-                            console.log(`  Paper ${i}: title="${paper.title}", date="${paper.date}"`);
+                            console.log(
+                                `  Paper ${i}: title="${paper.title}", date="${paper.date}"`,
+                            );
                         });
                     }
 
@@ -9119,7 +9494,10 @@ Install the companion browser extension to quickly add papers while browsing aca
                         clearTimeout(window.graphUpdateTimeout);
                     }
                     window.graphUpdateTimeout = setTimeout(() => {
-                        console.log(`[GRAPH UPDATE DEBUG] Graph update timeout triggered - currentlyFilteredPapers:`, currentlyFilteredPapers.length);
+                        console.log(
+                            `[GRAPH UPDATE DEBUG] Graph update timeout triggered - currentlyFilteredPapers:`,
+                            currentlyFilteredPapers.length,
+                        );
                         renderGraph();
                     }, 100);
                 }
@@ -9170,7 +9548,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                 currentPage: 1,
                 itemsPerPage: 100,
                 totalPages: 1,
-                totalItems: 0
+                totalItems: 0,
             };
 
             function createPaperElement(paper) {
@@ -9270,10 +9648,15 @@ Install the companion browser extension to quickly add papers while browsing aca
                 if (!container) return;
 
                 paginationState.totalItems = totalItems;
-                paginationState.totalPages = Math.ceil(totalItems / paginationState.itemsPerPage);
+                paginationState.totalPages = Math.ceil(
+                    totalItems / paginationState.itemsPerPage,
+                );
 
                 // Remove existing pagination
-                const existingPagination = container.parentElement.querySelector('.pagination-controls');
+                const existingPagination =
+                    container.parentElement.querySelector(
+                        ".pagination-controls",
+                    );
                 if (existingPagination) {
                     existingPagination.remove();
                 }
@@ -9281,9 +9664,10 @@ Install the companion browser extension to quickly add papers while browsing aca
                 if (paginationState.totalPages <= 1) return;
 
                 // Create pagination controls
-                const paginationDiv = document.createElement('div');
-                paginationDiv.className = 'pagination-controls';
-                paginationDiv.style.cssText = 'text-align: center; margin: 20px 0; padding: 10px;';
+                const paginationDiv = document.createElement("div");
+                paginationDiv.className = "pagination-controls";
+                paginationDiv.style.cssText =
+                    "text-align: center; margin: 20px 0; padding: 10px;";
 
                 let paginationHTML = `<div style="margin-bottom: 10px;">Showing page ${paginationState.currentPage} of ${paginationState.totalPages} (${totalItems} total papers)</div><div>`;
 
@@ -9294,8 +9678,15 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                 // Page numbers
                 const maxVisiblePages = 10;
-                let startPage = Math.max(1, paginationState.currentPage - Math.floor(maxVisiblePages / 2));
-                let endPage = Math.min(paginationState.totalPages, startPage + maxVisiblePages - 1);
+                let startPage = Math.max(
+                    1,
+                    paginationState.currentPage -
+                        Math.floor(maxVisiblePages / 2),
+                );
+                let endPage = Math.min(
+                    paginationState.totalPages,
+                    startPage + maxVisiblePages - 1,
+                );
 
                 if (endPage - startPage < maxVisiblePages - 1) {
                     startPage = Math.max(1, endPage - maxVisiblePages + 1);
@@ -9310,7 +9701,7 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                 for (let i = startPage; i <= endPage; i++) {
                     const isActive = i === paginationState.currentPage;
-                    paginationHTML += `<button class="btn${isActive ? ' btn-success' : ''}" onclick="goToPage(${i})" style="margin: 0 2px;${isActive ? ' background: #28a745; color: white;' : ''}">${i}</button>`;
+                    paginationHTML += `<button class="btn${isActive ? " btn-success" : ""}" onclick="goToPage(${i})" style="margin: 0 2px;${isActive ? " background: #28a745; color: white;" : ""}">${i}</button>`;
                 }
 
                 if (endPage < paginationState.totalPages) {
@@ -9325,7 +9716,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                     paginationHTML += `<button class="btn" onclick="goToPage(${paginationState.currentPage + 1})" style="margin: 0 5px;">Next »</button>`;
                 }
 
-                paginationHTML += '</div>';
+                paginationHTML += "</div>";
                 paginationDiv.innerHTML = paginationHTML;
 
                 container.parentElement.appendChild(paginationDiv);
@@ -9352,8 +9743,12 @@ Install the companion browser extension to quickly add papers while browsing aca
                 // If no papers provided, determine which papers to show
                 if (!papersToRender) {
                     // First check if we have an active search or filter
-                    const query = document.getElementById("search-query")?.value.trim() || "";
-                    const hasLabelFilters = searchFilters.included.size > 0 || searchFilters.excluded.size > 0;
+                    const query =
+                        document.getElementById("search-query")?.value.trim() ||
+                        "";
+                    const hasLabelFilters =
+                        searchFilters.included.size > 0 ||
+                        searchFilters.excluded.size > 0;
 
                     if (query || hasLabelFilters || favoriteFilterActive) {
                         // If there's an active search/filter, use filtered papers
@@ -9363,28 +9758,48 @@ Install the companion browser extension to quickly add papers while browsing aca
                         papersToRender = currentlyFilteredPapers;
                     } else {
                         // Fall back to all papers in current folder
-                        papersToRender = papers.filter(isPaperInCurrentFolderHierarchy);
+                        papersToRender = papers.filter(
+                            isPaperInCurrentFolderHierarchy,
+                        );
                     }
                 }
 
-                console.log(`DEBUG RENDER: About to render ${papersToRender.length} papers`);
+                console.log(
+                    `DEBUG RENDER: About to render ${papersToRender.length} papers`,
+                );
 
                 if (papersToRender.length === 0) {
-                    const query = document.getElementById("search-query")?.value.trim() || "";
-                    const folderText = currentFolder && currentFolder !== "" ? ` in "${currentFolder}"` : "";
+                    const query =
+                        document.getElementById("search-query")?.value.trim() ||
+                        "";
+                    const folderText =
+                        currentFolder && currentFolder !== ""
+                            ? ` in "${currentFolder}"`
+                            : "";
 
                     if (papers.length === 0) {
-                        container.innerHTML = '<div class="loading">No papers added yet. Add your first paper to get started!</div>';
-                    } else if (query || searchFilters.included.size > 0 || searchFilters.excluded.size > 0 || favoriteFilterActive) {
+                        container.innerHTML =
+                            '<div class="loading">No papers added yet. Add your first paper to get started!</div>';
+                    } else if (
+                        query ||
+                        searchFilters.included.size > 0 ||
+                        searchFilters.excluded.size > 0 ||
+                        favoriteFilterActive
+                    ) {
                         container.innerHTML = `<div class="loading">No papers match your search criteria${folderText}</div>`;
                     } else {
                         container.innerHTML = `<div class="loading">No papers found${folderText}</div>`;
                     }
 
-                    console.log("DEBUG RENDER: No papers to render, showing appropriate message");
+                    console.log(
+                        "DEBUG RENDER: No papers to render, showing appropriate message",
+                    );
 
                     // Remove any existing pagination
-                    const existingPagination = container.parentElement.querySelector('.pagination-controls');
+                    const existingPagination =
+                        container.parentElement.querySelector(
+                            ".pagination-controls",
+                        );
                     if (existingPagination) {
                         existingPagination.remove();
                     }
@@ -9399,17 +9814,39 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                 // Calculate pagination
                 const totalItems = sortedPapers.length;
-                const startIndex = (paginationState.currentPage - 1) * paginationState.itemsPerPage;
-                const endIndex = Math.min(startIndex + paginationState.itemsPerPage, totalItems);
-                const paginatedPapers = sortedPapers.slice(startIndex, endIndex);
+                const startIndex =
+                    (paginationState.currentPage - 1) *
+                    paginationState.itemsPerPage;
+                const endIndex = Math.min(
+                    startIndex + paginationState.itemsPerPage,
+                    totalItems,
+                );
+                const paginatedPapers = sortedPapers.slice(
+                    startIndex,
+                    endIndex,
+                );
 
                 // Render current page of papers
-                if (paginatedPapers.length === 0 && paginationState.currentPage > 1) {
+                if (
+                    paginatedPapers.length === 0 &&
+                    paginationState.currentPage > 1
+                ) {
                     // If we're on a page beyond the first and have no papers, go to the last valid page
-                    paginationState.currentPage = Math.max(1, Math.ceil(totalItems / paginationState.itemsPerPage));
-                    const newStartIndex = (paginationState.currentPage - 1) * paginationState.itemsPerPage;
-                    const newEndIndex = Math.min(newStartIndex + paginationState.itemsPerPage, totalItems);
-                    const newPaginatedPapers = sortedPapers.slice(newStartIndex, newEndIndex);
+                    paginationState.currentPage = Math.max(
+                        1,
+                        Math.ceil(totalItems / paginationState.itemsPerPage),
+                    );
+                    const newStartIndex =
+                        (paginationState.currentPage - 1) *
+                        paginationState.itemsPerPage;
+                    const newEndIndex = Math.min(
+                        newStartIndex + paginationState.itemsPerPage,
+                        totalItems,
+                    );
+                    const newPaginatedPapers = sortedPapers.slice(
+                        newStartIndex,
+                        newEndIndex,
+                    );
                     container.innerHTML = newPaginatedPapers
                         .map(
                             (paper) => `
@@ -9453,8 +9890,8 @@ Install the companion browser extension to quickly add papers while browsing aca
                         .join("");
                 } else {
                     container.innerHTML = paginatedPapers
-                    .map(
-                        (paper) => `
+                        .map(
+                            (paper) => `
                                     <div class="paper-item ${currentViewMode}${paper.isPlaceholder ? " placeholder-paper" : ""}${paperSelectionMode ? " selectable" : ""}" data-paper-id="${paper.id}" onclick="${paperSelectionMode ? `` : `viewPaper('${paper.id}')`}">
                                         <div class="favorite-star-icon ${paper.favorite ? "favorited" : ""}" onclick="event.stopPropagation(); toggleFavorite('${paper.id}')" title="${paper.favorite ? "Remove from favorites" : "Add to favorites"}">${paper.favorite ? "⭐" : "☆"}</div>
                                         <div class="scratchpad-icon${paper.scratchpad && paper.scratchpad.trim() ? " has-content" : ""}" onclick="event.stopPropagation(); openScratchpad('${paper.id}')" title="${paper.scratchpad && paper.scratchpad.trim() ? "Open scratchpad (has content)" : "Open scratchpad"}">📝</div>
@@ -9491,8 +9928,8 @@ Install the companion browser extension to quickly add papers while browsing aca
                                         </div>
                                     </div>
                                 `,
-                    )
-                    .join("");
+                        )
+                        .join("");
                 }
 
                 // Add pagination controls
@@ -9974,7 +10411,10 @@ Install the companion browser extension to quickly add papers while browsing aca
                     editSelect.setAttribute("data-listener-added", "true");
                 }
 
-                console.log("[EDIT DEBUG] Before update - paper labelSets:", papers[paperIndex].labelSets);
+                console.log(
+                    "[EDIT DEBUG] Before update - paper labelSets:",
+                    papers[paperIndex].labelSets,
+                );
 
                 // Store original paper for change tracking
                 const originalPaper = { ...currentEditingPaper };
@@ -9994,9 +10434,12 @@ Install the companion browser extension to quickly add papers while browsing aca
                 };
 
                 // Track change
-                trackChange('modify', papers[paperIndex], originalPaper);
+                trackChange("modify", papers[paperIndex], originalPaper);
 
-                console.log("[EDIT DEBUG] After update - paper labelSets:", papers[paperIndex].labelSets);
+                console.log(
+                    "[EDIT DEBUG] After update - paper labelSets:",
+                    papers[paperIndex].labelSets,
+                );
 
                 // Use incremental update instead of full save
                 queuePaperUpdate(papers[paperIndex].id, {
@@ -10009,7 +10452,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                     previousWorks,
                     folder: folder,
                     contactEmails: contactEmails,
-                    isPlaceholder: false
+                    isPlaceholder: false,
                 });
 
                 console.log(
@@ -10020,19 +10463,22 @@ Install the companion browser extension to quickly add papers while browsing aca
                 closePaperModal();
 
                 // Update UI element directly for label changes instead of full re-render
-                const paperElement = document.querySelector(`[data-paper-id="${papers[paperIndex].id}"]`);
+                const paperElement = document.querySelector(
+                    `[data-paper-id="${papers[paperIndex].id}"]`,
+                );
                 if (paperElement) {
-                    const labelsContainer = paperElement.querySelector('.paper-labels');
+                    const labelsContainer =
+                        paperElement.querySelector(".paper-labels");
                     if (labelsContainer) {
                         // Re-render just this paper's labels
-                        labelsContainer.innerHTML = '';
+                        labelsContainer.innerHTML = "";
                         if (labelSets && labelSets.length > 0) {
-                            labelSets.forEach(labelSet => {
-                                const setDiv = document.createElement('div');
-                                setDiv.className = 'paper-label-set';
-                                labelSet.labels.forEach(label => {
-                                    const chip = document.createElement('span');
-                                    chip.className = 'label-chip';
+                            labelSets.forEach((labelSet) => {
+                                const setDiv = document.createElement("div");
+                                setDiv.className = "paper-label-set";
+                                labelSet.labels.forEach((label) => {
+                                    const chip = document.createElement("span");
+                                    chip.className = "label-chip";
                                     chip.textContent = label;
                                     setDiv.appendChild(chip);
                                 });
@@ -10043,19 +10489,29 @@ Install the companion browser extension to quickly add papers while browsing aca
                 }
 
                 // Only do expensive operations if graph connections changed
-                if (JSON.stringify(originalPaper.previousWorks) !== JSON.stringify(previousWorks)) {
+                if (
+                    JSON.stringify(originalPaper.previousWorks) !==
+                    JSON.stringify(previousWorks)
+                ) {
                     renderGraph();
                 }
 
                 // Only invalidate search cache if search-relevant fields changed
-                if (originalPaper.title !== title || originalPaper.authors !== authors ||
-                    originalPaper.abstract !== abstract || originalPaper.date !== date ||
-                    JSON.stringify(originalPaper.labelSets) !== JSON.stringify(labelSets)) {
+                if (
+                    originalPaper.title !== title ||
+                    originalPaper.authors !== authors ||
+                    originalPaper.abstract !== abstract ||
+                    originalPaper.date !== date ||
+                    JSON.stringify(originalPaper.labelSets) !==
+                        JSON.stringify(labelSets)
+                ) {
                     // Remove only this paper from cache instead of clearing everything
                     paperElementCache.delete(papers[paperIndex].id);
                     // Only re-render if this paper is currently visible
                     if (paperElement && paperElement.offsetParent !== null) {
-                        const newElement = createPaperElement(papers[paperIndex]);
+                        const newElement = createPaperElement(
+                            papers[paperIndex],
+                        );
                         paperElement.replaceWith(newElement);
                     }
                 }
@@ -10071,7 +10527,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                     )
                 ) {
                     // Track change before deleting
-                    trackChange('delete', currentEditingPaper);
+                    trackChange("delete", currentEditingPaper);
 
                     papers = papers.filter(
                         (p) => p.id !== currentEditingPaper.id,
@@ -10133,7 +10589,10 @@ Install the companion browser extension to quickly add papers while browsing aca
                 if (papers.length === 0) return;
 
                 // Use currentlyFilteredPapers if available (for connected components), otherwise get filtered papers
-                const filteredPapers = currentlyFilteredPapers.length > 0 ? currentlyFilteredPapers : getCurrentlyFilteredPapers();
+                const filteredPapers =
+                    currentlyFilteredPapers.length > 0
+                        ? currentlyFilteredPapers
+                        : getCurrentlyFilteredPapers();
 
                 if (filteredPapers.length === 0) return;
 
@@ -10175,7 +10634,9 @@ Install the companion browser extension to quickly add papers while browsing aca
                             paper.previousWorks || paper.relatedPapers || [];
                         if (previousWorks && previousWorks.length > 0) {
                             previousWorks.forEach((relatedId) => {
-                                const referencedPaper = papers.find(p => p.id == relatedId);
+                                const referencedPaper = papers.find(
+                                    (p) => p.id == relatedId,
+                                );
                                 // Only add link if both papers are in filtered results
                                 if (
                                     referencedPaper &&
@@ -10192,8 +10653,6 @@ Install the companion browser extension to quickly add papers while browsing aca
                                     });
                                 }
                             });
-
-
                         }
                     });
                 } else if (graphType === "author") {
@@ -10324,11 +10783,23 @@ Install the companion browser extension to quickly add papers while browsing aca
                         const dateTime = new Date(d.date).getTime();
                         if (isNaN(dateTime)) return "#999"; // Gray for invalid dates
 
-                        const validNodes = nodes.filter((n) => !n.isPlaceholder && !isNaN(new Date(n.date).getTime()));
+                        const validNodes = nodes.filter(
+                            (n) =>
+                                !n.isPlaceholder &&
+                                !isNaN(new Date(n.date).getTime()),
+                        );
                         if (validNodes.length === 0) return "#667eea"; // Default blue
 
-                        const minTime = Math.min(...validNodes.map((n) => new Date(n.date).getTime()));
-                        const maxTime = Math.max(...validNodes.map((n) => new Date(n.date).getTime()));
+                        const minTime = Math.min(
+                            ...validNodes.map((n) =>
+                                new Date(n.date).getTime(),
+                            ),
+                        );
+                        const maxTime = Math.max(
+                            ...validNodes.map((n) =>
+                                new Date(n.date).getTime(),
+                            ),
+                        );
                         const timeRange = maxTime - minTime || 1;
                         const position = (dateTime - minTime) / timeRange;
                         const hue = 240 + position * 60;
@@ -10350,20 +10821,26 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                         // Check for Ctrl+click (Windows/Linux) or Cmd+click (Mac) for connected component
                         if (event.ctrlKey || event.metaKey) {
-                            console.log(`[MODIFIER CLICK DEBUG] ${event.metaKey ? 'Cmd' : 'Ctrl'}+click on paper: ${d.title}`);
+                            console.log(
+                                `[MODIFIER CLICK DEBUG] ${event.metaKey ? "Cmd" : "Ctrl"}+click on paper: ${d.title}`,
+                            );
                             showConnectedComponent(d.id);
                             return;
                         }
 
                         // Simple single click - view paper
-                        console.log(`[CLICK DEBUG] Single click on paper: ${d.title}`);
+                        console.log(
+                            `[CLICK DEBUG] Single click on paper: ${d.title}`,
+                        );
                         viewPaper(d.id);
                     })
                     .on("contextmenu", (event, d) => {
                         // Right-click alternative for connected component
                         event.preventDefault();
                         event.stopPropagation();
-                        console.log(`[RIGHT CLICK DEBUG] Right click on paper: ${d.title}`);
+                        console.log(
+                            `[RIGHT CLICK DEBUG] Right click on paper: ${d.title}`,
+                        );
                         showConnectedComponent(d.id);
                     });
 
@@ -10513,7 +10990,6 @@ Install the companion browser extension to quickly add papers while browsing aca
                     const descriptionY = isFiltered ? 28 : 18;
 
                     if (graphType === "followup") {
-
                     } else if (graphType === "author") {
                         legend
                             .append("text")
@@ -10526,8 +11002,6 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                     const colorY = isFiltered ? 42 : 32;
 
-
-
                     const instructionY = isFiltered ? 56 : 46;
 
                     if (focusedNode) {
@@ -10538,9 +11012,10 @@ Install the companion browser extension to quickly add papers while browsing aca
                             .attr("font-size", "10px")
                             .attr("fill", "#667eea")
                             .attr("font-weight", "bold")
-                            .text("💡 Click: View • Ctrl/Cmd+Click: Connected Component");
+                            .text(
+                                "💡 Click: View • Ctrl/Cmd+Click: Connected Component",
+                            );
                     } else {
-
                     }
                 }
             }
@@ -10569,9 +11044,11 @@ Install the companion browser extension to quickly add papers while browsing aca
                 messageDiv.textContent = message;
 
                 // Add stacking class if multiple messages of same type exist
-                const existingMessagesOfType = document.querySelectorAll(`.message.${type}`);
+                const existingMessagesOfType = document.querySelectorAll(
+                    `.message.${type}`,
+                );
                 if (existingMessagesOfType.length > 0) {
-                    messageDiv.style.marginTop = '5px';
+                    messageDiv.style.marginTop = "5px";
                 }
 
                 const sidebar = document.querySelector(".sidebar");
@@ -10579,7 +11056,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                     sidebar.insertBefore(messageDiv, sidebar.firstChild);
 
                     // Different timeout for different message types
-                    const timeout = type === 'error' ? 8000 : 5000;
+                    const timeout = type === "error" ? 8000 : 5000;
                     setTimeout(() => {
                         if (messageDiv.parentNode) {
                             messageDiv.remove();
@@ -10789,17 +11266,22 @@ Install the companion browser extension to quickly add papers while browsing aca
                 currentScratchpadPaper.scratchpad = content;
 
                 // Use incremental update instead of full database save
-                queuePaperUpdate(currentScratchpadPaper.id, { scratchpad: content });
+                queuePaperUpdate(currentScratchpadPaper.id, {
+                    scratchpad: content,
+                });
 
                 // Update scratchpad icon directly
-                const paperElement = document.querySelector(`[data-paper-id="${currentScratchpadPaper.id}"]`);
+                const paperElement = document.querySelector(
+                    `[data-paper-id="${currentScratchpadPaper.id}"]`,
+                );
                 if (paperElement) {
-                    const scratchpadIcon = paperElement.querySelector('.scratchpad-icon');
+                    const scratchpadIcon =
+                        paperElement.querySelector(".scratchpad-icon");
                     if (scratchpadIcon) {
                         if (content.trim()) {
-                            scratchpadIcon.classList.add('has-content');
+                            scratchpadIcon.classList.add("has-content");
                         } else {
-                            scratchpadIcon.classList.remove('has-content');
+                            scratchpadIcon.classList.remove("has-content");
                         }
                     }
                 }
@@ -10901,38 +11383,64 @@ Install the companion browser extension to quickly add papers while browsing aca
             }
 
             function showConnectedComponent(nodeId) {
-                console.log(`[CONNECTED COMPONENT DEBUG] Function called with nodeId: ${nodeId}`);
-                console.log(`[CONNECTED COMPONENT] Starting search for node: ${nodeId}`);
+                console.log(
+                    `[CONNECTED COMPONENT DEBUG] Function called with nodeId: ${nodeId}`,
+                );
+                console.log(
+                    `[CONNECTED COMPONENT] Starting search for node: ${nodeId}`,
+                );
 
                 // Find all papers connected to this node (transitively)
                 const connectedIds = new Set();
                 const toExplore = [nodeId];
 
                 // Find the paper to get its title for debugging
-                const startPaper = papers.find(p => p.id === nodeId);
-                console.log(`[CONNECTED COMPONENT] Starting paper: "${startPaper ? startPaper.title : 'NOT FOUND'}"`);
-                console.log(`[CONNECTED COMPONENT] Paper has previousWorks:`, startPaper ? startPaper.previousWorks : 'NO PAPER');
+                const startPaper = papers.find((p) => p.id === nodeId);
+                console.log(
+                    `[CONNECTED COMPONENT] Starting paper: "${startPaper ? startPaper.title : "NOT FOUND"}"`,
+                );
+                console.log(
+                    `[CONNECTED COMPONENT] Paper has previousWorks:`,
+                    startPaper ? startPaper.previousWorks : "NO PAPER",
+                );
 
                 while (toExplore.length > 0) {
                     const currentId = toExplore.pop();
                     if (connectedIds.has(currentId)) continue;
 
-                    console.log(`[CONNECTED COMPONENT] Exploring paper ID: ${currentId}`);
+                    console.log(
+                        `[CONNECTED COMPONENT] Exploring paper ID: ${currentId}`,
+                    );
                     connectedIds.add(currentId);
-                    const currentPaper = papers.find(p => p.id === currentId);
+                    const currentPaper = papers.find((p) => p.id === currentId);
 
                     if (currentPaper) {
-                        console.log(`[CONNECTED COMPONENT] Found paper: "${currentPaper.title}"`);
+                        console.log(
+                            `[CONNECTED COMPONENT] Found paper: "${currentPaper.title}"`,
+                        );
 
                         // Add previous works (papers this one references)
                         const previousWorks = currentPaper.previousWorks || [];
-                        console.log(`[CONNECTED COMPONENT] Previous works indices:`, previousWorks);
+                        console.log(
+                            `[CONNECTED COMPONENT] Previous works indices:`,
+                            previousWorks,
+                        );
 
-                        previousWorks.forEach(index => {
+                        previousWorks.forEach((index) => {
                             const referencedPaper = papers[index];
-                            console.log(`[CONNECTED COMPONENT] Checking previous work at index ${index}:`, referencedPaper ? referencedPaper.title : 'NOT FOUND');
-                            if (referencedPaper && !connectedIds.has(referencedPaper.id)) {
-                                console.log(`[CONNECTED COMPONENT] Adding to explore: "${referencedPaper.title}" (${referencedPaper.id})`);
+                            console.log(
+                                `[CONNECTED COMPONENT] Checking previous work at index ${index}:`,
+                                referencedPaper
+                                    ? referencedPaper.title
+                                    : "NOT FOUND",
+                            );
+                            if (
+                                referencedPaper &&
+                                !connectedIds.has(referencedPaper.id)
+                            ) {
+                                console.log(
+                                    `[CONNECTED COMPONENT] Adding to explore: "${referencedPaper.title}" (${referencedPaper.id})`,
+                                );
                                 toExplore.push(referencedPaper.id);
                             }
                         });
@@ -10940,34 +11448,65 @@ Install the companion browser extension to quickly add papers while browsing aca
                         // Add follow-ups (papers that reference this one)
                         papers.forEach((paper, paperIndex) => {
                             const previousWorks = paper.previousWorks || [];
-                            if (previousWorks.some(index => papers[index] && papers[index].id === currentId)) {
+                            if (
+                                previousWorks.some(
+                                    (index) =>
+                                        papers[index] &&
+                                        papers[index].id === currentId,
+                                )
+                            ) {
                                 if (!connectedIds.has(paper.id)) {
-                                    console.log(`[CONNECTED COMPONENT] Found follow-up: "${paper.title}" (${paper.id})`);
+                                    console.log(
+                                        `[CONNECTED COMPONENT] Found follow-up: "${paper.title}" (${paper.id})`,
+                                    );
                                     toExplore.push(paper.id);
                                 }
                             }
                         });
                     } else {
-                        console.log(`[CONNECTED COMPONENT] Paper with ID ${currentId} not found in papers array`);
+                        console.log(
+                            `[CONNECTED COMPONENT] Paper with ID ${currentId} not found in papers array`,
+                        );
                     }
                 }
 
-                console.log(`[CONNECTED COMPONENT] Final connected IDs:`, Array.from(connectedIds));
+                console.log(
+                    `[CONNECTED COMPONENT] Final connected IDs:`,
+                    Array.from(connectedIds),
+                );
 
                 // Update current filtered papers to only show connected component
-                const connectedPapers = papers.filter(p => connectedIds.has(p.id));
-                console.log(`[CONNECTED COMPONENT] Connected papers:`, connectedPapers.map(p => p.title));
+                const connectedPapers = papers.filter((p) =>
+                    connectedIds.has(p.id),
+                );
+                console.log(
+                    `[CONNECTED COMPONENT] Connected papers:`,
+                    connectedPapers.map((p) => p.title),
+                );
 
-                console.log(`[CONNECTED COMPONENT] Before update - currentlyFilteredPapers:`, currentlyFilteredPapers.length);
+                console.log(
+                    `[CONNECTED COMPONENT] Before update - currentlyFilteredPapers:`,
+                    currentlyFilteredPapers.length,
+                );
                 currentlyFilteredPapers = connectedPapers;
-                console.log(`[CONNECTED COMPONENT] After update - currentlyFilteredPapers:`, currentlyFilteredPapers.length);
+                console.log(
+                    `[CONNECTED COMPONENT] After update - currentlyFilteredPapers:`,
+                    currentlyFilteredPapers.length,
+                );
 
                 // Re-render papers list and graph
-                console.log(`[CONNECTED COMPONENT] Calling renderPapers with:`, currentlyFilteredPapers.length, "papers");
+                console.log(
+                    `[CONNECTED COMPONENT] Calling renderPapers with:`,
+                    currentlyFilteredPapers.length,
+                    "papers",
+                );
                 renderPapers(currentlyFilteredPapers);
                 console.log(`[CONNECTED COMPONENT] Calling renderGraph`);
                 renderGraph();
-                console.log(`[CONNECTED COMPONENT] After renderGraph - currentlyFilteredPapers:`, currentlyFilteredPapers.length);
+                console.log(
+                    `[CONNECTED COMPONENT] After renderGraph - currentlyFilteredPapers:`,
+                    currentlyFilteredPapers.length,
+                );
             }
 
             function showGraphHelp() {
@@ -11063,10 +11602,6 @@ Install the companion browser extension to quickly add papers while browsing aca
                 try {
                     showMessage("Preparing export...", "info");
 
-                    // Ensure we have the latest data from IndexedDB
-                    await loadPapers();
-                    await loadFolders();
-
                     // Include extension papers in export
                     let allPapers = [...papers];
                     const extensionStored = localStorage.getItem(
@@ -11094,7 +11629,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                     }
 
                     // Remove personal data from papers
-                    const cleanPapers = allPapers.map(paper => {
+                    const cleanPapers = allPapers.map((paper) => {
                         const cleanPaper = { ...paper };
                         delete cleanPaper.scratchpad;
                         delete cleanPaper.readingStatus;
@@ -11108,7 +11643,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                         userManual: userManualContent,
                         version: "2.0", // Updated for compatibility with incremental updates
                         exportDate: new Date().toISOString(),
-                        isFullExport: false
+                        isFullExport: false,
                     };
 
                     const blob = new Blob([JSON.stringify(data, null, 2)], {
@@ -11161,12 +11696,18 @@ Install the companion browser extension to quickly add papers while browsing aca
                 paper.readingStatus = readingStatuses[nextIndex].key;
 
                 // Use incremental update instead of full database save
-                queuePaperUpdate(paperId, { readingStatus: paper.readingStatus });
+                queuePaperUpdate(paperId, {
+                    readingStatus: paper.readingStatus,
+                });
 
                 // Update UI element directly instead of full re-render
-                const paperElement = document.querySelector(`[data-paper-id="${paperId}"]`);
+                const paperElement = document.querySelector(
+                    `[data-paper-id="${paperId}"]`,
+                );
                 if (paperElement) {
-                    const statusIcon = paperElement.querySelector('.reading-status-icon');
+                    const statusIcon = paperElement.querySelector(
+                        ".reading-status-icon",
+                    );
                     if (statusIcon) {
                         statusIcon.className = `reading-status-icon ${paper.readingStatus}`;
                         statusIcon.title = `Reading status: ${readingStatuses[nextIndex].label}`;
@@ -11189,18 +11730,22 @@ Install the companion browser extension to quickly add papers while browsing aca
                 queuePaperUpdate(paperId, { favorite: paper.favorite });
 
                 // Update UI element directly instead of full re-render
-                const paperElement = document.querySelector(`[data-paper-id="${paperId}"]`);
+                const paperElement = document.querySelector(
+                    `[data-paper-id="${paperId}"]`,
+                );
                 if (paperElement) {
-                    const favoriteIcon = paperElement.querySelector('.favorite-star-icon');
+                    const favoriteIcon = paperElement.querySelector(
+                        ".favorite-star-icon",
+                    );
                     if (favoriteIcon) {
                         if (paper.favorite) {
-                            favoriteIcon.classList.add('favorited');
-                            favoriteIcon.title = 'Remove from favorites';
-                            favoriteIcon.textContent = '⭐';
+                            favoriteIcon.classList.add("favorited");
+                            favoriteIcon.title = "Remove from favorites";
+                            favoriteIcon.textContent = "⭐";
                         } else {
-                            favoriteIcon.classList.remove('favorited');
-                            favoriteIcon.title = 'Add to favorites';
-                            favoriteIcon.textContent = '☆';
+                            favoriteIcon.classList.remove("favorited");
+                            favoriteIcon.title = "Add to favorites";
+                            favoriteIcon.textContent = "☆";
                         }
                     }
                 }
@@ -12132,7 +12677,9 @@ Install the companion browser extension to quickly add papers while browsing aca
                 }
 
                 // Get the checkbox to see its current state (after browser changed it)
-                const checkbox = document.querySelector(`[data-paper-id="${paperId}"] .paper-checkbox`);
+                const checkbox = document.querySelector(
+                    `[data-paper-id="${paperId}"] .paper-checkbox`,
+                );
                 if (!checkbox) return;
 
                 // Use checkbox state as source of truth
@@ -12146,8 +12693,6 @@ Install the companion browser extension to quickly add papers while browsing aca
                 updateBulkActionButton();
             }
 
-
-
             function updateSelectedCount() {
                 const countElement = document.getElementById("selected-count");
                 if (countElement) {
@@ -12158,8 +12703,6 @@ Install the companion browser extension to quickly add papers while browsing aca
             function updateBulkActionButton() {
                 const button = document.getElementById("execute-bulk-action");
                 const select = document.getElementById("bulk-action-select");
-
-
 
                 if (button && select) {
                     button.disabled =
@@ -12277,7 +12820,9 @@ Install the companion browser extension to quickly add papers while browsing aca
                         : getCurrentlyFilteredPapers();
                 visiblePapers.forEach((paper) => {
                     selectedPapers.add(paper.id);
-                    const checkbox = document.querySelector(`[data-paper-id="${paper.id}"] .paper-checkbox`);
+                    const checkbox = document.querySelector(
+                        `[data-paper-id="${paper.id}"] .paper-checkbox`,
+                    );
                     if (checkbox) checkbox.checked = true;
                 });
                 updateSelectedCount();
@@ -12285,8 +12830,10 @@ Install the companion browser extension to quickly add papers while browsing aca
             }
 
             function deselectAllPapers() {
-                selectedPapers.forEach(paperId => {
-                    const checkbox = document.querySelector(`[data-paper-id="${paperId}"] .paper-checkbox`);
+                selectedPapers.forEach((paperId) => {
+                    const checkbox = document.querySelector(
+                        `[data-paper-id="${paperId}"] .paper-checkbox`,
+                    );
                     if (checkbox) checkbox.checked = false;
                 });
                 selectedPapers.clear();
@@ -12427,8 +12974,10 @@ Install the companion browser extension to quickly add papers while browsing aca
                         });
 
                         // Track change and queue incremental update
-                        trackChange('modify', paper, originalPaper);
-                        queuePaperUpdate(paper.id, { labelSets: paper.labelSets });
+                        trackChange("modify", paper, originalPaper);
+                        queuePaperUpdate(paper.id, {
+                            labelSets: paper.labelSets,
+                        });
                     }
                 });
 
@@ -12449,7 +12998,10 @@ Install the companion browser extension to quickly add papers while browsing aca
             }
 
             function showBulkRemoveLabelDialog(paperIds) {
-                console.log("[BULK REMOVE] showBulkRemoveLabelDialog called with:", paperIds);
+                console.log(
+                    "[BULK REMOVE] showBulkRemoveLabelDialog called with:",
+                    paperIds,
+                );
                 // Create backdrop
                 const backdrop = document.createElement("div");
                 backdrop.style.position = "fixed";
@@ -12520,7 +13072,9 @@ Install the companion browser extension to quickly add papers while browsing aca
             }
 
             function closeBulkRemoveLabelDialog() {
-                const backdrop = document.getElementById("bulk-remove-label-backdrop");
+                const backdrop = document.getElementById(
+                    "bulk-remove-label-backdrop",
+                );
                 if (backdrop) {
                     backdrop.remove();
                 }
@@ -12528,17 +13082,26 @@ Install the companion browser extension to quickly add papers while browsing aca
 
             function applyBulkRemoveLabels(paperIdsString) {
                 console.log("[BULK REMOVE LABELS] Starting bulk label removal");
-                console.log("[BULK REMOVE LABELS] Paper IDs string:", paperIdsString);
+                console.log(
+                    "[BULK REMOVE LABELS] Paper IDs string:",
+                    paperIdsString,
+                );
 
                 const paperIds = paperIdsString.split(",");
                 console.log("[BULK REMOVE LABELS] Paper IDs array:", paperIds);
 
                 const labelSets = getLabelSets("bulk-remove");
-                console.log("[BULK REMOVE LABELS] Label sets retrieved:", labelSets);
+                console.log(
+                    "[BULK REMOVE LABELS] Label sets retrieved:",
+                    labelSets,
+                );
 
                 if (labelSets.length === 0) {
                     console.log("[BULK REMOVE LABELS] No label sets found");
-                    showMessage("Please add at least one label to remove", "error");
+                    showMessage(
+                        "Please add at least one label to remove",
+                        "error",
+                    );
                     return;
                 }
 
@@ -12551,31 +13114,47 @@ Install the companion browser extension to quickly add papers while browsing aca
                             paper.labelSets.forEach((paperLabelSet) => {
                                 // Remove labels from this label set
                                 removeSet.labels.forEach((labelToRemove) => {
-                                    const index = paperLabelSet.labels.indexOf(labelToRemove);
+                                    const index =
+                                        paperLabelSet.labels.indexOf(
+                                            labelToRemove,
+                                        );
                                     if (index > -1) {
                                         paperLabelSet.labels.splice(index, 1);
                                     }
                                 });
 
                                 // Remove annotations if they exist
-                                if (removeSet.annotations && paperLabelSet.annotations) {
-                                    Object.keys(removeSet.annotations).forEach((key) => {
-                                        delete paperLabelSet.annotations[key];
-                                    });
+                                if (
+                                    removeSet.annotations &&
+                                    paperLabelSet.annotations
+                                ) {
+                                    Object.keys(removeSet.annotations).forEach(
+                                        (key) => {
+                                            delete paperLabelSet.annotations[
+                                                key
+                                            ];
+                                        },
+                                    );
                                 }
                             });
 
                             // Remove empty label sets
-                            paper.labelSets = paper.labelSets.filter(labelSet => labelSet.labels.length > 0);
+                            paper.labelSets = paper.labelSets.filter(
+                                (labelSet) => labelSet.labels.length > 0,
+                            );
                         });
 
                         // Track change and queue incremental update
-                        trackChange('modify', paper, originalPaper);
-                        queuePaperUpdate(paper.id, { labelSets: paper.labelSets });
+                        trackChange("modify", paper, originalPaper);
+                        queuePaperUpdate(paper.id, {
+                            labelSets: paper.labelSets,
+                        });
                     }
                 });
 
-                console.log("[BULK REMOVE LABELS] Queuing incremental updates...");
+                console.log(
+                    "[BULK REMOVE LABELS] Queuing incremental updates...",
+                );
 
                 showMessage(
                     `Removed labels from ${paperIds.length} papers`,
@@ -12588,7 +13167,9 @@ Install the companion browser extension to quickly add papers while browsing aca
                 closeBulkRemoveLabelDialog();
                 performSearch(); // Maintain current search state
                 renderPapers(); // Update displayed papers with new labels
-                console.log("[BULK REMOVE LABELS] Bulk remove label operation completed");
+                console.log(
+                    "[BULK REMOVE LABELS] Bulk remove label operation completed",
+                );
             }
 
             function showBulkMoveDialog(paperIds) {
@@ -12789,7 +13370,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                             papers.push(paper);
 
                             // Track change and queue incremental update
-                            trackChange('add', paper);
+                            trackChange("add", paper);
                             queuePaperUpdate(paper.id, paper);
 
                             successCount++;
@@ -13529,37 +14110,61 @@ Install the companion browser extension to quickly add papers while browsing aca
             function initMobilePanels() {
                 if (window.innerWidth <= 768) {
                     // Add click handlers for collapsible panels
-                    const foldersPanel = document.querySelector('.folders-panel');
-                    const sidebar = document.querySelector('.sidebar');
+                    const foldersPanel =
+                        document.querySelector(".folders-panel");
+                    const sidebar = document.querySelector(".sidebar");
 
                     if (foldersPanel) {
-                        const foldersTitle = foldersPanel.querySelector('h3') ||
-                                           foldersPanel.querySelector('.section-title');
-                        if (foldersTitle && !foldersTitle.hasAttribute('data-mobile-handler')) {
-                            foldersTitle.setAttribute('data-mobile-handler', 'true');
-                            foldersTitle.addEventListener('click', function() {
-                                foldersPanel.classList.toggle('collapsed');
-                                const content = foldersPanel.querySelector('.folders-tree') ||
-                                              foldersPanel.children[1];
+                        const foldersTitle =
+                            foldersPanel.querySelector("h3") ||
+                            foldersPanel.querySelector(".section-title");
+                        if (
+                            foldersTitle &&
+                            !foldersTitle.hasAttribute("data-mobile-handler")
+                        ) {
+                            foldersTitle.setAttribute(
+                                "data-mobile-handler",
+                                "true",
+                            );
+                            foldersTitle.addEventListener("click", function () {
+                                foldersPanel.classList.toggle("collapsed");
+                                const content =
+                                    foldersPanel.querySelector(
+                                        ".folders-tree",
+                                    ) || foldersPanel.children[1];
                                 if (content) {
-                                    content.style.display = foldersPanel.classList.contains('collapsed') ?
-                                                           'none' : '';
+                                    content.style.display =
+                                        foldersPanel.classList.contains(
+                                            "collapsed",
+                                        )
+                                            ? "none"
+                                            : "";
                                 }
                             });
                         }
                     }
 
                     if (sidebar) {
-                        const sidebarTitle = sidebar.querySelector('.section-title');
-                        if (sidebarTitle && !sidebarTitle.hasAttribute('data-mobile-handler')) {
-                            sidebarTitle.setAttribute('data-mobile-handler', 'true');
-                            sidebarTitle.addEventListener('click', function() {
-                                sidebar.classList.toggle('collapsed');
-                                const content = sidebar.querySelector('#search-labels') ||
-                                              sidebar.children[1];
+                        const sidebarTitle =
+                            sidebar.querySelector(".section-title");
+                        if (
+                            sidebarTitle &&
+                            !sidebarTitle.hasAttribute("data-mobile-handler")
+                        ) {
+                            sidebarTitle.setAttribute(
+                                "data-mobile-handler",
+                                "true",
+                            );
+                            sidebarTitle.addEventListener("click", function () {
+                                sidebar.classList.toggle("collapsed");
+                                const content =
+                                    sidebar.querySelector("#search-labels") ||
+                                    sidebar.children[1];
                                 if (content) {
-                                    content.style.display = sidebar.classList.contains('collapsed') ?
-                                                           'none' : '';
+                                    content.style.display =
+                                        sidebar.classList.contains("collapsed")
+                                            ? "none"
+                                            : "";
                                 }
                             });
                         }
@@ -13568,8 +14173,8 @@ Install the companion browser extension to quickly add papers while browsing aca
             }
 
             // Initialize mobile panels on load and resize
-            window.addEventListener('load', initMobilePanels);
-            window.addEventListener('resize', initMobilePanels);
+            window.addEventListener("load", initMobilePanels);
+            window.addEventListener("resize", initMobilePanels);
             window.initMobilePanels = initMobilePanels;
             window.togglePaperSelection = togglePaperSelection;
 
@@ -13605,7 +14210,8 @@ Install the companion browser extension to quickly add papers while browsing aca
             window.removeLabelSet = removeLabelSet;
             window.searchPreviousWorks = searchPreviousWorks;
             window.searchEditPreviousWorks = searchEditPreviousWorks;
-            window.updateSelectedPreviousWorksDisplay = updateSelectedPreviousWorksDisplay;
+            window.updateSelectedPreviousWorksDisplay =
+                updateSelectedPreviousWorksDisplay;
             window.refreshGraph = refreshGraph;
             window.showConnectedComponent = showConnectedComponent;
             window.showGraphHelp = showGraphHelp;
@@ -13766,8 +14372,6 @@ Install the companion browser extension to quickly add papers while browsing aca
                     performSearch();
                     renderPapers();
 
-
-
                     showMessage(
                         `Date repair complete! ${repairedCount} papers repaired, ${unreparableCount} marked as "Unknown date"`,
                         "success",
@@ -13789,14 +14393,24 @@ Install the companion browser extension to quickly add papers while browsing aca
                 console.log("=== CHECKING PAPERS WITH UNKNOWN DATES ===");
                 let unknownCount = 0;
                 papers.forEach((paper, index) => {
-                    if (!paper.date || paper.date === "" || paper.date === "Unknown" || paper.date === "Unknown date") {
+                    if (
+                        !paper.date ||
+                        paper.date === "" ||
+                        paper.date === "Unknown" ||
+                        paper.date === "Unknown date"
+                    ) {
                         unknownCount++;
-                        if (unknownCount <= 10) { // Show first 10 examples
-                            console.log(`${unknownCount}. "${paper.title}" - date: "${paper.date}" (${typeof paper.date})`);
+                        if (unknownCount <= 10) {
+                            // Show first 10 examples
+                            console.log(
+                                `${unknownCount}. "${paper.title}" - date: "${paper.date}" (${typeof paper.date})`,
+                            );
                         }
                     }
                 });
-                console.log(`Total papers with unknown dates: ${unknownCount} out of ${papers.length}`);
+                console.log(
+                    `Total papers with unknown dates: ${unknownCount} out of ${papers.length}`,
+                );
                 console.log("=== END CHECK ===");
                 return unknownCount;
             }
@@ -13831,7 +14445,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                         showMessage(
                             "Paper saved instantly! ✨ Click 'Sync DB' to permanently store.",
                             "success",
-                            true  // Allow stacking with duplicate messages
+                            true, // Allow stacking with duplicate messages
                         );
                     }
                 } catch (error) {

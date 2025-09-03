@@ -1497,62 +1497,60 @@
             /* Mobile responsiveness */
             @media (max-width: 768px) {
                 .main-content {
-                    flex-direction: column;
+                    display: flex !important;
+                    flex-direction: column !important;
+                    grid-template-columns: none !important;
+                    gap: 15px !important;
+                }
+
+                .folders-panel,
+                .sidebar,
+                .content-area {
+                    width: 100% !important;
+                    margin: 0 !important;
+                    flex: none !important;
                 }
 
                 .folders-panel {
-                    width: 100% !important;
-                    max-height: 200px;
+                    order: 1;
+                    padding: 15px;
+                    max-height: 250px;
                     overflow-y: auto;
-                    margin-bottom: 10px;
                 }
 
                 .sidebar {
-                    width: 100% !important;
-                    max-height: 300px;
+                    order: 2;
+                    padding: 15px;
+                    max-height: 400px;
                     overflow-y: auto;
-                    margin-bottom: 10px;
                 }
 
                 .content-area {
-                    width: 100% !important;
-                    margin-left: 0 !important;
+                    order: 3;
+                    padding: 15px;
                 }
 
-                .paper-item {
+                /* Make form inputs more mobile-friendly */
+                .input-group input,
+                .input-group select,
+                .input-group textarea {
+                    font-size: 16px !important;
                     padding: 10px;
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+
+                .search-query-input {
+                    font-size: 16px !important;
+                    padding: 10px;
+                    width: 100%;
+                }
+
+                .btn {
+                    padding: 10px 15px;
                     font-size: 14px;
-                }
-
-                .paper-title {
-                    font-size: 14px;
-                    line-height: 1.4;
-                }
-
-                .paper-authors {
-                    font-size: 12px;
-                }
-
-                .paper-date {
-                    font-size: 11px;
-                }
-
-                .modal-content {
-                    width: 95% !important;
-                    max-width: none !important;
-                    margin: 10px !important;
-                    max-height: 90vh !important;
-                }
-
-                .pagination-controls {
-                    flex-wrap: wrap;
-                }
-
-                .pagination-controls button {
-                    min-width: 30px;
-                    height: 30px;
-                    font-size: 12px;
-                    margin: 1px;
+                    min-height: 44px;
+                    touch-action: manipulation;
                 }
 
                 .search-controls {
@@ -1560,43 +1558,142 @@
                     gap: 10px;
                 }
 
-                .search-controls input {
-                    width: 100%;
+                .database-actions {
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    justify-content: center;
                 }
 
-                .btn {
-                    padding: 8px 12px;
+                .paper-item {
+                    padding: 15px;
+                    margin-bottom: 8px;
+                    border-radius: 8px;
+                }
+
+                .paper-title {
+                    font-size: 15px;
+                    line-height: 1.3;
+                    margin-bottom: 8px;
+                }
+
+                .paper-authors {
+                    font-size: 13px;
+                    margin-bottom: 5px;
+                }
+
+                .paper-date {
+                    font-size: 12px;
+                    margin-bottom: 8px;
+                }
+
+                .paper-label-sets {
+                    margin-top: 8px;
+                }
+
+                .label-chip {
+                    font-size: 11px;
+                    padding: 3px 6px;
+                    margin: 2px;
+                }
+
+                .modal-content {
+                    width: 95% !important;
+                    max-width: none !important;
+                    margin: 20px 10px !important;
+                    max-height: 85vh !important;
+                    padding: 15px;
+                }
+
+                .modal-header h2 {
+                    font-size: 18px;
+                }
+
+                .pagination-controls {
+                    flex-wrap: wrap;
+                    gap: 5px;
+                    justify-content: center;
+                }
+
+                .pagination-controls button {
+                    min-width: 35px;
+                    height: 35px;
                     font-size: 13px;
                 }
 
-                .input-group {
-                    margin-bottom: 15px;
+                /* Collapsible sections for mobile */
+                .folders-panel h3,
+                .sidebar .section-title {
+                    cursor: pointer;
+                    user-select: none;
+                    position: relative;
+                    padding-right: 20px;
                 }
 
-                .input-group input,
-                .input-group select,
-                .input-group textarea {
-                    font-size: 14px;
-                    padding: 8px;
+                .folders-panel h3:after,
+                .sidebar .section-title:after {
+                    content: '▼';
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    font-size: 12px;
+                    transition: transform 0.2s;
+                }
+
+                .folders-panel.collapsed h3:after,
+                .sidebar.collapsed .section-title:after {
+                    transform: rotate(-90deg);
                 }
             }
 
-            /* Landscape mobile */
-            @media (max-width: 768px) and (orientation: landscape) {
+            /* Landscape mobile - keep horizontal layout but with better proportions */
+            @media (max-width: 768px) and (orientation: landscape) and (min-width: 500px) {
                 .main-content {
-                    flex-direction: row;
+                    display: grid !important;
+                    flex-direction: row !important;
+                    grid-template-columns: 250px 300px 1fr !important;
+                    gap: 15px !important;
+                }
+
+                .folders-panel,
+                .sidebar,
+                .content-area {
+                    order: unset;
+                    max-height: 70vh;
+                    overflow-y: auto;
                 }
 
                 .folders-panel {
-                    width: 200px !important;
-                    max-height: none;
-                    margin-bottom: 0;
+                    padding: 12px;
                 }
 
                 .sidebar {
-                    width: 250px !important;
-                    max-height: none;
-                    margin-bottom: 0;
+                    padding: 12px;
+                }
+            }
+
+            /* Very small screens */
+            @media (max-width: 480px) {
+                .container {
+                    padding: 10px;
+                }
+
+                .header h1 {
+                    font-size: 20px;
+                }
+
+                .header p {
+                    font-size: 14px;
+                }
+
+                .btn {
+                    font-size: 13px;
+                    padding: 8px 12px;
+                    min-height: 40px;
+                }
+
+                .modal-content {
+                    margin: 10px 5px !important;
+                    padding: 10px;
                 }
             }
 
@@ -1653,6 +1750,28 @@
                 }
                 100% {
                     transform: scale(1);
+                }
+            }
+
+            /* Prevent zoom on form inputs on iOS */
+            @media screen and (-webkit-min-device-pixel-ratio: 0) {
+                select,
+                textarea,
+                input[type="text"],
+                input[type="password"],
+                input[type="datetime"],
+                input[type="datetime-local"],
+                input[type="date"],
+                input[type="month"],
+                input[type="time"],
+                input[type="week"],
+                input[type="number"],
+                input[type="email"],
+                input[type="url"],
+                input[type="search"],
+                input[type="tel"],
+                input[type="color"] {
+                    font-size: 16px !important;
                 }
             }
         </style>
@@ -13286,6 +13405,53 @@ Install the companion browser extension to quickly add papers while browsing aca
             window.openUserManualDynamic = openUserManualDynamic;
             window.refreshMetadata = refreshMetadata;
             window.toggleSelectionMode = toggleSelectionMode;
+
+            // Mobile collapsible panel functionality
+            function initMobilePanels() {
+                if (window.innerWidth <= 768) {
+                    // Add click handlers for collapsible panels
+                    const foldersPanel = document.querySelector('.folders-panel');
+                    const sidebar = document.querySelector('.sidebar');
+
+                    if (foldersPanel) {
+                        const foldersTitle = foldersPanel.querySelector('h3') ||
+                                           foldersPanel.querySelector('.section-title');
+                        if (foldersTitle && !foldersTitle.hasAttribute('data-mobile-handler')) {
+                            foldersTitle.setAttribute('data-mobile-handler', 'true');
+                            foldersTitle.addEventListener('click', function() {
+                                foldersPanel.classList.toggle('collapsed');
+                                const content = foldersPanel.querySelector('.folders-tree') ||
+                                              foldersPanel.children[1];
+                                if (content) {
+                                    content.style.display = foldersPanel.classList.contains('collapsed') ?
+                                                           'none' : '';
+                                }
+                            });
+                        }
+                    }
+
+                    if (sidebar) {
+                        const sidebarTitle = sidebar.querySelector('.section-title');
+                        if (sidebarTitle && !sidebarTitle.hasAttribute('data-mobile-handler')) {
+                            sidebarTitle.setAttribute('data-mobile-handler', 'true');
+                            sidebarTitle.addEventListener('click', function() {
+                                sidebar.classList.toggle('collapsed');
+                                const content = sidebar.querySelector('#search-labels') ||
+                                              sidebar.children[1];
+                                if (content) {
+                                    content.style.display = sidebar.classList.contains('collapsed') ?
+                                                           'none' : '';
+                                }
+                            });
+                        }
+                    }
+                }
+            }
+
+            // Initialize mobile panels on load and resize
+            window.addEventListener('load', initMobilePanels);
+            window.addEventListener('resize', initMobilePanels);
+            window.initMobilePanels = initMobilePanels;
             window.togglePaperSelection = togglePaperSelection;
 
             window.selectAllVisiblePapers = selectAllVisiblePapers;

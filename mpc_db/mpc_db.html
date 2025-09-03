@@ -1338,18 +1338,7 @@
             }
 
             .paper-item.selectable {
-                cursor: pointer;
-                position: relative;
-            }
-
-            .paper-item.selectable:hover {
-                background-color: #f8f9fa;
-            }
-
-            .paper-item.selectable.selected {
-                background-color: #e7f0ff;
-                border-left: 4px solid #667eea;
-                box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
+                cursor: default;
             }
 
             .paper-checkbox {
@@ -1464,6 +1453,197 @@
                 border: 1px solid #ffeeba;
             }
 
+            .pagination-controls {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin: 20px 0;
+                padding: 15px;
+                border-top: 1px solid #ddd;
+                background-color: #f8f9fa;
+            }
+
+            .pagination-controls button {
+                min-width: 35px;
+                height: 35px;
+                margin: 0 2px;
+                border: 1px solid #ddd;
+                background: white;
+                color: #333;
+                cursor: pointer;
+                border-radius: 4px;
+                font-size: 13px;
+            }
+
+            .pagination-controls button:hover:not(:disabled) {
+                background-color: #e9ecef;
+                border-color: #adb5bd;
+                color: #333;
+            }
+
+            .pagination-controls button.btn-success {
+                background-color: #28a745 !important;
+                border-color: #28a745 !important;
+                color: white !important;
+            }
+
+            .pagination-controls button:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+                color: #999;
+            }
+
+            /* Mobile responsiveness */
+            @media (max-width: 768px) {
+                .main-content {
+                    flex-direction: column;
+                }
+
+                .folders-panel {
+                    width: 100% !important;
+                    max-height: 200px;
+                    overflow-y: auto;
+                    margin-bottom: 10px;
+                }
+
+                .sidebar {
+                    width: 100% !important;
+                    max-height: 300px;
+                    overflow-y: auto;
+                    margin-bottom: 10px;
+                }
+
+                .content-area {
+                    width: 100% !important;
+                    margin-left: 0 !important;
+                }
+
+                .paper-item {
+                    padding: 10px;
+                    font-size: 14px;
+                }
+
+                .paper-title {
+                    font-size: 14px;
+                    line-height: 1.4;
+                }
+
+                .paper-authors {
+                    font-size: 12px;
+                }
+
+                .paper-date {
+                    font-size: 11px;
+                }
+
+                .modal-content {
+                    width: 95% !important;
+                    max-width: none !important;
+                    margin: 10px !important;
+                    max-height: 90vh !important;
+                }
+
+                .pagination-controls {
+                    flex-wrap: wrap;
+                }
+
+                .pagination-controls button {
+                    min-width: 30px;
+                    height: 30px;
+                    font-size: 12px;
+                    margin: 1px;
+                }
+
+                .search-controls {
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                .search-controls input {
+                    width: 100%;
+                }
+
+                .btn {
+                    padding: 8px 12px;
+                    font-size: 13px;
+                }
+
+                .input-group {
+                    margin-bottom: 15px;
+                }
+
+                .input-group input,
+                .input-group select,
+                .input-group textarea {
+                    font-size: 14px;
+                    padding: 8px;
+                }
+            }
+
+            /* Landscape mobile */
+            @media (max-width: 768px) and (orientation: landscape) {
+                .main-content {
+                    flex-direction: row;
+                }
+
+                .folders-panel {
+                    width: 200px !important;
+                    max-height: none;
+                    margin-bottom: 0;
+                }
+
+                .sidebar {
+                    width: 250px !important;
+                    max-height: none;
+                    margin-bottom: 0;
+                }
+            }
+
+            /* Loading progress bar */
+            .loading-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.9);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 10000;
+            }
+
+            .loading-progress {
+                width: 300px;
+                height: 20px;
+                background: #f0f0f0;
+                border-radius: 10px;
+                overflow: hidden;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+
+            .loading-progress-bar {
+                height: 100%;
+                background: linear-gradient(90deg, #667eea, #764ba2);
+                width: 0%;
+                transition: width 0.3s ease;
+                border-radius: 10px;
+            }
+
+            .loading-text {
+                font-size: 16px;
+                color: #333;
+                margin-bottom: 10px;
+            }
+
+            .loading-subtext {
+                font-size: 14px;
+                color: #666;
+            }
+
             @keyframes pulse {
                 0% {
                     transform: scale(1);
@@ -1478,6 +1658,22 @@
         </style>
     </head>
     <body>
+        <script>
+            // Show loading immediately on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                const overlay = document.createElement('div');
+                overlay.id = 'loading-overlay';
+                overlay.className = 'loading-overlay';
+                overlay.innerHTML = `
+                    <div class="loading-text" id="loading-text">Loading MPC Database...</div>
+                    <div class="loading-progress">
+                        <div class="loading-progress-bar" id="loading-progress-bar"></div>
+                    </div>
+                    <div class="loading-subtext" id="loading-subtext">Initializing...</div>
+                `;
+                document.body.appendChild(overlay);
+            });
+        </script>
         <div class="container">
             <div class="header">
                 <h1>The Secure Computation Database</h1>
@@ -1944,7 +2140,7 @@
                             >
                                 <span>📂</span> Import
                             </button>
-                            <button class="btn" onclick="openUserManual()" title="Open user manual">
+                            <button class="btn" onclick="openUserManualDynamic()" title="Open user manual">
                                 <span>📖</span> User Manual
                             </button>
                             <button class="btn" onclick="integrateChanges()" title="Send your changes for review">
@@ -1961,15 +2157,7 @@
                             >
                                 <span>🔄</span> Refresh All
                             </button>
-                            <button
-                                class="btn admin-only"
-                                id="repair-dates-btn"
-                                onclick="repairCorruptedDates()"
-                                title="Fix papers with corrupted dates (after Aug 15, 2025)"
-                                style="display: none; background: #dc3545; color: white;"
-                            >
-                                <span>🔧</span> Fix Dates
-                            </button>
+
                             <button
                                 class="btn admin-only"
                                 id="sync-db-btn"
@@ -2005,6 +2193,14 @@
                                 style="margin-left: 4px; display: none"
                                 >ℹ️</span
                             >
+                            <button
+                                class="btn admin-only"
+                                onclick="editUserManual()"
+                                title="Edit user manual content"
+                                style="display: none"
+                            >
+                                <span>✏️</span> Edit Manual
+                            </button>
                             <input
                                 type="file"
                                 id="adminImportFile"
@@ -2019,6 +2215,15 @@
                                 style="display: none"
                             >
                                 <span>📥</span> Update DB
+                            </button>
+                            <button
+                                class="btn admin-only"
+                                onclick="toggleAutoLoad()"
+                                id="auto-load-toggle-btn"
+                                title="Toggle automatic loading of mpc_db.json on page refresh"
+                                style="display: none"
+                            >
+                                <span>🔄</span> <span id="auto-load-status">Disable Auto-load</span>
                             </button>
                         </div>
                     </div>
@@ -2370,12 +2575,331 @@
             // Change tracking and admin system
             let originalDatabase = null; // Original state from mpc_db.json for change tracking
             let isAdminMode = false;
+            let autoLoadEnabled = localStorage.getItem('autoLoadEnabled') !== 'false'; // Default to true
             let changeTracker = {
                 addedPapers: new Set(),
                 modifiedPapers: new Map(),
                 deletedPapers: new Set(),
                 modifiedLabels: new Map() // paperId -> {added: Set(), removed: Set()}
             };
+
+            // User manual content
+            let userManualContent = localStorage.getItem('userManualContent') || `# MPC Database User Manual
+
+## 1. What the Database Offers
+
+This database contains research papers on Multi-Party Computation (MPC) and related cryptographic topics. Features include:
+
+- **Comprehensive paper collection** with metadata (title, authors, abstract, venue, date)
+- **Smart labeling system** for categorizing papers by topics, techniques, and applications
+- **Reading status tracking** (to-read, reading, read, skimmed, referenced)
+- **Follow-up graph** showing connections between papers
+- **Advanced search** with Boolean logic and field-specific queries
+- **Personal annotations** via scratchpad for each paper
+
+## 2. Advanced Search Queries
+
+### Basic Text Search
+Simply type keywords to search across titles, authors, and abstracts.
+
+### Field-Specific Queries
+- \`author:alice\` - Find papers by author Alice
+- \`title:protocol\` - Find papers with "protocol" in the title
+- \`date:2024\` - Find papers from 2024
+- \`year:2024\` - Same as date (alternative syntax)
+
+### Date Range Queries
+- \`date:>2020\` - Papers after 2020
+- \`date:>=2020\` - Papers from 2020 onwards
+- \`date:<2020\` - Papers before 2020
+- \`date:<=2020\` - Papers up to and including 2020
+- \`date:2020-2023\` - Papers between 2020 and 2023
+- \`date:"unknown date"\` - Papers with unknown/invalid dates
+
+### Boolean Logic
+- \`author:alice AND title:secure\` - Papers by Alice with "secure" in title
+- \`author:alice OR author:bob\` - Papers by Alice or Bob
+- \`NOT author:charlie\` - Papers not by Charlie
+- \`(author:alice OR author:bob) AND date:>2020\` - Complex combinations
+
+### Example Complex Queries
+- \`(("author:alice x" AND "author:bob y") OR ("title:secure" AND "date:>1997"))\`
+- \`author:yuval AND (title:garbling OR title:obfuscation)\`
+- \`date:>2015 AND NOT author:excluded\`
+
+## 3. Label System and Filtering
+
+### Label Sets
+Papers can have multiple **label sets**, each representing independent contributions or protocols within the same paper. For example, a paper might have:
+- **Set 1**: ["MPC", "Honest Majority", "BGW"]
+- **Set 2**: ["Zero Knowledge", "SNARK", "Groth16"]
+
+### Label Search Behavior
+When searching with labels, a paper matches if **at least one label set** contains **all selected labels**. This allows papers with multiple contributions to be found accurately.
+
+### Using Label Filters
+- Click labels in the left panel to include them in search
+- Right-click or Ctrl+click to exclude labels
+- Selected labels show in blue, excluded in red
+- Mix label filters with text queries for precise searches
+
+### Favorite Filter
+Click the "⭐ Favorites" button to show only papers you've marked as favorites.
+
+## 4. Follow-up Feature and Graph View
+
+### Previous Works
+For each paper, you can define what previous work it improves upon by:
+- Adding URLs of previous papers during paper entry
+- The system automatically links papers in your database
+- Creates placeholder entries for external papers
+
+### Graph Interactions
+**Follow-up Graph Mode:**
+- Shows connections between papers based on previous works relationships
+- Arrows point from previous work → follow-up work
+
+**Single Click on Node:**
+- Highlights the clicked paper and its immediate connections
+- Shows papers that cite this work and papers this work cites
+
+**Cmd+Click (Mac) / Ctrl+Click (Windows):**
+- Shows the connected component containing that paper
+- Filters the paper list to show only connected papers
+- Useful for exploring research lineages
+
+**Author Graph Mode:**
+- Connects papers that share common authors
+- Useful for exploring collaborations
+
+## 5. Contact Authors Feature
+
+### Email Template
+When you click the email icon (📧) on a paper, it opens your email client with:
+
+**Subject:** \`Question about: [Paper Title]\`
+
+**Body:**
+\`\`\`
+Dear [Authors],
+
+I hope this email finds you well. I am writing to ask about your paper:
+
+"[Paper Title]"
+
+[Your question/comment here]
+
+Best regards,
+[Your name]
+\`\`\`
+
+### Setting Contact Emails
+- Edit papers to add author email addresses
+- Emails are stored locally and included in exports
+- Multiple emails supported (one per line)
+
+## 6. Reading Status and Organization
+
+### Status Icons
+- 📖 **To Read** - Papers on your reading list
+- 👁️ **Skimmed** - Papers you've briefly reviewed
+- 📚 **Reading** - Papers you're currently reading
+- ✅ **Read** - Papers you've fully read
+- 📝 **Referenced** - Papers you've cited or referenced
+
+### Folder Organization
+- Create custom folders for organizing papers
+- Papers can be moved between folders
+- Folder structure is personal and not shared
+
+## 7. Local Modifications and Change Integration
+
+When you modify the database (add papers, edit metadata, change labels), these changes are stored locally in your browser.
+
+**To submit your changes:**
+- Click "Integrate Changes" to send your modifications for review
+- Provide your contact information when prompted
+- An email will be sent to mpc@irif.fr with a summary of your changes
+- Changes are reviewed and may be integrated into the main database
+
+**Important:** If changes are not integrated, they will be overwritten when the database is updated. Use "Export" to save your personal copy.
+
+## 8. Personal Data and Privacy
+
+The following information stays local to your browser and is never shared:
+- **Scratchpad notes** - Your personal annotations for each paper
+- **Reading status** - Whether you've read, skimmed, or plan to read papers
+- **Folder organization** - Your personal folder structure
+- **Favorites** - Papers you've marked as favorites
+
+**Export vs Export Full:**
+- **Export:** Saves papers and labels only (for sharing or backup)
+- **Export Full:** Includes all personal data (scratchpad, reading status, folders)
+
+## 9. Adding Papers
+
+**Supported Sources:**
+- ePrint Archive (eprint.iacr.org)
+- ACM Digital Library
+- IEEE Xplore
+- Manual entry for other sources
+
+**Browser Extension:**
+Install the companion browser extension to quickly add papers while browsing academic sites.`;
+
+            // Simple markdown parser for user manual
+            function parseUserManualMarkdown(markdown) {
+                return markdown
+                    // Headers
+                    .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                    .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                    .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                    // Code blocks
+                    .replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
+                    // Inline code
+                    .replace(/`([^`]+)`/g, '<code>$1</code>')
+                    // Bold
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    // Lists
+                    .replace(/^- (.*$)/gm, '<li>$1</li>')
+                    .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
+                    // Fix nested lists
+                    .replace(/<\/ul>\s*<ul>/g, '')
+                    // Paragraphs
+                    .split('\n\n')
+                    .map(paragraph => {
+                        paragraph = paragraph.trim();
+                        if (!paragraph) return '';
+                        if (paragraph.startsWith('<h') || paragraph.startsWith('<ul') ||
+                            paragraph.startsWith('<pre') || paragraph.startsWith('<li')) {
+                            return paragraph;
+                        }
+                        return `<p>${paragraph}</p>`;
+                    })
+                    .join('\n');
+            }
+
+            // Save user manual content
+            function saveUserManualContent() {
+                localStorage.setItem('userManualContent', userManualContent);
+            }
+
+            // Edit user manual (admin only)
+            function editUserManual() {
+                if (!isAdminMode) {
+                    showMessage("Admin mode required to edit user manual", "error");
+                    return;
+                }
+
+                const modal = document.createElement('div');
+                modal.className = 'modal';
+                modal.innerHTML = `
+                    <div class="modal-content" style="max-width: 900px; max-height: 90vh; overflow-y: auto;">
+                        <div class="modal-header">
+                            <h2>Edit User Manual (Markdown)</h2>
+                            <span class="close" onclick="closeEditUserManual()">&times;</span>
+                        </div>
+                        <div style="padding: 20px;">
+                            <div style="margin-bottom: 10px;">
+                                <button class="btn" onclick="previewUserManual()" style="margin-right: 10px;">Preview</button>
+                                <button class="btn btn-success" onclick="saveUserManualEdit()">Save</button>
+                            </div>
+                            <textarea id="user-manual-editor" style="width: 100%; height: 500px; font-family: monospace; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">${userManualContent}</textarea>
+                            <div id="user-manual-preview" style="display: none; margin-top: 20px; padding: 20px; border: 1px solid #ddd; border-radius: 4px; background: #f9f9f9; line-height: 1.6;"></div>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+                modal.style.display = 'flex';
+                window.currentEditUserManual = modal;
+            }
+
+            function previewUserManual() {
+                const editor = document.getElementById('user-manual-editor');
+                const preview = document.getElementById('user-manual-preview');
+                if (editor && preview) {
+                    preview.innerHTML = parseUserManualMarkdown(editor.value);
+                    preview.style.display = preview.style.display === 'none' ? 'block' : 'none';
+                }
+            }
+
+            function saveUserManualEdit() {
+                const editor = document.getElementById('user-manual-editor');
+                if (editor) {
+                    userManualContent = editor.value;
+                    saveUserManualContent();
+                    showMessage("User manual updated successfully!", "success");
+                    closeEditUserManual();
+                }
+            }
+
+            function closeEditUserManual() {
+                if (window.currentEditUserManual) {
+                    document.body.removeChild(window.currentEditUserManual);
+                    window.currentEditUserManual = null;
+                }
+            }
+
+            // New dynamic user manual display
+            function openUserManualDynamic() {
+                const modal = document.createElement('div');
+                modal.className = 'modal';
+                modal.innerHTML = `
+                    <div class="modal-content" style="max-width: 800px; max-height: 90vh; overflow-y: auto;">
+                        <div class="modal-header">
+                            <h2>MPC Database User Manual</h2>
+                            <span class="close" onclick="closeUserManual()">&times;</span>
+                        </div>
+                        <div style="padding: 20px; line-height: 1.6;">
+                            ${parseUserManualMarkdown(userManualContent)}
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+                modal.style.display = 'flex';
+                window.currentUserManual = modal;
+            }
+
+            // Loading progress functions
+            function showLoadingProgress(text = "Loading database...", subtext = "") {
+                const existingOverlay = document.getElementById('loading-overlay');
+                if (existingOverlay) return; // Don't create multiple overlays
+
+                const overlay = document.createElement('div');
+                overlay.id = 'loading-overlay';
+                overlay.className = 'loading-overlay';
+                overlay.innerHTML = `
+                    <div class="loading-text" id="loading-text">${text}</div>
+                    <div class="loading-progress">
+                        <div class="loading-progress-bar" id="loading-progress-bar"></div>
+                    </div>
+                    <div class="loading-subtext" id="loading-subtext">${subtext}</div>
+                `;
+                document.body.appendChild(overlay);
+            }
+
+            function updateLoadingProgress(percent, text = null, subtext = null) {
+                const progressBar = document.getElementById('loading-progress-bar');
+                const textElement = document.getElementById('loading-text');
+                const subtextElement = document.getElementById('loading-subtext');
+
+                if (progressBar) {
+                    progressBar.style.width = `${Math.min(100, Math.max(0, percent))}%`;
+                }
+                if (text && textElement) {
+                    textElement.textContent = text;
+                }
+                if (subtext !== null && subtextElement) {
+                    subtextElement.textContent = subtext;
+                }
+            }
+
+            function hideLoadingProgress() {
+                const overlay = document.getElementById('loading-overlay');
+                if (overlay) {
+                    overlay.remove();
+                }
+            }
 
             function updatePaperCount() {
                 const paperCountElement = document.getElementById(
@@ -2645,13 +3169,15 @@
                 console.log("=== INITIALIZING CRYPTO PAPER MANAGER ===");
 
                 try {
-                    // Initialize IndexedDB first
+                    updateLoadingProgress(5, "Initializing database...");
                     await initDB();
                     console.log("IndexedDB initialized successfully");
 
+                    updateLoadingProgress(20, "Auto-loading database...");
                     // Try to auto-load mpc_db.json first
                     await autoLoadDatabase();
 
+                    updateLoadingProgress(40, "Loading papers and folders...");
                     // Load data from IndexedDB
                     await loadPapers();
                     await loadFolders();
@@ -2730,6 +3256,8 @@
                                 "[STORAGE EVENT] localStorage updated by another tab",
                             );
                             // Reload and merge data
+                            console.log("[INIT] Auto-load disabled, using local data");
+                            showLoadingProgress("Loading local database...", "Auto-load disabled");
                             loadPapers().then(() => {
                                 performSearch();
                                 renderPapers();
@@ -2778,12 +3306,25 @@
                     // Reset search state
                     currentlyFilteredPapers = [];
 
+                    updateLoadingProgress(60, "Migrating data...");
+                    // Run migration for previous works
+                    migratePreviousWorksToIds();
+
+                    updateLoadingProgress(80, "Rendering interface...");
                     // Render critical UI immediately
                     renderLabels("search-labels", "search");
                     renderFolders();
                     performSearch();
 
                     // Paper count will be updated after extension papers are loaded
+                    updatePaperCount();
+
+                    updateLoadingProgress(100, "Complete!", "Database loaded successfully");
+
+                    // Hide loading after a brief delay
+                    setTimeout(() => {
+                        hideLoadingProgress();
+                    }, 500);
 
                     // Defer non-critical updates
                     setTimeout(() => {
@@ -2820,20 +3361,8 @@
                                     `[INIT] ⚠️ Found ${dateCheck.suspicious} papers with corrupted dates after 2025-08-15`,
                                 );
 
-                                // Show repair button
-                                const repairBtn = document.getElementById("repair-dates-btn");
-                                if (repairBtn) {
-                                    repairBtn.style.display = "inline-block";
-                                    repairBtn.title = `Fix ${dateCheck.suspicious} papers with corrupted dates`;
-                                }
-
-                                // Only show warning if there are many corrupted dates (>5)
-                                if (dateCheck.suspicious > 5) {
-                                    showMessage(
-                                        `⚠️ ${dateCheck.suspicious} papers have corrupted dates. Click "Fix Dates" button or search with date:"unknown date".`,
-                                        "warning",
-                                    );
-                                }
+                                // Remove date corruption warning messages
+                                // Users can still search for date:"unknown date" if needed
                             }
                         }, 2000);
 
@@ -2895,6 +3424,13 @@
             async function autoLoadDatabase() {
                 try {
                     console.log("Attempting to auto-load mpc_db.json...");
+
+                    // Check if auto-load is enabled
+                    if (!autoLoadEnabled) {
+                        console.log("🚫 Auto-load is disabled via admin toggle");
+                        showMessage('Auto-load disabled: use Import button or enable via admin panel', 'info');
+                        return;
+                    }
 
                     // Check if we're running from file:// protocol
                     if (window.location.protocol === 'file:') {
@@ -2973,6 +3509,9 @@
                     const adminElements = document.querySelectorAll('.admin-only');
                     adminElements.forEach(el => el.style.display = '');
 
+                    // Update auto-load button status
+                    updateAutoLoadButton();
+
                     showMessage('Admin mode enabled', 'success');
                 } else {
                     showMessage('Incorrect password', 'error');
@@ -2992,9 +3531,118 @@
                 showMessage('Admin mode disabled', 'info');
             }
 
+            // Toggle auto-load functionality
+            function toggleAutoLoad() {
+                autoLoadEnabled = !autoLoadEnabled;
+                localStorage.setItem('autoLoadEnabled', autoLoadEnabled);
+                updateAutoLoadButton();
+                showMessage(`Auto-load ${autoLoadEnabled ? 'enabled' : 'disabled'}`, 'success');
+            }
+
+            // Update auto-load button text and status
+            function updateAutoLoadButton() {
+                const statusSpan = document.getElementById('auto-load-status');
+                if (statusSpan) {
+                    statusSpan.textContent = autoLoadEnabled ? 'Disable Auto-load' : 'Enable Auto-load';
+                }
+            }
+
             // Make functions globally available
             window.adminLogin = adminLogin;
             window.adminLogout = adminLogout;
+            window.toggleAutoLoad = toggleAutoLoad;
+
+            // Incremental update functions for performance
+            async function updateSinglePaper(paperId, changes) {
+                if (!db) await initDB();
+
+                return new Promise((resolve, reject) => {
+                    const transaction = db.transaction([PAPERS_STORE], 'readwrite');
+                    const papersStore = transaction.objectStore(PAPERS_STORE);
+
+                    const getRequest = papersStore.get(paperId);
+
+                    getRequest.onsuccess = () => {
+                        const existingPaper = getRequest.result;
+                        if (!existingPaper) {
+                            reject(new Error(`Paper with id ${paperId} not found`));
+                            return;
+                        }
+
+                        const updatedPaper = { ...existingPaper, ...changes };
+                        const putRequest = papersStore.put(updatedPaper);
+
+                        putRequest.onsuccess = () => {
+                            console.log(`[INCREMENTAL UPDATE] Updated paper ${paperId}:`, changes);
+                            resolve();
+                        };
+                        putRequest.onerror = () => reject(putRequest.error);
+                    };
+
+                    getRequest.onerror = () => reject(getRequest.error);
+                });
+            }
+
+            // Debounced batch save for multiple rapid changes
+            let pendingUpdates = new Map();
+            let saveTimeout = null;
+
+            function queuePaperUpdate(paperId, changes) {
+                if (!pendingUpdates.has(paperId)) {
+                    pendingUpdates.set(paperId, {});
+                }
+
+                Object.assign(pendingUpdates.get(paperId), changes);
+
+                // Clear existing timeout
+                if (saveTimeout) clearTimeout(saveTimeout);
+
+                // Set new timeout for batch save
+                saveTimeout = setTimeout(async () => {
+                    await processPendingUpdates();
+                }, 300); // Shorter delay for faster response
+            }
+
+            async function processPendingUpdates() {
+                const updates = Array.from(pendingUpdates.entries());
+                pendingUpdates.clear();
+                saveTimeout = null;
+
+                console.log(`[BATCH UPDATE] Processing ${updates.length} pending updates`);
+
+                const promises = updates.map(([paperId, changes]) =>
+                    updateSinglePaper(paperId, changes)
+                );
+
+                try {
+                    await Promise.all(promises);
+                    // Update localStorage backup (lightweight)
+                    saveToLocalStorage();
+                } catch (error) {
+                    console.error('[BATCH UPDATE] Error:', error);
+                    // Fallback to full save on error
+                    await savePapers();
+                }
+            }
+
+            // Throttle function for scroll events
+            function throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                }
+            }
+
+            // Make incremental functions globally available
+            window.updateSinglePaper = updateSinglePaper;
+            window.queuePaperUpdate = queuePaperUpdate;
+            window.processPendingUpdates = processPendingUpdates;
 
             // Track changes when papers are added/modified/deleted
             function trackChange(type, paper, originalPaper = null) {
@@ -3247,7 +3895,7 @@
             window.closeContactForm = closeContactForm;
             window.submitChanges = submitChanges;
 
-            // Import diff file (admin only)
+            // Import diff file (admin only) - optimized for incremental updates
             async function importDiffFile(event) {
                 if (!isAdminMode) {
                     showMessage('Admin access required', 'error');
@@ -3267,18 +3915,19 @@
 
                     let appliedCount = 0;
 
-                    // Apply added papers
+                    // Apply added papers using incremental updates
                     if (diff.changes.added) {
                         diff.changes.added.forEach(paper => {
                             const existingIndex = papers.findIndex(p => p.id === paper.id);
                             if (existingIndex === -1) {
                                 papers.push(paper);
+                                queuePaperUpdate(paper.id, paper);
                                 appliedCount++;
                             }
                         });
                     }
 
-                    // Apply modified papers
+                    // Apply modified papers using incremental updates
                     if (diff.changes.modified) {
                         diff.changes.modified.forEach(paper => {
                             const existingIndex = papers.findIndex(p => p.id === paper.id);
@@ -3291,6 +3940,7 @@
                                     folderId: papers[existingIndex].folderId
                                 };
                                 papers[existingIndex] = { ...paper, ...localData };
+                                queuePaperUpdate(paper.id, papers[existingIndex]);
                                 appliedCount++;
                             }
                         });
@@ -3307,7 +3957,8 @@
                         });
                     }
 
-                    await savePapers();
+                    // Process all pending updates
+                    await processPendingUpdates();
                     renderPapers();
                     updatePaperCount();
 
@@ -3327,8 +3978,9 @@
                 const data = {
                     papers: papers,
                     folders: folders,
+                    userManual: userManualContent,
                     exportDate: new Date().toISOString(),
-                    version: "1.0",
+                    version: "2.0", // Updated for new optimized format
                     isFullExport: true
                 };
 
@@ -3490,6 +4142,8 @@
             // Make functions globally available
             window.openUserManual = openUserManual;
             window.closeUserManual = closeUserManual;
+
+
 
             async function checkAutoAddParameters() {
                 const urlParams = new URLSearchParams(window.location.search);
@@ -3743,28 +4397,14 @@
             // Load papers from storage with robust data merging
             async function loadPapers() {
                 try {
+                    showLoadingProgress("Initializing database...", "Checking storage availability");
                     console.log(
-                        "Paper Manager loading papers with data merging...",
-                    );
-
-                    let indexedDBPapers = [];
-                    let localStoragePapers = [];
-
-                    // Step 0: Check for backup data immediately
-                    const backupKeys = [];
-                    for (let i = 0; i < localStorage.length; i++) {
-                        const key = localStorage.key(i);
-                        if (key && key.startsWith("cryptoPapers_backup")) {
-                            backupKeys.push(key);
-                        }
-                    }
-
-                    console.log(
-                        `[LOAD DEBUG] Found ${backupKeys.length} backup keys: ${backupKeys.join(", ")}`,
+                        "[LOAD DEBUG] Starting loadPapers() - checking storage availability",
                     );
 
                     // Initialize IndexedDB if not already done
                     if (!db) {
+                        updateLoadingProgress(10, "Initializing IndexedDB...");
                         try {
                             await initDB();
                             console.log(
@@ -3781,6 +4421,24 @@
                             );
                         }
                     }
+
+
+
+                    let indexedDBPapers = [];
+                    let localStoragePapers = [];
+
+                    // Step 0: Check for backup data immediately
+                    const backupKeys = [];
+                    for (let i = 0; i < localStorage.length; i++) {
+                        const key = localStorage.key(i);
+                        if (key && key.startsWith("cryptoPapers_backup")) {
+                            backupKeys.push(key);
+                        }
+                    }
+
+                    console.log(
+                        `[LOAD DEBUG] Found ${backupKeys.length} backup keys: ${backupKeys.join(", ")}`,
+                    );
 
                     // Step 1: Load extension papers first (highest priority - most recent)
                     let extensionPapers = [];
@@ -3964,6 +4622,7 @@
                     ) {
                         // Only localStorage has data
                         papers = localStoragePapers;
+                        updateLoadingProgress(70, "Synchronizing data...", `Found ${papers.length} papers in localStorage`);
                         console.log(
                             `[LOAD DEBUG] Using localStorage data (${papers.length} papers) - IndexedDB empty`,
                         );
@@ -4195,8 +4854,9 @@
             // IndexedDB database management
             let db = null;
             const DB_NAME = "CryptoPapersDB";
-            const DB_VERSION = 1;
+            const DB_VERSION = 3;
             const PAPERS_STORE = "papers";
+
             const FOLDERS_STORE = "folders";
 
             // Initialize IndexedDB
@@ -4258,15 +4918,9 @@
                             papersStore.createIndex("date", "date", {
                                 unique: false,
                             });
-                            papersStore.createIndex("folder", "folder", {
-                                unique: false,
-                            });
-                            papersStore.createIndex(
-                                "readingStatus",
-                                "readingStatus",
-                                { unique: false },
-                            );
                         }
+
+
 
                         // Create folders object store
                         if (!db.objectStoreNames.contains(FOLDERS_STORE)) {
@@ -4566,6 +5220,51 @@
                         "[METADATA CONSISTENCY ERROR]",
                         metadataError,
                     );
+                }
+            }
+
+            function migratePreviousWorksToIds() {
+                let migrationCount = 0;
+
+                papers.forEach(paper => {
+                    if (paper.previousWorks && paper.previousWorks.length > 0) {
+                        // Check if previousWorks contains indices (numbers) instead of IDs
+                        const firstItem = paper.previousWorks[0];
+                        if (typeof firstItem === 'number' && firstItem < papers.length) {
+                            // This looks like an array index, convert to IDs
+                            const newPreviousWorks = [];
+                            paper.previousWorks.forEach(index => {
+                                if (typeof index === 'number' && papers[index]) {
+                                    newPreviousWorks.push(papers[index].id);
+                                }
+                            });
+                            paper.previousWorks = newPreviousWorks;
+                            migrationCount++;
+                        }
+                    }
+
+                    // Also handle legacy relatedPapers field
+                    if (paper.relatedPapers && paper.relatedPapers.length > 0) {
+                        const newPreviousWorks = [];
+                        paper.relatedPapers.forEach(index => {
+                            if (typeof index === 'number' && papers[index]) {
+                                newPreviousWorks.push(papers[index].id);
+                            }
+                        });
+                        if (!paper.previousWorks) {
+                            paper.previousWorks = newPreviousWorks;
+                        } else {
+                            // Merge with existing previousWorks
+                            paper.previousWorks = [...new Set([...paper.previousWorks, ...newPreviousWorks])];
+                        }
+                        delete paper.relatedPapers;
+                        migrationCount++;
+                    }
+                });
+
+                if (migrationCount > 0) {
+                    console.log(`[MIGRATION] Converted previousWorks from indices to IDs for ${migrationCount} papers`);
+                    savePapers(); // Save the migrated data
                 }
             }
 
@@ -5116,6 +5815,9 @@
                     // Invalidate search cache when filters change
                     invalidateSearchCache();
 
+                    // Reset pagination when filters change
+                    paginationState.currentPage = 1;
+
                     performSearch();
                 }
             }
@@ -5150,7 +5852,7 @@
                 labelsContainer.appendChild(annotationDiv);
             }
 
-            // Import database from JSON file
+            // Import database from JSON file - handles both v1.0 and v2.0 formats
             function importDatabase(event) {
                 const file = event.target.files[0];
                 if (!file) return;
@@ -5162,6 +5864,7 @@
 
                         if (data.papers && Array.isArray(data.papers)) {
                             const isFullExport = data.isFullExport || false;
+                            const isV2Format = data.version === "2.0";
                             let confirmMessage = `Import ${data.papers.length} papers?`;
 
                             if (isFullExport) {
@@ -5235,6 +5938,12 @@
                                     // Keep existing folders
                                 }
 
+                                // Handle user manual
+                                if (data.userManual) {
+                                    userManualContent = data.userManual;
+                                    saveUserManualContent();
+                                }
+
                                 // Reset original database for change tracking
                                 originalDatabase = JSON.parse(JSON.stringify(data));
                                 changeTracker = {
@@ -5244,21 +5953,34 @@
                                     modifiedLabels: new Map()
                                 };
 
-                                savePapers();
-                                saveFolders();
-                                renderFolders();
-                                performSearch(); // Re-run search to maintain current view
-                                if (
-                                    document.getElementById("graph-display")
-                                        .style.display !== "none"
-                                ) {
-                                    renderGraph();
+                                // Use incremental saves for v2.0 format, legacy for v1.0
+                                if (isV2Format) {
+                                    // Process papers incrementally for better performance
+                                    papers.forEach(paper => queuePaperUpdate(paper.id, paper));
+                                    processPendingUpdates().then(() => {
+                                        saveFolders();
+                                        renderFolders();
+                                        performSearch();
+                                        if (document.getElementById("graph-display").style.display !== "none") {
+                                            renderGraph();
+                                        }
+                                        updatePreviousWorksSelect();
+                                        populateFolderSelects();
+                                    });
+                                } else {
+                                    savePapers();
+                                    saveFolders();
+                                    renderFolders();
+                                    performSearch();
+                                    if (document.getElementById("graph-display").style.display !== "none") {
+                                        renderGraph();
+                                    }
+                                    updatePreviousWorksSelect();
+                                    populateFolderSelects();
                                 }
-                                updatePreviousWorksSelect();
-                                populateFolderSelects();
 
                                 showMessage(
-                                    `Successfully imported ${papers.length} papers${folders.length > 0 ? ` and ${folders.length} folders` : ""}!`,
+                                    `Successfully imported ${papers.length} papers${folders.length > 0 ? ` and ${folders.length} folders` : ""} (${isV2Format ? 'v2.0 optimized format' : 'v1.0 legacy format'})!`,
                                     "success",
                                 );
                             }
@@ -5279,7 +6001,7 @@
                 reader.readAsText(file);
             }
 
-            // Make function globally available for module script
+            // Make function globally available for module script - moved earlier for immediate access
             window.importDatabase = importDatabase;
 
             // Get search annotation for a label
@@ -7304,7 +8026,7 @@
 
                 papers.forEach((paper, index) => {
                     const option = document.createElement("option");
-                    option.value = index;
+                    option.value = paper.id;
                     option.textContent = paper.isPlaceholder
                         ? `${paper.title} (needs metadata)`
                         : paper.title;
@@ -7464,9 +8186,8 @@
                     updatePreviousWorksSelect();
 
                     const select = document.getElementById("previous-works");
-                    const newIndex = papers.length - 1;
                     const option = select.querySelector(
-                        `option[value="${newIndex}"]`,
+                        `option[value="${placeholderPaper.id}"]`,
                     );
                     if (option) {
                         option.selected = true;
@@ -7522,7 +8243,7 @@
                 if (!hasMainContent && hasPreviousWorks) {
                     const previousWorks = Array.from(
                         document.getElementById("previous-works").selectedOptions,
-                    ).map((option) => parseInt(option.value));
+                    ).map((option) => option.value);
 
                     const paper = {
                         id: Date.now() + Math.random(),
@@ -7547,22 +8268,21 @@
                     // Track change
                     trackChange('add', paper);
 
-                    console.log(`[FORM DEBUG] ✅ Added previous works collection with ${previousWorks.length} papers`);
-                    const saveSuccess = await savePapers();
+                    // Use incremental update for new paper
+                    queuePaperUpdate(paper.id, paper);
 
-                    if (saveSuccess) {
-                        showMessage("Previous works added successfully!", "success");
-                        document.getElementById("add-paper-form").reset();
-                        closeBatchAddModal();
-                        performSearch();
-                    }
+                    console.log(`[FORM DEBUG] ✅ Added previous works collection with ${previousWorks.length} papers`);
+                    showMessage("Previous works added successfully!", "success");
+                    document.getElementById("add-paper-form").reset();
+                    closeBatchAddModal();
+                    performSearch(); // Still need this for new papers to appear
                     return;
                 }
 
                 const labelSets = getLabelSets("add");
                 const previousWorks = Array.from(
                     document.getElementById("previous-works").selectedOptions,
-                ).map((option) => parseInt(option.value));
+                ).map((option) => option.value);
 
                 const paper = {
                     id: Date.now() + Math.random(),
@@ -7589,17 +8309,14 @@
                 // Track change
                 trackChange('add', paper);
 
+                // Use incremental update for new paper
+                queuePaperUpdate(paper.id, paper);
+
                 console.log(
                     `[FORM DEBUG] ✅ Added paper: "${paper.title}" | Total papers: ${papers.length}`,
                 );
-                const saveSuccess = await savePapers();
-                console.log(
-                    `[FORM DEBUG] Save operation ${saveSuccess ? "succeeded" : "failed"}`,
-                );
 
-                // Invalidate caches when data changes
-                invalidateSearchCache();
-                paperElementCache.clear();
+                // Skip expensive cache operations for new papers - they'll be handled by performSearch
 
                 // Reset form
                 document.getElementById("eprint-url").value = "";
@@ -8116,12 +8833,12 @@
 
             // Perform search
             function performSearch() {
+                const container = document.getElementById("papers-list");
+                if (!container) return;
+
                 if (papers.length === 0) {
-                    const container = document.getElementById("papers-list");
-                    if (container) {
-                        container.innerHTML =
-                            '<div class="loading">No papers added yet. Add your first paper to get started!</div>';
-                    }
+                    container.innerHTML =
+                        '<div class="loading">No papers added yet. Add your first paper to get started!</div>';
                     return;
                 }
 
@@ -8131,6 +8848,9 @@
                 searchFilters.query = query;
 
                 try {
+                    // Reset pagination to first page when searching
+                    paginationState.currentPage = 1;
+
                     // Get filtered papers
                     const filteredPapers = getCurrentlyFilteredPapers();
 
@@ -8174,6 +8894,9 @@
                 searchFilters.query = "";
                 favoriteFilterActive = false;
 
+                // Reset pagination
+                paginationState.currentPage = 1;
+
                 document.getElementById("search-query").value = "";
                 document
                     .querySelectorAll("#search-labels .label-chip")
@@ -8204,15 +8927,12 @@
                 }
             }
 
-            // Render papers list
-            // Virtual scrolling state
-            let virtualScrollState = {
-                itemHeight: 150, // Estimated height per paper item
-                containerHeight: 0,
-                scrollTop: 0,
-                visibleStart: 0,
-                visibleEnd: 0,
-                buffer: 5, // Extra items to render above/below visible area
+            // Pagination state
+            let paginationState = {
+                currentPage: 1,
+                itemsPerPage: 100,
+                totalPages: 1,
+                totalItems: 0
             };
 
             function createPaperElement(paper) {
@@ -8307,83 +9027,80 @@
                 return element;
             }
 
-            function calculateVisibleRange(
-                scrollTop,
-                containerHeight,
-                totalItems,
-            ) {
-                const start = Math.max(
-                    0,
-                    Math.floor(scrollTop / virtualScrollState.itemHeight) -
-                        virtualScrollState.buffer,
-                );
-                const visibleCount = Math.ceil(
-                    containerHeight / virtualScrollState.itemHeight,
-                );
-                const end = Math.min(
-                    totalItems,
-                    start + visibleCount + virtualScrollState.buffer * 2,
-                );
-                return { start, end };
-            }
-
-            function renderPapersVirtual(papersToRender) {
+            function renderPagination(totalItems) {
                 const container = document.getElementById("papers-list");
                 if (!container) return;
 
-                // Ensure we have valid papers to render
-                if (!papersToRender || papersToRender.length === 0) {
-                    console.warn("renderPapersVirtual called with no papers");
-                    return;
+                paginationState.totalItems = totalItems;
+                paginationState.totalPages = Math.ceil(totalItems / paginationState.itemsPerPage);
+
+                // Remove existing pagination
+                const existingPagination = container.parentElement.querySelector('.pagination-controls');
+                if (existingPagination) {
+                    existingPagination.remove();
                 }
 
-                const { start, end } = calculateVisibleRange(
-                    virtualScrollState.scrollTop,
-                    virtualScrollState.containerHeight,
-                    papersToRender.length,
-                );
+                if (paginationState.totalPages <= 1) return;
 
-                // Create container for virtual scrolling if it doesn't exist
-                let virtualContainer = container.querySelector(
-                    ".virtual-scroll-container",
-                );
-                if (!virtualContainer) {
-                    virtualContainer = document.createElement("div");
-                    virtualContainer.className = "virtual-scroll-container";
-                    virtualContainer.style.position = "relative";
-                    container.appendChild(virtualContainer);
+                // Create pagination controls
+                const paginationDiv = document.createElement('div');
+                paginationDiv.className = 'pagination-controls';
+                paginationDiv.style.cssText = 'text-align: center; margin: 20px 0; padding: 10px;';
+
+                let paginationHTML = `<div style="margin-bottom: 10px;">Showing page ${paginationState.currentPage} of ${paginationState.totalPages} (${totalItems} total papers)</div><div>`;
+
+                // Previous button
+                if (paginationState.currentPage > 1) {
+                    paginationHTML += `<button class="btn" onclick="goToPage(${paginationState.currentPage - 1})" style="margin: 0 5px;">« Previous</button>`;
                 }
 
-                // Set total height for scrollbar
-                virtualContainer.style.height = `${papersToRender.length * virtualScrollState.itemHeight}px`;
+                // Page numbers
+                const maxVisiblePages = 10;
+                let startPage = Math.max(1, paginationState.currentPage - Math.floor(maxVisiblePages / 2));
+                let endPage = Math.min(paginationState.totalPages, startPage + maxVisiblePages - 1);
 
-                // Clear visible content
-                const existingContent =
-                    virtualContainer.querySelector(".virtual-content");
-                if (existingContent) {
-                    existingContent.remove();
+                if (endPage - startPage < maxVisiblePages - 1) {
+                    startPage = Math.max(1, endPage - maxVisiblePages + 1);
                 }
 
-                // Create content container
-                const contentContainer = document.createElement("div");
-                contentContainer.className = "virtual-content";
-                contentContainer.style.position = "absolute";
-                contentContainer.style.top = `${start * virtualScrollState.itemHeight}px`;
-                contentContainer.style.width = "100%";
-
-                // Render visible papers
-                for (let i = start; i < end; i++) {
-                    if (i >= papersToRender.length) break;
-                    const paper = papersToRender[i];
-                    if (!paper) continue;
-                    const element = createPaperElement(paper);
-                    contentContainer.appendChild(element);
+                if (startPage > 1) {
+                    paginationHTML += `<button class="btn" onclick="goToPage(1)" style="margin: 0 2px;">1</button>`;
+                    if (startPage > 2) {
+                        paginationHTML += `<span style="margin: 0 5px;">...</span>`;
+                    }
                 }
 
-                virtualContainer.appendChild(contentContainer);
-                virtualScrollState.visibleStart = start;
-                virtualScrollState.visibleEnd = end;
+                for (let i = startPage; i <= endPage; i++) {
+                    const isActive = i === paginationState.currentPage;
+                    paginationHTML += `<button class="btn${isActive ? ' btn-success' : ''}" onclick="goToPage(${i})" style="margin: 0 2px;${isActive ? ' background: #28a745; color: white;' : ''}">${i}</button>`;
+                }
+
+                if (endPage < paginationState.totalPages) {
+                    if (endPage < paginationState.totalPages - 1) {
+                        paginationHTML += `<span style="margin: 0 5px;">...</span>`;
+                    }
+                    paginationHTML += `<button class="btn" onclick="goToPage(${paginationState.totalPages})" style="margin: 0 2px;">${paginationState.totalPages}</button>`;
+                }
+
+                // Next button
+                if (paginationState.currentPage < paginationState.totalPages) {
+                    paginationHTML += `<button class="btn" onclick="goToPage(${paginationState.currentPage + 1})" style="margin: 0 5px;">Next »</button>`;
+                }
+
+                paginationHTML += '</div>';
+                paginationDiv.innerHTML = paginationHTML;
+
+                container.parentElement.appendChild(paginationDiv);
             }
+
+            function goToPage(pageNum) {
+                if (pageNum < 1 || pageNum > paginationState.totalPages) return;
+                paginationState.currentPage = pageNum;
+                renderPapers();
+            }
+
+            // Make goToPage globally available
+            window.goToPage = goToPage;
 
             function renderPapers(papersToRender = null) {
                 const container = document.getElementById("papers-list");
@@ -8394,33 +9111,45 @@
                     return;
                 }
 
-                // If no papers provided, use currently filtered papers if available
+                // If no papers provided, determine which papers to show
                 if (!papersToRender) {
-                    if (currentlyFilteredPapers.length > 0) {
+                    // First check if we have an active search or filter
+                    const query = document.getElementById("search-query")?.value.trim() || "";
+                    const hasLabelFilters = searchFilters.included.size > 0 || searchFilters.excluded.size > 0;
+
+                    if (query || hasLabelFilters || favoriteFilterActive) {
+                        // If there's an active search/filter, use filtered papers
+                        papersToRender = getCurrentlyFilteredPapers();
+                    } else if (currentlyFilteredPapers.length > 0) {
+                        // Otherwise use cached filtered papers if available
                         papersToRender = currentlyFilteredPapers;
                     } else {
-                        papersToRender = papers.filter(
-                            isPaperInCurrentFolderHierarchy,
-                        );
-
-                        // Apply favorite filter if active
-                        if (favoriteFilterActive) {
-                            papersToRender = papersToRender.filter(
-                                (paper) => paper.favorite,
-                            );
-                        }
+                        // Fall back to all papers in current folder
+                        papersToRender = papers.filter(isPaperInCurrentFolderHierarchy);
                     }
                 }
 
                 console.log(`DEBUG RENDER: About to render ${papersToRender.length} papers`);
 
                 if (papersToRender.length === 0) {
-                    const folderText =
-                        currentFolder && currentFolder !== ""
-                            ? ` in "${currentFolder}"`
-                            : "";
-                    container.innerHTML = `<div class="loading">No papers found${folderText}</div>`;
-                    console.log("DEBUG RENDER: No papers to render, showing 'No papers found'");
+                    const query = document.getElementById("search-query")?.value.trim() || "";
+                    const folderText = currentFolder && currentFolder !== "" ? ` in "${currentFolder}"` : "";
+
+                    if (papers.length === 0) {
+                        container.innerHTML = '<div class="loading">No papers added yet. Add your first paper to get started!</div>';
+                    } else if (query || searchFilters.included.size > 0 || searchFilters.excluded.size > 0 || favoriteFilterActive) {
+                        container.innerHTML = `<div class="loading">No papers match your search criteria${folderText}</div>`;
+                    } else {
+                        container.innerHTML = `<div class="loading">No papers found${folderText}</div>`;
+                    }
+
+                    console.log("DEBUG RENDER: No papers to render, showing appropriate message");
+
+                    // Remove any existing pagination
+                    const existingPagination = container.parentElement.querySelector('.pagination-controls');
+                    if (existingPagination) {
+                        existingPagination.remove();
+                    }
                     return;
                 }
 
@@ -8430,17 +9159,70 @@
                 // Update reading status statistics
                 updateReadingStatusStats(papersToRender);
 
-                // Temporarily disable virtual scrolling to fix search interaction issues
-                // Use regular rendering for all datasets
-                container.innerHTML = sortedPapers
+                // Calculate pagination
+                const totalItems = sortedPapers.length;
+                const startIndex = (paginationState.currentPage - 1) * paginationState.itemsPerPage;
+                const endIndex = Math.min(startIndex + paginationState.itemsPerPage, totalItems);
+                const paginatedPapers = sortedPapers.slice(startIndex, endIndex);
+
+                // Render current page of papers
+                if (paginatedPapers.length === 0 && paginationState.currentPage > 1) {
+                    // If we're on a page beyond the first and have no papers, go to the last valid page
+                    paginationState.currentPage = Math.max(1, Math.ceil(totalItems / paginationState.itemsPerPage));
+                    const newStartIndex = (paginationState.currentPage - 1) * paginationState.itemsPerPage;
+                    const newEndIndex = Math.min(newStartIndex + paginationState.itemsPerPage, totalItems);
+                    const newPaginatedPapers = sortedPapers.slice(newStartIndex, newEndIndex);
+                    container.innerHTML = newPaginatedPapers
+                        .map(
+                            (paper) => `
+                                        <div class="paper-item ${currentViewMode}${paper.isPlaceholder ? " placeholder-paper" : ""}${paperSelectionMode ? " selectable" : ""}" data-paper-id="${paper.id}" onclick="${paperSelectionMode ? `` : `viewPaper('${paper.id}')`}">
+                                            <div class="favorite-star-icon ${paper.favorite ? "favorited" : ""}" onclick="event.stopPropagation(); toggleFavorite('${paper.id}')" title="${paper.favorite ? "Remove from favorites" : "Add to favorites"}">${paper.favorite ? "⭐" : "☆"}</div>
+                                            <div class="scratchpad-icon${paper.scratchpad && paper.scratchpad.trim() ? " has-content" : ""}" onclick="event.stopPropagation(); openScratchpad('${paper.id}')" title="${paper.scratchpad && paper.scratchpad.trim() ? "Open scratchpad (has content)" : "Open scratchpad"}">📝</div>
+                                            ${paper.contactEmails && paper.contactEmails.length > 0 ? `<div class="email-contact-icon" onclick="event.stopPropagation(); emailAuthors('${paper.id}')" title="Email authors (${paper.contactEmails.length} contacts)">📧</div>` : ""}
+                                            <div class="reading-status-icon ${paper.readingStatus || "referenced"}" onclick="event.stopPropagation(); cycleReadingStatus('${paper.id}')" title="${getReadingStatusLabel(paper.readingStatus || "referenced")}">${getReadingStatusIcon(paper.readingStatus || "referenced")}</div>
+                                            <div class="paper-title">${paperSelectionMode ? `<input type="checkbox" class="paper-checkbox" ${selectedPapers.has(paper.id) ? "checked" : ""} onchange="togglePaperSelection('${paper.id}')">` : ""}${escapeHtml(paper.title)}${paper.isPlaceholder ? ' <span class="placeholder-indicator">(needs metadata)</span>' : ""}</div>
+                                            <div class="paper-authors">${escapeHtml(paper.authors)}</div>
+                                            <div class="paper-date">${new Date(paper.date).toLocaleDateString()}</div>
+                                            ${currentViewMode === "expanded" ? `<div class="paper-abstract">${escapeHtml(paper.abstract || "No abstract available")}</div>` : ""}
+                                            ${currentViewMode === "expanded" && paper.url ? `<div class="paper-url"><a href="${paper.url}" target="_blank" onclick="event.stopPropagation()">${paper.url}</a></div>` : ""}
+                                            <div class="paper-label-sets">
+                                                ${(paper.labelSets || [])
+                                                    .map(
+                                                        (labelSet) => `
+                                                    <div class="paper-label-set">
+                                                        ${labelSet.name ? `<span class="paper-label-set-name">${escapeHtml(labelSet.name)}:</span>` : ""}
+                                                        ${labelSet.labels
+                                                            .map((label) => {
+                                                                const annotation =
+                                                                    labelSet.annotations &&
+                                                                    labelSet
+                                                                        .annotations[
+                                                                        label
+                                                                    ]
+                                                                        ? ` (${escapeHtml(labelSet.annotations[label])})`
+                                                                        : "";
+                                                                return `<span class="label-chip">${escapeHtml(label)}${annotation}</span>`;
+                                                            })
+                                                            .join("")}
+                                                    </div>
+                                                `,
+                                                    )
+                                                    .join("")}
+                                            </div>
+                                        </div>
+                                    `,
+                        )
+                        .join("");
+                } else {
+                    container.innerHTML = paginatedPapers
                     .map(
                         (paper) => `
-                                    <div class="paper-item ${currentViewMode}${paper.isPlaceholder ? " placeholder-paper" : ""}${paperSelectionMode ? " selectable" : ""}${paperSelectionMode && selectedPapers.has(paper.id) ? " selected" : ""}" data-paper-id="${paper.id}" onclick="${paperSelectionMode ? `togglePaperSelection('${paper.id}')` : `viewPaper('${paper.id}')`}">
+                                    <div class="paper-item ${currentViewMode}${paper.isPlaceholder ? " placeholder-paper" : ""}${paperSelectionMode ? " selectable" : ""}" data-paper-id="${paper.id}" onclick="${paperSelectionMode ? `` : `viewPaper('${paper.id}')`}">
                                         <div class="favorite-star-icon ${paper.favorite ? "favorited" : ""}" onclick="event.stopPropagation(); toggleFavorite('${paper.id}')" title="${paper.favorite ? "Remove from favorites" : "Add to favorites"}">${paper.favorite ? "⭐" : "☆"}</div>
                                         <div class="scratchpad-icon${paper.scratchpad && paper.scratchpad.trim() ? " has-content" : ""}" onclick="event.stopPropagation(); openScratchpad('${paper.id}')" title="${paper.scratchpad && paper.scratchpad.trim() ? "Open scratchpad (has content)" : "Open scratchpad"}">📝</div>
                                         ${paper.contactEmails && paper.contactEmails.length > 0 ? `<div class="email-contact-icon" onclick="event.stopPropagation(); emailAuthors('${paper.id}')" title="Email authors (${paper.contactEmails.length} contacts)">📧</div>` : ""}
                                         <div class="reading-status-icon ${paper.readingStatus || "referenced"}" onclick="event.stopPropagation(); cycleReadingStatus('${paper.id}')" title="${getReadingStatusLabel(paper.readingStatus || "referenced")}">${getReadingStatusIcon(paper.readingStatus || "referenced")}</div>
-                                        <div class="paper-title">${paperSelectionMode ? `<input type="checkbox" class="paper-checkbox" ${selectedPapers.has(paper.id) ? "checked" : ""} onclick="event.stopPropagation(); togglePaperSelection('${paper.id}')">` : ""}${escapeHtml(paper.title)}${paper.isPlaceholder ? ' <span class="placeholder-indicator">(needs metadata)</span>' : ""}</div>
+                                        <div class="paper-title">${paperSelectionMode ? `<input type="checkbox" class="paper-checkbox" ${selectedPapers.has(paper.id) ? "checked" : ""} onchange="togglePaperSelection('${paper.id}')">` : ""}${escapeHtml(paper.title)}${paper.isPlaceholder ? ' <span class="placeholder-indicator">(needs metadata)</span>' : ""}</div>
                                         <div class="paper-authors">${escapeHtml(paper.authors)}</div>
                                         <div class="paper-date">${new Date(paper.date).toLocaleDateString()}</div>
                                         ${currentViewMode === "expanded" ? `<div class="paper-abstract">${escapeHtml(paper.abstract || "No abstract available")}</div>` : ""}
@@ -8473,6 +9255,10 @@
                                 `,
                     )
                     .join("");
+                }
+
+                // Add pagination controls
+                renderPagination(totalItems);
             }
 
             // Escape HTML to prevent XSS
@@ -8741,9 +9527,9 @@
                     const previousWorks =
                         paper.previousWorks || paper.relatedPapers || [];
                     if (previousWorks) {
-                        previousWorks.forEach((index) => {
+                        previousWorks.forEach((paperId) => {
                             const option = previousWorksSelect.querySelector(
-                                `option[value="${index}"]`,
+                                `option[value="${paperId}"]`,
                             );
                             if (option) {
                                 option.selected = true;
@@ -8774,7 +9560,7 @@
                         paper.authors.toLowerCase().includes(searchTerm)
                     ) {
                         const option = document.createElement("option");
-                        option.value = index;
+                        option.value = paper.id;
                         option.textContent = paper.isPlaceholder
                             ? `${paper.title} (needs metadata)`
                             : paper.title;
@@ -8856,7 +9642,7 @@
                         date: new Date().toISOString().split("T")[0],
                         url: url,
                         labelSets: [],
-                        relatedPapers: [],
+                        previousWorks: [],
                         addedDate: new Date().toISOString(),
                         isPlaceholder: true,
                         folder: "",
@@ -8869,9 +9655,8 @@
                     const select = document.getElementById(
                         "edit-previous-works",
                     );
-                    const newIndex = papers.length - 1;
                     const option = select.querySelector(
-                        `option[value="${newIndex}"]`,
+                        `option[value="${placeholderPaper.id}"]`,
                     );
                     if (option) {
                         option.selected = true;
@@ -8935,7 +9720,7 @@
                 const previousWorks = Array.from(
                     document.getElementById("edit-previous-works")
                         .selectedOptions,
-                ).map((option) => parseInt(option.value));
+                ).map((option) => option.value);
 
                 const editSelect = document.getElementById(
                     "edit-previous-works",
@@ -8975,19 +9760,67 @@
 
                 console.log("[EDIT DEBUG] After update - paper labelSets:", papers[paperIndex].labelSets);
 
-                // Invalidate caches when data changes
-                invalidateSearchCache();
-                paperElementCache.clear();
+                // Use incremental update instead of full save
+                queuePaperUpdate(papers[paperIndex].id, {
+                    title,
+                    authors,
+                    abstract,
+                    date,
+                    url,
+                    labelSets: labelSets,
+                    previousWorks,
+                    folder: folder,
+                    contactEmails: contactEmails,
+                    isPlaceholder: false
+                });
 
                 console.log(
-                    `[DELETE DEBUG] Deleted paper: "${currentEditingPaper.title}" | Remaining papers: ${papers.length}`,
+                    `[EDIT DEBUG] Updated paper: "${currentEditingPaper.title}"`,
                 );
-                savePapers();
 
                 showMessage("Paper updated successfully!", "success");
                 closePaperModal();
-                performSearch(); // Maintain current search state
-                renderGraph();
+
+                // Update UI element directly for label changes instead of full re-render
+                const paperElement = document.querySelector(`[data-paper-id="${papers[paperIndex].id}"]`);
+                if (paperElement) {
+                    const labelsContainer = paperElement.querySelector('.paper-labels');
+                    if (labelsContainer) {
+                        // Re-render just this paper's labels
+                        labelsContainer.innerHTML = '';
+                        if (labelSets && labelSets.length > 0) {
+                            labelSets.forEach(labelSet => {
+                                const setDiv = document.createElement('div');
+                                setDiv.className = 'paper-label-set';
+                                labelSet.labels.forEach(label => {
+                                    const chip = document.createElement('span');
+                                    chip.className = 'label-chip';
+                                    chip.textContent = label;
+                                    setDiv.appendChild(chip);
+                                });
+                                labelsContainer.appendChild(setDiv);
+                            });
+                        }
+                    }
+                }
+
+                // Only do expensive operations if graph connections changed
+                if (JSON.stringify(originalPaper.previousWorks) !== JSON.stringify(previousWorks)) {
+                    renderGraph();
+                }
+
+                // Only invalidate search cache if search-relevant fields changed
+                if (originalPaper.title !== title || originalPaper.authors !== authors ||
+                    originalPaper.abstract !== abstract || originalPaper.date !== date ||
+                    JSON.stringify(originalPaper.labelSets) !== JSON.stringify(labelSets)) {
+                    // Remove only this paper from cache instead of clearing everything
+                    paperElementCache.delete(papers[paperIndex].id);
+                    // Only re-render if this paper is currently visible
+                    if (paperElement && paperElement.offsetParent !== null) {
+                        const newElement = createPaperElement(papers[paperIndex]);
+                        paperElement.replaceWith(newElement);
+                    }
+                }
             }
 
             // Delete paper
@@ -9103,8 +9936,8 @@
                         const previousWorks =
                             paper.previousWorks || paper.relatedPapers || [];
                         if (previousWorks && previousWorks.length > 0) {
-                            previousWorks.forEach((relatedIndex) => {
-                                const referencedPaper = papers[relatedIndex];
+                            previousWorks.forEach((relatedId) => {
+                                const referencedPaper = papers.find(p => p.id == relatedId);
                                 // Only add link if both papers are in filtered results
                                 if (
                                     referencedPaper &&
@@ -9122,8 +9955,7 @@
                                 }
                             });
 
-                            // Track change
-                            trackChange('modify', paper, originalPaper);
+
                         }
                     });
                 } else if (graphType === "author") {
@@ -9717,10 +10549,25 @@
                     "scratchpad-textarea",
                 ).value;
                 currentScratchpadPaper.scratchpad = content;
-                savePapers();
+
+                // Use incremental update instead of full database save
+                queuePaperUpdate(currentScratchpadPaper.id, { scratchpad: content });
+
+                // Update scratchpad icon directly
+                const paperElement = document.querySelector(`[data-paper-id="${currentScratchpadPaper.id}"]`);
+                if (paperElement) {
+                    const scratchpadIcon = paperElement.querySelector('.scratchpad-icon');
+                    if (scratchpadIcon) {
+                        if (content.trim()) {
+                            scratchpadIcon.classList.add('has-content');
+                        } else {
+                            scratchpadIcon.classList.remove('has-content');
+                        }
+                    }
+                }
+
                 showMessage("Scratchpad saved!", "success");
                 closeScratchpadModal();
-                performSearch(); // Maintain current search state
             }
 
             // Sorting functions
@@ -9746,9 +10593,29 @@
                 return papers.sort((a, b) => {
                     switch (currentSortOrder) {
                         case "date-desc":
-                            return new Date(b.date) - new Date(a.date);
+                            const dateA = new Date(a.date);
+                            const dateB = new Date(b.date);
+                            const isValidA = !isNaN(dateA.getTime());
+                            const isValidB = !isNaN(dateB.getTime());
+
+                            // Put invalid dates at the end
+                            if (!isValidA && !isValidB) return 0;
+                            if (!isValidA) return 1;
+                            if (!isValidB) return -1;
+
+                            return dateB - dateA;
                         case "date-asc":
-                            return new Date(a.date) - new Date(b.date);
+                            const dateA2 = new Date(a.date);
+                            const dateB2 = new Date(b.date);
+                            const isValidA2 = !isNaN(dateA2.getTime());
+                            const isValidB2 = !isNaN(dateB2.getTime());
+
+                            // Put invalid dates at the end
+                            if (!isValidA2 && !isValidB2) return 0;
+                            if (!isValidA2) return 1;
+                            if (!isValidB2) return -1;
+
+                            return dateA2 - dateB2;
                         case "title-asc":
                             return a.title.localeCompare(b.title);
                         case "title-desc":
@@ -10000,8 +10867,10 @@
 
                     const data = {
                         papers: cleanPapers,
-                        version: "2.0",
+                        userManual: userManualContent,
+                        version: "2.0", // Updated for compatibility with incremental updates
                         exportDate: new Date().toISOString(),
+                        isFullExport: false
                     };
 
                     const blob = new Blob([JSON.stringify(data, null, 2)], {
@@ -10053,12 +10922,18 @@
                 const nextIndex = (currentIndex + 1) % readingStatuses.length;
                 paper.readingStatus = readingStatuses[nextIndex].key;
 
-                // Invalidate caches when data changes
-                invalidateSearchCache();
-                paperElementCache.clear();
+                // Use incremental update instead of full database save
+                queuePaperUpdate(paperId, { readingStatus: paper.readingStatus });
 
-                savePapers();
-                performSearch(); // Maintain current search state
+                // Update UI element directly instead of full re-render
+                const paperElement = document.querySelector(`[data-paper-id="${paperId}"]`);
+                if (paperElement) {
+                    const statusIcon = paperElement.querySelector('.reading-status-icon');
+                    if (statusIcon) {
+                        statusIcon.className = `reading-status-icon ${paper.readingStatus}`;
+                        statusIcon.title = `Reading status: ${readingStatuses[nextIndex].label}`;
+                    }
+                }
                 showMessage(
                     `Reading status: ${readingStatuses[nextIndex].label}`,
                     "info",
@@ -10072,12 +10947,25 @@
 
                 paper.favorite = !paper.favorite;
 
-                // Invalidate caches when data changes
-                invalidateSearchCache();
-                paperElementCache.clear();
+                // Use incremental update instead of full database save
+                queuePaperUpdate(paperId, { favorite: paper.favorite });
 
-                savePapers();
-                performSearch(); // Maintain current search state
+                // Update UI element directly instead of full re-render
+                const paperElement = document.querySelector(`[data-paper-id="${paperId}"]`);
+                if (paperElement) {
+                    const favoriteIcon = paperElement.querySelector('.favorite-star-icon');
+                    if (favoriteIcon) {
+                        if (paper.favorite) {
+                            favoriteIcon.classList.add('favorited');
+                            favoriteIcon.title = 'Remove from favorites';
+                            favoriteIcon.textContent = '⭐';
+                        } else {
+                            favoriteIcon.classList.remove('favorited');
+                            favoriteIcon.title = 'Add to favorites';
+                            favoriteIcon.textContent = '☆';
+                        }
+                    }
+                }
                 showMessage(
                     paper.favorite
                         ? "Added to favorites ⭐"
@@ -10089,6 +10977,10 @@
             // Toggle favorite filter
             function toggleFavoriteFilter() {
                 favoriteFilterActive = !favoriteFilterActive;
+
+                // Reset pagination when toggling filter
+                paginationState.currentPage = 1;
+
                 const btn = document.getElementById("favorite-filter-btn");
 
                 if (favoriteFilterActive) {
@@ -10182,6 +11074,9 @@
                     }
                     searchQuery.value = currentQuery;
                 }
+
+                // Reset pagination when changing reading status filter
+                paginationState.currentPage = 1;
 
                 updatePaperCount();
                 performSearch();
@@ -10882,6 +11777,9 @@
                 }
             }
 
+            // Make function globally available
+            window.processManualRefresh = processManualRefresh;
+
             // Add real-time preview update for scratchpad and keyboard shortcuts
             document.addEventListener("DOMContentLoaded", function () {
                 const scratchpadTextarea = document.getElementById(
@@ -10944,9 +11842,10 @@
                 try {
                     await init();
                 } catch (error) {
-                    console.error("Failed to initialize app:", error);
+                    console.error("Failed to initialize database:", error);
+                    hideLoadingProgress();
                     showMessage(
-                        "Failed to initialize the application. Please refresh the page.",
+                        "Failed to load database. Please refresh the page.",
                         "error",
                     );
                 }
@@ -10994,24 +11893,22 @@
                     return;
                 }
 
+                // Get the checkbox to see its current state (after browser changed it)
+                const checkbox = document.querySelector(`[data-paper-id="${paperId}"] .paper-checkbox`);
+                if (!checkbox) return;
 
-
-                if (selectedPapers.has(paperId)) {
-                    selectedPapers.delete(paperId);
-
-                } else {
+                // Use checkbox state as source of truth
+                if (checkbox.checked) {
                     selectedPapers.add(paperId);
-
+                } else {
+                    selectedPapers.delete(paperId);
                 }
-
-
 
                 updateSelectedCount();
                 updateBulkActionButton();
-
-                // Update visual state without full re-render
-                updatePaperSelectionVisuals(paperId);
             }
+
+
 
             function updateSelectedCount() {
                 const countElement = document.getElementById("selected-count");
@@ -11142,41 +12039,26 @@
                         : getCurrentlyFilteredPapers();
                 visiblePapers.forEach((paper) => {
                     selectedPapers.add(paper.id);
+                    const checkbox = document.querySelector(`[data-paper-id="${paper.id}"] .paper-checkbox`);
+                    if (checkbox) checkbox.checked = true;
                 });
                 updateSelectedCount();
                 updateBulkActionButton();
-                performSearch(); // Maintain current search state
             }
 
             function deselectAllPapers() {
+                selectedPapers.forEach(paperId => {
+                    const checkbox = document.querySelector(`[data-paper-id="${paperId}"] .paper-checkbox`);
+                    if (checkbox) checkbox.checked = false;
+                });
                 selectedPapers.clear();
                 updateSelectedCount();
                 updateBulkActionButton();
-                performSearch(); // Maintain current search state
             }
 
             function updatePaperSelectionVisuals(paperId) {
-
-
-                const paperElement = document.querySelector(
-                    `[data-paper-id="${paperId}"]`,
-                );
-                const checkbox = paperElement?.querySelector(".paper-checkbox");
-
-
-
-                if (paperElement && checkbox) {
-                    if (selectedPapers.has(paperId)) {
-                        paperElement.classList.add("selected");
-                        checkbox.checked = true;
-
-                    } else {
-                        paperElement.classList.remove("selected");
-                        checkbox.checked = false;
-
-                    }
-
-                }
+                // This function is now simplified since checkbox is source of truth
+                // No need to update checkbox state - it's already correct
             }
 
             function showBulkLabelDialog(paperIds) {
@@ -11306,14 +12188,13 @@
                             }
                         });
 
-                        // Track change
+                        // Track change and queue incremental update
                         trackChange('modify', paper, originalPaper);
+                        queuePaperUpdate(paper.id, { labelSets: paper.labelSets });
                     }
                 });
 
-                console.log("[BULK LABELS] Saving papers...");
-                savePapers();
-                console.log("[BULK LABELS] Papers saved successfully");
+                console.log("[BULK LABELS] Queuing incremental updates...");
 
                 showMessage(
                     `Added labels to ${paperIds.length} papers`,
@@ -11450,14 +12331,13 @@
                             paper.labelSets = paper.labelSets.filter(labelSet => labelSet.labels.length > 0);
                         });
 
-                        // Track change
+                        // Track change and queue incremental update
                         trackChange('modify', paper, originalPaper);
+                        queuePaperUpdate(paper.id, { labelSets: paper.labelSets });
                     }
                 });
 
-                console.log("[BULK REMOVE LABELS] Saving papers...");
-                savePapers();
-                console.log("[BULK REMOVE LABELS] Papers saved successfully");
+                console.log("[BULK REMOVE LABELS] Queuing incremental updates...");
 
                 showMessage(
                     `Removed labels from ${paperIds.length} papers`,
@@ -11670,8 +12550,9 @@
 
                             papers.push(paper);
 
-                            // Track change
+                            // Track change and queue incremental update
                             trackChange('add', paper);
+                            queuePaperUpdate(paper.id, paper);
 
                             successCount++;
                             addBatchResult(
@@ -11700,8 +12581,8 @@
                     }
                 }
 
-                // Save papers and update UI
-                savePapers();
+                // Force process pending updates for batch add
+                await processPendingUpdates();
                 performSearch(); // Maintain current search state
 
                 // Update progress
@@ -12398,9 +13279,15 @@
             window.editContactEmails = editContactEmails;
             window.emailAuthors = emailAuthors;
             window.refreshAllMetadata = refreshAllMetadata;
+            window.editUserManual = editUserManual;
+            window.previewUserManual = previewUserManual;
+            window.saveUserManualEdit = saveUserManualEdit;
+            window.closeEditUserManual = closeEditUserManual;
+            window.openUserManualDynamic = openUserManualDynamic;
             window.refreshMetadata = refreshMetadata;
             window.toggleSelectionMode = toggleSelectionMode;
             window.togglePaperSelection = togglePaperSelection;
+
             window.selectAllVisiblePapers = selectAllVisiblePapers;
             window.deselectAllPapers = deselectAllPapers;
             window.executeBulkAction = executeBulkAction;
@@ -12441,7 +13328,6 @@
             window.syncExtensionPapers = syncExtensionPapers;
             window.updateExtensionSyncBadge = updateExtensionSyncBadge;
             window.showSyncHelp = showSyncHelp;
-            window.repairCorruptedDates = repairCorruptedDates;
             window.checkUnknownDates = checkUnknownDates;
             window.checkDateIntegrity = checkDateIntegrity;
 
@@ -12595,11 +13481,7 @@
                     performSearch();
                     renderPapers();
 
-                    // Hide repair button since dates are now fixed
-                    const repairBtn = document.getElementById("repair-dates-btn");
-                    if (repairBtn) {
-                        repairBtn.style.display = "none";
-                    }
+
 
                     showMessage(
                         `Date repair complete! ${repairedCount} papers repaired, ${unreparableCount} marked as "Unknown date"`,

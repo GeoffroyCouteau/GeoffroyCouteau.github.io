@@ -1558,6 +1558,17 @@
                     gap: 10px;
                 }
 
+                .sorting-controls {
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                    gap: 10px;
+                }
+
+                .view-mode-controls {
+                    width: 100%;
+                    justify-content: flex-start;
+                }
+
                 .database-actions {
                     flex-wrap: wrap;
                     gap: 8px;
@@ -1568,12 +1579,45 @@
                     padding: 15px;
                     margin-bottom: 8px;
                     border-radius: 8px;
+                    position: relative;
                 }
 
                 .paper-title {
                     font-size: 15px;
                     line-height: 1.3;
                     margin-bottom: 8px;
+                    margin-right: 120px; /* Space for icons */
+                }
+
+                /* Stack paper icons vertically on mobile */
+                .favorite-star-icon,
+                .scratchpad-icon,
+                .email-contact-icon,
+                .reading-status-icon {
+                    position: absolute;
+                    right: 10px;
+                    width: 25px;
+                    height: 25px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 16px;
+                }
+
+                .favorite-star-icon {
+                    top: 15px;
+                }
+
+                .scratchpad-icon {
+                    top: 45px;
+                }
+
+                .email-contact-icon {
+                    top: 75px;
+                }
+
+                .reading-status-icon {
+                    top: 105px;
                 }
 
                 .paper-authors {
@@ -1675,6 +1719,54 @@
             @media (max-width: 480px) {
                 .container {
                     padding: 10px;
+                }
+
+                .header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 32px;
+                    padding: 24px 0;
+                }
+
+                .header-content {
+                    flex: 1;
+                    text-align: center;
+                }
+
+                .header-manual-btn {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    padding: 10px 20px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+                    flex-shrink: 0;
+                }
+
+                .header-manual-btn:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+                    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+                }
+
+                .header-content {
+                    text-align: center;
+                    margin-bottom: 15px;
+                }
+
+                .header-manual-btn {
+                    margin-left: 0;
+                    width: auto;
+                    align-self: center;
                 }
 
                 .header h1 {
@@ -1795,10 +1887,15 @@
         </script>
         <div class="container">
             <div class="header">
-                <h1>The Secure Computation Database</h1>
-                <p>
-                    Organize and explore your secure computation research papers
-                </p>
+                <div class="header-content">
+                    <h1>The Secure Computation Database</h1>
+                    <p>
+                        Organize and explore your secure computation research papers
+                    </p>
+                </div>
+                <button class="header-manual-btn" onclick="openUserManualDynamic()" title="Open user manual">
+                    <span>📖</span> User Manual
+                </button>
             </div>
 
             <div class="main-content">
@@ -2259,9 +2356,7 @@
                             >
                                 <span>📂</span> Import
                             </button>
-                            <button class="btn" onclick="openUserManualDynamic()" title="Open user manual">
-                                <span>📖</span> User Manual
-                            </button>
+
                             <button class="btn" onclick="integrateChanges()" title="Send your changes for review">
                                 <span>📧</span> Integrate Changes
                             </button>
@@ -2964,12 +3059,24 @@ Install the companion browser extension to quickly add papers while browsing aca
                 const modal = document.createElement('div');
                 modal.className = 'modal';
                 modal.innerHTML = `
-                    <div class="modal-content" style="max-width: 800px; max-height: 90vh; overflow-y: auto;">
-                        <div class="modal-header">
-                            <h2>MPC Database User Manual</h2>
-                            <span class="close" onclick="closeUserManual()">&times;</span>
+                    <div class="modal-content" style="max-width: 900px; max-height: 90vh; overflow-y: auto; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); box-shadow: 0 20px 60px rgba(0,0,0,0.15); border-radius: 16px;">
+                        <div class="modal-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 16px 16px 0 0; padding: 25px 30px;">
+                            <h2 style="margin: 0; font-size: 24px; font-weight: 600;">📚 MPC Database User Manual</h2>
+                            <span class="close" onclick="closeUserManual()" style="color: white; opacity: 0.8;">&times;</span>
                         </div>
-                        <div style="padding: 20px; line-height: 1.6;">
+                        <div style="padding: 40px; line-height: 1.8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+                            <style>
+                                .modal h1 { margin-top: 40px; margin-bottom: 20px; color: #2c3e50; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+                                .modal h2 { margin-top: 35px; margin-bottom: 18px; color: #34495e; }
+                                .modal h3 { margin-top: 25px; margin-bottom: 12px; color: #5a6c7d; }
+                                .modal p { margin-bottom: 16px; text-align: justify; }
+                                .modal ul, .modal ol { margin-bottom: 16px; padding-left: 25px; }
+                                .modal li { margin-bottom: 8px; }
+                                .modal code { background: #f8f9fa; padding: 2px 6px; border-radius: 4px; font-family: 'Monaco', 'Consolas', monospace; color: #e74c3c; }
+                                .modal pre { background: #2c3e50; color: #ecf0f1; padding: 20px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+                                .modal blockquote { border-left: 4px solid #667eea; padding-left: 20px; margin: 16px 0; font-style: italic; color: #5a6c7d; }
+                                .modal strong { color: #2c3e50; }
+                            </style>
                             ${parseUserManualMarkdown(userManualContent)}
                         </div>
                     </div>
@@ -3293,8 +3400,13 @@ Install the companion browser extension to quickly add papers while browsing aca
                     console.log("IndexedDB initialized successfully");
 
                     updateLoadingProgress(20, "Auto-loading database...");
+                    // Set flag to indicate auto-loading (for user manual handling)
+                    window.isAutoLoading = true;
                     // Try to auto-load mpc_db.json first
                     await autoLoadDatabase();
+
+
+                    window.isAutoLoading = false;
 
                     updateLoadingProgress(40, "Loading papers and folders...");
                     // Load data from IndexedDB
@@ -3580,6 +3692,13 @@ Install the companion browser extension to quickly add papers while browsing aca
 
                         // Import the data (overwrite everything)
                         papers = data.papers || [];
+
+                        // Load user manual if present in mpc_db.json
+                        if (data.userManual) {
+                            userManualContent = data.userManual;
+                            saveUserManualContent();
+                            console.log("✅ User manual loaded from mpc_db.json");
+                        }
 
                         // Save to IndexedDB
                         await savePapers();
@@ -6057,7 +6176,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                                     // Keep existing folders
                                 }
 
-                                // Handle user manual
+                                // Handle user manual - always load from imported data
                                 if (data.userManual) {
                                     userManualContent = data.userManual;
                                     saveUserManualContent();

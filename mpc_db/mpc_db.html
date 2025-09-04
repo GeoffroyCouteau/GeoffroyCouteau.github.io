@@ -7612,13 +7612,21 @@ Install the companion browser extension to quickly add papers while browsing aca
                         }
                     }
 
-                    // Extract date
+                    // Extract date - look for both 'approved' and 'received' dates
                     const bodyText = doc.body.textContent;
-                    const dateMatch = bodyText.match(
-                        /(\d{4}-\d{2}-\d{2}):\s*received/i,
+                    let dateMatch = bodyText.match(
+                        /(\d{4}-\d{2}-\d{2}):\s*(approved|received)/i,
                     );
                     if (dateMatch) {
                         date = dateMatch[1];
+                    } else {
+                        // Fallback: look for any date pattern in the History section
+                        const historyMatch = bodyText.match(
+                            /History[\s\S]*?(\d{4}-\d{2}-\d{2})/i,
+                        );
+                        if (historyMatch) {
+                            date = historyMatch[1];
+                        }
                     }
 
                     // Extract contact author emails
@@ -8678,17 +8686,25 @@ Install the companion browser extension to quickly add papers while browsing aca
                     abstract = abstractLines.join(" ").trim();
                 }
 
-                // Extract date
-                const dateMatch = content.match(
-                    /(\d{4}-\d{2}-\d{2}):\s*received/i,
+                // Extract date - look for both 'approved' and 'received' dates
+                let dateMatch = content.match(
+                    /(\d{4}-\d{2}-\d{2}):\s*(approved|received)/i,
                 );
                 if (dateMatch) {
                     date = dateMatch[1];
                 } else {
-                    const yearMatch = paperId.match(/^(\d{4})/);
-                    if (yearMatch) {
-                        const year = yearMatch[1];
-                        date = `${year}-01-01`;
+                    // Fallback: look for any date pattern in the History section
+                    const historyMatch = content.match(
+                        /History[\s\S]*?(\d{4}-\d{2}-\d{2})/i,
+                    );
+                    if (historyMatch) {
+                        date = historyMatch[1];
+                    } else {
+                        const yearMatch = paperId.match(/^(\d{4})/);
+                        if (yearMatch) {
+                            const year = yearMatch[1];
+                            date = `${year}-01-01`;
+                        }
                     }
                 }
 
@@ -13513,6 +13529,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                                 title: metadata.title || "Untitled",
                                 authors: metadata.authors || "Unknown",
                                 year: metadata.year || new Date().getFullYear(),
+                                date: metadata.date || "Unknown date",
                                 url: url,
                                 abstract: metadata.abstract || "",
                                 labels: [],
@@ -13639,22 +13656,58 @@ Install the companion browser extension to quickly add papers while browsing aca
                                 "text/html",
                             );
 
-                            // Extract metadata from the HTML
-                            const metadata = parseHtmlMetadata(
-                                doc,
-                                paperId,
-                                urlType,
-                            );
+                            // For ePrint papers, use text-based parsing for better reliability
+                            if (urlType === "eprint") {
+                                // Convert HTML to text content for parsing
+                                const textContent =
+                                    doc.body.textContent ||
+                                    doc.body.innerText ||
+                                    "";
+                                const metadata = parseEprintContent(
+                                    textContent,
+                                    paperId,
+                                );
 
-                            return {
-                                title: metadata.title,
-                                authors: metadata.authors,
-                                abstract: metadata.abstract,
-                                year: metadata.date
-                                    ? new Date(metadata.date).getFullYear()
-                                    : new Date().getFullYear(),
-                                contactEmails: metadata.contactEmails,
-                            };
+                                return {
+                                    title: metadata.title,
+                                    authors: metadata.authors,
+                                    abstract: metadata.abstract,
+                                    date: metadata.date || "Unknown date",
+                                    year:
+                                        metadata.date &&
+                                        metadata.date !== "Unknown date" &&
+                                        !isNaN(
+                                            new Date(metadata.date).getTime(),
+                                        )
+                                            ? new Date(
+                                                  metadata.date,
+                                              ).getFullYear()
+                                            : new Date().getFullYear(),
+                                    contactEmails: metadata.contactEmails,
+                                };
+                            } else {
+                                // Use HTML parsing for other types
+                                const metadata = parseHtmlMetadata(
+                                    doc,
+                                    paperId,
+                                    urlType,
+                                );
+
+                                return {
+                                    title: metadata.title,
+                                    authors: metadata.authors,
+                                    abstract: metadata.abstract,
+                                    date: metadata.date || "Unknown date",
+                                    year:
+                                        metadata.date &&
+                                        metadata.date !== "Unknown date"
+                                            ? new Date(
+                                                  metadata.date,
+                                              ).getFullYear()
+                                            : new Date().getFullYear(),
+                                    contactEmails: metadata.contactEmails,
+                                };
+                            }
                         }
                     } catch (corsError) {
                         console.log(
@@ -13682,21 +13735,60 @@ Install the companion browser extension to quickly add papers while browsing aca
                                     "text/html",
                                 );
 
-                                const metadata = parseHtmlMetadata(
-                                    doc,
-                                    paperId,
-                                    urlType,
-                                );
+                                // For ePrint papers, use text-based parsing for better reliability
+                                if (urlType === "eprint") {
+                                    // Convert HTML to text content for parsing
+                                    const textContent =
+                                        doc.body.textContent ||
+                                        doc.body.innerText ||
+                                        "";
+                                    const metadata = parseEprintContent(
+                                        textContent,
+                                        paperId,
+                                    );
 
-                                return {
-                                    title: metadata.title,
-                                    authors: metadata.authors,
-                                    abstract: metadata.abstract,
-                                    year: metadata.date
-                                        ? new Date(metadata.date).getFullYear()
-                                        : new Date().getFullYear(),
-                                    contactEmails: metadata.contactEmails,
-                                };
+                                    return {
+                                        title: metadata.title,
+                                        authors: metadata.authors,
+                                        abstract: metadata.abstract,
+                                        date: metadata.date || "Unknown date",
+                                        year:
+                                            metadata.date &&
+                                            metadata.date !== "Unknown date" &&
+                                            !isNaN(
+                                                new Date(
+                                                    metadata.date,
+                                                ).getTime(),
+                                            )
+                                                ? new Date(
+                                                      metadata.date,
+                                                  ).getFullYear()
+                                                : new Date().getFullYear(),
+                                        contactEmails: metadata.contactEmails,
+                                    };
+                                } else {
+                                    // Use HTML parsing for other types
+                                    const metadata = parseHtmlMetadata(
+                                        doc,
+                                        paperId,
+                                        urlType,
+                                    );
+
+                                    return {
+                                        title: metadata.title,
+                                        authors: metadata.authors,
+                                        abstract: metadata.abstract,
+                                        date: metadata.date || "Unknown date",
+                                        year:
+                                            metadata.date &&
+                                            metadata.date !== "Unknown date"
+                                                ? new Date(
+                                                      metadata.date,
+                                                  ).getFullYear()
+                                                : new Date().getFullYear(),
+                                        contactEmails: metadata.contactEmails,
+                                    };
+                                }
                             }
                         } catch (proxyError) {
                             console.log(

@@ -341,11 +341,7 @@
                 padding: 24px;
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
                 border: 1px solid rgba(255, 255, 255, 0.2);
-                margin: 24px auto;
-                width: 100%;
-                max-width: 1400px;
-                display: block;
-                clear: both;
+                margin-bottom: 24px;
             }
 
             .graph-svg {
@@ -2442,13 +2438,7 @@
                             <button class="btn" onclick="toggleSelectionMode()">
                                 <span>☑️</span> Select Papers
                             </button>
-                            <div
-                                style="
-                                    display: flex;
-                                    gap: 8px;
-                                    align-items: center;
-                                "
-                            >
+                            <div style="display: flex; gap: 8px; align-items: center;">
                                 <button
                                     class="btn"
                                     onclick="toggleExportImportOptions()"
@@ -2473,374 +2463,356 @@
                                 </button>
                             </div>
 
-                            <!-- Collapsible Export/Import Options -->
+                        <!-- Collapsible Export/Import Options -->
+                        <div
+                            id="export-import-options"
+                            style="
+                                display: none;
+                                margin-top: 16px;
+                                margin-bottom: 24px;
+                            "
+                        >
                             <div
-                                id="export-import-options"
                                 style="
-                                    display: none;
-                                    margin-top: 16px;
-                                    margin-bottom: 24px;
+                                    background: linear-gradient(
+                                        135deg,
+                                        #e3f2fd 0%,
+                                        #f3e5f5 100%
+                                    );
+                                    border: 1px solid #bbdefb;
+                                    border-radius: 12px;
+                                    padding: 16px;
+                                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
                                 "
                             >
-                                <div
+                                <h4
                                     style="
-                                        background: linear-gradient(
-                                            135deg,
-                                            #e3f2fd 0%,
-                                            #f3e5f5 100%
-                                        );
-                                        border: 1px solid #bbdefb;
-                                        border-radius: 12px;
-                                        padding: 16px;
-                                        box-shadow: 0 2px 8px
-                                            rgba(0, 0, 0, 0.08);
+                                        margin: 0 0 12px 0;
+                                        color: #1565c0;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        text-align: center;
                                     "
                                 >
-                                    <h4
-                                        style="
-                                            margin: 0 0 12px 0;
-                                            color: #1565c0;
-                                            font-size: 14px;
-                                            font-weight: 600;
-                                            text-align: center;
-                                        "
-                                    >
-                                        Export/Import Options
-                                    </h4>
-                                    <div
-                                        style="
-                                            display: flex;
-                                            flex-wrap: wrap;
-                                            gap: 6px;
-                                            justify-content: center;
-                                            align-items: center;
-                                        "
-                                    >
-                                        <button
-                                            class="btn"
-                                            onclick="exportDatabase()"
-                                            style="
-                                                padding: 6px 10px;
-                                                font-size: 12px;
-                                                min-width: auto;
-                                            "
-                                        >
-                                            <span>📁</span> Export
-                                        </button>
-                                        <button
-                                            class="btn"
-                                            onclick="exportFullDatabase()"
-                                            title="Export with scratchpad, reading status, and folders"
-                                            style="
-                                                padding: 6px 10px;
-                                                font-size: 12px;
-                                                min-width: auto;
-                                            "
-                                        >
-                                            <span>📁</span> Export Full
-                                        </button>
-                                        <input
-                                            type="file"
-                                            id="importFile"
-                                            accept=".json"
-                                            style="display: none"
-                                            onchange="importDatabase(event)"
-                                        />
-                                        <button
-                                            class="btn"
-                                            onclick="document.getElementById('importFile').click()"
-                                            style="
-                                                padding: 6px 10px;
-                                                font-size: 12px;
-                                                min-width: auto;
-                                            "
-                                        >
-                                            <span>📂</span> Import
-                                        </button>
-                                        <button
-                                            class="btn"
-                                            onclick="integrateChanges()"
-                                            title="Send your changes for review"
-                                            style="
-                                                padding: 6px 10px;
-                                                font-size: 12px;
-                                                min-width: auto;
-                                            "
-                                        >
-                                            <span>📧</span> Update DB
-                                        </button>
-                                        <button
-                                            class="btn"
-                                            onclick="toggleAutoLoad()"
-                                            id="auto-load-toggle-btn-options"
-                                            title="Toggle automatic loading of mpc_db.json on page refresh"
-                                            style="
-                                                padding: 6px 10px;
-                                                font-size: 12px;
-                                                min-width: auto;
-                                            "
-                                        >
-                                            <span>🔄</span>
-                                            <span id="auto-load-status-options"
-                                                >Disable Auto-load</span
-                                            >
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Collapsible Admin Options -->
-                            <div
-                                id="admin-options"
-                                style="
-                                    display: none;
-                                    margin-top: 16px;
-                                    margin-bottom: 24px;
-                                "
-                            >
+                                    Export/Import Options
+                                </h4>
                                 <div
                                     style="
-                                        background: linear-gradient(
-                                            135deg,
-                                            #fff3e0 0%,
-                                            #fce4ec 100%
-                                        );
-                                        border: 1px solid #ffcc02;
-                                        border-radius: 12px;
-                                        padding: 16px;
-                                        box-shadow: 0 2px 8px
-                                            rgba(0, 0, 0, 0.08);
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        gap: 6px;
+                                        justify-content: center;
+                                        align-items: center;
                                     "
                                 >
-                                    <h4
+                                    <button
+                                        class="btn"
+                                        onclick="exportDatabase()"
                                         style="
-                                            margin: 0 0 12px 0;
-                                            color: #e65100;
-                                            font-size: 14px;
-                                            font-weight: 600;
-                                            text-align: center;
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
                                         "
                                     >
-                                        Admin Options
-                                    </h4>
-                                    <div
+                                        <span>📁</span> Export
+                                    </button>
+                                    <button
+                                        class="btn"
+                                        onclick="exportFullDatabase()"
+                                        title="Export with scratchpad, reading status, and folders"
                                         style="
-                                            display: flex;
-                                            flex-wrap: wrap;
-                                            gap: 6px;
-                                            justify-content: center;
-                                            align-items: center;
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
                                         "
                                     >
-                                        <button
-                                            class="btn"
-                                            onclick="refreshAllMetadata()"
-                                            title="Refresh metadata for all visible papers"
-                                            style="
-                                                padding: 6px 10px;
-                                                font-size: 12px;
-                                                min-width: auto;
-                                            "
+                                        <span>📁</span> Export Full
+                                    </button>
+                                    <input
+                                        type="file"
+                                        id="importFile"
+                                        accept=".json"
+                                        style="display: none"
+                                        onchange="importDatabase(event)"
+                                    />
+                                    <button
+                                        class="btn"
+                                        onclick="document.getElementById('importFile').click()"
+                                        style="
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
+                                        "
+                                    >
+                                        <span>📂</span> Import
+                                    </button>
+                                    <button
+                                        class="btn"
+                                        onclick="integrateChanges()"
+                                        title="Send your changes for review"
+                                        style="
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
+                                        "
+                                    >
+                                        <span>📧</span> Update DB
+                                    </button>
+                                    <button
+                                        class="btn"
+                                        onclick="toggleAutoLoad()"
+                                        id="auto-load-toggle-btn-options"
+                                        title="Toggle automatic loading of mpc_db.json on page refresh"
+                                        style="
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
+                                        "
+                                    >
+                                        <span>🔄</span>
+                                        <span id="auto-load-status-options"
+                                            >Disable Auto-load</span
                                         >
-                                            <span>🔄</span> Refresh Metadata
-                                        </button>
-                                        <button
-                                            class="btn"
-                                            onclick="findDuplicates()"
-                                            title="Find papers with identical titles"
-                                            style="
-                                                padding: 6px 10px;
-                                                font-size: 12px;
-                                                min-width: auto;
-                                            "
-                                        >
-                                            <span>👥</span> Find Duplicates
-                                        </button>
-                                        <button
-                                            class="btn"
-                                            onclick="findDoubleAuthors()"
-                                            title="Find papers with duplicate author names"
-                                            style="
-                                                padding: 6px 10px;
-                                                font-size: 12px;
-                                                min-width: auto;
-                                            "
-                                        >
-                                            <span>👤👤</span> Find Double
-                                            Authors
-                                        </button>
-                                        <button
-                                            class="btn"
-                                            onclick="editUserManual()"
-                                            title="Edit user manual content"
-                                            style="
-                                                padding: 6px 10px;
-                                                font-size: 12px;
-                                                min-width: auto;
-                                            "
-                                        >
-                                            <span>✏️</span> Edit Manual
-                                        </button>
-                                        <input
-                                            type="file"
-                                            id="adminImportFile"
-                                            accept=".json"
-                                            style="display: none"
-                                            onchange="importDiffFile(event)"
-                                        />
-                                        <button
-                                            class="btn"
-                                            onclick="document.getElementById('adminImportFile').click()"
-                                            title="Import diff file with changes"
-                                            style="
-                                                padding: 6px 10px;
-                                                font-size: 12px;
-                                                min-width: auto;
-                                            "
-                                        >
-                                            <span>📥</span> Update DB
-                                        </button>
-                                        <button
-                                            class="btn"
-                                            id="sync-db-btn"
-                                            onclick="syncExtensionPapers()"
-                                            title="Sync papers added via browser extension to database"
-                                            style="
-                                                padding: 6px 10px;
-                                                font-size: 12px;
-                                                min-width: auto;
-                                                position: relative;
-                                            "
-                                        >
-                                            <span>🔗</span> Sync DB
-                                            <div
-                                                id="unsynced-count"
-                                                class="badge"
-                                                style="
-                                                    position: absolute;
-                                                    top: -8px;
-                                                    right: -8px;
-                                                    background: #ff4444;
-                                                    color: white;
-                                                    border-radius: 50%;
-                                                    width: 18px;
-                                                    height: 18px;
-                                                    font-size: 10px;
-                                                    line-height: 18px;
-                                                    display: none;
-                                                "
-                                            ></div>
-                                        </button>
-                                        <span
-                                            class="help-icon"
-                                            onclick="showSyncHelp()"
-                                            title="When do I need to sync?"
-                                            style="
-                                                margin-left: 4px;
-                                                cursor: pointer;
-                                            "
-                                            >ℹ️</span
-                                        >
-                                    </div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Paper Selection Controls -->
+                        <!-- Collapsible Admin Options -->
                         <div
-                            id="paper-selection-controls"
-                            class="paper-selection-controls"
+                            id="admin-options"
+                            style="
+                                display: none;
+                                margin-top: 16px;
+                                margin-bottom: 24px;
+                            "
                         >
-                            <div class="selection-info">
-                                <div>
-                                    <span id="selected-count">0</span> papers
-                                    selected
-                                </div>
-                                <div class="selection-buttons">
+                            <div
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #fff3e0 0%,
+                                        #fce4ec 100%
+                                    );
+                                    border: 1px solid #ffcc02;
+                                    border-radius: 12px;
+                                    padding: 16px;
+                                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                                "
+                            >
+                                <h4
+                                    style="
+                                        margin: 0 0 12px 0;
+                                        color: #e65100;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        text-align: center;
+                                    "
+                                >
+                                    Admin Options
+                                </h4>
+                                <div
+                                    style="
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        gap: 6px;
+                                        justify-content: center;
+                                        align-items: center;
+                                    "
+                                >
                                     <button
-                                        class="btn btn-secondary"
-                                        onclick="selectAllVisiblePapers()"
+                                        class="btn"
+                                        onclick="refreshAllMetadata()"
+                                        title="Refresh metadata for all visible papers"
                                         style="
-                                            padding: 4px 8px;
+                                            padding: 6px 10px;
                                             font-size: 12px;
+                                            min-width: auto;
                                         "
                                     >
-                                        Select All
+                                        <span>🔄</span> Refresh Metadata
                                     </button>
                                     <button
-                                        class="btn btn-secondary"
-                                        onclick="deselectAllPapers()"
+                                        class="btn"
+                                        onclick="findDuplicates()"
+                                        title="Find papers with identical titles"
                                         style="
-                                            padding: 4px 8px;
+                                            padding: 6px 10px;
                                             font-size: 12px;
+                                            min-width: auto;
                                         "
                                     >
-                                        Deselect All
+                                        <span>👥</span> Find Duplicates
                                     </button>
+                                    <button
+                                        class="btn"
+                                        onclick="findDoubleAuthors()"
+                                        title="Find papers with duplicate author names"
+                                        style="
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
+                                        "
+                                    >
+                                        <span>👤👤</span> Find Double Authors
+                                    </button>
+                                    <button
+                                        class="btn"
+                                        onclick="editUserManual()"
+                                        title="Edit user manual content"
+                                        style="
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
+                                        "
+                                    >
+                                        <span>✏️</span> Edit Manual
+                                    </button>
+                                    <input
+                                        type="file"
+                                        id="adminImportFile"
+                                        accept=".json"
+                                        style="display: none"
+                                        onchange="importDiffFile(event)"
+                                    />
+                                    <button
+                                        class="btn"
+                                        onclick="document.getElementById('adminImportFile').click()"
+                                        title="Import diff file with changes"
+                                        style="
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
+                                        "
+                                    >
+                                        <span>📥</span> Update DB
+                                    </button>
+                                    <button
+                                        class="btn"
+                                        id="sync-db-btn"
+                                        onclick="syncExtensionPapers()"
+                                        title="Sync papers added via browser extension to database"
+                                        style="
+                                            padding: 6px 10px;
+                                            font-size: 12px;
+                                            min-width: auto;
+                                            position: relative;
+                                        "
+                                    >
+                                        <span>🔗</span> Sync DB
+                                        <div
+                                            id="unsynced-count"
+                                            class="badge"
+                                            style="
+                                                position: absolute;
+                                                top: -8px;
+                                                right: -8px;
+                                                background: #ff4444;
+                                                color: white;
+                                                border-radius: 50%;
+                                                width: 18px;
+                                                height: 18px;
+                                                font-size: 10px;
+                                                line-height: 18px;
+                                                display: none;
+                                            "
+                                        ></div>
+                                    </button>
+                                    <span
+                                        class="help-icon"
+                                        onclick="showSyncHelp()"
+                                        title="When do I need to sync?"
+                                        style="margin-left: 4px; cursor: pointer;"
+                                        >ℹ️</span
+                                    >
                                 </div>
                             </div>
-                            <div class="selection-actions">
-                                <select
-                                    id="bulk-action-select"
-                                    class="selection-dropdown"
-                                >
-                                    <option value="">Choose action...</option>
-                                    <option value="favorite">
-                                        Mark as favorite
-                                    </option>
-                                    <option value="unfavorite">
-                                        Remove from favorites
-                                    </option>
-                                    <option value="set-status-referenced">
-                                        Set status: Referenced
-                                    </option>
-                                    <option value="set-status-to-read">
-                                        Set status: To Read
-                                    </option>
-                                    <option value="set-status-skimmed">
-                                        Set status: Skimmed
-                                    </option>
-                                    <option value="set-status-reading">
-                                        Set status: Reading
-                                    </option>
-                                    <option value="set-status-read">
-                                        Set status: Read
-                                    </option>
-                                    <option value="add-labels">
-                                        Add labels
-                                    </option>
-                                    <option value="remove-labels">
-                                        Remove labels
-                                    </option>
-                                    <option value="move-to-folder">
-                                        Move to folder
-                                    </option>
-                                    <option value="delete">
-                                        Delete papers
-                                    </option>
-                                </select>
+                        </div>
+                    </div>
+
+                    <!-- Paper Selection Controls -->
+                    <div
+                        id="paper-selection-controls"
+                        class="paper-selection-controls"
+                    >
+                        <div class="selection-info">
+                            <div>
+                                <span id="selected-count">0</span> papers
+                                selected
+                            </div>
+                            <div class="selection-buttons">
                                 <button
-                                    id="execute-bulk-action"
-                                    class="bulk-action-btn"
-                                    onclick="executeBulkAction()"
-                                    disabled
+                                    class="btn btn-secondary"
+                                    onclick="selectAllVisiblePapers()"
+                                    style="padding: 4px 8px; font-size: 12px"
                                 >
-                                    Execute
+                                    Select All
                                 </button>
                                 <button
                                     class="btn btn-secondary"
-                                    onclick="toggleSelectionMode()"
+                                    onclick="deselectAllPapers()"
+                                    style="padding: 4px 8px; font-size: 12px"
                                 >
-                                    Done
+                                    Deselect All
                                 </button>
                             </div>
                         </div>
+                        <div class="selection-actions">
+                            <select
+                                id="bulk-action-select"
+                                class="selection-dropdown"
+                            >
+                                <option value="">Choose action...</option>
+                                <option value="favorite">
+                                    Mark as favorite
+                                </option>
+                                <option value="unfavorite">
+                                    Remove from favorites
+                                </option>
+                                <option value="set-status-referenced">
+                                    Set status: Referenced
+                                </option>
+                                <option value="set-status-to-read">
+                                    Set status: To Read
+                                </option>
+                                <option value="set-status-skimmed">
+                                    Set status: Skimmed
+                                </option>
+                                <option value="set-status-reading">
+                                    Set status: Reading
+                                </option>
+                                <option value="set-status-read">
+                                    Set status: Read
+                                </option>
+                                <option value="add-labels">Add labels</option>
+                                <option value="remove-labels">
+                                    Remove labels
+                                </option>
+                                <option value="move-to-folder">
+                                    Move to folder
+                                </option>
+                            </select>
+                            <button
+                                id="execute-bulk-action"
+                                class="bulk-action-btn"
+                                onclick="executeBulkAction()"
+                                disabled
+                            >
+                                Execute
+                            </button>
+                            <button
+                                class="btn btn-secondary"
+                                onclick="toggleSelectionMode()"
+                            >
+                                Done
+                            </button>
+                        </div>
+                    </div>
 
-                        <div id="papers-list" class="papers-list">
-                            <div class="loading">
-                                No papers added yet. Add your first paper to get
-                                started!
-                            </div>
+                    <div id="papers-list" class="papers-list">
+                        <div class="loading">
+                            No papers added yet. Add your first paper to get
+                            started!
                         </div>
                     </div>
                 </div>
@@ -2855,9 +2827,8 @@
                     </button>
                 </div>
             </div>
-        </div>
 
-        <div class="graph-container">
+            <div class="graph-container">
                 <div class="section-title">
                     Paper Relationships
                     <span
@@ -12454,8 +12425,10 @@ Install the companion browser extension to quickly add papers while browsing aca
 
             // Refresh all metadata function
             async function refreshAllMetadata() {
-                // Get currently filtered papers from search results
-                const visiblePapers = currentlyFilteredPapers.length > 0 ? currentlyFilteredPapers : getCurrentlyFilteredPapers();
+                // Get currently visible papers (same logic as renderPapers uses)
+                const visiblePapers = papers.filter(
+                    isPaperInCurrentFolderHierarchy,
+                );
 
                 if (visiblePapers.length === 0) {
                     showMessage("No papers to refresh", "info");
@@ -13110,44 +13083,6 @@ Install the companion browser extension to quickly add papers while browsing aca
                         break;
                     case "move-to-folder":
                         showBulkMoveDialog(selectedPaperIds);
-                        return;
-                    case "delete":
-                        // Show confirmation dialog for delete
-                        const confirmMessage = `Are you sure you want to delete ${selectedPaperObjects.length} selected paper${selectedPaperObjects.length === 1 ? "" : "s"}? This action cannot be undone.`;
-
-                        if (confirm(confirmMessage)) {
-                            const modal = document.createElement("div");
-                            modal.className = "modal";
-                            modal.style.display = "block";
-                            modal.innerHTML = `
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h2>Confirm Delete</h2>
-                                        <span class="close" onclick="this.closest('.modal').remove()">&times;</span>
-                                    </div>
-                                    <div style="padding: 20px;">
-                                        <p>You are about to delete <strong>${selectedPaperObjects.length}</strong> paper${selectedPaperObjects.length === 1 ? "" : "s"}:</p>
-                                        <div style="max-height: 200px; overflow-y: auto; margin: 16px 0; padding: 12px; background: #f8f9fa; border-radius: 4px;">
-                                            ${selectedPaperObjects.map(paper => `<div style="margin-bottom: 4px;">• ${paper.title}</div>`).join("")}
-                                        </div>
-                                        <p style="color: #dc3545; font-weight: bold;">This action cannot be undone!</p>
-                                    </div>
-                                    <div class="modal-actions">
-                                        <button class="btn btn-secondary" onclick="this.closest('.modal').remove()">Cancel</button>
-                                        <button class="btn" style="background: #dc3545; color: white;" onclick="window.executeDelete('${selectedPaperIds.join(",")}')">Delete Papers</button>
-                                    </div>
-                                </div>
-                            `;
-
-                            document.body.appendChild(modal);
-
-                            // Close modal when clicking outside
-                            modal.addEventListener("click", (e) => {
-                                if (e.target === modal) {
-                                    modal.remove();
-                                }
-                            });
-                        }
                         return;
                 }
 
@@ -14515,49 +14450,21 @@ Install the companion browser extension to quickly add papers while browsing aca
             window.changeSortOrder = changeSortOrder;
             window.cycleReadingStatus = cycleReadingStatus;
             window.toggleFavorite = toggleFavorite;
-            // Execute bulk delete function
-            function executeDelete(paperIdsString) {
-                const paperIds = paperIdsString.split(",");
-                let deletedCount = 0;
-
-                // Remove papers from the main array
-                paperIds.forEach(paperId => {
-                    const paperIndex = papers.findIndex(p => p.id === paperId);
-                    if (paperIndex !== -1) {
-                        const paper = papers[paperIndex];
-                        papers.splice(paperIndex, 1);
-                        deletedCount++;
-
-                        // Track change for database sync
-                        trackChange("delete", paper);
-                    }
-                });
-
-                // Update filtered papers to remove deleted ones
-                currentlyFilteredPapers = currentlyFilteredPapers.filter(
-                    paper => !paperIds.includes(paper.id)
-                );
-
-                // Clear selection
-                selectedPapers.clear();
-                paperSelectionMode = false;
-
-                // Update UI
-                savePapers();
-                renderPapers();
-                renderFolders();
-
-                // Update graph if visible
-                if (document.getElementById("graph-display").style.display !== "none") {
-                    renderGraph();
-                }
-
-                // Close modal and exit selection mode
-                document.querySelector(".modal").remove();
-                toggleSelectionMode();
-
-                showMessage(`Successfully deleted ${deletedCount} paper${deletedCount === 1 ? "" : "s"}`, "success");
-            }
+            window.toggleFavoriteFilter = toggleFavoriteFilter;
+            window.editContactEmails = editContactEmails;
+            window.emailAuthors = emailAuthors;
+            window.refreshAllMetadata = refreshAllMetadata;
+            window.toggleAdminOptions = toggleAdminOptions;
+            window.findDuplicates = findDuplicates;
+            window.findDoubleAuthors = findDoubleAuthors;
+            window.fixDoubleAuthors = fixDoubleAuthors;
+            window.editUserManual = editUserManual;
+            window.previewUserManual = previewUserManual;
+            window.saveUserManualEdit = saveUserManualEdit;
+            window.closeEditUserManual = closeEditUserManual;
+            window.openUserManualDynamic = openUserManualDynamic;
+            window.refreshMetadata = refreshMetadata;
+            window.toggleSelectionMode = toggleSelectionMode;
 
             // Find duplicates function
             function findDuplicates() {
@@ -14565,7 +14472,7 @@ Install the companion browser extension to quickly add papers while browsing aca
                 const duplicates = [];
 
                 // Group papers by title
-                papers.forEach((paper) => {
+                papers.forEach(paper => {
                     const title = paper.title.toLowerCase().trim();
                     if (!titleMap.has(title)) {
                         titleMap.set(title, []);
@@ -14586,30 +14493,25 @@ Install the companion browser extension to quickly add papers while browsing aca
                 }
 
                 // Set search to show only duplicates
-                document.getElementById("search-query").value = "";
-                currentlyFilteredPapers = duplicates;
-                renderPapers(duplicates);
+                document.getElementById("searchInput").value = "";
+                currentSearchQuery = "";
+                filteredPapers = duplicates;
+                renderPapers();
 
-                const duplicateGroups =
-                    titleMap.size - papers.length + duplicates.length;
-                showMessage(
-                    `Found ${duplicates.length} duplicate papers in ${duplicateGroups} groups`,
-                    "success",
-                );
+                const duplicateGroups = titleMap.size - papers.length + duplicates.length;
+                showMessage(`Found ${duplicates.length} duplicate papers in ${duplicateGroups} groups`, "success");
             }
 
             // Find double authors function
             function findDoubleAuthors() {
                 const papersWithDoubleAuthors = [];
 
-                papers.forEach((paper) => {
-                    const authors = paper.authors
-                        .split(",")
-                        .map((a) => a.trim());
+                papers.forEach(paper => {
+                    const authors = paper.authors.split(',').map(a => a.trim());
                     const authorSet = new Set();
                     let hasDuplicates = false;
 
-                    authors.forEach((author) => {
+                    authors.forEach(author => {
                         if (author && authorSet.has(author)) {
                             hasDuplicates = true;
                         }
@@ -14624,21 +14526,19 @@ Install the companion browser extension to quickly add papers while browsing aca
                 });
 
                 if (papersWithDoubleAuthors.length === 0) {
-                    showMessage(
-                        "No papers with duplicate author names found",
-                        "info",
-                    );
+                    showMessage("No papers with duplicate author names found", "info");
                     return;
                 }
 
                 // Set search to show only papers with double authors
-                document.getElementById("search-query").value = "";
-                currentlyFilteredPapers = papersWithDoubleAuthors;
-                renderPapers(papersWithDoubleAuthors);
+                document.getElementById("searchInput").value = "";
+                currentSearchQuery = "";
+                filteredPapers = papersWithDoubleAuthors;
+                renderPapers();
 
                 // Show fix button
-                const fixButton = document.createElement("div");
-                fixButton.id = "fix-double-authors-banner";
+                const fixButton = document.createElement('div');
+                fixButton.id = 'fix-double-authors-banner';
                 fixButton.style.cssText = `
                     position: fixed;
                     top: 20px;
@@ -14676,18 +14576,13 @@ Install the companion browser extension to quickly add papers while browsing aca
                 `;
 
                 // Remove existing banner if present
-                const existingBanner = document.getElementById(
-                    "fix-double-authors-banner",
-                );
+                const existingBanner = document.getElementById('fix-double-authors-banner');
                 if (existingBanner) {
                     existingBanner.remove();
                 }
 
                 document.body.appendChild(fixButton);
-                showMessage(
-                    `Found ${papersWithDoubleAuthors.length} papers with duplicate author names`,
-                    "success",
-                );
+                showMessage(`Found ${papersWithDoubleAuthors.length} papers with duplicate author names`, "success");
             }
 
             // Fix double authors function
@@ -14695,61 +14590,33 @@ Install the companion browser extension to quickly add papers while browsing aca
                 let fixedCount = 0;
 
                 papers.forEach((paper, index) => {
-                    const authors = paper.authors
-                        .split(",")
-                        .map((a) => a.trim());
-                    const uniqueAuthors = [
-                        ...new Set(authors.filter((a) => a)),
-                    ];
+                    const authors = paper.authors.split(',').map(a => a.trim());
+                    const uniqueAuthors = [...new Set(authors.filter(a => a))];
 
                     if (uniqueAuthors.length !== authors.length) {
-                        papers[index].authors = uniqueAuthors.join(", ");
+                        papers[index].authors = uniqueAuthors.join(', ');
                         fixedCount++;
 
                         // Track change for database sync
                         trackChange("modify", papers[index]);
-                        queuePaperUpdate(papers[index].id, {
-                            authors: papers[index].authors,
-                        });
+                        queuePaperUpdate(papers[index].id, { authors: papers[index].authors });
                     }
                 });
 
                 if (fixedCount > 0) {
                     savePapers();
                     renderPapers();
-                    showMessage(
-                        `Fixed duplicate author names in ${fixedCount} papers`,
-                        "success",
-                    );
+                    showMessage(`Fixed duplicate author names in ${fixedCount} papers`, "success");
                 } else {
                     showMessage("No papers needed fixing", "info");
                 }
 
                 // Remove the fix banner
-                const banner = document.getElementById(
-                    "fix-double-authors-banner",
-                );
+                const banner = document.getElementById('fix-double-authors-banner');
                 if (banner) {
                     banner.remove();
                 }
             }
-
-            window.toggleFavoriteFilter = toggleFavoriteFilter;
-            window.editContactEmails = editContactEmails;
-            window.emailAuthors = emailAuthors;
-            window.refreshAllMetadata = refreshAllMetadata;
-            window.toggleAdminOptions = toggleAdminOptions;
-            window.findDuplicates = findDuplicates;
-            window.findDoubleAuthors = findDoubleAuthors;
-            window.fixDoubleAuthors = fixDoubleAuthors;
-            window.executeDelete = executeDelete;
-            window.editUserManual = editUserManual;
-            window.previewUserManual = previewUserManual;
-            window.saveUserManualEdit = saveUserManualEdit;
-            window.closeEditUserManual = closeEditUserManual;
-            window.openUserManualDynamic = openUserManualDynamic;
-            window.refreshMetadata = refreshMetadata;
-            window.toggleSelectionMode = toggleSelectionMode;
 
             // Mobile collapsible panel functionality
             function initMobilePanels() {
@@ -15107,7 +14974,9 @@ Install the companion browser extension to quickly add papers while browsing aca
                     );
                     const count = stored ? JSON.parse(stored).length : 0;
 
-                    const badge = document.getElementById("unsynced-count");
+                    const badge = document.getElementById(
+                        "unsynced-count",
+                    );
                     const syncBtn = document.getElementById("sync-db-btn");
 
                     if (badge && syncBtn) {

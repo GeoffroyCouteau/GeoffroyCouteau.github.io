@@ -88,7 +88,7 @@ I currently have very limited bandwidth to take on new postdocs or PhD students.
 Ulysse Léchine | Jan. 2025 -- current | |
 Lennart Braun | Jan. 2025 -- current | |
 [Ioanna Karantaidou](https://sites.google.com/view/ioannakarantaidou) | Jan. 2025 -- current | Co-hosted with [Michele Orrù](https://tumbolandia.net/) |
-[Sihang Pu](https://sihangpu.uk/) | Apr. 2024 -- current | |
+[Sihang Pu](https://sihangpu.uk/) | Apr. 2024 -- Aug. 2025 | |
 [Christop Egger](https://christoph-egger.org/) | Oct. 2022 -- Oct. 2024 | Now Assistant Professor at Chalmers University of Technology|
 [Alexander Koch](https://alex-koch.gitlab.io/) | Oct. 2022 -- Feb. 2025 | Now Cryptography Expert and Consultant at Secorvo Security Consulting |
 Balthazar Bauer | Oct. 2022 -- Sep. 2023 | Now holding the Chaire de Professeur Junior at UVSQ |

@@ -10,6 +10,7 @@ categories: TestCategories
 
 | Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| S$\&$P 2026 | Concretely-Efficient Multi-Key Homomorphic Secret Sharing and Applications <br> *Kaiwen He, Geoffroy Couteau, Srinivas Devadas, Sacha Servan-Schreiber* | ePrint, IEEE |
 | TCC 2025 | Pseudorandom Correlation Functions for Garbled Circuits <br> *Geoffroy Couteau, Srinivas Devadas, Alexander Koch, and Sacha Servan-Schreiber* | ePrint, Springer |
 | TCC 2025 | Multiparty Homomorphic Secret Sharing and More from LPN and MQ <br> *Geoffroy Couteau, Naman Kumar, and Xiaxi Ye* | ePrint, Springer |
 | ASIACRYPT 2025 | Fast Pseudorandom Correlation Functions from Sparse LPN <br> *Lennart Braun, Geoffroy Couteau, Kelsey Melissaris, Mahshid Riahinia, and Elahe Sadeghi* | ePrint, Springer |

@@ -2487,11 +2487,8 @@ ${processedAfter}`;
     if (!member) return;
 
     const memberName = `${member.firstName} ${member.lastName}`;
-    const memberPubs = this.data.publications.filter(
-      (pub) =>
-        pub.authors.toLowerCase().includes(member.firstName.toLowerCase()) ||
-        pub.authors.toLowerCase().includes(member.lastName.toLowerCase()) ||
-        pub.authors.toLowerCase().includes(memberName.toLowerCase()),
+    const memberPubs = this.data.publications.filter((pub) =>
+      pub.authors.toLowerCase().includes(memberName.toLowerCase()),
     );
 
     // Switch to publications section
@@ -2543,14 +2540,9 @@ ${processedAfter}`;
         (p) => p.id === parseInt(pub.dataset.id),
       );
       if (publication) {
-        const isMatch =
-          publication.authors
-            .toLowerCase()
-            .includes(member.firstName.toLowerCase()) ||
-          publication.authors
-            .toLowerCase()
-            .includes(member.lastName.toLowerCase()) ||
-          publication.authors.toLowerCase().includes(memberName.toLowerCase());
+        const isMatch = publication.authors
+          .toLowerCase()
+          .includes(memberName.toLowerCase());
         pub.style.display = isMatch ? "block" : "none";
       }
     });

@@ -10,13 +10,13 @@ categories: TestCategories
 
 | Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
-| S$\&$P 2026 | Concretely-Efficient Multi-Key Homomorphic Secret Sharing and Applications <br> *Kaiwen He, Geoffroy Couteau, Srinivas Devadas, Sacha Servan-Schreiber* | ePrint, IEEE |
+| S$\&$P 2026 | Concretely-Efficient Multi-Key Homomorphic Secret Sharing and Applications <br> *Kaiwen He, Geoffroy Couteau, Srinivas Devadas, Sacha Servan-Schreiber* | ePrint, <br> IEEE |
 | TCC 2025 | Pseudorandom Correlation Functions for Garbled Circuits <br> *Geoffroy Couteau, Srinivas Devadas, Alexander Koch, and Sacha Servan-Schreiber* | ePrint, Springer |
-| TCC 2025 | Multiparty Homomorphic Secret Sharing and More from LPN and MQ <br> *Geoffroy Couteau, Naman Kumar, and Xiaxi Ye* | ePrint, Springer |
-| ASIACRYPT 2025 | Fast Pseudorandom Correlation Functions from Sparse LPN <br> *Lennart Braun, Geoffroy Couteau, Kelsey Melissaris, Mahshid Riahinia, and Elahe Sadeghi* | ePrint, Springer |
+| TCC 2025 | Multiparty Homomorphic Secret Sharing and More from LPN and MQ <br> *Geoffroy Couteau, Naman Kumar, and Xiaxi Ye* | [ePrint](https://eprint.iacr.org/2025/966), Springer |
+| ASIACRYPT 2025 | Fast Pseudorandom Correlation Functions from Sparse LPN <br> *Lennart Braun, Geoffroy Couteau, Kelsey Melissaris, Mahshid Riahinia, and Elahe Sadeghi* | [ePrint](https://eprint.iacr.org/2025/1644), Springer |
 | ToSC 2025 | SoK: On Shallow Weak PRFs <br> *Christina Boura, Geoffroy Couteau, Léo Perrin, and Yann Rotella* | ePrint, tosc |
-| Cryptography and Communications 2025 | Instantiating the Hash-Then-Evaluate Paradigm: Strengthening PRFs, PCFs, and OPRFs <br> *Chris Brzuska, Geoffroy Couteau, Christoph Egger, and Pierre Meyer* | [ePrint](https://eprint.iacr.org/2023/1145), Springer |
-| RANDOM 2025 | Structured-Seed Local Pseudorandom Generators and their Applications <br> *Benny Applebaum, Dung Bui, Geoffroy Couteau and Nikolas Melissaris* | ePrint, <br>LIPIcs | 
+| Cryptography and Communications 2025 | Instantiating the Hash-Then-Evaluate Paradigm: Strengthening PRFs, PCFs, and OPRFs <br> *Chris Brzuska, Geoffroy Couteau, Christoph Egger, and Pierre Meyer* | [ePrint](https://eprint.iacr.org/2023/1145), [Springer](https://link.springer.com/article/10.1007/s12095-025-00825-3) |
+| RANDOM 2025 | Structured-Seed Local Pseudorandom Generators and their Applications <br> *Benny Applebaum, Dung Bui, Geoffroy Couteau and Nikolas Melissaris* | [ePrint](https://eprint.iacr.org/2024/1027), <br>[LIPIcs](https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.APPROX/RANDOM.2025.63) | 
 | SAC 2025 | Downlink (T)FHE ciphertexts compression <br> *Antonina Bondarchuk, Olive Chakraborty, Geoffroy Couteau, and Renaud Sirdey* | [ePrint](https://eprint.iacr.org/2024/1921), Springer | 
 | CRYPTO 2025  | 𝜔(1/𝜆)-Rate Boolean Garbling Scheme from Generic Groups <br> *Geoffroy Couteau, Carmit Hazay, Aditya Hegde, and Naman Kumar*| [ePrint](https://eprint.iacr.org/2025/268), [Springer](https://eprint.iacr.org/2025/268)|
 | EUROCRYPT 2025  | Multi-key Homomorphic Secret Sharing <br> *Geoffroy Couteau, Lalita Devadas, Aditya Hegde, Abhishek Jain, and Sacha Servan-Schreiber*| [ePrint](https://eprint.iacr.org/2025/094), [Springer](https://link.springer.com/chapter/10.1007/978-3-031-91092-0_1)|

@@ -21,7 +21,7 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 ### News
 
-<p><strong>October 2025:</strong> As a short primer to an upcoming book on the subject, I wrote a <a href="https://geoffroycouteau.github.io/blog/pcg">blog post</a> on pseudorandom correlation generators, where the aim is to provide pointers and resources to cryptographers who'd be interested in learning more about them.</p>
+<p><strong>October 2025:</strong> As a short primer to an upcoming book on the subject, I wrote a <a href="https://geoffroycouteau.github.io/posts/pcg/">blog post</a> on pseudorandom correlation generators, where the aim is to provide pointers and resources to cryptographers who'd be interested in learning more about them.</p>
 
 <p><strong>August 2025:</strong> The website for OBELiSC is now <a href="https://geoffroycouteau.github.io/obelisc">online</a>. It provides more information about the project, the main research goals, the team members, and the publications associated to the project. Check it out!</p>
 

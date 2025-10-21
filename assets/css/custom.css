@@ -1,0 +1,47 @@
+/* === QUESTION BOX STYLES === */
+.question {
+  border: 1px solid #ccc;
+  border-left: 6px solid #3f51b5;
+  background-color: #f5f7ff;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.question::before {
+  content: "❓";
+  font-size: 1.4rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.question strong {
+  color: #3f51b5;
+}
+
+/* === COLOR VARIANTS === */
+.question-blue {
+  border-left-color: #3f51b5;
+  background-color: #f5f7ff;
+}
+
+.question-green {
+  border-left-color: #2e8b57;
+  background-color: #f2fbf5;
+}
+
+.question-yellow {
+  border-left-color: #f4b400;
+  background-color: #fffce8;
+}
+
+.question-red {
+  border-left-color: #d9534f;
+  background-color: #fff4f4;
+}
+
+.question-purple {
+  border-left-color: #7e57c2;
+  background-color: #f8f3ff;
+}

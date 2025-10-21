@@ -21,6 +21,8 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 ### News
 
+<p><strong>October 2025:</strong> As a short primer to an upcoming book on the subject, I wrote a <a href="https://geoffroycouteau.github.io/blog/pcg">blog post</a> on pseudorandom correlation generators, where the aim is to provide pointers and resources to cryptographers who'd be interested in learning more about them.</p>
+
 <p><strong>August 2025:</strong> The website for OBELiSC is now <a href="https://geoffroycouteau.github.io/obelisc">online</a>. It provides more information about the project, the main research goals, the team members, and the publications associated to the project. Check it out!</p>
 
 <details>
@@ -83,6 +85,9 @@ I currently have very limited bandwidth to take on new postdocs or PhD students.
 |---|---|---|---|
 |  | Time period | Notes |
 |---|---|---|---|
+[Francesco Migliaro](https://pur2all.github.io/) | Nov. 2025 -- current |
+[Mahshid Riahinia](https://mriahinia.github.io/) | Oct. 2025 -- current |
+[Kelsey Melissaris](https://www.kelseymelissaris.com/) | Oct. 2025 -- current  |
 [Kaartik Bhushan](https://homepages.iitb.ac.in/~kbhushan/) | Jun. 2025 -- current | |
 [Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Mar. 2025 -- current | |
 Ulysse Léchine | Jan. 2025 -- current | |
@@ -99,6 +104,8 @@ Sven Maier | Nov. 2022 -- Mar. 2023 | Currently Research Engineer at Wibu System
 |---|---|---|---|
 | | Time period | Notes |
 |---|---|---|---|
+Tamara Paris | Oct. 2025 -- | Cryptographic Methods for Ethics and AI Security (co-advised with [Michele Orrù](https://tumbolandia.net/), [AJung Moon](https://www.ajungmoon.com/), and [Jin Guo](https://www.cs.mcgill.ca/~jguo/)) |
+Naman Kumar | Oct. 2025 -- | |
 Elahe Sadeghi | Oct. 2024 -- | Decentralized Wallets from Fast Threshold Signing (co-advised with [Sriram Vishwanath](http://sriram.utlinc.org/#/)) |
 [Dung Bui](https://dungbui15.github.io/) | Oct. 2021 -- Mar. 2025 | Efficient Secure Computation from Correlated Pseudorandomness. Now postdoc at QI team, LIP6, Sorbonne Université. You can check Dung's PhD thesis [here](https://dungbui15.github.io/files/thesis.pdf).|
 [Clément Ducros](https://www.irif.fr/users/cducros/index) | Oct. 2021 -- Nov. 2024 | Multiparty Computation from the Hardness of Coding Theory (co-advised with [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/)). You can check Clément's PhD thesis [here](https://theses.hal.science/tel-04889558/). |

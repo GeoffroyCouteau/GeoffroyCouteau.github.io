@@ -1,0 +1,1945 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Paper Tree Viewer</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    Oxygen, Ubuntu, Cantarell, sans-serif;
+                background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                min-height: 100vh;
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+            }
+
+            #toolbar {
+                display: none;
+            }
+
+            #debug {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 10px;
+                right: 10px;
+                background: rgba(255, 0, 0, 0.9);
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                font-size: 14px;
+                z-index: 3000;
+                word-wrap: break-word;
+                font-weight: bold;
+            }
+
+            #toolbar h1 {
+                font-size: 24px;
+                font-weight: 600;
+                color: #2c3e50;
+                letter-spacing: -0.5px;
+            }
+
+            .toolbar-actions {
+                display: flex;
+                gap: 12px;
+            }
+
+            .toolbar-button {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 20px;
+                font-size: 13px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+            }
+
+            .toolbar-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            }
+
+            .toolbar-button:active {
+                transform: translateY(0);
+            }
+
+            .toolbar-button.secondary {
+                background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            }
+
+            .toolbar-button.danger {
+                background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+            }
+
+            #canvas-container {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                overflow: auto;
+            }
+
+            #canvas {
+                position: relative;
+                min-width: 100%;
+                min-height: calc(100vh - 80px);
+                padding: 100px;
+            }
+
+            .paper-node {
+                position: absolute;
+                background: white;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                font-size: 11px;
+                color: #2c3e50;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+                cursor: pointer;
+                transition: all 0.3s ease;
+                z-index: 10;
+                text-align: center;
+                padding: 6px;
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+                border: 3px solid transparent;
+            }
+
+            .paper-node:hover {
+                transform: scale(1.15);
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .paper-node.root {
+                background: #6366f1 !important;
+                color: white !important;
+            }
+
+            .paper-node.selected {
+                border-color: #ff6b6b;
+                box-shadow:
+                    0 0 0 2px white,
+                    0 0 0 5px #ff6b6b,
+                    0 4px 20px rgba(0, 0, 0, 0.12);
+            }
+
+            .branch {
+                position: absolute;
+                stroke: #60a5fa;
+                stroke-width: 15;
+                fill: none;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                z-index: 1;
+                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+            }
+
+            .branch.white-center {
+                stroke: white;
+                stroke-width: 5;
+                z-index: 2;
+            }
+
+            .add-button {
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+                color: white;
+                border: none;
+                font-size: 22px;
+                cursor: pointer;
+                box-shadow: 0 4px 15px rgba(17, 153, 142, 0.3);
+                transition: all 0.3s ease;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                touch-action: manipulation;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .add-button:hover {
+                transform: scale(1.15);
+                box-shadow: 0 6px 20px rgba(17, 153, 142, 0.5);
+            }
+
+            .node-controls {
+                position: absolute;
+                display: flex;
+                gap: 8px;
+                z-index: 11;
+            }
+
+            .node-controls button {
+                padding: 6px 12px;
+                border: none;
+                border-radius: 16px;
+                font-size: 11px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .edit-btn {
+                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                color: white;
+            }
+
+            .add-branch-btn {
+                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                color: white;
+            }
+
+            .delete-btn {
+                background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+                color: white;
+            }
+
+            .node-controls button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            #modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(5px);
+                z-index: 2000;
+                align-items: center;
+                justify-content: center;
+                overflow-y: auto;
+                padding: 20px;
+            }
+
+            #modal.active {
+                display: flex;
+            }
+
+            .modal-content {
+                background: white;
+                border-radius: 20px;
+                padding: 30px;
+                width: 90%;
+                max-width: 450px;
+                max-height: 80vh;
+                overflow-y: auto;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                animation: modalSlideIn 0.3s ease;
+                margin: auto;
+            }
+
+            @keyframes modalSlideIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .modal-content h2 {
+                margin-bottom: 20px;
+                color: #2c3e50;
+                font-size: 22px;
+            }
+
+            .form-group {
+                margin-bottom: 16px;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 6px;
+                color: #555;
+                font-weight: 600;
+                font-size: 13px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                width: 100%;
+                padding: 10px 14px;
+                border: 2px solid #e0e0e0;
+                border-radius: 8px;
+                font-size: 13px;
+                font-family: inherit;
+                transition: all 0.3s ease;
+            }
+
+            .form-group input:focus,
+            .form-group textarea:focus {
+                outline: none;
+                border-color: #667eea;
+                box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            }
+
+            .form-group textarea {
+                resize: vertical;
+                min-height: 60px;
+            }
+
+            .color-palette {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                gap: 8px;
+                margin-top: 6px;
+            }
+
+            .color-option {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                border: 3px solid transparent;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+
+            .color-option:hover {
+                transform: scale(1.1);
+            }
+
+            .color-option.selected {
+                border-color: #2c3e50;
+                box-shadow:
+                    0 0 0 2px white,
+                    0 0 0 4px #2c3e50;
+            }
+
+            .modal-actions {
+                display: flex;
+                gap: 10px;
+                margin-top: 24px;
+            }
+
+            .modal-actions button {
+                flex: 1;
+                padding: 12px;
+                border: none;
+                border-radius: 8px;
+                font-size: 13px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .btn-primary {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+            }
+
+            .btn-secondary {
+                background: #e0e0e0;
+                color: #555;
+            }
+
+            .modal-actions button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .hidden {
+                display: none !important;
+            }
+
+            .selection-info {
+                position: fixed;
+                top: 120px;
+                left: 20px;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 12px 16px;
+                border-radius: 10px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                font-size: 13px;
+                color: #2c3e50;
+                z-index: 1001;
+            }
+
+            .edge-selected {
+                stroke: #ff6b6b !important;
+                stroke-width: 20 !important;
+                filter: drop-shadow(
+                    0 0 10px rgba(255, 107, 107, 0.5)
+                ) !important;
+            }
+
+            .edge-selected.white-center {
+                stroke-width: 8 !important;
+            }
+
+            .clickable-edge {
+                cursor: pointer;
+            }
+
+            .clickable-edge:hover {
+                stroke-width: 18px !important;
+                filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.6)) !important;
+            }
+
+            .clickable-edge.white-center:hover {
+                stroke-width: 8px !important;
+            }
+
+            .node-dragging {
+                cursor: grabbing !important;
+                z-index: 1000 !important;
+            }
+
+            .selection-info .btn {
+                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                color: white;
+                border: none;
+                padding: 6px 12px;
+                border-radius: 6px;
+                font-size: 11px;
+                cursor: pointer;
+                margin-top: 8px;
+                margin-right: 8px;
+            }
+
+            #file-input {
+                display: none;
+            }
+
+            #tree-wrapper {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transform-origin: 0 0;
+            }
+
+            svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: auto;
+                overflow: visible;
+            }
+
+            .empty-state {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                color: #7f8c8d;
+                font-size: 18px;
+            }
+
+            .empty-state button {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                border: none;
+                padding: 12px 24px;
+                border-radius: 25px;
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-top: 20px;
+            }
+
+            .empty-state button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            }
+
+            /* Paper info modal styles */
+            .paper-info-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            }
+
+            .paper-info-content {
+                background: white;
+                border-radius: 8px;
+                padding: 20px;
+                max-width: 500px;
+                max-height: 80vh;
+                overflow-y: auto;
+                position: relative;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                margin: 20px;
+            }
+
+            .paper-info-close {
+                position: absolute;
+                top: 10px;
+                right: 15px;
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+                color: #666;
+                padding: 5px;
+                line-height: 1;
+            }
+
+            .paper-info-close:hover {
+                color: #333;
+            }
+
+            .paper-info-title {
+                margin: 0 20px 15px 0;
+                color: #333;
+                font-size: 18px;
+                line-height: 1.3;
+            }
+
+            .paper-info-authors,
+            .paper-info-year-conf,
+            .paper-info-link,
+            .paper-info-notes {
+                margin-bottom: 12px;
+                color: #555;
+                line-height: 1.4;
+            }
+
+            .paper-info-link a {
+                color: #667eea;
+                text-decoration: none;
+                word-break: break-all;
+            }
+
+            .paper-info-link a:hover {
+                text-decoration: underline;
+            }
+
+            .paper-info-notes {
+                margin-bottom: 0;
+                font-style: italic;
+            }
+
+            /* Caption modal styles */
+            #caption-modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 1001;
+            }
+
+            #caption-modal.active {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .caption-row {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 10px;
+            }
+
+            .caption-color-box {
+                width: 24px;
+                height: 24px;
+                border-radius: 4px;
+                border: 2px solid #ddd;
+                flex-shrink: 0;
+            }
+
+            .caption-color-box.small {
+                width: 16px;
+                height: 16px;
+            }
+
+            .caption-input {
+                flex: 1;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                font-size: 14px;
+            }
+
+            /* Caption viewer styles */
+            #caption-viewer {
+                display: none;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: white;
+                border-radius: 8px;
+                padding: 20px;
+                max-width: 300px;
+                max-height: 400px;
+                overflow-y: auto;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+            }
+
+            .caption-content {
+                position: relative;
+            }
+
+            .caption-close {
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                background: none;
+                border: none;
+                font-size: 20px;
+                cursor: pointer;
+                color: #666;
+                padding: 5px;
+            }
+
+            .caption-close:hover {
+                color: #333;
+            }
+
+            .caption-display-row {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 8px;
+            }
+
+            .caption-display-row span {
+                font-size: 14px;
+                color: #333;
+            }
+
+            /* Status checkbox styles */
+            .status-checkboxes {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .checkbox-label {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 14px;
+                cursor: pointer;
+            }
+
+            .checkbox-label input[type="checkbox"] {
+                margin: 0 !important;
+                cursor: pointer;
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+            }
+
+            /* Status icon styles */
+            .status-icon {
+                position: absolute;
+                font-size: 24px;
+                z-index: 5;
+                pointer-events: none;
+                text-shadow: 0 0 4px rgba(255, 255, 255, 0.9);
+                font-weight: bold;
+            }
+
+            .status-icon.broken {
+                color: #ff2222;
+            }
+
+            .status-icon.cryptanalyzed {
+                color: #ff8800;
+            }
+
+            .status-icon.cryptanalysis {
+                color: #4444ff;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="debug"></div>
+
+        <div id="canvas-container">
+            <div id="tree-wrapper">
+                <svg id="svg">
+                    <defs>
+                        <linearGradient
+                            id="blueWhiteBlueGradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="0%"
+                            gradientUnits="userSpaceOnUse"
+                        >
+                            <stop
+                                offset="0%"
+                                stop-color="#2563eb"
+                                stop-opacity="1"
+                            />
+                            <stop
+                                offset="20%"
+                                stop-color="#2563eb"
+                                stop-opacity="1"
+                            />
+                            <stop
+                                offset="50%"
+                                stop-color="#ffffff"
+                                stop-opacity="1"
+                            />
+                            <stop
+                                offset="80%"
+                                stop-color="#2563eb"
+                                stop-opacity="1"
+                            />
+                            <stop
+                                offset="100%"
+                                stop-color="#2563eb"
+                                stop-opacity="1"
+                            />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div id="canvas"></div>
+            </div>
+        </div>
+
+        <button
+            id="show-caption-btn"
+            onclick="showCaptionViewer()"
+            style="
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                background: rgba(255, 255, 255, 0.9);
+                border: none;
+                border-radius: 20px;
+                padding: 8px 16px;
+                font-size: 12px;
+                cursor: pointer;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            "
+        >
+            Show Legend
+        </button>
+
+        <div id="caption-viewer">
+            <div class="caption-content">
+                <button class="caption-close" onclick="closeCaptionViewer()">
+                    ×
+                </button>
+                <h3>Legend</h3>
+                <div id="caption-display"></div>
+            </div>
+        </div>
+
+        <script>
+            let editMode = false;
+            let papers = [];
+            let customEdges = [];
+            let selectedNodes = [];
+            let currentEditId = null;
+            let currentParentId = null;
+            let selectedColor = null;
+            let caption = {
+                colors: {},
+                position: { x: 50, y: 50 },
+                visible: true,
+            };
+            let isDraggingNode = false;
+            let draggedNodeId = null;
+            let dragOffsetX = 0;
+            let dragOffsetY = 0;
+            let selectedEdge = null;
+            const VERTICAL_SPACING = 140;
+            const HORIZONTAL_SPACING = 120;
+
+            // Default pan and zoom values (will be overridden by JSON)
+            let panX = 0;
+            let panY = 0;
+            let zoomLevel = 1;
+            let isPanning = false;
+            let lastPanX = 0;
+            let lastPanY = 0;
+
+            const COLORS = [
+                {
+                    name: "Default",
+                    value: null,
+                    bg: "#6366f1",
+                },
+                {
+                    name: "Red",
+                    value: "#e74c3c",
+                    bg: "#e74c3c",
+                },
+                {
+                    name: "Blue",
+                    value: "#3498db",
+                    bg: "#3498db",
+                },
+                {
+                    name: "Green",
+                    value: "#2ecc71",
+                    bg: "#2ecc71",
+                },
+                {
+                    name: "Orange",
+                    value: "#e67e22",
+                    bg: "#e67e22",
+                },
+                {
+                    name: "Purple",
+                    value: "#9b59b6",
+                    bg: "#9b59b6",
+                },
+                {
+                    name: "Pink",
+                    value: "#e91e63",
+                    bg: "#e91e63",
+                },
+                {
+                    name: "Teal",
+                    value: "#1abc9c",
+                    bg: "#1abc9c",
+                },
+                {
+                    name: "Yellow",
+                    value: "#f1c40f",
+                    bg: "#f1c40f",
+                },
+                {
+                    name: "Indigo",
+                    value: "#34495e",
+                    bg: "#34495e",
+                },
+                {
+                    name: "Coral",
+                    value: "#ff6b6b",
+                    bg: "#ff6b6b",
+                },
+                {
+                    name: "Mint",
+                    value: "#55efc4",
+                    bg: "#55efc4",
+                },
+            ];
+
+            function debug(msg) {
+                const debugEl = document.getElementById("debug");
+                debugEl.textContent =
+                    new Date().toLocaleTimeString() + ": " + msg;
+                console.log(msg);
+            }
+
+            async function loadTreeData() {
+                try {
+                    const response = await fetch("pcg.json");
+                    if (!response.ok) {
+                        throw new Error(
+                            `HTTP error! status: ${response.status}`,
+                        );
+                    }
+                    const data = await response.json();
+
+                    // Load papers and edges
+                    papers = data.papers || [];
+                    customEdges = data.customEdges || [];
+                    caption = data.caption || {
+                        colors: {},
+                        position: { x: 50, y: 50 },
+                        visible: true,
+                    };
+
+                    // Load saved pan and zoom if available
+                    panX = data.panX || 0;
+                    panY = data.panY || 0;
+                    zoomLevel = data.zoomLevel || 1;
+
+                    console.log(
+                        "Loaded",
+                        papers.length,
+                        "papers from pcg.json",
+                    );
+                    initializeTree();
+                    // Auto-center and fit after loading
+                    setTimeout(() => autoFitTree(), 100);
+                } catch (error) {
+                    console.error("Error loading tree data:", error);
+                    // Show error message to user
+                    const canvas = document.getElementById("canvas");
+                    canvas.innerHTML = `
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                                    text-align: center; color: #666; font-family: Arial, sans-serif;">
+                            <h3>Error loading tree data</h3>
+                            <p>Could not load pcg.json. Please ensure the file exists in the same directory.</p>
+                            <p style="font-size: 12px; color: #999;">Error: ${error.message}</p>
+                        </div>
+                    `;
+                }
+            }
+
+            function moveSubtree(parentId, deltaX, deltaY) {
+                // Find all direct children of the parent
+                const children = papers.filter((p) => p.parentId === parentId);
+
+                // Move each child and recursively move their subtrees
+                children.forEach((child) => {
+                    child.x += deltaX;
+                    child.y += deltaY;
+
+                    // Recursively move this child's subtree
+                    moveSubtree(child.id, deltaX, deltaY);
+                });
+            }
+
+            function generateCitation(authors, year) {
+                const authorList = authors.split(",").map((a) => a.trim());
+                let initials = "";
+
+                for (let author of authorList.slice(0, 3)) {
+                    const parts = author.split(" ").filter((p) => p.length > 0);
+                    if (parts.length > 0) {
+                        initials += parts[parts.length - 1][0].toUpperCase();
+                    }
+                }
+
+                return initials + (year ? year.toString().slice(-2) : "");
+            }
+
+            function generateUniqueCitation(authors, year, paperId) {
+                let baseCitation = generateCitation(authors, year);
+
+                // Find all papers with the same base citation
+                const duplicates = papers.filter(
+                    (p) =>
+                        p.id !== paperId &&
+                        generateCitation(p.authors, p.year) === baseCitation,
+                );
+
+                if (duplicates.length > 0) {
+                    // Sort by ID to ensure consistent ordering
+                    const allWithSameCitation = [
+                        ...duplicates,
+                        { id: paperId, authors, year },
+                    ].sort((a, b) => a.id - b.id);
+
+                    const index = allWithSameCitation.findIndex(
+                        (p) => p.id === paperId,
+                    );
+                    const suffix = String.fromCharCode(97 + index); // 'a', 'b', 'c', etc.
+                    return baseCitation + suffix;
+                }
+
+                return baseCitation;
+            }
+
+            function initializeTree() {
+                calculatePositions();
+                renderTree();
+            }
+
+            function autoFitTree() {
+                if (papers.length === 0) return;
+
+                const canvasContainer =
+                    document.getElementById("canvas-container");
+                const canvasRect = canvasContainer.getBoundingClientRect();
+                const containerWidth = canvasRect.width;
+                const containerHeight = canvasRect.height;
+
+                // Use the same coordinate system as renderTree
+                const centerX = containerWidth / 2;
+                const centerY = containerHeight - 100;
+
+                // Find bounding box of all nodes in screen coordinates
+                let minX = Infinity,
+                    minY = Infinity,
+                    maxX = -Infinity,
+                    maxY = -Infinity;
+
+                papers.forEach((paper) => {
+                    const screenX = centerX + paper.x;
+                    const screenY = centerY + paper.y;
+                    minX = Math.min(minX, screenX - 25); // 25 = half node width
+                    minY = Math.min(minY, screenY - 25); // 25 = half node height
+                    maxX = Math.max(maxX, screenX + 25);
+                    maxY = Math.max(maxY, screenY + 25);
+                });
+
+                // Add some margin
+                const margin = 50;
+                const contentWidth = maxX - minX + 2 * margin;
+                const contentHeight = maxY - minY + 2 * margin;
+
+                // Calculate zoom to fit
+                const scaleX = containerWidth / contentWidth;
+                const scaleY = containerHeight / contentHeight;
+                zoomLevel = Math.min(scaleX, scaleY, 3); // Cap at 3x zoom
+
+                // Calculate center position in screen coordinates
+                const contentCenterX = (minX + maxX) / 2;
+                const contentCenterY = (minY + maxY) / 2;
+
+                // Position so content center aligns with container center
+                panX = containerWidth / 2 - contentCenterX * zoomLevel;
+                panY = containerHeight / 2 - contentCenterY * zoomLevel;
+
+                // Update the transform
+                const treeWrapper = document.getElementById("tree-wrapper");
+                treeWrapper.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomLevel})`;
+            }
+
+            function calculatePositions() {
+                if (papers.length === 0) return;
+
+                // Find nodes that need positioning (new nodes without positions)
+                const nodesNeedingPosition = papers.filter(
+                    (paper) => paper.x === undefined || paper.y === undefined,
+                );
+
+                if (nodesNeedingPosition.length === 0) {
+                    return; // All nodes already have positions
+                }
+
+                // Only position new nodes relative to their parents
+                nodesNeedingPosition.forEach((newNode) => {
+                    if (!newNode.parentId) {
+                        // Root node - find a good spot
+                        const existingRoots = papers.filter(
+                            (p) => !p.parentId && p.id !== newNode.id,
+                        );
+                        if (existingRoots.length === 0) {
+                            newNode.x = 0;
+                            newNode.y = 0;
+                        } else {
+                            // Place to the right of existing roots
+                            const rightmostRoot = existingRoots.reduce(
+                                (rightmost, root) =>
+                                    root.x > rightmost.x ? root : rightmost,
+                            );
+                            newNode.x =
+                                rightmostRoot.x + HORIZONTAL_SPACING * 2;
+                            newNode.y = 0;
+                        }
+                    } else {
+                        // Child node - position relative to parent
+                        const parent = papers.find(
+                            (p) => p.id === newNode.parentId,
+                        );
+                        if (
+                            parent &&
+                            parent.x !== undefined &&
+                            parent.y !== undefined
+                        ) {
+                            // Find existing siblings
+                            const siblings = papers.filter(
+                                (p) =>
+                                    p.parentId === newNode.parentId &&
+                                    p.id !== newNode.id,
+                            );
+
+                            if (siblings.length === 0) {
+                                // First child - place directly above parent
+                                newNode.x = parent.x;
+                                newNode.y = parent.y - VERTICAL_SPACING;
+                            } else {
+                                // Has siblings - place to the right of rightmost sibling
+                                const rightmostSibling = siblings.reduce(
+                                    (rightmost, sibling) =>
+                                        sibling.x > rightmost.x
+                                            ? sibling
+                                            : rightmost,
+                                );
+                                newNode.x =
+                                    rightmostSibling.x + HORIZONTAL_SPACING;
+                                newNode.y = parent.y - VERTICAL_SPACING;
+                            }
+                        }
+                    }
+                });
+            }
+
+            function getNodeColor(paper) {
+                if (paper.color) return paper.color;
+                if (paper.parentId) {
+                    const parent = papers.find((p) => p.id === paper.parentId);
+                    if (parent) return getNodeColor(parent);
+                }
+                return null;
+            }
+
+            function renderTree() {
+                const canvas = document.getElementById("canvas");
+                const svg = document.getElementById("svg");
+
+                // Clear existing content except defs
+                canvas.innerHTML = "";
+                const existingGroups = svg.querySelectorAll("g");
+                existingGroups.forEach((g) => g.remove());
+
+                console.log("Rendering tree with", papers.length, "papers");
+
+                if (papers.length === 0) {
+                    // Show empty state
+                    const emptyDiv = document.createElement("div");
+                    emptyDiv.className = "empty-state";
+                    emptyDiv.innerHTML = `
+                        <div>Your paper tree is empty</div>
+                        <button onclick="openModal(null)">Add First Paper</button>
+                    `;
+                    canvas.appendChild(emptyDiv);
+                    console.log("Showing empty state");
+                    return;
+                }
+
+                console.log("Rendering", papers.length, "papers");
+
+                const canvasContainer =
+                    document.getElementById("canvas-container");
+                const canvasRect = canvasContainer.getBoundingClientRect();
+                const centerX = canvasRect.width / 2;
+                const centerY = canvasRect.height - 100;
+
+                // Apply zoom and pan to the tree wrapper (contains both SVG and canvas)
+                const treeWrapper = document.getElementById("tree-wrapper");
+                treeWrapper.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomLevel})`;
+
+                // Get SVG element but don't modify its dimensions during zoom
+                const svgElement = document.getElementById("svg");
+
+                // Create a group for paths
+                const pathGroup = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "g",
+                );
+                svgElement.appendChild(pathGroup);
+
+                // Draw hierarchy branches
+                papers.forEach((paper) => {
+                    if (paper.parentId) {
+                        const parent = papers.find(
+                            (p) => p.id === paper.parentId,
+                        );
+                        if (parent) {
+                            drawBranch(
+                                svgElement,
+                                centerX + parent.x,
+                                centerY + parent.y,
+                                centerX + paper.x,
+                                centerY + paper.y,
+                                false,
+                                centerX,
+                                centerY,
+                                null,
+                            );
+                        }
+                    }
+                });
+
+                // Draw custom edges
+                customEdges.forEach((edge) => {
+                    const fromPaper = papers.find((p) => p.id === edge.from);
+                    const toPaper = papers.find((p) => p.id === edge.to);
+                    if (fromPaper && toPaper) {
+                        drawBranch(
+                            svgElement,
+                            centerX + fromPaper.x,
+                            centerY + fromPaper.y,
+                            centerX + toPaper.x,
+                            centerY + toPaper.y,
+                            true,
+                            centerX,
+                            centerY,
+                            edge,
+                        );
+                    }
+                });
+
+                // Render nodes
+                papers.forEach((paper) => {
+                    const node = document.createElement("div");
+                    node.className =
+                        "paper-node" + (paper.parentId === null ? " root" : "");
+                    if (selectedNodes.includes(paper.id)) {
+                        node.classList.add("selected");
+                    }
+                    node.style.left = centerX + paper.x - 25 + "px";
+                    node.style.top = centerY + paper.y - 25 + "px";
+
+                    const nodeColor = getNodeColor(paper);
+                    if (nodeColor) {
+                        const colorObj = COLORS.find(
+                            (c) => c.value === nodeColor,
+                        );
+                        if (colorObj) {
+                            node.style.setProperty(
+                                "background",
+                                colorObj.bg,
+                                "important",
+                            );
+                            node.style.setProperty(
+                                "color",
+                                "white",
+                                "important",
+                            );
+                        }
+                    } else if (paper.parentId === null) {
+                        node.style.setProperty(
+                            "background",
+                            "#6366f1",
+                            "important",
+                        );
+                        node.style.setProperty("color", "white", "important");
+                    }
+
+                    node.textContent = generateUniqueCitation(
+                        paper.authors,
+                        paper.year,
+                        paper.id,
+                    );
+                    node.title = paper.title;
+
+                    node.onclick = (e) => {
+                        e.stopPropagation();
+                        if (editMode) {
+                            if (e.metaKey || e.ctrlKey) {
+                                // Command/Ctrl click for selection
+                                toggleNodeSelection(paper.id);
+                            } else {
+                                showNodeControls(
+                                    paper.id,
+                                    centerX + paper.x,
+                                    centerY + paper.y,
+                                );
+                            }
+                        } else {
+                            // In view mode, show paper information
+                            showPaperInfo(paper);
+                        }
+                    };
+
+                    // Add status icons if they exist
+                    const status = paper.status || {};
+                    const icons = [];
+
+                    if (status.broken) {
+                        icons.push({
+                            element: "✗",
+                            class: "broken",
+                            title:
+                                "Broken" +
+                                (status.brokenRef
+                                    ? ": " + status.brokenRef
+                                    : ""),
+                        });
+                    }
+
+                    if (status.cryptanalyzed) {
+                        icons.push({
+                            element: "🔧",
+                            class: "cryptanalyzed",
+                            title:
+                                "Cryptanalyzed" +
+                                (status.cryptanalyzedRef
+                                    ? ": " + status.cryptanalyzedRef
+                                    : ""),
+                        });
+                    }
+
+                    if (status.cryptanalysis) {
+                        icons.push({
+                            element: "🔍",
+                            class: "cryptanalysis",
+                            title: "Contains cryptanalysis",
+                        });
+                    }
+
+                    // Position icons side-by-side at bottom-left
+                    icons.forEach((iconData, index) => {
+                        const icon = document.createElement("div");
+                        icon.className = `status-icon ${iconData.class}`;
+                        icon.innerHTML = iconData.element;
+                        icon.title = iconData.title;
+                        icon.style.left = `${-28 - index * 26}px`;
+                        icon.style.bottom = "-8px";
+                        node.appendChild(icon);
+                    });
+
+                    // Add drag functionality for nodes
+                    node.addEventListener("mousedown", (e) => {
+                        if (editMode && !e.metaKey && !e.ctrlKey) {
+                            isDraggingNode = true;
+                            draggedNodeId = paper.id;
+                            node.classList.add("node-dragging");
+
+                            // Calculate offset from mouse to node center
+                            const nodeRect = node.getBoundingClientRect();
+                            const containerRect =
+                                canvasContainer.getBoundingClientRect();
+                            dragOffsetX = e.clientX - nodeRect.left - 25; // 25 = half node width
+                            dragOffsetY = e.clientY - nodeRect.top - 25; // 25 = half node height
+
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }
+                    });
+
+                    canvas.appendChild(node);
+                });
+
+                // Add buttons for leaf nodes in edit mode
+                if (editMode) {
+                    papers.forEach((paper) => {
+                        const children = papers.filter(
+                            (p) => p.parentId === paper.id,
+                        );
+                        if (children.length === 0) {
+                            const addBtn = document.createElement("button");
+                            addBtn.className = "add-button";
+                            addBtn.textContent = "+";
+                            addBtn.style.left = centerX + paper.x - 20 + "px";
+                            addBtn.style.top = centerY + paper.y - 90 + "px";
+                            addBtn.onclick = (e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                openModal(paper.id);
+                            };
+                            canvas.appendChild(addBtn);
+                        }
+                    });
+                }
+            }
+
+            function drawBranch(
+                svgElement,
+                x1,
+                y1,
+                x2,
+                y2,
+                isCustomEdge = false,
+                centerX = 0,
+                centerY = 0,
+                edgeData = null,
+            ) {
+                const dx = x2 - x1;
+                const dy = y2 - y1;
+
+                let d;
+                if (isCustomEdge) {
+                    // Custom edges: smooth curved connections
+                    const controlOffsetX = dx * 0.5;
+                    const controlOffsetY = dy * 0.3;
+
+                    d = `M ${x1} ${y1} Q ${x1 + controlOffsetX} ${y1 + controlOffsetY} ${x2} ${y2}`;
+                } else {
+                    // Hierarchy edges: cactus-like rounded connections
+                    const horizontalDistance = Math.abs(dx);
+
+                    if (horizontalDistance < 20) {
+                        // Nearly vertically aligned - straight line
+                        d = `M ${x1} ${y1} L ${x2} ${y2}`;
+                    } else {
+                        // Single smooth Bezier curve with horizontal-then-vertical flow
+                        const controlX1 = x1 + dx * 0.7; // First control point - horizontal bias
+                        const controlY1 = y1; // Keep at parent level initially
+                        const controlX2 = x2; // Second control point - vertical bias
+                        const controlY2 = y1 + (y2 - y1) * 0.3; // Partway to child
+
+                        // Smooth cubic Bezier curve
+                        d = `M ${x1} ${y1} C ${controlX1} ${controlY1} ${controlX2} ${controlY2} ${x2} ${y2}`;
+                    }
+                }
+
+                // All edges use the same blue-white-blue stripe effect
+                // Find or create the pathGroup
+                let pathGroup = svgElement.querySelector("g");
+                if (!pathGroup) {
+                    pathGroup = document.createElementNS(
+                        "http://www.w3.org/2000/svg",
+                        "g",
+                    );
+                    svgElement.appendChild(pathGroup);
+                }
+
+                // Create edge group for selection
+                const edgeGroup = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "g",
+                );
+
+                // Blue outer path
+                const outerPath = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "path",
+                );
+                outerPath.setAttribute("d", d);
+                outerPath.setAttribute("class", "branch");
+                edgeGroup.appendChild(outerPath);
+
+                // White center path
+                const centerPath = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "path",
+                );
+                centerPath.setAttribute("d", d);
+                centerPath.setAttribute("class", "branch white-center");
+                edgeGroup.appendChild(centerPath);
+
+                // Add edge identifier for custom edges
+                if (isCustomEdge && edgeData) {
+                    edgeGroup.setAttribute(
+                        "data-edge-id",
+                        `${edgeData.from}-${edgeData.to}`,
+                    );
+
+                    // Create invisible thick path for easier clicking
+                    const clickPath = document.createElementNS(
+                        "http://www.w3.org/2000/svg",
+                        "path",
+                    );
+                    clickPath.setAttribute("d", d);
+                    clickPath.setAttribute("stroke", "transparent");
+                    clickPath.setAttribute("stroke-width", "25");
+                    clickPath.setAttribute("fill", "none");
+                    clickPath.style.cursor = "pointer";
+                    clickPath.style.pointerEvents = "stroke";
+
+                    console.log(
+                        "Setting up edge click for",
+                        edgeData.from,
+                        "->",
+                        edgeData.to,
+                    );
+
+                    const clickHandler = (e) => {
+                        console.log(
+                            "Edge clicked:",
+                            edgeData.from,
+                            "->",
+                            edgeData.to,
+                        );
+                        e.stopPropagation();
+                        e.preventDefault();
+                        selectEdge(edgeGroup, edgeData);
+                    };
+
+                    clickPath.addEventListener("click", clickHandler);
+                    edgeGroup.appendChild(clickPath);
+
+                    // Add hover effects to visible paths
+                    outerPath.classList.add("clickable-edge");
+                    centerPath.classList.add("clickable-edge");
+                }
+
+                pathGroup.appendChild(edgeGroup);
+            }
+
+            function selectEdge(edgeElement, edge) {
+                // Clear previous edge selection
+                if (selectedEdge) {
+                    selectedEdge.element.classList.remove("edge-selected");
+                    selectedEdge.element
+                        .querySelectorAll("path")
+                        .forEach((path) => {
+                            path.classList.remove("edge-selected");
+                        });
+                }
+
+                // Select new edge
+                selectedEdge = { element: edgeElement, data: edge };
+                edgeElement.classList.add("edge-selected");
+                edgeElement.querySelectorAll("path").forEach((path) => {
+                    path.classList.add("edge-selected");
+                });
+
+                // Show delete option
+                const deleteBtn = document.createElement("div");
+                deleteBtn.style.cssText = `
+                    position: fixed;
+                    top: 200px;
+                    left: 20px;
+                    background: #ff4444;
+                    color: white;
+                    padding: 8px 16px;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    font-size: 12px;
+                    z-index: 1002;
+                `;
+                deleteBtn.textContent = "Delete Edge";
+                deleteBtn.onclick = deleteSelectedEdge;
+                deleteBtn.id = "edge-delete-btn";
+
+                // Remove existing button
+                const existingBtn = document.getElementById("edge-delete-btn");
+                if (existingBtn) existingBtn.remove();
+
+                document.body.appendChild(deleteBtn);
+            }
+
+            function deleteSelectedEdge() {
+                if (selectedEdge) {
+                    const { from, to } = selectedEdge.data;
+                    customEdges = customEdges.filter(
+                        (e) =>
+                            !(
+                                (e.from === from && e.to === to) ||
+                                (e.from === to && e.to === from)
+                            ),
+                    );
+                    selectedEdge = null;
+
+                    const deleteBtn =
+                        document.getElementById("edge-delete-btn");
+                    if (deleteBtn) deleteBtn.remove();
+
+                    renderTree();
+                }
+            }
+
+            function clearSelection() {
+                selectedNodes = [];
+            }
+
+            function showPaperInfo(paper) {
+                // Remove any existing paper info modal
+                const existingModal =
+                    document.getElementById("paper-info-modal");
+                if (existingModal) {
+                    existingModal.remove();
+                }
+
+                // Create modal
+                const modal = document.createElement("div");
+                modal.id = "paper-info-modal";
+                modal.className = "paper-info-modal";
+
+                // Create modal content
+                const modalContent = document.createElement("div");
+                modalContent.className = "paper-info-content";
+
+                // Close button
+                const closeBtn = document.createElement("button");
+                closeBtn.className = "paper-info-close";
+                closeBtn.innerHTML = "×";
+                closeBtn.onclick = () => modal.remove();
+
+                // Paper details
+                const title = document.createElement("h3");
+                title.textContent = paper.title;
+                title.className = "paper-info-title";
+
+                const authors = document.createElement("p");
+                authors.innerHTML = `<strong>Authors:</strong> ${paper.authors}`;
+                authors.className = "paper-info-authors";
+
+                const yearConf = document.createElement("p");
+                yearConf.innerHTML = `<strong>Year:</strong> ${paper.year}${paper.conference ? ` | <strong>Conference:</strong> ${paper.conference}` : ""}`;
+                yearConf.className = "paper-info-year-conf";
+
+                const link = document.createElement("p");
+                if (paper.link && paper.link.trim()) {
+                    link.innerHTML = `<strong>Link:</strong> <a href="${paper.link}" target="_blank" rel="noopener noreferrer">${paper.link}</a>`;
+                } else {
+                    link.innerHTML = `<strong>Link:</strong> Not available`;
+                }
+                link.className = "paper-info-link";
+
+                const notes = document.createElement("p");
+                if (paper.notes && paper.notes.trim()) {
+                    notes.innerHTML = `<strong>Notes:</strong> ${paper.notes}`;
+                } else {
+                    notes.innerHTML = `<strong>Notes:</strong> None`;
+                }
+                notes.className = "paper-info-notes";
+
+                // Add status information if it exists
+                const status = paper.status || {};
+                let statusSection = null;
+                if (
+                    status.broken ||
+                    status.cryptanalyzed ||
+                    status.cryptanalysis
+                ) {
+                    statusSection = document.createElement("div");
+                    statusSection.style.marginTop = "15px";
+                    statusSection.style.paddingTop = "15px";
+                    statusSection.style.borderTop = "1px solid #eee";
+
+                    const statusTitle = document.createElement("p");
+                    statusTitle.innerHTML = `<strong>Status:</strong>`;
+                    statusTitle.style.marginBottom = "8px";
+                    statusSection.appendChild(statusTitle);
+
+                    if (status.broken) {
+                        const brokenInfo = document.createElement("p");
+                        brokenInfo.innerHTML = `<span style="color: #ff2222; margin-right: 8px;">✗</span><strong>Broken</strong>`;
+                        if (status.brokenRef && status.brokenRef.trim()) {
+                            // Check if it looks like a URL
+                            const refText = status.brokenRef;
+                            if (
+                                refText.startsWith("http://") ||
+                                refText.startsWith("https://")
+                            ) {
+                                brokenInfo.innerHTML += `: <a href="${refText}" target="_blank" rel="noopener noreferrer" style="color: #667eea; text-decoration: none;"><em>${refText}</em></a>`;
+                            } else {
+                                brokenInfo.innerHTML += `: <em>${refText}</em>`;
+                            }
+                        }
+                        brokenInfo.style.marginBottom = "6px";
+                        statusSection.appendChild(brokenInfo);
+                    }
+
+                    if (status.cryptanalyzed) {
+                        const cryptanalyzedInfo = document.createElement("p");
+                        cryptanalyzedInfo.innerHTML = `<span style="color: #ff8800; margin-right: 8px;">🔧</span><strong>Cryptanalyzed</strong>`;
+                        if (
+                            status.cryptanalyzedRef &&
+                            status.cryptanalyzedRef.trim()
+                        ) {
+                            // Check if it looks like a URL
+                            const refText = status.cryptanalyzedRef;
+                            if (
+                                refText.startsWith("http://") ||
+                                refText.startsWith("https://")
+                            ) {
+                                cryptanalyzedInfo.innerHTML += `: <a href="${refText}" target="_blank" rel="noopener noreferrer" style="color: #667eea; text-decoration: none;"><em>${refText}</em></a>`;
+                            } else {
+                                cryptanalyzedInfo.innerHTML += `: <em>${refText}</em>`;
+                            }
+                        }
+                        cryptanalyzedInfo.style.marginBottom = "6px";
+                        statusSection.appendChild(cryptanalyzedInfo);
+                    }
+
+                    if (status.cryptanalysis) {
+                        const cryptanalysisInfo = document.createElement("p");
+                        cryptanalysisInfo.innerHTML = `<span style="color: #4444ff; margin-right: 8px;">🔍</span><strong>Contains Cryptanalysis</strong>`;
+                        cryptanalysisInfo.style.marginBottom = "6px";
+                        statusSection.appendChild(cryptanalysisInfo);
+                    }
+                }
+
+                // Append elements
+                modalContent.appendChild(closeBtn);
+                modalContent.appendChild(title);
+                modalContent.appendChild(authors);
+                modalContent.appendChild(yearConf);
+                modalContent.appendChild(link);
+                if (statusSection) {
+                    modalContent.appendChild(statusSection);
+                }
+                modalContent.appendChild(notes);
+                modal.appendChild(modalContent);
+
+                // Add to page
+                document.body.appendChild(modal);
+
+                // Close on outside click
+                modal.onclick = (e) => {
+                    if (e.target === modal) {
+                        modal.remove();
+                    }
+                };
+
+                // Close on Escape key
+                const handleKeyPress = (e) => {
+                    if (e.key === "Escape") {
+                        modal.remove();
+                        document.removeEventListener("keydown", handleKeyPress);
+                    }
+                };
+                document.addEventListener("keydown", handleKeyPress);
+            }
+
+            function showCaptionViewer() {
+                const viewer = document.getElementById("caption-viewer");
+                const display = document.getElementById("caption-display");
+
+                display.innerHTML = "";
+
+                Object.entries(caption.colors).forEach(
+                    ([color, description]) => {
+                        const row = document.createElement("div");
+                        row.className = "caption-display-row";
+
+                        const colorBox = document.createElement("div");
+                        colorBox.className = "caption-color-box small";
+                        colorBox.style.backgroundColor = color;
+
+                        const text = document.createElement("span");
+                        text.textContent = description;
+
+                        row.appendChild(colorBox);
+                        row.appendChild(text);
+                        display.appendChild(row);
+                    },
+                );
+
+                // Add status icon explanations
+                const statusIcons = [
+                    {
+                        icon: "✗",
+                        text: "Broken - Construction has been broken",
+                    },
+                    {
+                        icon: "🔧",
+                        text: "Cryptanalyzed - Parameters have been cryptanalyzed",
+                    },
+                    {
+                        icon: "🔍",
+                        text: "Cryptanalysis - Contains significant cryptanalysis",
+                    },
+                ];
+
+                statusIcons.forEach(({ icon, text }) => {
+                    const row = document.createElement("div");
+                    row.className = "caption-display-row";
+
+                    const iconSpan = document.createElement("span");
+                    iconSpan.textContent = icon;
+                    iconSpan.style.fontSize = "16px";
+                    iconSpan.style.width = "20px";
+                    iconSpan.style.textAlign = "center";
+
+                    const textSpan = document.createElement("span");
+                    textSpan.textContent = text;
+
+                    row.appendChild(iconSpan);
+                    row.appendChild(textSpan);
+                    display.appendChild(row);
+                });
+
+                viewer.style.display = "block";
+            }
+
+            function closeCaptionViewer() {
+                document.getElementById("caption-viewer").style.display =
+                    "none";
+            }
+
+            // Event listeners
+            document.addEventListener("DOMContentLoaded", function () {
+                loadTreeData();
+            });
+
+            // Clear selection when clicking on empty space
+            document.addEventListener("click", function (e) {
+                if (
+                    e.target.id === "canvas" ||
+                    e.target.id === "canvas-container"
+                ) {
+                    clearSelection();
+                    document
+                        .querySelectorAll(".node-controls")
+                        .forEach((el) => el.remove());
+
+                    // Clear edge selection
+                    if (selectedEdge) {
+                        selectedEdge.element.classList.remove("edge-selected");
+                        selectedEdge.element
+                            .querySelectorAll("path")
+                            .forEach((path) => {
+                                path.classList.remove("edge-selected");
+                            });
+                        selectedEdge = null;
+
+                        const deleteBtn =
+                            document.getElementById("edge-delete-btn");
+                        if (deleteBtn) deleteBtn.remove();
+                    }
+                }
+            });
+
+            // Pan and zoom functionality
+            const canvasContainer = document.getElementById("canvas-container");
+
+            // Mouse events for panning
+            canvasContainer.addEventListener("mousedown", function (e) {
+                if (e.target === canvasContainer || e.target.id === "canvas") {
+                    isPanning = true;
+                    lastPanX = e.clientX;
+                    lastPanY = e.clientY;
+                    canvasContainer.style.cursor = "grabbing";
+                    e.preventDefault();
+                }
+            });
+
+            document.addEventListener("mousemove", function (e) {
+                if (isPanning && !isDraggingNode) {
+                    const deltaX = e.clientX - lastPanX;
+                    const deltaY = e.clientY - lastPanY;
+
+                    // Fix: don't divide by zoom level for pan speed
+                    panX += deltaX;
+                    panY += deltaY;
+
+                    lastPanX = e.clientX;
+                    lastPanY = e.clientY;
+
+                    // Only update the transform, don't re-render
+                    const treeWrapper = document.getElementById("tree-wrapper");
+                    treeWrapper.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomLevel})`;
+                } else if (isDraggingNode && draggedNodeId) {
+                    // Handle node dragging with subtree
+                    const rect = canvasContainer.getBoundingClientRect();
+                    const mouseX = e.clientX - rect.left;
+                    const mouseY = e.clientY - rect.top;
+
+                    // Convert screen coordinates to world coordinates
+                    const worldX = (mouseX - panX - dragOffsetX) / zoomLevel;
+                    const worldY = (mouseY - panY - dragOffsetY) / zoomLevel;
+
+                    // Find canvas center
+                    const canvasContainer =
+                        document.getElementById("canvas-container");
+                    const canvasRect = canvasContainer.getBoundingClientRect();
+                    const centerX = canvasRect.width / 2;
+                    const centerY = canvasRect.height - 100;
+
+                    // Calculate new position for the dragged node
+                    const draggedNode = papers.find(
+                        (p) => p.id === draggedNodeId,
+                    );
+                    if (draggedNode) {
+                        const newX = worldX - centerX;
+                        const newY = worldY - centerY;
+
+                        // Calculate the offset from old position
+                        const deltaX = newX - draggedNode.x;
+                        const deltaY = newY - draggedNode.y;
+
+                        // Move the dragged node
+                        draggedNode.x = newX;
+                        draggedNode.y = newY;
+
+                        // Move all descendants (subtree) by the same offset
+                        moveSubtree(draggedNodeId, deltaX, deltaY);
+
+                        renderTree();
+                    }
+                }
+            });
+
+            document.addEventListener("mouseup", function (e) {
+                if (isPanning) {
+                    isPanning = false;
+                    canvasContainer.style.cursor = "default";
+                }
+
+                if (isDraggingNode) {
+                    isDraggingNode = false;
+                    draggedNodeId = null;
+                    // Remove dragging class from all nodes
+                    document
+                        .querySelectorAll(".node-dragging")
+                        .forEach((node) => {
+                            node.classList.remove("node-dragging");
+                        });
+                }
+            });
+
+            // Zoom functionality with wheel/touchpad
+            canvasContainer.addEventListener("wheel", function (e) {
+                e.preventDefault();
+
+                const zoomFactor = 0.1;
+                const rect = canvasContainer.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+
+                // Store old zoom level
+                const oldZoom = zoomLevel;
+
+                // Update zoom level
+                if (e.deltaY < 0) {
+                    // Zoom in
+                    zoomLevel = Math.min(zoomLevel * (1 + zoomFactor), 3);
+                } else {
+                    // Zoom out
+                    zoomLevel = Math.max(zoomLevel * (1 - zoomFactor), 0.2);
+                }
+
+                // Calculate the world position under the mouse before zoom
+                const worldX = (mouseX - panX) / oldZoom;
+                const worldY = (mouseY - panY) / oldZoom;
+
+                // Calculate new pan to keep that world position under the mouse
+                panX = mouseX - worldX * zoomLevel;
+                panY = mouseY - worldY * zoomLevel;
+
+                // Only update the transform, don't re-render the entire tree
+                const treeWrapper = document.getElementById("tree-wrapper");
+                treeWrapper.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomLevel})`;
+            });
+
+            // Touch events for mobile panning
+            let lastTouchX = 0;
+            let lastTouchY = 0;
+
+            canvasContainer.addEventListener("touchstart", function (e) {
+                if (e.touches.length === 1) {
+                    isPanning = true;
+                    lastTouchX = e.touches[0].clientX;
+                    lastTouchY = e.touches[0].clientY;
+                    e.preventDefault();
+                }
+            });
+
+            canvasContainer.addEventListener("touchmove", function (e) {
+                if (isPanning && e.touches.length === 1) {
+                    const deltaX = e.touches[0].clientX - lastTouchX;
+                    const deltaY = e.touches[0].clientY - lastTouchY;
+
+                    // Fix: don't divide by zoom level for touch pan speed
+                    panX += deltaX;
+                    panY += deltaY;
+
+                    lastTouchX = e.touches[0].clientX;
+                    lastTouchY = e.touches[0].clientY;
+
+                    // Only update the transform, don't re-render
+                    const treeWrapper = document.getElementById("tree-wrapper");
+                    treeWrapper.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomLevel})`;
+                    e.preventDefault();
+                }
+            });
+
+            canvasContainer.addEventListener("touchend", function (e) {
+                isPanning = false;
+            });
+        </script>
+    </body>
+</html>

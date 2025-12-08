@@ -78,7 +78,7 @@ This website contains a few posts which might be useful to students in cryptogra
 
 <!--Currently, I am specifically looking for a master student to work on a project related to secure computation and coding theory during the period March 2021 -- September 2021 (other periods can be envisioned depending on the student constraints). There is a possibility of continuing this internship as a PhD. You might want to check the [internship proposal](/assets/pdf/internship_codes.pdf).-->
 
-I currently have very limited bandwidth to take on new postdocs or PhD students. However, I can always be persuaded to make room for one more if I see strong potential for exciting collaborations. Topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including fine-grained cryptography, black-box separations, and connections to learning theory).
+I currently (December 2025) do not have any bandwidth to take on new postdocs or PhD students in the near term, but you can always contact me to inquiry about opportunities the might come up in the future. My usual topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including fine-grained cryptography, black-box separations, and connections to learning theory).
 
 #### Postdocs
 

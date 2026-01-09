@@ -76,8 +76,8 @@
       "notes": "",
       "color": "#1abc9c",
       "parentId": 3,
-      "x": 695.8413231116049,
-      "y": -796.8213688879612
+      "x": 616.7018237615478,
+      "y": -631.9474119086756
     },
     {
       "id": 6,
@@ -89,8 +89,8 @@
       "notes": "",
       "color": "#ff6b6b",
       "parentId": 3,
-      "x": 1277.015162797471,
-      "y": -648.6713957488416,
+      "x": 1309.9899541933282,
+      "y": -653.0680346016226,
       "status": {
         "broken": false,
         "cryptanalyzed": true,
@@ -109,8 +109,8 @@
       "notes": "",
       "color": "#1abc9c",
       "parentId": 5,
-      "x": 793.4992183319292,
-      "y": -961.8259053224178
+      "x": 714.3597189818721,
+      "y": -796.9519483431322
     },
     {
       "id": 8,
@@ -122,8 +122,8 @@
       "notes": "",
       "color": "#1abc9c",
       "parentId": 7,
-      "x": 697.6000841310648,
-      "y": -1106.0722314448913,
+      "x": 618.4605847810077,
+      "y": -941.1982744656058,
       "status": {
         "broken": false,
         "cryptanalyzed": true,
@@ -142,8 +142,8 @@
       "notes": "",
       "color": "#1abc9c",
       "parentId": 7,
-      "x": 903.4992183319292,
-      "y": -1101.8259053224174
+      "x": 824.3597189818721,
+      "y": -936.9519483431319
     },
     {
       "id": 10,
@@ -155,8 +155,8 @@
       "notes": "",
       "color": "#1abc9c",
       "parentId": 9,
-      "x": 903.4992183319292,
-      "y": -1241.8259053224174
+      "x": 824.3597189818721,
+      "y": -1076.9519483431318
     },
     {
       "id": 11,
@@ -208,8 +208,8 @@
       "notes": "",
       "color": "#ff6b6b",
       "parentId": 6,
-      "x": 1080.917667277619,
-      "y": -795.9551966705643,
+      "x": 1162.2554860540668,
+      "y": -784.9635995386119,
       "status": {
         "broken": false,
         "cryptanalyzed": false,
@@ -241,8 +241,8 @@
       "notes": "Technically more of a follow-up to the HSS line of work (not included in this tree), but mentioned here for its first introduction of a public-key PCF (from DCR and QR)",
       "color": "#9b59b6",
       "parentId": 6,
-      "x": 1277.015162797471,
-      "y": -788.6713957488421
+      "x": 1309.9899541933282,
+      "y": -793.068034601623
     },
     {
       "id": 16,
@@ -254,8 +254,8 @@
       "notes": "",
       "color": "#9b59b6",
       "parentId": 15,
-      "x": 1176.4642994430853,
-      "y": -979.7238259673775,
+      "x": 1209.4390908389425,
+      "y": -984.1204648201584,
       "status": {
         "broken": false,
         "cryptanalyzed": true,
@@ -274,8 +274,8 @@
       "notes": "",
       "color": "#ff6b6b",
       "parentId": 6,
-      "x": 1497.015162797471,
-      "y": -788.6713957488421
+      "x": 1483.8252462391283,
+      "y": -790.8697151752325
     },
     {
       "id": 19,
@@ -444,8 +444,8 @@
       "notes": "",
       "color": "#9b59b6",
       "parentId": 16,
-      "x": 1176.7854658342098,
-      "y": -1109.1614191103715
+      "x": 1209.760257230067,
+      "y": -1113.5580579631524
     },
     {
       "id": 31,
@@ -457,8 +457,8 @@
       "notes": "Breaks QA-SD over small fields when the compression factor c is not large enough. In particular, this breaks the original parameters suggested in FOLEAGE (https://eprint.iacr.org/2024/429). The parameters can be updated to (provably) withstand the attack, at the cost of a significant (but reasonable) efficiency degradation.",
       "color": "#1abc9c",
       "parentId": 8,
-      "x": 697.7659977513686,
-      "y": -1244.9599063597825,
+      "x": 618.6264984013114,
+      "y": -1080.085949380497,
       "status": {
         "broken": false,
         "cryptanalyzed": false,
@@ -477,8 +477,8 @@
       "notes": "",
       "color": "#ff6b6b",
       "parentId": 15,
-      "x": 1382.0559794541198,
-      "y": -898.9602271531419
+      "x": 1415.030770849977,
+      "y": -903.3568660059228
     },
     {
       "id": 33,
@@ -570,8 +570,8 @@
       "notes": "",
       "color": "#9b59b6",
       "parentId": 16,
-      "x": 1300.581440275569,
-      "y": -1111.6803629804301,
+      "x": 1333.5562316714263,
+      "y": -1116.077001833211,
       "status": {
         "broken": false,
         "cryptanalyzed": false,
@@ -617,8 +617,8 @@
         "cryptanalyzedRef": ""
       },
       "parentId": 8,
-      "x": 560.8426137220163,
-      "y": -1242.7826362659716
+      "x": 481.70311437195915,
+      "y": -1080.1069987130763
     },
     {
       "id": 40,
@@ -637,8 +637,8 @@
         "cryptanalyzedRef": ""
       },
       "parentId": 5,
-      "x": 382.25282516131404,
-      "y": -962.5085538332434
+      "x": 303.1133258112569,
+      "y": -797.6345968539578
     },
     {
       "id": 41,
@@ -657,8 +657,8 @@
         "cryptanalyzedRef": ""
       },
       "parentId": 40,
-      "x": 383.15513971920666,
-      "y": -1128.6742334925166
+      "x": 304.01564036914954,
+      "y": -963.800276513231
     },
     {
       "id": 42,
@@ -677,8 +677,8 @@
         "cryptanalyzedRef": ""
       },
       "parentId": 45,
-      "x": 498.27456876819826,
-      "y": -1125.9159449546282
+      "x": 419.13506941814114,
+      "y": -961.0419879753426
     },
     {
       "id": 43,
@@ -697,8 +697,8 @@
         "cryptanalyzedRef": ""
       },
       "parentId": 5,
-      "x": 986.8799887417574,
-      "y": -968.8154170530912
+      "x": 907.7404893917003,
+      "y": -803.9414600738056
     },
     {
       "id": 44,
@@ -737,8 +737,8 @@
         "cryptanalyzedRef": ""
       },
       "parentId": 5,
-      "x": 498.9915928091118,
-      "y": -962.1342192606589
+      "x": 419.8520934590547,
+      "y": -797.2602622813733
     },
     {
       "id": 46,
@@ -759,12 +759,72 @@
       "parentId": 44,
       "x": 3011.0598609812364,
       "y": -622.3422493023754
+    },
+    {
+      "id": 47,
+      "title": "Fast Pseudorandom Correlation Functions from Sparse LPN",
+      "authors": "Lennart Braun, Geoffroy Couteau, Kelsey Melissaris, Mahshid Riahinia, and Elahe Sadeghi",
+      "conference": "ASIACRYPT",
+      "year": 2025,
+      "link": "https://eprint.iacr.org/2025/1644",
+      "notes": "",
+      "color": "#ff6b6b",
+      "status": {
+        "broken": false,
+        "cryptanalyzed": false,
+        "cryptanalysis": false,
+        "brokenRef": "",
+        "cryptanalyzedRef": ""
+      },
+      "parentId": 6,
+      "x": 1039.8050886826943,
+      "y": -795.7916323533515
+    },
+    {
+      "id": 48,
+      "title": "A New Approach to Large Party Beaver-Style MPC with Small Computational Overhead",
+      "authors": "Aayush Jain, Huijia Lin, Nuozhou Sun",
+      "conference": "",
+      "year": 2025,
+      "link": "https://eprint.iacr.org/2025/2305.pdf",
+      "notes": "",
+      "color": "#ff6b6b",
+      "status": {
+        "broken": false,
+        "cryptanalyzed": false,
+        "cryptanalysis": false,
+        "brokenRef": "",
+        "cryptanalyzedRef": ""
+      },
+      "parentId": 47,
+      "x": 1042.003408109084,
+      "y": -960.6655893326376
+    },
+    {
+      "id": 49,
+      "title": "Fully Distributed Multi-Point Functions for PCGs and Beyond",
+      "authors": "Amit Agarwal, Srinivasan Raghuraman, Peter Rindal",
+      "conference": "",
+      "year": 2025,
+      "link": "https://eprint.iacr.org/2025/2294.pdf",
+      "notes": "",
+      "color": "#1abc9c",
+      "status": {
+        "broken": false,
+        "cryptanalyzed": false,
+        "cryptanalysis": false,
+        "brokenRef": "",
+        "cryptanalyzedRef": ""
+      },
+      "parentId": 39,
+      "x": 484.0084028680476,
+      "y": -1200.7294041679334
     }
   ],
   "customEdges": [],
-  "panX": -490.3599818249031,
-  "panY": 361.24910281769564,
-  "zoomLevel": 0.5003728041341817,
+  "panX": -476.96038311259235,
+  "panY": 350.18959324925726,
+  "zoomLevel": 0.5030626298860207,
   "caption": {
     "colors": {
       "#e91e63": "The original PCG constructions, and/or generic improvements to the original strategy",

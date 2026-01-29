@@ -91,7 +91,7 @@ I currently (December 2025) do not have any bandwidth to take on new postdocs or
 [Kaartik Bhushan](https://homepages.iitb.ac.in/~kbhushan/) | Jun. 2025 -- current | |
 [Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Mar. 2025 -- current | |
 Ulysse Léchine | Jan. 2025 -- current | |
-Lennart Braun | Jan. 2025 -- current | |
+[Lennart Braun](https://lennartbraun.de/) | Jan. 2025 -- current | |
 [Ioanna Karantaidou](https://sites.google.com/view/ioannakarantaidou) | Jan. 2025 -- current | Co-hosted with [Michele Orrù](https://tumbolandia.net/) |
 [Sihang Pu](https://sihangpu.uk/) | Apr. 2024 -- Aug. 2025 | |
 [Christop Egger](https://christoph-egger.org/) | Oct. 2022 -- Oct. 2024 | Now Assistant Professor at Chalmers University of Technology|

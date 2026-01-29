@@ -10,6 +10,7 @@ categories: TestCategories
 
 | Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| EUROCRYPT 2026 | Client-Server Homomorphic Secret Sharing in the CRS Model <br> *Damiano Abram, Geoffroy Couteau, Lalita Devadas, Aditya Hegde, Abhishek Jain, Lawrence Roy, Sacha Servan-Schreiber*| ePrint, <br> Springer|
 | AsiaCCS 2026 | Stateless 2PC Signatures for Internet-Scale Authentication and  Authorization <br> *Michael Adjedj, Geoffroy Couteau, Arik Galansky, Nikolaos Makriyannis, and Oren Yomtov*| [ePrint](https://eprint.iacr.org/2025/1475), <br> ACM|
 | S$\&$P 2026 | Concretely-Efficient Multi-Key Homomorphic Secret Sharing and Applications <br> *Kaiwen He, Sacha Servan-Schreiber, Geoffroy Couteau, and Srinivas Devadas* | [ePrint](https://eprint.iacr.org/2025/1803), <br> IEEE |
 | TCC 2025 | Pseudorandom Correlation Functions for Garbled Circuits <br> *Geoffroy Couteau, Srinivas Devadas, Alexander Koch, and Sacha Servan-Schreiber* | ePrint, Springer |

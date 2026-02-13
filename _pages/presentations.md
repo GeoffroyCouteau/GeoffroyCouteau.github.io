@@ -17,7 +17,7 @@ div {
 }
 </style>
 
-A list of talks I gave, with links to the slides and video, when available. The list is far from comprehensive, since in many cases I did not particularly keep track of the event, or changed the slides afterwards for an other event. I did not include any event for which the webpage was not working anymore, and whose slides were already included in this page (in one form or another, usually due to giving a talk on the same result in another place). If you notice that a link is wrong or broken, please drop me a mail.
+An outdated list of talks I gave, with links to the slides and video, when available. The list is far from comprehensive, since in many cases I did not particularly keep track of the event, or changed the slides afterwards for an other event. I did not include any event for which the webpage was not working anymore, and whose slides were already included in this page (in one form or another, usually due to giving a talk on the same result in another place). If you notice that a link is wrong or broken, please drop me a mail.
 
 | Date | Event | Paper / subject                                        | Links |
 | -----|-----|-------------------------------------------------- | -------------|

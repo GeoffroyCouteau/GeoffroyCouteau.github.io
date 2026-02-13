@@ -90,10 +90,10 @@ I currently (December 2025) do not have any bandwidth to take on new postdocs or
 [Kelsey Melissaris](https://www.kelseymelissaris.com/) | Oct. 2025 -- current  |
 [Kaartik Bhushan](https://homepages.iitb.ac.in/~kbhushan/) | Jun. 2025 -- current | |
 [Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Mar. 2025 -- current | |
-Ulysse Léchine | Jan. 2025 -- current | |
 [Lennart Braun](https://lennartbraun.de/) | Jan. 2025 -- current | |
-[Ioanna Karantaidou](https://sites.google.com/view/ioannakarantaidou) | Jan. 2025 -- current | Co-hosted with [Michele Orrù](https://tumbolandia.net/) |
-[Sihang Pu](https://sihangpu.uk/) | Apr. 2024 -- Aug. 2025 | |
+Ulysse Léchine | Jan. 2025 -- Dec. 2026 | |
+[Ioanna Karantaidou](https://sites.google.com/view/ioannakarantaidou) | Jan. 2025 -- Dec. 2026 | Co-hosted with [Michele Orrù](https://tumbolandia.net/) |
+[Sihang Pu](https://sihangpu.uk/) | Apr. 2024 -- Aug. 2025 | Now Assistant Professor at East China Normal University |
 [Christop Egger](https://christoph-egger.org/) | Oct. 2022 -- Oct. 2024 | Now Assistant Professor at Chalmers University of Technology|
 [Alexander Koch](https://alex-koch.gitlab.io/) | Oct. 2022 -- Feb. 2025 | Now Cryptography Expert and Consultant at Secorvo Security Consulting |
 Balthazar Bauer | Oct. 2022 -- Sep. 2023 | Now holding the Chaire de Professeur Junior at UVSQ |
@@ -132,13 +132,13 @@ Dominik Hartmann | Feb. 2019 -- Aug. 2019 | Compilers for non-interactive zero-k
 [Amit Agarwal](https://amitagarwal.gitbook.io/profile) | Apr. 2025 -- May 2025 | Visiting PhD <br> student | |
 Xiaxi Ye | Apr. 2025 -- Aug. 2025 | Visiting PhD <br> student | |
 [Kaartik Bhushan](https://homepages.iitb.ac.in/~kbhushan/) | Nov. 2024 -- Feb. 2024 | Visiting PhD <br> student | Now postdoctoral researcher at IRIF. |
-[Francesco Migliaro](https://pur2all.github.io/) | Nov. 2024 -- Apr. 2025 | Visting PhD <br> student | |
+[Francesco Migliaro](https://pur2all.github.io/) | Nov. 2024 -- Apr. 2025 | Visting PhD <br> student | Now postdoctoral researcher at IRIF. |
 [Mahshid Riahinia](https://mriahinia.github.io/) | Sep. 2024 -- Sep. 2025 | Visiting postdoctoral researcher | |
 [Naman Kumar](https://matcauthon49.github.io/) | June 2024 -- Sep. 2024 | Internship | Naman's visit led to a [paper](https://eprint.iacr.org/2025/1053) presented at EUROCRYPT'25 |
 [Aditya Hegde](https://adishegde.github.io/) | June 2024 -- July 2024 | Internship | Aditya's visit led [to](https://link.springer.com/chapter/10.1007/978-3-031-91095-1_5) [three](https://eprint.iacr.org/2025/1053) [papers](https://eprint.iacr.org/2025/094) presented at EUROCRYPT'25. |
 [Willy Quach](https://wquach.github.io/) | Feb. 2024 -- May 2024 | Visiting postdoctoral researcher | Willy's visit led to a [paper](https://link.springer.com/chapter/10.1007/978-3-031-78011-0_10) presented at TCC'24. |
 [Kelsey Melissaris](https://www.kelseymelissaris.com/) | Feb. 2024 -- Jun. 2024 | Visiting postdoctoral researcher | |
-[Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Feb. 2024 -- Jun. 2024 | Visiting PhD <br> student | Nikolas' visit led to a paper, to be presented at RANDOM'25. Now postdoctoral researcher at IRIF. |
+[Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Feb. 2024 -- Jun. 2024 | Visiting PhD <br> student | Nikolas' visit led to a paper, presented at RANDOM'25. Now postdoctoral researcher at IRIF. |
 [Sacha Servan-Schreiber](https://sachaservanschreiber.com/) | Sep. 2023 -- March 2024 | Visiting PhD <br> student | Sacha's visit led to [two](https://eprint.iacr.org/2024/1079) [papers](https://eprint.iacr.org/2024/429), presented at ASIACRYPT'24. |
 [Naman Kumar](https://matcauthon49.github.io/) | May 2023 -- Jun. 2023 | Internship | Naman's work led to a paper, to be presented at CRYPTO'24. |
 Elahe Sadeghi | Jun. 2022 -- Jul. 2022 | Visiting PhD <br> student | Elahe's work led to a [paper](https://eprint.iacr.org/2023/571), presented at EUROCRYPT'23. |
@@ -159,7 +159,7 @@ The list of conferences, workshops, and journals where I served as a member of t
 |---|---|
 | Year  | Venues |
 |---|---|
-| 2025 | EUROCRYPT <br> (area chair: advanced cryptographic primitives) |
+| 2026 | EUROCRYPT (area chair), CRYPTO |
 | 2024 | Communications in Cryptology, TCC |
 | 2023 | CSF, CRYPTO |
 | 2022 | PKC, CSF, SCN, TCC |

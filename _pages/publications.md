@@ -10,6 +10,8 @@ categories: TestCategories
 
 | Conference/Journal | Article                                        | Links |
 | -----|---------------------------------------- | -------------|
+| CRYPTO 2026 | Succinct Two-Round Two-Party Signing from PCFs <br> *Lennart Braun, Geoffroy Couteau, Kelsey Melissaris, Mahshid Riahinia, and Elahe Sadeghi*| ePrint, <br> Springer|
+| CRYPTO 2026 | Post-Quantum Public-Key Pseudorandom Correlation Functions for OT <br> *Kaartik Bhushan, Shweta Agrawal, Geoffroy Couteau, and Mahshid Riahinia*| ePrint, <br> Springer|
 | PKC 2026 | Two-Round 2PC ECDSA at the Cost of 1 OLE <br> *Michael Adjedj, Constantin Blokh, Geoffroy Couteau, Arik Galansky, Antoine Joux, and Nikolaos Makriyannis*| [ePrint](https://eprint.iacr.org/2024/1950), <br> ACM|
 | EUROCRYPT 2026 | Client-Server Homomorphic Secret Sharing in the CRS Model <br> *Damiano Abram, Geoffroy Couteau, Lalita Devadas, Aditya Hegde, Abhishek Jain, Lawrence Roy, Sacha Servan-Schreiber*| ePrint, <br> Springer|
 | AsiaCCS 2026 | Stateless 2PC Signatures for Internet-Scale Authentication and  Authorization <br> *Michael Adjedj, Geoffroy Couteau, Arik Galansky, Nikolaos Makriyannis, and Oren Yomtov*| [ePrint](https://eprint.iacr.org/2025/1475), <br> ACM|

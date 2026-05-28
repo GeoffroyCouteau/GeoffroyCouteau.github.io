@@ -21,6 +21,8 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 ### News
 
+<p><strong>May 2026:</strong>  I’m excited to share that I’ve received an <a href="https://www.amazon.science/research-awards">Amazon Research Award</a> for my proposal “Pseudorandom Correlations for Threshold Cryptography” (PCTC). The starting point of the project is an observation: threshold cryptography is just a particular form of MPC, and pseudorandom correlation generators are great tools to speedup MPC, so they ought to be useful for designing fast threshold signatures and friends, right? It turns out that it's not so simple: existing work on PCGs don't fit well the constraints of threshold schemes. The aim of PCTC will be to fix that! My coauthors and I took a first stab at the problem in an upcoming Crypto'26 paper, but there is more to come.
+
 <p><strong>May 2026:</strong> My book <a href="https://link.springer.com/book/10.1007/978-3-032-07089-0">An Introduction to Silent Secure Computation</a> is now available! It provides a gentle introduction to secure computation in the preprocessing model, pseudorandom correlation generators, and some more advanced topics.</p>
 
 <p><strong>October 2025:</strong> As a short primer to an upcoming book on the subject, I wrote a <a href="https://geoffroycouteau.github.io/posts/pcg/">blog post</a> on pseudorandom correlation generators, where the aim is to provide pointers and resources to cryptographers who'd be interested in learning more about them.</p>

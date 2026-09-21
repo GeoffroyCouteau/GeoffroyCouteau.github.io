@@ -83,7 +83,7 @@ I currently (September 2026) do not have any bandwidth to take on new postdocs o
 [Francesco Migliaro](https://pur2all.github.io/) | Dec. 2025 |
 [Mahshid Riahinia](https://mriahinia.github.io/) | Oct. 2025 |
 [Kelsey Melissaris](https://www.kelseymelissaris.com/) | Jan. 2026 |
-[Kaartik Bhushan](https://sites.google.com/view/kaartikbhushan/) | Jun. 2025 | |
+[Kaartik Bhushan](https://sites.google.com/view/kaartikbhushan/?pli=1&authuser=0) | Jun. 2025 | |
 [Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Mar. 2025 | |
 [Lennart Braun](https://lennartbraun.de/) | Jan. 2025 | |
 
@@ -228,7 +228,7 @@ Elahe Sadeghi | Oct. 2024 | Decentralized Wallets from Fast Threshold Signing (c
         <td>Visiting PhD student</td>
       </tr>
       <tr>
-        <td><a href="https://homepages.iitb.ac.in/~kbhushan/">Kaartik Bhushan</a></td>
+        <td><a href="https://sites.google.com/view/kaartikbhushan/?pli=1&amp;authuser=0">Kaartik Bhushan</a></td>
         <td>Nov. 2024 – Apr. 2025</td>
         <td>Visiting PhD student <br><br> <em>Note:</em> Now postdoctoral researcher at IRIF.</td>
       </tr>

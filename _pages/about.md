@@ -21,19 +21,23 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 ### News
 
+<p><strong>September 2026:</strong> Some recent good news about former students: <a href="https://pierremeyer.me/">Pierre Meyer</a>, my first-ever PhD student, recently got a faculty position at <a href="https://cispa.de/en">CISPA</a>; <a href="https://www.di.ens.fr/michael.reichle/">Michael Reichle</a>, my first-ever student, got a faculty position at <a href="https://insait.ai/">INSAIT</a>; and <a href="https://dungbui15.github.io/">Dung Bui</a> received an honorable mention for the 2025 <a href="https://gdr-securite.irisa.fr/prix-de-these/">PhD Thesis Prize</a> of the GDR Sécurité at CNRS. Congratulations to all of them!</p>
+
+<p><strong>June 2026:</strong> I had the pleasure to contribute an <a href="https://dl.acm.org/doi/10.1145/3819804.3819810">article</a> to the SIGACT News Complexity Theory Column (but I strongly encourage you to check the <em>other</em> articles of the Complexity Theory Column, there are lots of gems!). The article overviews the cryptographic challenges of compressing correlated sources of randomness, trying to convey the goals and challenges of this exciting field to a broader audience. Compared to my other write-ups on the topic, this one is much less application-centric (and indeed, the term "secure computation" appears only <em>three times</em>, and only in passing): it draws the landscape of what is known (very little) and what remains to be discovered (pretty much everything) in this area.</p>
+
 <p><strong>May 2026:</strong>  I’m excited to share that I’ve received an <a href="https://www.amazon.science/research-awards/latest-news/fall-2025-amazon-research-awards-recipients-announced">Amazon Research Award</a> for my proposal “Pseudorandom Correlations for Threshold Cryptography” (PCTC). The starting point of the project is an observation: threshold cryptography is just a particular form of MPC, and pseudorandom correlation generators are great tools to speedup MPC, so they ought to be useful for designing fast threshold signatures and friends, right? It turns out that it's not so simple: existing work on PCGs don't fit well the constraints of threshold schemes. The aim of PCTC will be to fix that! My coauthors and I took a first stab at the problem in an upcoming Crypto'26 paper, but there is more to come.</p>
 
 
 <p><strong>May 2026:</strong> My book <a href="https://link.springer.com/book/10.1007/978-3-032-07089-0">An Introduction to Silent Secure Computation</a> is now available! It provides a gentle introduction to secure computation in the preprocessing model, pseudorandom correlation generators, and some more advanced topics.</p>
 
-<p><strong>October 2025:</strong> As a short primer to an upcoming book on the subject, I wrote a <a href="https://geoffroycouteau.github.io/posts/pcg/">blog post</a> on pseudorandom correlation generators, where the aim is to provide pointers and resources to cryptographers who'd be interested in learning more about them.</p>
-
-<p><strong>August 2025:</strong> The website for OBELiSC is now <a href="https://geoffroycouteau.github.io/obelisc">online</a>. It provides more information about the project, the main research goals, the team members, and the publications associated to the project. Check it out!</p>
-
 <details>
   <summary><strong>Archived</strong></summary>
 
 <br>
+  <p><strong>October 2025:</strong> As a short primer to an upcoming book on the subject, I wrote a <a href="https://geoffroycouteau.github.io/posts/pcg/">blog post</a> on pseudorandom correlation generators, where the aim is to provide pointers and resources to cryptographers who'd be interested in learning more about them.</p>
+
+  <p><strong>August 2025:</strong> The website for OBELiSC is now <a href="https://geoffroycouteau.github.io/obelisc">online</a>. It provides more information about the project, the main research goals, the team members, and the publications associated to the project. Check it out!</p>
+
   <p><strong>June 2024:</strong> The Algorithms &amp; Complexity team at IRIF (CNRS, Université Paris-Cité) in Paris, France is inviting applications for several fully-funded postdoctoral positions (1–2 years) to work on cryptography. Areas of interest include, but are not limited to, zero-knowledge proofs, secure computation, post-quantum cryptography, foundations of cryptography, connections with complexity theory, confidential transactions, anonymous credentials. The candidate will work alongside Geoffroy Couteau and Michele Orrù.</p>
 
  <div class="notice--info">
@@ -67,19 +71,9 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 ---
 
-### Resources
-
-This website contains a few posts which might be useful to students in cryptography, gathered in the [blog](/blog) section. It includes in particular:
-
-- A [LaTeX template](/latex/) for writing research papers in cryptography;
-- A [probability cheat sheet](/cheat-sheet/), with basic tools and results that I believe should be part of the cryptographer's toolbox;
-- A [Q&A section](/QA/), where I gathered some of my answers to common questions on the [cryptography stackexchange](https://crypto.stackexchange.com/).
-
----
-
 ### Students and postdocs
 
-I currently (December 2025) do not have any bandwidth to take on new postdocs or PhD students in the near term, but you can always contact me to inquiry about opportunities the might come up in the future. My usual topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including fine-grained cryptography, black-box separations, and connections to learning theory).
+I currently (September 2026) do not have any bandwidth to take on new postdocs or PhD students in the near term, but you can always contact me to inquiry about opportunities the might come up in the future. My usual topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including fine-grained cryptography, black-box separations, and connections to learning theory).
 
 #### Postdocs
 
@@ -102,15 +96,6 @@ Tamara Paris | Oct. 2025 | Cryptographic Methods for Ethics and AI Security (co-
 Naman Kumar | Oct. 2025 | |
 Elahe Sadeghi | Oct. 2024 | Decentralized Wallets from Fast Threshold Signing (co-advised with [Sriram Vishwanath](http://sriram.utlinc.org/#/)) |
 
-
-#### Other: visitors, interns
-
-|---|---|---|---|
-| | Started | Status | Notes |
-|---|---|---|---|
-Thejas Radhika Sajith | May 2025 | Internship | |
-Anuja Modi | May 2025 | Visiting PhD <br> student | |
-Olta Bytyci | Apr. 2025 | Internship | |
 
 <details>
   <summary><strong>Alumni</strong></summary>
@@ -213,6 +198,21 @@ Olta Bytyci | Apr. 2025 | Internship | |
     </thead>
     <tbody>
       <tr>
+        <td>Olta Bytyci</td>
+        <td>Apr. 2026 – Aug. 2026</td>
+        <td>Internship</td>
+      </tr>
+      <tr>
+        <td>Thejas Radhika Sajith</td>
+        <td>May 2026 – Jul. 2026</td>
+        <td>Internship</td>
+      </tr>
+      <tr>
+        <td>Anuja Modi</td>
+        <td>May 2026 – Jul. 2026</td>
+        <td>Visiting PhD student</td>
+      </tr>
+      <tr>
         <td><a href="https://amitagarwal.gitbook.io/profile">Amit Agarwal</a></td>
         <td>Apr. 2025 – May 2025</td>
         <td>Visiting PhD student</td>
@@ -260,7 +260,7 @@ Olta Bytyci | Apr. 2025 | Internship | |
       <tr>
         <td><a href="https://nikolasmelissaris.github.io/">Nikolas Melissaris</a></td>
         <td>Feb. 2024 – Jun. 2024</td>
-        <td>Visiting PhD student <br><br> <em>Note:</em> Nikolas' visit led to a paper, presented at RANDOM'25. Now postdoctoral researcher at IRIF.</td>
+        <td>Visiting PhD student <br><br> <em>Note:</em> Nikolas' visit led to <a href="https://eprint.iacr.org/2024/1027">two</a> <a href="https://eprint.iacr.org/2026/255">papers</a>, presented at RANDOM'25 and TCC'26. Now postdoctoral researcher at IRIF.</td>
       </tr>
       <tr>
         <td><a href="https://themelis.github.io/">Alexandros Themelis</a></td>

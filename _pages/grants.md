@@ -1,5 +1,5 @@
 ---
-title:  "Grant Projets"
+title:  "Grant Projects"
 layout: archive
 author_profile: true
 permalink: /grants/
@@ -19,7 +19,7 @@ The list of all past and present grant-funded research projects where I am invol
 ### As Principal Investigator
 
 |---|---|---|---|---|---|
-| Project | Acronym | Team members | Duration | Fundings | Type |
+| Project | Acronym | Team members | Duration | Funding | Type |
 |---|---|---|---|---|---|---|
 | [Overcoming Barriers and Efficiency <br> Limitations in Secure Computation](https://geoffroycouteau.github.io/obelisc) | OBELiSC | -- | 2024 -- 2028 | €1.5M | [ERC Starting Grant](https://erc.europa.eu/apply-grant/starting-grant) |
 | LInear Codes ENabling Computation <br> over Encrypted Data | LICENCED | [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/) | 2022 -- 2023 | €65.000 | [DIM RFSI](https://dim-rfsi.fr/projets/appel-a-projets-scientifiques-2021) |
@@ -28,14 +28,14 @@ The list of all past and present grant-funded research projects where I am invol
 ### As Local Coordinator
 
 |---|---|---|---|---|---|
-| Project | Acronym | Principal <br> Investigator | Duration | Fundings | Type |
+| Project | Acronym | Principal <br> Investigator | Duration | Funding | Type |
 |---|---|---|---|---|---|---|
 | Secure Computations | SecureCompute | [David Pointcheval](https://www.di.ens.fr/david.pointcheval/index.php) | 2022 -- 2028 | €5M (1M IRIF)| [PEPR <br> Cybersécurité](https://anr.fr/fr/detail/call/pepr-cybersecurite-appel-a-projets-2022/?tx_anrprojects_request%5Baction%5D=show&cHash=8e3af47312e6cd8cd8ceb49d19667954) |
 
 ### As Member
 
 |---|---|---|---|---|---|
-| Project | Acronym | Principal <br> Investigator | Duration | Fundings | Type |
+| Project | Acronym | Principal <br> Investigator | Duration | Funding | Type |
 |---|---|---|---|---|---|---|
 | Algèbre, preuves, protocoles,<br> algorithmes, courbes, et surfaces<br> pour les codes et leurs applications | BARRACUDA | [Alain Couvreur](https://www.lix.polytechnique.fr/Labo/Alain.Couvreur/) | 2022 -- 2025 | €377.000 | [ANR PRC](https://anr.fr/fileadmin/aap/2021/selection/aapg-selection-2021-3.pdf) |
 

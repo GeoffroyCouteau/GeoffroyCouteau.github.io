@@ -24,6 +24,6 @@ Amphithéâtre Turing, bâtiment Sophie Germain<br>
 - Benny Applebaum, reviewer, Professor at Tel-Aviv University
 - Ivan Damgård, examiner, Professor at Aarhus University
 - Carmit Hazay, reviewer, Professor at Bar-Ilan University
-- Sophie Laplante, examiner, Professor at Université Paris-Cité
+- Sophie Laplante, examiner, Professor at Université Paris Cité
 
 The manuscript is available [here](https://geoffroycouteau.github.io/assets/pdf/hdr.pdf).

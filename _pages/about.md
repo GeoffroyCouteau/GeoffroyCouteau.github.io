@@ -2,7 +2,7 @@
 permalink: /
 title: "About"
 classes: wide
-excerpt: "I am a CNRS research scientist at IRIF, Université de Paris."
+excerpt: "I am a CNRS research scientist at IRIF, Université Paris Cité."
 ---
 
 <style>
@@ -15,7 +15,7 @@ div {
 I am a CNRS research scientist at [IRIF][irif], Université Paris Cité. I received my PhD from École Normale Supérieure de Paris ([ENS][ens]) in November 2017, under the supervision of [David Pointcheval](https://www.di.ens.fr/david.pointcheval/index.php) and [Hoeteck Wee](https://www.di.ens.fr/~wee/). In 2017 -- 2019, I was a postdoctoral researcher at Karlsruhe Institute of Technology ([KIT][kit]), in the team of [Dennis Hofheinz](https://people.inf.ethz.ch/dhofheinz/). I was fortunate enough to be awarded an ERC Starting Grant for my project OBELiSC. You can find the page of the project [here](https://geoffroycouteau.github.io/obelisc).
 
 
-My main research interests are secure multiparty computation and zero-knowledge proofs (both foundational and practical aspects), as well as the theoretical foundations of cryptography. For an up-to-date list of my publications, you can check my [publication page][publications], my [dblp profile][dblp], or my [Google scholar profile][scholar]. All my publications become available at some point in open access format on the ePrint archive; see the list [here](https://eprint.iacr.org/search?q=&title=&authors=geoffroy+couteau). Here are links to my [PhD thesis](/assets/pdf/thesis.pdf) and my [HDR manuscript](https://geoffroycouteau.github.io/assets/pdf/hdr.pdf).
+My main research interests are secure multiparty computation and zero-knowledge proofs (both foundational and practical aspects), as well as the theoretical foundations of cryptography. For an up-to-date list of my publications, you can check my [publications page][publications], my [dblp profile][dblp], or my [Google scholar profile][scholar]. All my publications become available at some point in open access format on the ePrint archive; see the list [here](https://eprint.iacr.org/search?q=&title=&authors=geoffroy+couteau). Here are links to my [PhD thesis](/assets/pdf/thesis.pdf) and my [HDR manuscript](https://geoffroycouteau.github.io/assets/pdf/hdr.pdf).
 
 ---
 
@@ -25,7 +25,7 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 <p><strong>June 2026:</strong> I had the pleasure to contribute an <a href="https://dl.acm.org/doi/10.1145/3819804.3819810">article</a> to the SIGACT News Complexity Theory Column (but I strongly encourage you to check the <em>other</em> articles of the Complexity Theory Column, there are lots of gems!). The article overviews the cryptographic challenges of compressing correlated sources of randomness, trying to convey the goals and challenges of this exciting field to a broader audience. Compared to my other write-ups on the topic, this one is much less application-centric (and indeed, the term "secure computation" appears only <em>three times</em>, and only in passing): it draws the landscape of what is known (very little) and what remains to be discovered (pretty much everything) in this area.</p>
 
-<p><strong>May 2026:</strong>  I’m excited to share that I’ve received an <a href="https://www.amazon.science/research-awards/latest-news/fall-2025-amazon-research-awards-recipients-announced">Amazon Research Award</a> for my proposal “Pseudorandom Correlations for Threshold Cryptography” (PCTC). The starting point of the project is an observation: threshold cryptography is just a particular form of MPC, and pseudorandom correlation generators are great tools to speedup MPC, so they ought to be useful for designing fast threshold signatures and friends, right? It turns out that it's not so simple: existing work on PCGs don't fit well the constraints of threshold schemes. The aim of PCTC will be to fix that! My coauthors and I took a first stab at the problem in an upcoming Crypto'26 paper, but there is more to come.</p>
+<p><strong>May 2026:</strong>  I’m excited to share that I’ve received an <a href="https://www.amazon.science/research-awards/latest-news/fall-2025-amazon-research-awards-recipients-announced">Amazon Research Award</a> for my proposal “Pseudorandom Correlations for Threshold Cryptography” (PCTC). The starting point of the project is an observation: threshold cryptography is just a particular form of MPC, and pseudorandom correlation generators are great tools to speed up MPC, so they ought to be useful for designing fast threshold signatures and friends, right? It turns out that it's not so simple: existing work on PCGs doesn't fit well the constraints of threshold schemes. The aim of PCTC will be to fix that! My coauthors and I took a first stab at the problem in an upcoming Crypto'26 paper, but there is more to come.</p>
 
 
 <p><strong>May 2026:</strong> My book <a href="https://link.springer.com/book/10.1007/978-3-032-07089-0">An Introduction to Silent Secure Computation</a> is now available! It provides a gentle introduction to secure computation in the preprocessing model, pseudorandom correlation generators, and some more advanced topics.</p>
@@ -36,9 +36,9 @@ My main research interests are secure multiparty computation and zero-knowledge 
 <br>
   <p><strong>October 2025:</strong> As a short primer to an upcoming book on the subject, I wrote a <a href="https://geoffroycouteau.github.io/posts/pcg/">blog post</a> on pseudorandom correlation generators, where the aim is to provide pointers and resources to cryptographers who'd be interested in learning more about them.</p>
 
-  <p><strong>August 2025:</strong> The website for OBELiSC is now <a href="https://geoffroycouteau.github.io/obelisc">online</a>. It provides more information about the project, the main research goals, the team members, and the publications associated to the project. Check it out!</p>
+  <p><strong>August 2025:</strong> The website for OBELiSC is now <a href="https://geoffroycouteau.github.io/obelisc">online</a>. It provides more information about the project, the main research goals, the team members, and the publications associated with the project. Check it out!</p>
 
-  <p><strong>June 2024:</strong> The Algorithms &amp; Complexity team at IRIF (CNRS, Université Paris-Cité) in Paris, France is inviting applications for several fully-funded postdoctoral positions (1–2 years) to work on cryptography. Areas of interest include, but are not limited to, zero-knowledge proofs, secure computation, post-quantum cryptography, foundations of cryptography, connections with complexity theory, confidential transactions, anonymous credentials. The candidate will work alongside Geoffroy Couteau and Michele Orrù.</p>
+  <p><strong>June 2024:</strong> The Algorithms &amp; Complexity team at IRIF (CNRS, Université Paris Cité) in Paris, France is inviting applications for several fully-funded postdoctoral positions (1–2 years) to work on cryptography. Areas of interest include, but are not limited to, zero-knowledge proofs, secure computation, post-quantum cryptography, foundations of cryptography, connections with complexity theory, confidential transactions, anonymous credentials. The candidate will work alongside Geoffroy Couteau and Michele Orrù.</p>
 
  <div class="notice--info">
   <div>
@@ -55,9 +55,9 @@ My main research interests are secure multiparty computation and zero-knowledge 
     <a href="https://www.irif.fr/postes/postdoc" class="btn btn--success">How to apply</a>
   </div>
 
-  <p><em>Update (August 2024):</em> this opening is now closed! You can still check the link above to be informed about other positions at IRIF in the Algorithm and Complexity group, now or in the future (the page is updated regularly).</p>
+  <p><em>Update (August 2024):</em> this opening is now closed! You can still check the link above to be informed about other positions at IRIF in the Algorithms &amp; Complexity group, now or in the future (the page is updated regularly).</p>
 
-  <p><strong>March 2024:</strong> I defended my <em>Habilitation à Diriger des Recherches</em> on March 20. An HDR is a French diploma needed to supervize PhD students (without it, a co-supervisor with HDR is required). It proceeds essentially like a second PhD defense. You can find my HDR manuscript <a href="https://geoffroycouteau.github.io/assets/pdf/hdr.pdf">here</a>; it provides an overview of secure computation in the correlated randomness model, and a step-by-step introduction to pseudorandom correlation generators, which might be useful for anyone wanting to get into this research area. More information about the defense <a href="\hdr/">here</a>.</p>
+  <p><strong>March 2024:</strong> I defended my <em>Habilitation à Diriger des Recherches</em> on March 20. An HDR is a French diploma needed to supervise PhD students (without it, a co-supervisor with HDR is required). It proceeds essentially like a second PhD defense. You can find my HDR manuscript <a href="https://geoffroycouteau.github.io/assets/pdf/hdr.pdf">here</a>; it provides an overview of secure computation in the correlated randomness model, and a step-by-step introduction to pseudorandom correlation generators, which might be useful for anyone wanting to get into this research area. More information about the defense <a href="\hdr/">here</a>.</p>
 
   <p><strong>September 2023:</strong> I was <a href="https://erc.europa.eu/sites/default/files/2023-09/erc_2023-stg-results_pe.pdf">awarded an ERC Starting Grant</a> for my project OBELiSC (Overcoming Barriers and Efficiency Limitations in Secure Computation). See <a href="https://www.ins2i.cnrs.fr/fr/cnrsinfo/geoffroy-couteau-une-erc-pour-pousser-la-securite-des-donnees">here</a> and <a href="https://www.irif.fr/portraits/erc_geoffroy_couteau">here</a> for interviews where I explain (in French) the goals of the project, and <a href="https://u-paris.fr/cinq-nouveaux-erc-starting-grants-dans-les-laboratoires-duniversite-paris-cite/">here</a> for a short abstract (still in French).</p>
 
@@ -73,16 +73,16 @@ My main research interests are secure multiparty computation and zero-knowledge 
 
 ### Students and postdocs
 
-I currently (September 2026) do not have any bandwidth to take on new postdocs or PhD students in the near term, but you can always contact me to inquiry about opportunities the might come up in the future. My usual topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including fine-grained cryptography, black-box separations, and connections to learning theory).
+I currently (September 2026) do not have any bandwidth to take on new postdocs or PhD students in the near term, but you can always contact me to inquire about opportunities that might come up in the future. My usual topics of interest include, but are not limited to, secure computation, zero-knowledge proofs, post-quantum cryptography, code-based cryptography, and foundational aspects of cryptography (including fine-grained cryptography, black-box separations, and connections to learning theory)..
 
 #### Postdocs
 
 |---|---|---|---|
 |  | Started | Notes |
 |---|---|---|---|
-[Francesco Migliaro](https://pur2all.github.io/) | Nov. 2025 |
+[Francesco Migliaro](https://pur2all.github.io/) | Dec. 2025 |
 [Mahshid Riahinia](https://mriahinia.github.io/) | Oct. 2025 |
-[Kelsey Melissaris](https://www.kelseymelissaris.com/) | Oct. 2025  |
+[Kelsey Melissaris](https://www.kelseymelissaris.com/) | Jan. 2026 |
 [Kaartik Bhushan](https://sites.google.com/view/kaartikbhushan/) | Jun. 2025 | |
 [Nikolas Melissaris](https://nikolasmelissaris.github.io/) | Mar. 2025 | |
 [Lennart Braun](https://lennartbraun.de/) | Jan. 2025 | |
@@ -161,17 +161,17 @@ Elahe Sadeghi | Oct. 2024 | Decentralized Wallets from Fast Threshold Signing (c
       </tr>
       <tr>
         <td><a href="https://sihangpu.uk/">Sihang Pu</a></td>
-        <td>Apr. 2024 – Aug. 2025</td>
+        <td>May 2024 – Aug. 2025</td>
         <td>Now Assistant Professor at East China Normal University</td>
       </tr>
       <tr>
-        <td><a href="https://christoph-egger.org/">Christop Egger</a></td>
-        <td>Oct. 2022 – Oct. 2024</td>
+        <td><a href="https://christoph-egger.org/">Christoph Egger</a></td>
+        <td>Nov. 2022 – Oct. 2024</td>
         <td>Now Assistant Professor at Chalmers University of Technology</td>
       </tr>
       <tr>
         <td><a href="https://alex-koch.gitlab.io/">Alexander Koch</a></td>
-        <td>Oct. 2022 – Feb. 2025</td>
+        <td>Nov. 2022 – Feb. 2025</td>
         <td>Now Cryptography Expert and Consultant at Secorvo Security Consulting</td>
       </tr>
       <tr>
@@ -181,7 +181,7 @@ Elahe Sadeghi | Oct. 2024 | Decentralized Wallets from Fast Threshold Signing (c
       </tr>
       <tr>
         <td>Sven Maier</td>
-        <td>Nov. 2022 – Mar. 2023</td>
+        <td>Dec. 2022 – Mar. 2023</td>
         <td>Now Research Engineer at Wibu Systems</td>
       </tr>
     </tbody>
@@ -198,8 +198,13 @@ Elahe Sadeghi | Oct. 2024 | Decentralized Wallets from Fast Threshold Signing (c
     </thead>
     <tbody>
       <tr>
+        <td>Ankit Kumar Mishra</td>
+        <td>Jul. 2026 – Sep. 2026</td>
+        <td>Visiting PhD student</td>
+      </tr>
+      <tr>
         <td>Olta Bytyci</td>
-        <td>Apr. 2026 – Aug. 2026</td>
+        <td>May 2026 – Sep. 2026</td>
         <td>Internship</td>
       </tr>
       <tr>
@@ -219,12 +224,12 @@ Elahe Sadeghi | Oct. 2024 | Decentralized Wallets from Fast Threshold Signing (c
       </tr>
       <tr>
         <td>Xiaxi Ye</td>
-        <td>Apr. 2025 – Sep. 2025</td>
+        <td>Apr. 2025 – Aug. 2025</td>
         <td>Visiting PhD student</td>
       </tr>
       <tr>
         <td><a href="https://homepages.iitb.ac.in/~kbhushan/">Kaartik Bhushan</a></td>
-        <td>Nov. 2024 – Feb. 2025</td>
+        <td>Nov. 2024 – Apr. 2025</td>
         <td>Visiting PhD student <br><br> <em>Note:</em> Now postdoctoral researcher at IRIF.</td>
       </tr>
       <tr>
@@ -239,7 +244,7 @@ Elahe Sadeghi | Oct. 2024 | Decentralized Wallets from Fast Threshold Signing (c
       </tr>
       <tr>
         <td><a href="https://matcauthon49.github.io/">Naman Kumar</a></td>
-        <td>June 2024 – Sep. 2024</td>
+        <td>July 2024 – Sep. 2024</td>
         <td>Internship <br><br> <em>Note:</em> Naman's visit led to a <a href="https://eprint.iacr.org/2025/1053">paper</a> presented at EUROCRYPT'25</td>
       </tr>
       <tr>
@@ -249,7 +254,7 @@ Elahe Sadeghi | Oct. 2024 | Decentralized Wallets from Fast Threshold Signing (c
       </tr>
       <tr>
         <td><a href="https://wquach.github.io/">Willy Quach</a></td>
-        <td>Feb. 2024 – May 2024</td>
+        <td>Feb. 2024 – Sep. 2024</td>
         <td>Visiting postdoctoral researcher <br><br> <em>Note:</em> Willy's visit led to a <a href="https://link.springer.com/chapter/10.1007/978-3-031-78011-0_10">paper</a> presented at TCC'24.</td>
       </tr>
       <tr>
@@ -264,7 +269,7 @@ Elahe Sadeghi | Oct. 2024 | Decentralized Wallets from Fast Threshold Signing (c
       </tr>
       <tr>
         <td><a href="https://themelis.github.io/">Alexandros Themelis</a></td>
-        <td>Apr. 2024 – Sep. 2024</td>
+        <td>Mar. 2024 – Sep. 2025</td>
         <td>Advanced Post-Quantum Signatures. Co-supervised with <a href="https://sihangpu.uk/">Sihang Pu</a>.</td>
       </tr>
       <tr>
@@ -274,8 +279,8 @@ Elahe Sadeghi | Oct. 2024 | Decentralized Wallets from Fast Threshold Signing (c
       </tr>
       <tr>
         <td><a href="https://matcauthon49.github.io/">Naman Kumar</a></td>
-        <td>May 2023 – Jun. 2023</td>
-        <td>Internship <br><br> <em>Note:</em> Naman's work led to a paper, to be presented at CRYPTO'24.</td>
+        <td>May 2023 – Jul. 2023</td>
+        <td>Internship <br><br> <em>Note:</em> Naman's work led to a paper, presented at CRYPTO'24.</td>
       </tr>
       <tr>
         <td>Elahe Sadeghi</td>
@@ -284,17 +289,17 @@ Elahe Sadeghi | Oct. 2024 | Decentralized Wallets from Fast Threshold Signing (c
       </tr>
       <tr>
         <td><a href="https://dungbui15.github.io/">Dung Bui</a></td>
-        <td>Mar. 2021 – Aug. 2021</td>
+        <td>Mar. 2021 – Sep. 2021</td>
         <td>Batch equality tests and secure comparison from pseudorandom correlation generators. Dung's work led to a <a href="https://eprint.iacr.org/2022/334">paper</a>, presented at PKC'23.</td>
       </tr>
       <tr>
         <td><a href="https://www.irif.fr/users/cducros/index">Clément Ducros</a></td>
-        <td>Mar. 2021 – Aug. 2021</td>
+        <td>Mar. 2021 – Sep. 2021</td>
         <td>Secure computation meets linear-time encodable codes. Clément's work led to a <a href="https://eprint.iacr.org/2023/650">paper</a>, presented at PKC'23.</td>
       </tr>
       <tr>
         <td>Milan Gonzalez-Thauvin</td>
-        <td>May 2021 – Jul. 2021</td>
+        <td>May 2021 – Jun. 2021</td>
         <td>Internship <br><br> <em>Note:</em> Constructions of Non-Interactive Zero-Knowledge Proofs: Efficiency and Generality</td>
       </tr>
       <tr>
@@ -314,12 +319,12 @@ Elahe Sadeghi | Oct. 2024 | Decentralized Wallets from Fast Threshold Signing (c
       </tr>
       <tr>
         <td><a href="https://pierremeyer.me/">Pierre Meyer</a></td>
-        <td>Nov. 2020 – Jan. 2020</td>
+        <td>Nov. 2019 – Jan. 2020</td>
         <td>Internship <br><br> <em>Note:</em> Breaking the circuit size barrier for secure computation under quasi-polynomial LPN. Pierre's work led to a <a href="https://eprint.iacr.org/2021/943">paper</a>, presented at EUROCRYPT'21.</td>
       </tr>
       <tr>
         <td>Dominik Hartmann</td>
-        <td>Feb. 2019 – Aug. 2019</td>
+        <td>Apr. 2019 – Oct. 2019</td>
         <td>Compilers for non-interactive zero-knowledge proofs. Dominik's work led to a <a href="https://eprint.iacr.org/2020/286.pdf">paper</a>, presented at CRYPTO'20. Now PhD student at Ruhr Universität Bochum.</td>
       </tr>
       <tr>

@@ -46,7 +46,7 @@ div {
 
 ### Obfuscation
 
-- [Why do we use multilinear maps in obfuscation schemes?](https://crypto.stackexchange.com/questions/43527/why-do-we-use-multilinear-maps-for-obfuscation/43530#43530) (short answer: they are essentially necessary in a well defined sense -- though that does not mean constructions must explicitely go through them!)
+- [Why do we use multilinear maps in obfuscation schemes?](https://crypto.stackexchange.com/questions/43527/why-do-we-use-multilinear-maps-for-obfuscation/43530#43530) (short answer: they are essentially necessary in a well defined sense -- though that does not mean constructions must explicitly go through them!)
 - [Can we obfuscate functions that are mostly zero?](https://crypto.stackexchange.com/questions/67696/obfuscating-functions-that-are-mostly-zero/67741#67741) (short answer: there is a gradation of increasingly complex obfuscation schemes from increasingly stronger assumptions for increasingly larger subclasses of mostly zero function; the linked answer provide a detailed overview.)
 
 ### Symmetric Primitives

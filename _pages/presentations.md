@@ -8,7 +8,6 @@ author_profile: true
 tags: test
 categories: TestCategories
 ---
----
 
 <style>
 div {
@@ -17,7 +16,7 @@ div {
 }
 </style>
 
-An outdated list of talks I gave, with links to the slides and video, when available. The list is far from comprehensive, since in many cases I did not particularly keep track of the event, or changed the slides afterwards for an other event. I did not include any event for which the webpage was not working anymore, and whose slides were already included in this page (in one form or another, usually due to giving a talk on the same result in another place). If you notice that a link is wrong or broken, please drop me a mail.
+An outdated list of talks I gave, with links to the slides and video, when available. The list is far from comprehensive, since in many cases I did not particularly keep track of the event, or changed the slides afterwards for another event. I did not include any event for which the webpage was not working anymore, and whose slides were already included in this page (in one form or another, usually due to giving a talk on the same result in another place). If you notice that a link is wrong or broken, please drop me a mail.
 
 | Date | Event | Paper / subject                                        | Links |
 | -----|-----|-------------------------------------------------- | -------------|
@@ -35,8 +34,8 @@ An outdated list of talks I gave, with links to the slides and video, when avail
 | April 2021 | [Boston University Security Seminar](https://www.bu.edu/hic/noteworthy/calendar/?eid=252034)  | Low-Complexity Weak Pseudorandom Functions in AC0[MOD2]	| [Slides](/assets/slides/presentation_pcf_2021.pdf), [Video](https://www.youtube.com/watch?v=zMkH6mbcBdM) |
 | April 2021 | [UVSQ Crypto Seminar](https://lmv.math.cnrs.fr/evenenement/crypto-geoffroy-couteau-irif-lpn-a-densite-variable-et-fonctions-faiblement-pseudoaleatoires-dans-des-classes-de-complexite-basses/)  | LPN a densité variable, et fonctions faiblement pseudoaléatoires dans des classes de complexité basses	| Slides, Video |
 | January 2021 | [ITCS 2021](http://itcs-conf.org/)  | Black-Box Uselessness: Composing Separations in Cryptography	| [Slides](/assets/slides/presentation_itcs2021.pdf), [Video](https://www.youtube.com/watch?v=bid2q3A_mKI) |
-| September 2020 | [Cryptography, Network Security and Cybersecurity Webinar, MAKAUT](https://makautwb.ac.in/) | Efficient Two-Round OT Extension and Silent Non-Interactive Secure Computation | [Slides](/assets/slides/presentation_makaut_september_2020.pdf), Video |
 | October 2020 | UCLA Crypto Seminar  | Pseudorandom Correlation Generators from Learning Parity with Noise | [Slides](/assets/slides/presentation_ucla_october_2020.pdf), Video |
+| September 2020 | [Cryptography, Network Security and Cybersecurity Webinar, MAKAUT](https://makautwb.ac.in/) | Efficient Two-Round OT Extension and Silent Non-Interactive Secure Computation | [Slides](/assets/slides/presentation_makaut_september_2020.pdf), Video |
 | November 2019 | [8th French-Israeli Workshop on the Foundations of Computer Science](https://www.filofocs.org/filofocs-2019)  | Efficient Pseudorandom Correlation Generators: Silent OT Extension and More | Slides, Video |
 | November 2019 | C2 (Codage & Cryptography Seminar) |Pseudorandom Correlation Generators from Learning Parity with Noise | [Slides](/assets/slides/presentation_c2_nov_2020.pdf), Video |
 | October 2019 | [ENS Lyon Crypto Seminar](http://www.ens-lyon.fr/LIP/AriC/seminar) | Efficient Pseudorandom Correlation Generators: Silent OT Extension and More | Slides, Video |
@@ -52,5 +51,5 @@ An outdated list of talks I gave, with links to the slides and video, when avail
 | November 2017 | [CCS 2017](https://ccs2017.sigsac.org/)  | Homomorphic Secret Sharing: Optimizations and applications	| [Slides](/assets/slides/presentation_hss_ccs2017.pdf), [Video](https://www.youtube.com/watch?v=qsOFR_oC_4g) |
 | May 2017 | [EUROCRYPT 2017](https://eurocrypt.iacr.org/2017/)  | Removing the Strong RSA Assumption from Arguments over the Integers	| [Slides](/assets/slides/presentation_rsa_ec2017.pdf), [Video](https://www.youtube.com/watch?v=xeuQoULDWtI) |
 | September 2016 | [Third Paris Crypto Day](https://pariscryptoday.github.io/third.html)  | Encryption Switching Protocols	| [Slides](http://ctic.au.dk/fileadmin/www.ctic.au.dk/PDF/MPC-2016/Presentation_Geoffroy-Couteau.pdf), Video |
-| August 2016 | [CRYPTO 2016](https://eurocrypt.iacr.org/2017/)  | Encryption Switching Protocols	| [Slides](http://ctic.au.dk/fileadmin/www.ctic.au.dk/PDF/MPC-2016/Presentation_Geoffroy-Couteau.pdf), [Video](https://www.youtube.com/watch?v=w8ybMi7dzAE) |
-| August 2015 | [CRYPTO 2015](https://eurocrypt.iacr.org/2017/)  | Implicit Zero-Knowledge Arguments and Applications to the Malicious Setting	| Slides, [Video](https://www.youtube.com/watch?v=u_zNExEveqU) |
+| August 2016 | [CRYPTO 2016](https://www.iacr.org/conferences/crypto2016/)  | Encryption Switching Protocols	| [Slides](http://ctic.au.dk/fileadmin/www.ctic.au.dk/PDF/MPC-2016/Presentation_Geoffroy-Couteau.pdf), [Video](https://www.youtube.com/watch?v=w8ybMi7dzAE) |
+| August 2015 | [CRYPTO 2015](https://www.iacr.org/conferences/crypto2015/)  | Implicit Zero-Knowledge Arguments and Applications to the Malicious Setting	| Slides, [Video](https://www.youtube.com/watch?v=u_zNExEveqU) |

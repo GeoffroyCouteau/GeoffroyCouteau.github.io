@@ -32,7 +32,7 @@ div {
 - [How to generate Beaver triples?](https://crypto.stackexchange.com/questions/41651/what-are-the-ways-to-generate-beaver-triples-for-multiplication-gate/41660#41660)
 - [Can two parties securely check whether they hold the same value?](https://crypto.stackexchange.com/questions/34621/two-party-equality-computation/34629#34629) (keyword: socialist millionaires problem)
 - [How is silent oblivious transfer constructed?](https://crypto.stackexchange.com/questions/84178/silent-oblivious-transfer-question/84206#84206)
-- [How to do secure bitwise mutliplication?](https://crypto.stackexchange.com/questions/43674/most-efficient-way-to-perform-secure-bitwise-multiplication/43680#43680)
+- [How to do secure bitwise multiplication?](https://crypto.stackexchange.com/questions/43674/most-efficient-way-to-perform-secure-bitwise-multiplication/43680#43680)
 
 ### General Questions
 

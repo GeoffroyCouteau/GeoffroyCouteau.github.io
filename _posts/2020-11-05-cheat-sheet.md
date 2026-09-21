@@ -37,7 +37,7 @@ In the course of working on various projects, I found myself spending an excessi
 
 ### Notations
 
-Let $\mathsf{Ber}\_p$ denote the Bernouilli distribution with probability $p$. $\mathsf{SD}(X,Y)$ denotes the statistical distance between random variables $(X,Y)$ over a set $S$, defined as
+Let $\mathsf{Ber}\_p$ denote the Bernoulli distribution with probability $p$. $\mathsf{SD}(X,Y)$ denotes the statistical distance between random variables $(X,Y)$ over a set $S$, defined as
 
 \begin{align}
 \mathsf{SD}(X,Y) &= \frac{1}{2} \cdot \sum_{x\in S} |\Pr[X = x] - \Pr[Y = x]|\\\\  
